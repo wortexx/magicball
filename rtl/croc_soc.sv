@@ -60,6 +60,14 @@ mgr_obi_rsp_t user_mgr_obi_rsp;
 logic [NumExternalIrqs-1:0] interrupts;
 logic [GpioCount-1:0] gpio_in_sync;
 
+  // Wires for user domain SCK and MOSI
+  logic user_spi_sck;
+  logic user_spi_mosi;
+
+  // Intermediate wires for Croc domain GPIO outputs
+  logic [GpioCount-1:0] croc_gpio_o;
+  logic [GpioCount-1:0] croc_gpio_out_en_o;
+
 croc_domain #(
   .GpioCount( GpioCount ) 
 ) i_croc (
@@ -79,8 +87,9 @@ croc_domain #(
   .uart_tx_o,
 
   .gpio_i,             
-  .gpio_o,            
-  .gpio_out_en_o,
+  //  Connect GPIO outputs to intermediate wires
+  .gpio_o ( croc_gpio_o ),            
+  .gpio_out_en_o ( croc_gpio_out_en_o ),
 
   .gpio_in_sync_o ( gpio_in_sync ),
 
@@ -109,7 +118,29 @@ user_domain #(
   .user_mgr_obi_rsp_i ( user_mgr_obi_rsp ),
 
   .gpio_in_sync_i ( gpio_in_sync ),
-  .interrupts_o   ( interrupts   )
+  .interrupts_o   ( interrupts   ),
+
+        // Connect User domain SPI outputs 
+    .spi_sck_o      ( user_spi_sck  ),
+    .spi_mosi_o     ( user_spi_mosi ),
 );
+
+  //   Drive top-level GPIO outputs: assign SPI signals to GPIO pins 0, 1
+  assign gpio_o[0] = user_spi_sck;
+  assign gpio_o[1] = user_spi_mosi;
+
+  // Assign remaining GPIO pins from the Croc GPIO controller
+  if (GpioCount > 2) begin : gen_remaining_gpio_o
+      assign gpio_o[GpioCount-1:2] = croc_gpio_o[GpioCount-1:2];
+  end
+
+  // GPIO output enables: enable outputs for SPI pins
+  assign gpio_out_en_o[0] = 1'b1; // SCK is always output
+  assign gpio_out_en_o[1] = 1'b1; // MOSI is always output
+
+  // Assign remaining output enables from the Croc GPIO controller
+  if (GpioCount > 2) begin : gen_remaining_gpio_oe
+      assign gpio_out_en_o[GpioCount-1:2] = croc_gpio_out_en_o[GpioCount-1:2];
+  end
 
 endmodule

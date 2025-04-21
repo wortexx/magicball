@@ -20,7 +20,11 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   input  mgr_obi_rsp_t user_mgr_obi_rsp_i,
 
   input  logic [      GpioCount-1:0] gpio_in_sync_i, // synchronized GPIO inputs
-  output logic [NumExternalIrqs-1:0] interrupts_o // interrupts to core
+  output logic [NumExternalIrqs-1:0] interrupts_o, // interrupts to core
+
+  // Added SCK and MOSI output ports
+  output logic       spi_sck_o,
+  output logic       spi_mosi_o,
 );
 
   assign interrupts_o = '0;  
@@ -50,9 +54,16 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   sbr_obi_req_t user_error_obi_req;
   sbr_obi_rsp_t user_error_obi_rsp;
 
+  // SPI Subordinate Bus (Connects to Port UserSpi = 1)
+  sbr_obi_req_t user_spi_obi_req;
+  sbr_obi_rsp_t user_spi_obi_rsp;
+
   // Fanout into more readable signals
   assign user_error_obi_req              = all_user_sbr_obi_req[UserError];
   assign all_user_sbr_obi_rsp[UserError] = user_error_obi_rsp;
+
+  assign all_user_sbr_obi_rsp[UserError] = user_error_obi_rsp; // Index 0
+  assign all_user_sbr_obi_rsp[UserSpi]   = user_spi_obi_rsp;   // Index 1
 
 
   //-----------------------------------------------------------------------------------------------
@@ -114,5 +125,29 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     .obi_req_i  ( user_error_obi_req ),
     .obi_rsp_o  ( user_error_obi_rsp )
   );
+
+    // Single SPI peripheral instantiation (connected to index UserSpi = 1) 
+  obi_spi_peripheral_fixed i_spi_peripheral (
+    .clk_i    (clk_i),
+    .rst_ni   (rst_ni),
+
+    //  OBI Slave Interface 
+    // Connect to the signals provided by the demux for index UserSpi (1)
+    .req_i    ( user_spi_obi_req.req    ),
+    .addr_i   ( user_spi_obi_req.a.addr ),
+    .wdata_i  ( user_spi_obi_req.a.wdata ),
+    .be_i     ( user_spi_obi_req.a.be   ),
+    .we_i     ( user_spi_obi_req.a.we   ),
+
+    .gnt_o    ( user_spi_obi_rsp.gnt    ),
+    .rvalid_o ( user_spi_obi_rsp.rvalid),
+    .rdata_o  ( user_spi_obi_rsp.r.data ),
+
+    //  SPI Master Interface 
+    // Connect to the new top-level output ports of user_domain
+    .sck_o    ( spi_sck_o  ),
+    .mosi_o   ( spi_mosi_o ),
+  );
+
 
 endmodule
