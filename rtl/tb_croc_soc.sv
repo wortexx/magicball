@@ -36,6 +36,9 @@ module tb_croc_soc #(
     logic fetch_en_i;
     logic status_o;
 
+    logic [3:0] tb_unused_o;
+    logic [3:0] tb_unused_oe_o;
+
     localparam int unsigned GpioCount = 32;
 
     logic [GpioCount-1:0] gpio_i;             
@@ -425,7 +428,9 @@ module tb_croc_soc #(
 
         .gpio_i        ( gpio_i        ),             
         .gpio_o        ( gpio_o        ),            
-        .gpio_out_en_o ( gpio_out_en_o )
+        .gpio_out_en_o ( gpio_out_en_o ),
+        .unused_o      ( tb_unused_o     ),
+        .unused_oe_o   ( tb_unused_oe_o  )
     );
 
     assign gpio_i[ 3:0]          = '0;

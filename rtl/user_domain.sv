@@ -24,7 +24,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
 
   // Added SCK and MOSI output ports
   output logic       spi_sck_o,
-  output logic       spi_mosi_o,
+  output logic       spi_mosi_o
 );
 
   assign interrupts_o = '0;  
@@ -146,7 +146,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     //  SPI Master Interface 
     // Connect to the new top-level output ports of user_domain
     .sck_o    ( spi_sck_o  ),
-    .mosi_o   ( spi_mosi_o ),
+    .mosi_o   ( spi_mosi_o )
   );
 
 

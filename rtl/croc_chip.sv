@@ -62,13 +62,16 @@ module croc_chip import croc_pkg::*; #() (
     logic soc_clk_i;
     logic soc_rst_ni;
     logic soc_ref_clk_i;
-    logic soc_testmode;
+    logic soc_testmode_i;
 
     logic soc_jtag_tck_i;
     logic soc_jtag_trst_ni;
     logic soc_jtag_tms_i;
     logic soc_jtag_tdi_i;
     logic soc_jtag_tdo_o;
+
+    logic soc_uart_rx_i; 
+    logic soc_uart_tx_o;
 
     logic soc_fetch_en_i;
     logic soc_status_o;
@@ -78,6 +81,9 @@ module croc_chip import croc_pkg::*; #() (
     logic [GpioCount-1:0] soc_gpio_i;             
     logic [GpioCount-1:0] soc_gpio_o;            
     logic [GpioCount-1:0] soc_gpio_out_en_o; // Output enable signal; 0 -> input, 1 -> output
+
+    logic [3:0] soc_unused_o;
+    logic [3:0] soc_unused_oe_o;
 
     sg13g2_IOPadIn        pad_clk_i        (.pad(clk_i),        .p2c(soc_clk_i));
     sg13g2_IOPadIn        pad_rst_ni       (.pad(rst_ni),       .p2c(soc_rst_ni));
@@ -128,10 +134,10 @@ module croc_chip import croc_pkg::*; #() (
     sg13g2_IOPadInOut30mA pad_gpio29_io    (.pad(gpio29_io),    .c2p(soc_gpio_o[29]), .p2c(soc_gpio_i[29]),  .c2p_en(soc_gpio_out_en_o[29]));
     sg13g2_IOPadInOut30mA pad_gpio30_io    (.pad(gpio30_io),    .c2p(soc_gpio_o[30]), .p2c(soc_gpio_i[30]),  .c2p_en(soc_gpio_out_en_o[30]));
     sg13g2_IOPadInOut30mA pad_gpio31_io    (.pad(gpio31_io),    .c2p(soc_gpio_o[31]), .p2c(soc_gpio_i[31]),  .c2p_en(soc_gpio_out_en_o[31]));
-    sg13g2_IOPadOut16mA pad_unused0_o      (.pad(unused0_o),    .c2p(soc_status_o));
-    sg13g2_IOPadOut16mA pad_unused1_o      (.pad(unused1_o),    .c2p(soc_status_o));
-    sg13g2_IOPadOut16mA pad_unused2_o      (.pad(unused2_o),    .c2p(soc_status_o));
-    sg13g2_IOPadOut16mA pad_unused3_o      (.pad(unused3_o),    .c2p(soc_status_o));
+    sg13g2_IOPadOut16mA pad_unused0_o      (.pad(unused0_o),    .c2p(soc_unused_o[0]));
+    sg13g2_IOPadOut16mA pad_unused1_o      (.pad(unused1_o),    .c2p(soc_unused_o[1]));
+    sg13g2_IOPadOut16mA pad_unused2_o      (.pad(unused2_o),    .c2p(soc_unused_o[2]));
+    sg13g2_IOPadOut16mA pad_unused3_o      (.pad(unused3_o),    .c2p(soc_unused_o[3]));
 
     (* dont_touch = "true" *)sg13g2_IOPadVdd pad_vdd0();
     (* dont_touch = "true" *)sg13g2_IOPadVdd pad_vdd1();
@@ -175,7 +181,11 @@ module croc_chip import croc_pkg::*; #() (
 
     .gpio_i         ( soc_gpio_i        ),             
     .gpio_o         ( soc_gpio_o        ),            
-    .gpio_out_en_o  ( soc_gpio_out_en_o )
+    .gpio_out_en_o  ( soc_gpio_out_en_o ),
+
+    //  Connect unused ports from croc_soc instance 
+    .unused_o       ( soc_unused_o      ),
+    .unused_oe_o    ( soc_unused_oe_o   )
   );
 
 endmodule

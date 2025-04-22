@@ -26,7 +26,11 @@ module croc_soc import croc_pkg::*; #(
 
   input  logic [GpioCount-1:0] gpio_i,       // Input from GPIO pins
   output logic [GpioCount-1:0] gpio_o,       // Output to GPIO pins
-  output logic [GpioCount-1:0] gpio_out_en_o // Output enable signal; 0 -> input, 1 -> output
+  output logic [GpioCount-1:0] gpio_out_en_o, // Output enable signal; 0 -> input, 1 -> output
+
+  //  Ports for unused pins 
+  output logic [3:0]             unused_o,
+  output logic [3:0]             unused_oe_o // Output enable for unused pins
 );
 
   logic synced_rst_n, synced_fetch_en;
@@ -120,27 +124,26 @@ user_domain #(
   .gpio_in_sync_i ( gpio_in_sync ),
   .interrupts_o   ( interrupts   ),
 
-        // Connect User domain SPI outputs 
+  //  Connect User domain SPI outputs 
     .spi_sck_o      ( user_spi_sck  ),
-    .spi_mosi_o     ( user_spi_mosi ),
+    .spi_mosi_o     ( user_spi_mosi )
 );
 
-  //   Drive top-level GPIO outputs: assign SPI signals to GPIO pins 0, 1
-  assign gpio_o[0] = user_spi_sck;
-  assign gpio_o[1] = user_spi_mosi;
+  //  Drive top-level GPIO outputs: assign SPI signals to GPIO pins 0, 1
+  //  Connect ALL standard GPIO outputs directly from the intermediate wires (driven by i_croc)
+  //  This allows software to control CS1, CS2, D/C etc. using standard GPIO registers.
+  assign gpio_o        = croc_gpio_o;
+  assign gpio_out_en_o = croc_gpio_out_en_o;
 
-  // Assign remaining GPIO pins from the Croc GPIO controller
-  if (GpioCount > 2) begin : gen_remaining_gpio_o
-      assign gpio_o[GpioCount-1:2] = croc_gpio_o[GpioCount-1:2];
-  end
+  // Drive top-level UNUSED outputs 
+  // Route hardware SPI signals from user_domain to unused[0:1]
+  assign unused_o[0]    = user_spi_sck;
+  assign unused_o[1]    = user_spi_mosi;
+  assign unused_o[3:2]  = 2'b0;   // Leave unused[2:3] unconnected
 
-  // GPIO output enables: enable outputs for SPI pins
-  assign gpio_out_en_o[0] = 1'b1; // SCK is always output
-  assign gpio_out_en_o[1] = 1'b1; // MOSI is always output
-
-  // Assign remaining output enables from the Croc GPIO controller
-  if (GpioCount > 2) begin : gen_remaining_gpio_oe
-      assign gpio_out_en_o[GpioCount-1:2] = croc_gpio_out_en_o[GpioCount-1:2];
-  end
+  // Set output enable for unused pins
+  assign unused_oe_o[0] = 1'b1; // SCK is always output
+  assign unused_oe_o[1] = 1'b1; // MOSI is always output
+  assign unused_oe_o[3:2] = 2'b0; // Default output enables low
 
 endmodule
