@@ -27,7 +27,7 @@ package user_pkg;
   localparam bit [31:0] UserSpiAddrRange    = 32'h0000_1000;          // every subordinate has at least 4KB
   
   //Define address for the single SPI peripheral
-  localparam bit [31:0] UserSpiAddrOffset = croc_pkg::UserBaseAddr + 0 * UserSpiAddrRange; // Example: 32'h2000_0000
+  localparam bit [31:0] UserSpiAddrOffset = UserRomAddrOffset + 0 * UserSpiAddrRange; // Example: 32'h2000_0000
 
 
   localparam int unsigned NumDemuxSbrRules  = NumUserDomainSubordinates; // number of address rules in the decoder
@@ -40,13 +40,17 @@ package user_pkg;
   } user_demux_outputs_e;
 
   // Address rules given to address decoder
-  localparam croc_pkg::addr_map_rule_t [NumDemuxSbrRules-1:0] user_addr_map = {
+ /* localparam croc_pkg::addr_map_rule_t [NumDemuxSbrRules-1:0] user_addr_map = {
     // Rule for SPI Peripheral (maps to index UserSpi = 1)
     '{ addr_base: UserSpiAddrOffset,
        addr_mask: ~(UserSpiAddrRange - 1), // Mask for 4KB range: 32'hFFFF_F000 
        index:     UserSpi
      }
     // Add more rules here if NumUserDomainSubordinates increases, separated by commas
-  };
+  */
+
+  localparam croc_pkg::addr_map_rule_t [NumDemuxSbrRules-1:0] user_addr_map = '{
+  0: '{ UserSpiAddrOffset, ~(UserSpiAddrRange - 1), UserSpi }
+};
 
 endpackage

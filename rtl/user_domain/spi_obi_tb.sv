@@ -248,4 +248,4 @@ module spi_obi_tb;
     $finish; // End simulation
   end
 
-endmodule : spi_obi_tb
+endmodule

@@ -127,7 +127,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
   );
 
     // Single SPI peripheral instantiation (connected to index UserSpi = 1) 
-  obi_spi_peripheral_fixed i_spi_peripheral (
+  obi_spi_peripheral i_spi_peripheral (
     .clk_i    (clk_i),
     .rst_ni   (rst_ni),
 
@@ -148,6 +148,5 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     .sck_o    ( spi_sck_o  ),
     .mosi_o   ( spi_mosi_o )
   );
-
 
 endmodule

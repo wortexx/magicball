@@ -227,4 +227,4 @@ module obi_spi_peripheral (
     end // else: !if(!rst_ni)
   end // always_ff
 
-endmodule : obi_spi_peripheral
+endmodule

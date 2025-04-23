@@ -1,0 +1,1195 @@
+cd verilator; /foss/tools/bin/verilator --binary -j 0 -Wno-fatal -Wno-style -Wno-WIDTHEXPAND --timing --autoflush --trace --trace-structs --unroll-count 1 --unroll-stmts 1 -O3 -CFLAGS "-O1 -march=native" --top tb_croc_soc -f croc.f
+%Warning-REDEFMACRO: Redefining existing define: 'VERILATOR', with different value: ''
+                     ... Location of previous definition, with value: '1'
+                     ... For warning description see https://verilator.org/warn/REDEFMACRO?v=5.030
+                     ... Use "/* verilator lint_off REDEFMACRO */" and lint_on around source to disable this message.
+%Warning-PINMISSING: /fosic/designs/croc/rtl/user_domain.sv:130:22: Cell has missing pin: 'cs_o'
+  130 |   obi_spi_peripheral i_spi_peripheral (
+      |                      ^~~~~~~~~~~~~~~~
+                     /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:21:23: ... Location of port declaration
+   21 |   output logic        cs_o      
+      |                       ^~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_verification/clk_rst_gen.sv:12:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   12 | module clk_rst_gen #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_sram.sv:56:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   56 | module tc_sram #(
+      |        ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_sram_impl.sv:27:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   27 | module tc_sram_impl #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_clk.sv:11:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   11 | module tc_clk_and2 (
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_clk.sv:21:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   21 | module tc_clk_buffer (
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_clk.sv:31:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   31 | module tc_clk_gating #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_clk.sv:55:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   55 | module tc_clk_inverter (
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_clk.sv:74:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   74 | module tc_clk_mux2 (
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_clk.sv:85:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   85 | module tc_clk_xor2 (
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/tech_cells_generic/tc_clk.sv:95:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   95 | module tc_clk_or2 (
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/binary_to_gray.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module binary_to_gray #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cb_filter_pkg.sv:14:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   14 | package cb_filter_pkg;
+      |         ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cc_onehot.sv:18:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   18 | module cc_onehot #(
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_reset_ctrlr_pkg.sv:18:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   18 | package cdc_reset_ctrlr_pkg;
+      |         ^~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cf_math_pkg.sv:18:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   18 | package cf_math_pkg;
+      |         ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/clk_int_div.sv:70:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   70 | module clk_int_div #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/credit_counter.sv:11:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   11 | module credit_counter #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/delta_counter.sv:14:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   14 | module delta_counter #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/ecc_pkg.sv:15:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | package ecc_pkg;
+      |         ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/edge_propagator_tx.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module edge_propagator_tx (
+      |        ^~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/exp_backoff.sv:23:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   23 | module exp_backoff #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/fifo_v3.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module fifo_v3 #(
+      |        ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/gray_to_binary.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module gray_to_binary #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/isochronous_4phase_handshake.sv:43:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   43 | module isochronous_4phase_handshake (
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/isochronous_spill_register.sv:40:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   40 | module isochronous_spill_register #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/lfsr.sv:22:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   22 | module lfsr #(
+      |        ^~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/lfsr_16bit.sv:21:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   21 | module lfsr_16bit #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/lfsr_8bit.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module lfsr_8bit #(
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/lossy_valid_to_stream.sv:49:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   49 | module lossy_valid_to_stream #(
+      |        ^~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/mv_filter.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module mv_filter #(
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/onehot_to_bin.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module onehot_to_bin #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/plru_tree.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module plru_tree #(
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/passthrough_stream_fifo.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module passthrough_stream_fifo #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/popcount.sv:22:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   22 | module popcount #(
+      |        ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/rr_arb_tree.sv:47:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   47 | module rr_arb_tree #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/rstgen_bypass.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module rstgen_bypass #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/serial_deglitch.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module serial_deglitch #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/shift_reg.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module shift_reg #(
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/shift_reg_gated.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module shift_reg_gated #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/spill_register_flushable.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module spill_register_flushable #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_demux.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module stream_demux #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_filter.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module stream_filter (
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_fork.sv:19:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   19 | module stream_fork #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_join_dynamic.sv:18:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   18 | module stream_join_dynamic #(
+      |        ^~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_mux.sv:14:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   14 | module stream_mux #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_throttle.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module stream_throttle #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/sub_per_hash.sv:39:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   39 | module sub_per_hash #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/sync.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module sync #(
+      |        ^~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/sync_wedge.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module sync_wedge #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/unread.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module unread (
+      |        ^~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/read.sv:10:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   10 | module read #(
+      |        ^~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/addr_decode_dync.sv:38:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   38 | module addr_decode_dync #(
+      |        ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_2phase.sv:43:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   43 | module cdc_2phase #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_2phase.sv:92:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   92 | module cdc_2phase_src #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_2phase.sv:142:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  142 | module cdc_2phase_dst #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_4phase.sv:36:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   36 | module cdc_4phase #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_4phase.sv:92:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   92 | module cdc_4phase_src #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_4phase.sv:205:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  205 | module cdc_4phase_dst #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/clk_int_div_static.sv:60:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   60 | module clk_int_div_static #(
+      |        ^~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/addr_decode.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module addr_decode #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/addr_decode_napot.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module addr_decode_napot #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/multiaddr_decode.sv:30:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   30 | module multiaddr_decode #(
+      |        ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cb_filter.sv:43:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   43 | module cb_filter #(
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cb_filter.sv:201:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  201 | module hash_block #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_fifo_2phase.sv:45:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   45 | module cdc_fifo_2phase #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/clk_mux_glitch_free.sv:73:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   73 | module clk_mux_glitch_free #(
+      |        ^~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/clk_mux_glitch_free.sv:256:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  256 | module clk_or_tree #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/counter.sv:14:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   14 | module counter #(
+      |        ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/ecc_decode.sv:29:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   29 | module ecc_decode import ecc_pkg::*; #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/ecc_encode.sv:22:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   22 | module ecc_encode import ecc_pkg::*; #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/edge_detect.sv:14:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   14 | module edge_detect (
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/lzc.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module lzc #(
+      |        ^~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/max_counter.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module max_counter #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/rstgen.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module rstgen (
+      |        ^~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/spill_register.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module spill_register #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_delay.sv:14:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   14 | module stream_delay #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_fifo.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module stream_fifo #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_fork_dynamic.sv:22:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   22 | module stream_fork_dynamic #(
+      |        ^~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_join.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module stream_join #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_reset_ctrlr.sv:109:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  109 | module cdc_reset_ctrlr
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_reset_ctrlr.sv:187:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  187 | module cdc_reset_ctrlr_half
+      |        ^~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_fifo_gray.sv:102:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  102 | module cdc_fifo_gray #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_fifo_gray.sv:172:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  172 | module cdc_fifo_gray_src #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_fifo_gray.sv:230:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  230 | module cdc_fifo_gray_dst #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/fall_through_register.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module fall_through_register #(
+      |        ^~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/id_queue.sv:48:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   48 | module id_queue #(
+      |        ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_to_mem.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module stream_to_mem #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_arbiter_flushable.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module stream_arbiter_flushable #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_fifo_optimal_wrap.sv:10:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   10 | module stream_fifo_optimal_wrap #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_register.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module stream_register #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_xbar.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module stream_xbar #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_fifo_gray_clearable.sv:102:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  102 | module cdc_fifo_gray_clearable #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_fifo_gray_clearable.sv:269:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  269 | module cdc_fifo_gray_src_clearable #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_fifo_gray_clearable.sv:328:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  328 | module cdc_fifo_gray_dst_clearable #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_2phase_clearable.sv:53:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   53 | module cdc_2phase_clearable #(
+      |        ^~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_2phase_clearable.sv:200:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  200 | module cdc_2phase_src_clearable #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/cdc_2phase_clearable.sv:274:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  274 | module cdc_2phase_dst_clearable #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/mem_to_banks_detailed.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module mem_to_banks_detailed #(
+      |        ^~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_arbiter.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module stream_arbiter #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/stream_omega_net.sv:18:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   18 | module stream_omega_net #(
+      |        ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/common_cells/mem_to_banks.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module mem_to_banks #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb/apb_pkg.sv:15:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | package apb_pkg;
+      |         ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/register_interface/lowrisc_opentitan/prim_subreg_arb.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module prim_subreg_arb #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/register_interface/lowrisc_opentitan/prim_subreg_ext.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module prim_subreg_ext #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/register_interface/periph_to_reg.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module periph_to_reg #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/register_interface/reg_to_apb.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module reg_to_apb #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/register_interface/lowrisc_opentitan/prim_subreg_shadow.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module prim_subreg_shadow #(
+      |        ^~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/register_interface/lowrisc_opentitan/prim_subreg.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module prim_subreg #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/slib_clock_div.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module slib_clock_div #(parameter RATIO = 4) (
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/slib_counter.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module slib_counter # (parameter WIDTH = 4) (
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/slib_edge_detect.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module slib_edge_detect(
+      |        ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/slib_fifo.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module slib_fifo # (parameter WIDTH = 8, parameter SIZE_E=6) (
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/slib_input_filter.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module slib_input_filter #(parameter SIZE = 4) (
+      |        ^~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/slib_input_sync.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module slib_input_sync(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/slib_mv_filter.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module slib_mv_filter #(parameter WIDTH = 4, parameter THRESHOLD = 10) (
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/uart_baudgen.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module uart_baudgen(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/uart_interrupt.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module uart_interrupt(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/uart_receiver.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module uart_receiver(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/uart_transmitter.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module uart_transmitter(
+      |        ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/apb_uart.sv:35:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   35 | module apb_uart(
+      |        ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/apb_uart_wrap.sv:27:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   27 | module apb_uart_wrap #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/apb_uart/reg_uart_wrap.sv:31:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   31 | module reg_uart_wrap #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_pkg.sv:9:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    9 | package cve2_pkg;
+      |         ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_alu.sv:9:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    9 | module cve2_alu #(
+      |        ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_compressed_decoder.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module cve2_compressed_decoder (
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_controller.sv:12:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   12 | module cve2_controller #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_counter.sv:1:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    1 | module cve2_counter #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_csr.sv:11:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   11 | module cve2_csr #(
+      |        ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_decoder.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module cve2_decoder #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_fetch_fifo.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module cve2_fetch_fifo #(
+      |        ^~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_load_store_unit.sv:16:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   16 | module cve2_load_store_unit
+      |        ^~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_multdiv_fast.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module cve2_multdiv_fast #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_multdiv_slow.sv:14:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   14 | module cve2_multdiv_slow
+      |        ^~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_pmp.sv:5:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    5 | module cve2_pmp #(
+      |        ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_register_file_ff.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module cve2_register_file_ff #(
+      |        ^~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_wb.sv:14:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   14 | module cve2_wb #(
+      |        ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_cs_registers.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module cve2_cs_registers #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_ex_block.sv:11:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   11 | module cve2_ex_block #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_id_stage.sv:19:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   19 | module cve2_id_stage #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_prefetch_buffer.sv:12:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   12 | module cve2_prefetch_buffer #(
+      |        ^~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_if_stage.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module cve2_if_stage import cve2_pkg::*; #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/cve2/cve2_core.sv:15:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   15 | module cve2_core import cve2_pkg::*; #(
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_pkg.sv:7:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | package obi_pkg;
+      |         ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_rready_converter.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module obi_rready_converter #(
+      |        ^~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_atop_resolver.sv:12:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   12 | module obi_atop_resolver import obi_pkg::*; #(
+      |        ^~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_atop_resolver.sv:454:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  454 | module obi_atop_resolver_intf import obi_pkg::*; #(
+      |        ^~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_demux.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module obi_demux #(
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_demux.sv:111:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  111 | module obi_demux_intf #(
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_err_sbr.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module obi_err_sbr #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_err_sbr.sv:69:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   69 | module obi_err_sbr_intf #(
+      |        ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_mux.sv:10:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   10 | module obi_mux #(
+      |        ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_mux.sv:166:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  166 | module obi_mux_intf #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_sram_shim.sv:7:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | module obi_sram_shim #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_xbar.sv:8:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    8 | module obi_xbar #(
+      |        ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/obi/obi_xbar.sv:161:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  161 | module obi_xbar_intf #(
+      |        ^~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dm_pkg.sv:19:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   19 | package dm;
+      |         ^~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/debug_rom/debug_rom.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module debug_rom (
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/debug_rom/debug_rom_one_scratch.sv:17:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   17 | module debug_rom_one_scratch (
+      |        ^~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dm_csrs.sv:18:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   18 | module dm_csrs #(
+      |        ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dm_mem.sv:19:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   19 | module dm_mem #(
+      |        ^~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dmi_cdc.sv:19:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   19 | module dmi_cdc (
+      |        ^~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dmi_jtag_tap.sv:19:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   19 | module dmi_jtag_tap #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dm_sba.sv:18:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   18 | module dm_sba #(
+      |        ^~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dm_top.sv:20:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   20 | module dm_top #(
+      |        ^~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dmi_jtag.sv:19:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   19 | module dmi_jtag #(
+      |        ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/dm_obi_top.sv:63:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   63 | module dm_obi_top #(
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/tb/jtag_test_simple.sv:11:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   11 | module jtag_driver_simple #(
+      |        ^~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/riscv-dbg/tb/jtag_test_simple.sv:163:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  163 | module riscv_dbg_simple #(
+      |        ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/timer_unit/timer_unit_counter.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module timer_unit_counter
+      |        ^~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/timer_unit/timer_unit_counter_presc.sv:13:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   13 | module timer_unit_counter_presc
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/timer_unit/apb_timer_unit.sv:37:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   37 | module apb_timer_unit
+      |        ^~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/timer_unit/timer_unit.sv:37:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   37 | module timer_unit
+      |        ^~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/croc_pkg.sv:11:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   11 | package croc_pkg;
+      |         ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/user_pkg.sv:11:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   11 | package user_pkg;
+      |         ^~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/soc_ctrl/soc_ctrl_reg_pkg.sv:7:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    7 | package soc_ctrl_reg_pkg;
+      |         ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/gpio/gpio_reg_pkg.sv:10:9: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   10 | package gpio_reg_pkg;
+      |         ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/core_wrap.sv:8:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    8 | module core_wrap import croc_pkg::*; #() (
+      |        ^~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/soc_ctrl/soc_ctrl_reg_top.sv:10:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   10 | module soc_ctrl_reg_top #(
+      |        ^~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/soc_ctrl/soc_ctrl_reg_top.sv:268:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+  268 | module soc_ctrl_reg_top_intf
+      |        ^~~~~~~~~~~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/gpio/gpio_reg_top.sv:12:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   12 | module gpio_reg_top import gpio_reg_pkg::*; #(
+      |        ^~~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/gpio/gpio.sv:12:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+   12 | module gpio #(
+      |        ^~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/croc_domain.sv:8:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    8 | module croc_domain import croc_pkg::*; #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-TIMESCALEMOD: /fosic/designs/croc/rtl/user_domain.sv:8:8: Timescale missing on this module as other modules have it (IEEE 1800-2023 3.14.2.3)
+    8 | module user_domain import user_pkg::*; import croc_pkg::*; #(
+      |        ^~~~~~~~~~~
+                       /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:3:8: ... Location of module with timescale
+    3 | module obi_spi_peripheral (
+      |        ^~~~~~~~~~~~~~~~~~
+%Warning-REALCVT: /fosic/designs/croc/rtl/tb_croc_soc.sv:14:47: Implicit conversion of real to integer
+   14 |     parameter time         TAppl         = 0.2*ClkPeriod,
+      |                                               ^
+%Warning-REALCVT: /fosic/designs/croc/rtl/tb_croc_soc.sv:15:47: Implicit conversion of real to integer
+   15 |     parameter time         TTest         = 0.8*ClkPeriod,
+      |                                               ^
+%Warning-REALCVT: /fosic/designs/croc/rtl/tb_croc_soc.sv:21:47: Implicit conversion of real to integer
+   21 |     localparam int unsigned ClkFrequency = 1s / ClkPeriod
+      |                                               ^
+%Warning-REALCVT: /fosic/designs/croc/rtl/tb_croc_soc.sv:312:40: Implicit conversion of real to integer
+  312 |     localparam time UartBaudPeriod = 1s/UartRealBaudRate;
+      |                                        ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/common_cells/cdc_2phase_clearable.sv:90:3: Logical operator GENIF expects 1 bit on the If, but If's VARREF 'CLEAR_ON_ASYNC_RESET' generates 32 bits.
+                                                                                      : ... note: In instance 'tb_croc_soc.i_croc_soc.i_croc.i_dmi_jtag.i_dmi_cdc.i_cdc_req'
+   90 |   if (CLEAR_ON_ASYNC_RESET) begin : gen_elaboration_assertion
+      |   ^~
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/apb_uart/uart_receiver.sv:142:23: Bit extraction of var[7:0] requires 3 bit index, not 4 bits.
+                                                                             : ... note: In instance 'tb_croc_soc.i_croc_soc.i_croc.i_uart.i_apb_uart.UART_RX'
+  142 |                  iDOUT[iDataCount] <= iFSIN;
+      |                       ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/gpio/gpio_reg_top.sv:73:24: Operator ASSIGNW expects 1 bits on the Assign RHS, but Assign RHS's SEL generates 3 bits.
+                                                                       : ... note: In instance 'tb_croc_soc.i_croc_soc.i_croc.i_gpio.i_reg_file'
+   73 |   assign id_d          = obi_req_i.a.aid;
+      |                        ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/obi/obi_mux.sv:147:38: Operator ASSIGN expects 1 bits on the Assign RHS, but Assign RHS's SEL generates 3 bits.
+                                                                  : ... note: In instance 'tb_croc_soc.i_croc_soc.i_croc.i_main_xbar.gen_mux[4].i_mux'
+  147 |    sbr_rsp_r[response_id].rid        = mgr_port_rsp_i.r.rid;                       
+      |                                      ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/tech_cells_generic/tc_sram.sv:96:31: Operator ASSIGN expects 32 bits on the Assign RHS, but Assign RHS's REPLICATE generates 1024 bits.
+                                                                                : ... note: In instance 'tb_croc_soc.i_croc_soc.i_croc.gen_sram_bank[1].i_sram'
+   96 |         "random": init_val[i] = {DataWidth{$urandom()}};
+      |                               ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:120:23: Operator ASSIGN expects 3 bits on the Assign RHS, but Assign RHS's SUB generates 32 bits.
+                                                                                     : ... note: In instance 'tb_croc_soc.i_croc_soc.i_user.i_spi_peripheral'
+  120 |         bit_cnt_d     = SPI_DATA_BITS - 1;
+      |                       ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:135:29: Operator ASSIGN expects 4 bits on the Assign RHS, but Assign RHS's COND generates 32 bits.
+                                                                                     : ... note: In instance 'tb_croc_soc.i_croc_soc.i_user.i_spi_peripheral'
+  135 |           next_bit_idx_calc = (bit_cnt_q == 0) ? 0 : (SPI_DATA_BITS - 1 - (bit_cnt_q - 1));
+      |                             ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv:136:29: Bit extraction of var[7:0] requires 3 bit index, not 4 bits.
+                                                                                     : ... note: In instance 'tb_croc_soc.i_croc_soc.i_user.i_spi_peripheral'
+  136 |           mosi_o = tx_data_q[next_bit_idx_calc];  
+      |                             ^
+%Error: /fosic/designs/croc/rtl/user_domain.sv:144:36: Member 'data' not found in structure
+                                                     : ... note: In instance 'tb_croc_soc.i_croc_soc.i_user'
+  144 |     .rdata_o  ( user_spi_obi_rsp.r.data ),
+      |                                    ^~~~
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/croc_domain.sv:369:27: Operator ASSIGNW expects 9 bits on the Assign RHS, but Assign RHS's SEL generates 30 bits.
+                                                                  : ... note: In instance 'tb_croc_soc.i_croc_soc.i_croc'
+  369 |     assign bank_word_addr = bank_byte_addr[SbrObiCfg.AddrWidth-1:2];
+      |                           ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/riscv-dbg/tb/jtag_test_simple.sv:241:17: Operator ASSIGN expects 1 bits on the Assign RHS, but Assign RHS's CASTWRAP generates 32 bits.
+                                                                                    : ... note: In instance 'tb_croc_soc.jtag_dbg'
+  241 |         data[i] = dm::dtmcs_t'(read_data[i]);
+      |                 ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/riscv-dbg/tb/jtag_test_simple.sv:254:23: Operator ASSIGN expects 41 bits on the Assign RHS, but Assign RHS's REPLICATE generates 42 bits.
+                                                                                    : ... note: In instance 'tb_croc_soc.jtag_dbg'
+  254 |     write_data_packed = {address, data, dm::DTM_WRITE};
+      |                       ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/riscv-dbg/tb/jtag_test_simple.sv:269:56: Operator ASSIGN expects 41 bits on the Assign RHS, but Assign RHS's REPLICATE generates 42 bits.
+                                                                                    : ... note: In instance 'tb_croc_soc.jtag_dbg'
+  269 |     automatic logic [DMIWidth-1:0] write_data_packed = {address, 32'b0, dm::DTM_READ};
+      |                                                        ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/riscv-dbg/tb/jtag_test_simple.sv:282:23: Operator ASSIGN expects 41 bits on the Assign RHS, but Assign RHS's REPLICATE generates 42 bits.
+                                                                                    : ... note: In instance 'tb_croc_soc.jtag_dbg'
+  282 |     write_data_packed = {address, 32'b0, dm::DTM_NOP};
+      |                       ^
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/tb_croc_soc.sv:138:17: Logical operator IF expects 1 bit on the If, but If's SEL generates 3 bits.
+                                                                  : ... note: In instance 'tb_croc_soc'
+  138 |                 if (acs.cmderr) $fatal(1, "[JTAG] Abstract command error!");
+      |                 ^~
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/tb_croc_soc.sv:145:17: Logical operator IF expects 1 bit on the If, but If's OR generates 3 bits.
+                                                                  : ... note: In instance 'tb_croc_soc'
+  145 |                 if (sbcs.sberror | sbcs.sbbusyerror) $fatal(1, "[JTAG] System bus error!");
+      |                 ^~
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/tb_croc_soc.sv:343:9: Logical operator IF expects 1 bit on the If, but If's VARREF 'UartParityEna' generates 32 bits.
+                                                                 : ... note: In instance 'tb_croc_soc'
+  343 |         if(UartParityEna) begin
+      |         ^~
+%Warning-WIDTHTRUNC: /fosic/designs/croc/rtl/tb_croc_soc.sv:361:9: Logical operator IF expects 1 bit on the If, but If's VARREF 'UartParityEna' generates 32 bits.
+                                                                 : ... note: In instance 'tb_croc_soc'
+  361 |         if (UartParityEna)
+      |         ^~
+%Error: Exiting due to 1 error(s)
+make: *** [Makefile:93: verilator/obj_dir/Vtb_croc_soc] Error 1
