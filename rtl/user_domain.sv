@@ -141,7 +141,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
 
     .gnt_o    ( user_spi_obi_rsp.gnt    ),
     .rvalid_o ( user_spi_obi_rsp.rvalid),
-    .rdata_o  ( user_spi_obi_rsp.r.data ),
+    .rdata_o  ( user_spi_obi_rsp.r.rdata ),
 
     //  SPI Master Interface 
     // Connect to the new top-level output ports of user_domain

@@ -71,7 +71,8 @@ module obi_spi_peripheral (
   //--------------------------------------------------------------------------
   // OBI Grant Logic (Determines when to assert gnt_o)
   //--------------------------------------------------------------------------
-  assign gnt_for_read = !we_i && (addr_i == SPI_STATUS_ADDR); // Ok to grant status reads anytime
+  assign gnt_for_read = !we_i && ((addr_i & 32'hFFF) == SPI_STATUS_ADDR);
+  //assign gnt_for_read = !we_i && (addr_i == SPI_STATUS_ADDR); // Ok to grant status reads anytime
   assign gnt_for_write = we_i && (state_q == IDLE) &&         // Ok to grant writes ONLY when IDLE
                          ((addr_i == SPI_TX_ADDR) || (addr_i == SPI_CTRL_ADDR));
   assign gnt_o = req_i && (gnt_for_read || gnt_for_write);     // Grant if requested and conditions met
@@ -170,8 +171,9 @@ module obi_spi_peripheral (
   assign rdata_o  = rdata_q;
 
   // Combinational check if status read granted this cycle
-  assign status_read_req = req_i && !we_i && gnt_o && (addr_i == SPI_STATUS_ADDR);
-
+  //assign status_read_req = req_i && !we_i && gnt_o && (addr_i == SPI_STATUS_ADDR);
+ // assign status_read_req = gnt_for_read && req_i;
+    assign status_read_req = req_i && !we_i && gnt_o && ((addr_i & 32'hFFF) == SPI_STATUS_ADDR);
   // This block updates all registers (_q signals) based on their corresponding
   // _d signals (calculated above) or direct input logic.
   always_ff @(posedge clk_i or negedge rst_ni) begin
@@ -195,6 +197,8 @@ module obi_spi_peripheral (
       // Note: This logic directly assigns to _q signals based on *current* inputs and grant.
       // It takes precedence over the default _q <= _d assignment for start_flag and tx_data.
       if (req_i && we_i && gnt_o) begin
+        $display("%t : SPI PERIPH READ REQ -> addr_i = 0x%08h | gnt_o = %b | rvalid_q = %b | we_i = %b", 
+                 $time, addr_i, gnt_o, rvalid_q, we_i);
         unique case (addr_i)
           SPI_TX_ADDR: begin
             if (be_i[0]) begin
@@ -216,8 +220,11 @@ module obi_spi_peripheral (
       // Else: start_flag_q <= start_flag_d (handled by default update above)
 
 
-      // OBI Read Path Logic
-      rvalid_q <= status_read_req; // Update rvalid register based on grant last cycle
+      // OBI Read Path Logic if (req_i && !we_i && gnt_o) begin
+        $display("%t : SPI PERIPH READ REQ -> addr_i = 0x%08h | gnt_o = %b | rvalid_q = %b | we_i = %b", 
+                 $time, addr_i, gnt_o, rvalid_q, we_i);
+     // rvalid_q <= status_read_req; // Update rvalid register based on grant last cycle
+      //rvalid_q <= req_i && gnt_for_read;
       if (status_read_req) begin
         // Update rdata register based on current status bits when read granted
         rdata_q <= DATA_WIDTH'(status_bits);      

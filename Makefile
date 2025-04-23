@@ -76,7 +76,7 @@ vsim: vsim/compile_rtl.tcl $(SW_HEX)
 ## Simulate netlist using Questasim/Modelsim/vsim
 vsim-yosys: vsim/compile_netlist.tcl $(SW_HEX) yosys/out/croc_chip_yosys_debug.v
 	rm -rf vsim/work
-	cd vsim; $(VSIM) -c -do "source compile_netlist.tcl; source compile_tech.tcl; exit"
+	cd vsim; $(VSIM) -c -do "source compile_netlist.tcl; source compile_tech.tcl; exit"	
 	cd vsim; $(VSIM) -gui tb_croc_soc $(VSIM_ARGS)
 
 
