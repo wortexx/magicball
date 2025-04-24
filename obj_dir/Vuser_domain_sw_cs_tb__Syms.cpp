@@ -47,7 +47,7 @@ Vuser_domain_sw_cs_tb__Syms::Vuser_domain_sw_cs_tb__Syms(VerilatedContext* conte
     , TOP__soc_ctrl_reg_pkg{this, Verilated::catName(namep, "soc_ctrl_reg_pkg")}
 {
         // Check resources
-        Verilated::stackCheck(18);
+        Verilated::stackCheck(20);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);

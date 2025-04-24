@@ -107,43 +107,41 @@ croc_domain #(
   .core_busy_o  ( status_o    )
 );
 
-user_domain #(
-  .GpioCount( GpioCount ) 
-) i_user (
-  .clk_i,
-  .rst_ni ( synced_rst_n ),
-  .ref_clk_i,
-  .testmode_i,
-
-  .user_sbr_obi_req_i ( user_sbr_obi_req ),
-  .user_sbr_obi_rsp_o ( user_sbr_obi_rsp ),
-
-  .user_mgr_obi_req_o ( user_mgr_obi_req ),
-  .user_mgr_obi_rsp_i ( user_mgr_obi_rsp ),
-
-  .gpio_in_sync_i ( gpio_in_sync ),
-  .interrupts_o   ( interrupts   ),
-
-  //  Connect User domain SPI outputs 
+  user_domain #(
+    .GpioCount( GpioCount ) // Pass GpioCount if needed by gpio_in_sync_i connection
+  ) i_user (
+    .clk_i,
+    .rst_ni ( synced_rst_n ),
+    .ref_clk_i,
+    .testmode_i,
+    .user_sbr_obi_req_i ( user_sbr_obi_req ),
+    .user_sbr_obi_rsp_o ( user_sbr_obi_rsp ),
+    .user_mgr_obi_req_o ( user_mgr_obi_req ),
+    .user_mgr_obi_rsp_i ( user_mgr_obi_rsp ),
+    .gpio_in_sync_i ( gpio_in_sync ),
+    .interrupts_o   ( interrupts   ),
+    // Connect user domain SPI outputs (SCK and MOSI only)
     .spi_sck_o      ( user_spi_sck  ),
     .spi_mosi_o     ( user_spi_mosi )
-);
+  );
 
   //  Drive top-level GPIO outputs: assign SPI signals to GPIO pins 0, 1
   //  Connect ALL standard GPIO outputs directly from the intermediate wires (driven by i_croc)
   //  This allows software to control CS1, CS2, D/C etc. using standard GPIO registers.
   assign gpio_o        = croc_gpio_o;
   assign gpio_out_en_o = croc_gpio_out_en_o;
-
+  
   // Drive top-level UNUSED outputs 
   // Route hardware SPI signals from user_domain to unused[0:1]
-  assign unused_o[0]    = user_spi_sck;
-  assign unused_o[1]    = user_spi_mosi;
-  assign unused_o[3:2]  = 2'b0;   // Leave unused[2:3] unconnected
+  assign unused_o[0] = user_spi_sck;
+  assign unused_o[1] = user_spi_mosi;
+  // Leave unused[2:3] unconnected or tied off if purely outputs
+  assign unused_o[3:2] = 2'b0; // Tie off unused outputs
 
-  // Set output enable for unused pins
+  // Set output enables for unused pins
   assign unused_oe_o[0] = 1'b1; // SCK is always output
   assign unused_oe_o[1] = 1'b1; // MOSI is always output
+  // Leave unused[2:3] output enables low (or connect if needed elsewhere)
   assign unused_oe_o[3:2] = 2'b0; // Default output enables low
 
 endmodule

@@ -1,6 +1,6 @@
 `timescale 1ns/1ps // Simulation time units
 
-module obi_spi_peripheral (
+module obi_spi_peripheral ( // Module name confirmed
   // Clock and Reset
   input  logic        clk_i,  // System clock
   input  logic        rst_ni, // Async reset, low active
@@ -18,145 +18,133 @@ module obi_spi_peripheral (
   // SPI Master Interface (Connects to SPI Device)
   output logic        sck_o,   // SPI clock output
   output logic        mosi_o,  // SPI data output (Master Out)
-  output logic        cs_o     // SPI chip select output (Active Low)
+  output logic        cs_no    // SPI chip select output (Active Low, use _n convention)
 );
 
+  //--------------------------------------------------------------------------
   // Parameters & Addresses
+  //--------------------------------------------------------------------------
   localparam int ADDR_WIDTH      = 32;
   localparam int DATA_WIDTH      = 32;
-  localparam int SPI_DATA_BITS   = 8;  // Standard 8 bits per SPI transfer
-  // Divider to create SPI clock from system clock: spi_freq = clk_i / (2 * DIVIDER)
-  localparam int SPI_CLK_DIVIDER = 4;  // Adjust this based on clk_i and desired SPI speed (e.g., <= 5MHz)
+  localparam int SPI_DATA_BITS   = 8;
+  localparam int SPI_CLK_DIVIDER = 4; // Adjust as needed (e.g., for 5MHz max -> DIVIDER >= clk_mhz / 10)
 
-  localparam logic [ADDR_WIDTH-1:0] SPI_CTRL_ADDR   = 32'h00; // Write here to start SPI
-  localparam logic [ADDR_WIDTH-1:0] SPI_TX_ADDR     = 32'h04; // Write 8-bit data here before start
-  localparam logic [ADDR_WIDTH-1:0] SPI_STATUS_ADDR = 32'h08; // Read here for {done, busy} status
+  // *** Relative offsets within this peripheral's 4KB address range ***
+  localparam logic [11:0] SPI_CTRL_ADDR_OFFSET   = 12'h000; // Write here to start SPI
+  localparam logic [11:0] SPI_TX_ADDR_OFFSET     = 12'h004; // Write 8-bit data here before start
+  localparam logic [11:0] SPI_STATUS_ADDR_OFFSET = 12'h008; // Read here for {done, busy} status
 
   //--------------------------------------------------------------------------
   // State Machine Definition
   //--------------------------------------------------------------------------
   typedef enum logic [1:0] {
-    IDLE,      // Doing nothing, waiting for start
-    LOAD,      // Preparing counters, asserting CS
-    SHIFT,     // Sending SPI bits
-    COMPLETE   // Finished sending for 1 cycle
+    IDLE, LOAD, SHIFT, COMPLETE
   } state_e;
 
-  state_e      state_q, state_d;          // FSM current state (_q) and next state (_d) logic
+  state_e state_q, state_d;
 
   //--------------------------------------------------------------------------
   // Internal Registers and Wires
   //--------------------------------------------------------------------------
-  // Registers holding state between clock cycles (_q = output of FF)
-  logic        start_flag_q;             // Holds the start command until processed
-  logic [SPI_DATA_BITS-1:0] tx_data_q;   // Holds the 8 bits to be sent via SPI
-  logic [$clog2(SPI_DATA_BITS)-1:0] bit_cnt_q; // Counts bits remaining in SPI transfer (7 down to 0)
-  logic [$clog2(SPI_CLK_DIVIDER*2)-1:0] spi_clk_cnt_q; // Counts system clocks to generate SPI clock timing
-  logic        rvalid_q;                 // Register driving rvalid_o output
-  logic [DATA_WIDTH-1:0] rdata_q;        // Register driving rdata_o output
-
-  // Combinational logic / Wires (_d = input to FF, others are pure combinational)
-  logic        start_flag_d;             // Next value logic for start_flag_q
-  logic [SPI_DATA_BITS-1:0] tx_data_d;   // Next value logic for tx_data_q
-  logic [$clog2(SPI_DATA_BITS)-1:0] bit_cnt_d; // Next value logic for bit_cnt_q
-  logic [$clog2(SPI_CLK_DIVIDER*2)-1:0] spi_clk_cnt_d; // Next value logic for spi_clk_cnt_q
-
-  logic        spi_clk_phase;            // Is SPI clock counter in high phase?
-  logic        status_read_req;          // Was a status read granted this cycle?
-  logic [1:0]  status_bits;              // Combinational {done, busy} status value
-  logic        busy;                     // Is FSM busy?
-  logic        done;                     // Did FSM just complete?
-  logic        gnt_for_read, gnt_for_write; // Grant conditions
+  logic        start_flag_q, start_flag_d;
+  logic [SPI_DATA_BITS-1:0] tx_data_q, tx_data_d;
+  logic [$clog2(SPI_DATA_BITS)-1:0] bit_cnt_q, bit_cnt_d;
+  logic [$clog2(SPI_CLK_DIVIDER*2)-1:0] spi_clk_cnt_q, spi_clk_cnt_d;
+  logic        rvalid_q;
+  logic [DATA_WIDTH-1:0] rdata_q;
+  logic [ADDR_WIDTH-1:0] granted_addr_q; ////added for debug to latch addr_i when gnt_o goes high
+  logic        spi_clk_phase;
+  logic        status_read_req;
+  logic [1:0]  status_bits;
+  logic        busy;
+  //logic        done;
+  logic        done_q, done_d;
+  logic        gnt_for_read, gnt_for_write;
 
   //--------------------------------------------------------------------------
-  // OBI Grant Logic (Determines when to assert gnt_o)
+  // OBI Grant Logic (Combinational)
   //--------------------------------------------------------------------------
-  assign gnt_for_read = !we_i && ((addr_i & 32'hFFF) == SPI_STATUS_ADDR);
-  //assign gnt_for_read = !we_i && (addr_i == SPI_STATUS_ADDR); // Ok to grant status reads anytime
-  assign gnt_for_write = we_i && (state_q == IDLE) &&         // Ok to grant writes ONLY when IDLE
-                         ((addr_i == SPI_TX_ADDR) || (addr_i == SPI_CTRL_ADDR));
-  assign gnt_o = req_i && (gnt_for_read || gnt_for_write);     // Grant if requested and conditions met
+  // *** Restored Original Logic ***
+  // Grant reads ONLY if address offset matches STATUS register
+  assign gnt_for_read = !we_i && (addr_i[11:0] == SPI_STATUS_ADDR_OFFSET);
+
+  // Grant writes ONLY when IDLE and address offset matches TX or CTRL register
+  assign gnt_for_write = we_i && (state_q == IDLE) &&
+                         ((addr_i[11:0] == SPI_TX_ADDR_OFFSET) || (addr_i[11:0] == SPI_CTRL_ADDR_OFFSET));
+
+  // Final grant signal
+  assign gnt_o = req_i && (gnt_for_read || gnt_for_write);
 
   //--------------------------------------------------------------------------
-  // Status Logic
+  // Status Logic (Combinational)
   //--------------------------------------------------------------------------
-  assign busy = (state_q != IDLE) && (state_q != COMPLETE); // Busy if not IDLE or COMPLETE
-  assign done = (state_q == COMPLETE);                   // Done only in COMPLETE state
-  assign status_bits = {done, busy};                       // Combine for reading via OBI
+  assign busy = (state_q != IDLE) && (state_q != COMPLETE);
+  //assign done = (state_q == COMPLETE);
+  assign done = done_q; 
+  assign status_bits = {done, busy};
 
   //--------------------------------------------------------------------------
-  // SPI Clock Generation Logic
+  // SPI Clock Generation Logic (Combinational)
   //--------------------------------------------------------------------------
   assign spi_clk_phase = (spi_clk_cnt_q >= SPI_CLK_DIVIDER);
 
   //--------------------------------------------------------------------------
   // Combinational Logic (FSM Next State and Outputs)
   //--------------------------------------------------------------------------
-  // This block calculates the '_d' signals (inputs to registers) and outputs
-  // based on the '_q' signals (current register values) and inputs.
   always_comb begin
-    // Default assignments: Assume no change unless logic below overrides
+    // Defaults
     state_d        = state_q;
     bit_cnt_d      = bit_cnt_q;
     spi_clk_cnt_d  = spi_clk_cnt_q;
     start_flag_d   = start_flag_q;
-    tx_data_d      = tx_data_q; // Use _d suffix for consistency in this block
-
-    // Default output assignments
-    cs_o           = 1'b1;
+    tx_data_d      = tx_data_q;
+    cs_no          = 1'b1; // Default inactive HIGH
     sck_o          = 1'b0;
     mosi_o         = tx_data_q[SPI_DATA_BITS-1 - bit_cnt_q];
 
-    // FSM transitions and output overrides based on current state (state_q)
+    // FSM Logic
     case (state_q)
       IDLE: begin
+        cs_no = 1'b1;
         if (start_flag_q) begin
           state_d      = LOAD;
-          start_flag_d = 1'b0; // Assign to _d signal
+          start_flag_d = 1'b0;
         end
       end
-
       LOAD: begin
-        cs_o          = 1'b0;
+        cs_no         = 1'b0; // Assert CS low
         bit_cnt_d     = SPI_DATA_BITS - 1;
         spi_clk_cnt_d = '0;
-        mosi_o        = tx_data_q[SPI_DATA_BITS-1]; // Use current tx_data_q
+        mosi_o        = tx_data_q[SPI_DATA_BITS-1];
         state_d       = SHIFT;
       end
-
       SHIFT: begin
-        logic [$clog2(SPI_DATA_BITS):0] next_bit_idx_calc = '0; // Intermediate variable ok
-        cs_o  = 1'b0;
+        logic [$clog2(SPI_DATA_BITS):0] next_bit_idx_calc = '0;
+        cs_no = 1'b0; // Keep CS low
         sck_o = spi_clk_phase;
-        spi_clk_cnt_d = spi_clk_cnt_q + 1; // Calculate next value for counter
+        spi_clk_cnt_d = spi_clk_cnt_q + 1;
 
-        // Update MOSI data at the start of the SCK cycle (when SCK is low)
-        if (spi_clk_cnt_q == (SPI_CLK_DIVIDER*2 - 1)) begin // If end of SCK cycle...
-          // Calculate index for the *next* bit to be sent
-          next_bit_idx_calc = (bit_cnt_q == 0) ? 0 : (SPI_DATA_BITS - 1 - (bit_cnt_q - 1));
-          mosi_o = tx_data_q[next_bit_idx_calc]; // Output based on current tx_data_q
-        end
-        // else keep current bit data on MOSI (default assignment handles this)
-
-        // At the end of a full SCK cycle
         if (spi_clk_cnt_q == (SPI_CLK_DIVIDER*2 - 1)) begin
-          spi_clk_cnt_d = '0; // Assign to _d signal
-          if (bit_cnt_q == 0) begin // Was that the last bit?
-            state_d = COMPLETE; // Assign to _d signal
+          next_bit_idx_calc = (bit_cnt_q == 0) ? 0 : (SPI_DATA_BITS - 1 - (bit_cnt_q - 1));
+          mosi_o = tx_data_q[next_bit_idx_calc];
+        end
+
+        if (spi_clk_cnt_q == (SPI_CLK_DIVIDER*2 - 1)) begin
+          spi_clk_cnt_d = '0;
+          if (bit_cnt_q == 0) begin
+            state_d = COMPLETE;
           end else begin
-            bit_cnt_d = bit_cnt_q - 1; // Assign to _d signal
+            bit_cnt_d = bit_cnt_q - 1;
           end
         end
       end // SHIFT
-
       COMPLETE: begin
-        cs_o    = 1'b1;
-        state_d = IDLE; // Assign to _d signal
+        cs_no   = 1'b1; // Deassert CS high
+        state_d = IDLE;
       end
-
       default: begin
-        state_d = IDLE; // Assign to _d signal
-        cs_o    = 1'b1;
+        state_d = IDLE;
+        cs_no   = 1'b1;
         sck_o   = 1'b0;
         mosi_o  = 1'b0;
       end
@@ -167,15 +155,14 @@ module obi_spi_peripheral (
   // Sequential Logic (Registers updated on Clock Edge)
   //--------------------------------------------------------------------------
   // Drive registered outputs from _q signals
-  assign rvalid_o = rvalid_q;
-  assign rdata_o  = rdata_q;
+  assign rvalid_o = rvalid_q; // Ensure output is driven
+  assign rdata_o  = rdata_q;  // Ensure output is driven
 
-  // Combinational check if status read granted this cycle
-  //assign status_read_req = req_i && !we_i && gnt_o && (addr_i == SPI_STATUS_ADDR);
- // assign status_read_req = gnt_for_read && req_i;
-    assign status_read_req = req_i && !we_i && gnt_o && ((addr_i & 32'hFFF) == SPI_STATUS_ADDR);
-  // This block updates all registers (_q signals) based on their corresponding
-  // _d signals (calculated above) or direct input logic.
+  // *** Restored Original Logic ***
+  // Combinational check if status read was granted *this cycle*
+  // Uses the internal grant signal gnt_o and correct address offset comparison
+
+  assign status_read_req = !we_i && (granted_addr_q == SPI_STATUS_ADDR_OFFSET);
   always_ff @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
       state_q       <= IDLE;
@@ -185,50 +172,57 @@ module obi_spi_peripheral (
       spi_clk_cnt_q <= '0;
       rvalid_q      <= 1'b0;
       rdata_q       <= '0;
+      granted_addr_q <= '0;                    //same as above 
     end else begin
-      // Update state registers from their _d inputs
+      // Default register updates
       state_q       <= state_d;
       bit_cnt_q     <= bit_cnt_d;
       spi_clk_cnt_q <= spi_clk_cnt_d;
-      start_flag_q  <= start_flag_d; // Use start_flag_d calculated in always_comb
-      tx_data_q     <= tx_data_d;    // Use tx_data_d as default
-
-      // OBI Write Handling (Overrides tx_data_q and start_flag_q based on inputs)
-      // Note: This logic directly assigns to _q signals based on *current* inputs and grant.
-      // It takes precedence over the default _q <= _d assignment for start_flag and tx_data.
+      start_flag_q  <= start_flag_d;
+      tx_data_q     <= tx_data_d;
+      if (gnt_o) begin                        //
+        granted_addr_q <= addr_i[11:0];            //  same as above latching i_addr
+      end                                     // 
+      // OBI Write Handling (Requires internal gnt_o to be high)
       if (req_i && we_i && gnt_o) begin
-        unique case (addr_i)
-          SPI_TX_ADDR: begin
+        // Check lower bits of address for offset match
+        unique case (addr_i[11:0])
+          SPI_TX_ADDR_OFFSET: begin
             if (be_i[0]) begin
-              // Directly update tx_data_q based on current inputs if write granted
               tx_data_q <= wdata_i[SPI_DATA_BITS-1:0];
             end
           end
-          SPI_CTRL_ADDR: begin
-            // Directly update start_flag_q based on current inputs if write granted
+          SPI_CTRL_ADDR_OFFSET: begin
             start_flag_q <= 1'b1;
           end
           default:;
         endcase
-      // If start flag was consumed (state moving IDLE->LOAD), ensure start_flag_q stays low
-      // This overrides the default start_flag_q <= start_flag_d assignment in this specific case.
       end else if (state_q == IDLE && state_d == LOAD) begin
+         // Clear start flag when FSM consumes it
          start_flag_q <= 1'b0;
       end
-      // Else: start_flag_q <= start_flag_d (handled by default update above)
 
+      // OBI Read Path Logic
+      // Update rvalid register based on grant *this cycle*
+      rvalid_q <= status_read_req;
 
-      // OBI Read Path Logic if (req_i && !we_i && gnt_o) begin
-        $display("%t : SPI PERIPH READ REQ -> addr_i = 0x%08h | gnt_o = %b | rvalid_q = %b | we_i = %b", 
-                 $time, addr_i, gnt_o, rvalid_q, we_i);
-     // rvalid_q <= status_read_req; // Update rvalid register based on grant last cycle
-      //rvalid_q <= req_i && gnt_for_read;
-      if (status_read_req) begin
-        // Update rdata register based on current status bits when read granted
-        rdata_q <= DATA_WIDTH'(status_bits);      
+      // Update rdata register WHEN rvalid_q IS HIGH (was high previous cycle)
+      if (rvalid_q) begin
+        rdata_q <= DATA_WIDTH'(status_bits);
+        //$display("rdata_q = 0x%08h at %0t (done=%b, busy=%b)", rdata_q, $time, done_q, busy);
       end else begin
-        rdata_q <= '0; // Clear read data register otherwise
+        rdata_q <= '0;
       end
+      done_d = done_q;
+
+      if (state_q == COMPLETE && state_d == IDLE)
+        done_d = 1'b1;
+
+      if (status_read_req)
+        done_d = 1'b0;
+
+      done_q <= done_d;
+
     end // else: !if(!rst_ni)
   end // always_ff
 

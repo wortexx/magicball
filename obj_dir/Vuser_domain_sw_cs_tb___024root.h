@@ -56,29 +56,38 @@ class alignas(VL_CACHE_LINE_BYTES) Vuser_domain_sw_cs_tb___024root final : publi
         CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_n;
         CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q;
         CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT____Vlvbound_h3dcab515__0;
-        CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_o;
+        CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no;
         CData/*1:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q;
         CData/*1:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d;
         CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q;
-        CData/*7:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q;
-        CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q;
-        CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q;
-        CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q;
         CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d;
+        CData/*7:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q;
         CData/*7:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d;
+        CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q;
         CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d;
+        CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q;
         CData/*2:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d;
-        CData/*1:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits;
+        CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q;
+        CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_read_req;
+        CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q;
+        CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_d;
         CData/*3:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_bit_idx_calc;
         CData/*7:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data;
         CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit;
+        CData/*0:0*/ __Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__0;
+        CData/*0:0*/ __VstlDidInit;
         CData/*0:0*/ __VstlFirstIteration;
+        CData/*0:0*/ __Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__1;
         CData/*0:0*/ __Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__clk_i__0;
         CData/*0:0*/ __Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__rst_ni__0;
+        CData/*0:0*/ __VactDidInit;
         CData/*0:0*/ __VactContinue;
         SData/*15:0*/ user_domain_sw_cs_tb__DOT__gpio_in_sync_i;
         VlWide<3>/*72:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT____Vlvbound_h19131224__0;
         IData/*31:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q;
+        IData/*31:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q;
+    };
+    struct {
         IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device;
         IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val;
         IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count;
@@ -86,19 +95,16 @@ class alignas(VL_CACHE_LINE_BYTES) Vuser_domain_sw_cs_tb___024root final : publi
         VlWide<3>/*73:0*/ user_domain_sw_cs_tb__DOT__user_sbr_obi_req;
         QData/*36:0*/ user_domain_sw_cs_tb__DOT__user_mgr_obi_rsp;
         VlWide<3>/*77:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp;
-    };
-    struct {
         QData/*38:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp;
-        VlWide<3>/*73:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req;
         QData/*38:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp;
         VlWide<5>/*147:0*/ user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o;
-        VlUnpacked<CData/*0:0*/, 7> __Vm_traceActivity;
+        VlUnpacked<CData/*0:0*/, 9> __Vm_traceActivity;
     };
     VlDelayScheduler __VdlySched;
     VlTriggerScheduler __VtrigSched_h7829ce67__0;
-    VlTriggerVec<1> __VstlTriggered;
-    VlTriggerVec<3> __VactTriggered;
-    VlTriggerVec<3> __VnbaTriggered;
+    VlTriggerVec<2> __VstlTriggered;
+    VlTriggerVec<4> __VactTriggered;
+    VlTriggerVec<4> __VnbaTriggered;
 
     // INTERNAL VARIABLES
     Vuser_domain_sw_cs_tb__Syms* const vlSymsp;

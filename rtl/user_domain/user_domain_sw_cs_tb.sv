@@ -12,7 +12,7 @@ module user_domain_sw_cs_tb;
   //--------------------------------------------------------------------------
   // Parameters
   //--------------------------------------------------------------------------
-  localparam CLK_PERIOD       = 10ns; // 100 MHz clock
+  localparam CLK_PERIOD       = 50ns; // 20 MHz clock
   localparam RESET_DURATION   = 2 * CLK_PERIOD;
   localparam OBI_TIMEOUT      = 1000; // Max cycles to wait for OBI gnt/rvalid
   localparam SPI_DONE_TIMEOUT = 5000; // Max cycles to wait for SPI busy=0
@@ -182,7 +182,7 @@ module user_domain_sw_cs_tb;
       logic [31:0] status_val;
       logic busy_bit;
       int timeout_count = 0;
-      $display("%t : Waiting for SPI HW to finish...", $time);
+      $display("%t : Waiting for SPI HW to finishs...", $time);
       @(posedge clk_i); // Ensure we don't read in the same cycle we triggered
       do begin
           read_obi(SPI_STATUS_ADDR, status_val); // Read the status register
@@ -350,4 +350,4 @@ module user_domain_sw_cs_tb;
     end
   end
 
-endmodule : user_domain_sw_cs_tb
+endmodule 

@@ -99,10 +99,14 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___dump_triggers__stl(Vuser_dom
     if ((1ULL & vlSelfRef.__VstlTriggered.word(0U))) {
         VL_DBG_MSGF("         'stl' region trigger index 0 is active: Internal 'stl' trigger - first iteration\n");
     }
+    if ((2ULL & vlSelfRef.__VstlTriggered.word(0U))) {
+        VL_DBG_MSGF("         'stl' region trigger index 1 is active: @([hybrid] user_domain_sw_cs_tb.dut.__Vcellout__i_spi_peripheral__gnt_o)\n");
+    }
 }
 #endif  // VL_DEBUG
 
 VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf);
+VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_comb__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf);
 
 VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___eval_stl(Vuser_domain_sw_cs_tb___024root* vlSelf) {
     (void)vlSelf;  // Prevent unused variable warning
@@ -112,6 +116,10 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___eval_stl(Vuser_domain_sw_cs_
     // Body
     if ((1ULL & vlSelfRef.__VstlTriggered.word(0U))) {
         Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(vlSelf);
+        Vuser_domain_sw_cs_tb___024root____Vm_traceActivitySetAll(vlSelf);
+    }
+    if ((3ULL & vlSelfRef.__VstlTriggered.word(0U))) {
+        Vuser_domain_sw_cs_tb___024root___stl_comb__TOP__0(vlSelf);
         Vuser_domain_sw_cs_tb___024root____Vm_traceActivitySetAll(vlSelf);
     }
 }
@@ -125,13 +133,8 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(Vuser_do
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__i_addr_decode_dync__DOT__matched_rules = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_valid_o = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_error_o = 0U;
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_o = 1U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d 
         = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q;
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits 
-        = (((3U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
-            << 1U) | ((0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
-                      & (3U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))));
     vlSelfRef.user_domain_sw_cs_tb__DOT__spi_sck_o = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d 
         = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q;
@@ -153,7 +156,7 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(Vuser_do
         = (1U & ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
                  >> (7U & ((IData)(7U) - (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q)))));
     if ((2U & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_o 
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no 
             = (1U & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q));
         if ((1U & (~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)))) {
             vlSelfRef.user_domain_sw_cs_tb__DOT__spi_sck_o 
@@ -185,16 +188,19 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(Vuser_do
                 vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 3U;
             }
         }
-    } else if ((1U & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_o = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d = 7U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 2U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__spi_mosi_o 
-            = (1U & ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
-                     >> 7U));
-    } else if (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 1U;
+    } else {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no 
+            = (1U & (~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)));
+        if ((1U & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d = 0U;
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d = 7U;
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 2U;
+            vlSelfRef.user_domain_sw_cs_tb__DOT__spi_mosi_o 
+                = (1U & ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
+                         >> 7U));
+        } else if (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 1U;
+        }
     }
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx = 0U;
     if (((0x20001000U <= ((vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
@@ -212,19 +218,6 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(Vuser_do
         = ((0x7fULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
            | ((QData)((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q)) 
               << 7U));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o 
-        = (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
-           & ((IData)((0x2000U == (0x3ffe00U & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U]))) 
-              | ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                  >> 9U) & ((0U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
-                            & ((4U == ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                                        << 0x16U) | 
-                                       (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                        >> 0xaU))) 
-                               | (0U == ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                                          << 0x16U) 
-                                         | (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                            >> 0xaU))))))));
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp = 0ULL;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp 
         = (0x7fULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp);
@@ -250,12 +243,26 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(Vuser_do
         = ((0x7ffffffffcULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp) 
            | (IData)((IData)((((1U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q)) 
                                << 1U) | (0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q))))));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n 
+        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q;
+    if (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp) 
+         & (0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q)))) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n 
+            = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n) 
+               & ((IData)(1U) + (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q)));
+    }
+}
+
+VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_comb__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vuser_domain_sw_cs_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___stl_comb__TOP__0\n"); );
+    auto &vlSelfRef = std::ref(*vlSelf).get();
+    // Body
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp 
         = ((0x7ffffffffcULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
            | (IData)((IData)((((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o) 
                                << 1U) | (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q)))));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n 
-        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
         = (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp);
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
@@ -353,6 +360,21 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(Vuser_do
                          - (IData)(1U)) : ((IData)(1U) 
                                            + (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q))));
     }
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o 
+        = ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+            >> 0xaU) & ((IData)((0x800000U == (0xfff80000U 
+                                               & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U]))) 
+                        | ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                            >> 0x13U) & ((0U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
+                                         & ((4U == 
+                                             (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                                              >> 0x14U)) 
+                                            | (0U == 
+                                               (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                                                >> 0x14U)))))));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_read_req 
+        = ((~ (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+               >> 0x13U)) & (8U == vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q));
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT____Vcellinp__i_id_fifo__push_i 
         = (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[0U] 
                  & (IData)((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp 
@@ -362,12 +384,6 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___stl_sequent__TOP__0(Vuser_do
         = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__write_pointer_q;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_n 
         = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q;
-    if (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp) 
-         & (0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q)))) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n 
-            = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n) 
-               & ((IData)(1U) + (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q)));
-    }
     if (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT____Vcellinp__i_id_fifo__push_i) 
          & (1U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q)))) {
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__gate_clock = 0U;
@@ -437,13 +453,16 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___dump_triggers__act(Vuser_dom
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelfRef.__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge user_domain_sw_cs_tb.clk_i)\n");
+        VL_DBG_MSGF("         'act' region trigger index 0 is active: @([hybrid] user_domain_sw_cs_tb.dut.__Vcellout__i_spi_peripheral__gnt_o)\n");
     }
     if ((2ULL & vlSelfRef.__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 1 is active: @(negedge user_domain_sw_cs_tb.rst_ni)\n");
+        VL_DBG_MSGF("         'act' region trigger index 1 is active: @(posedge user_domain_sw_cs_tb.clk_i)\n");
     }
     if ((4ULL & vlSelfRef.__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 2 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'act' region trigger index 2 is active: @(negedge user_domain_sw_cs_tb.rst_ni)\n");
+    }
+    if ((8ULL & vlSelfRef.__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 3 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -459,13 +478,16 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___dump_triggers__nba(Vuser_dom
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge user_domain_sw_cs_tb.clk_i)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @([hybrid] user_domain_sw_cs_tb.dut.__Vcellout__i_spi_peripheral__gnt_o)\n");
     }
     if ((2ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(negedge user_domain_sw_cs_tb.rst_ni)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(posedge user_domain_sw_cs_tb.clk_i)\n");
     }
     if ((4ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 2 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+        VL_DBG_MSGF("         'nba' region trigger index 2 is active: @(negedge user_domain_sw_cs_tb.rst_ni)\n");
+    }
+    if ((8ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 3 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
     }
 }
 #endif  // VL_DEBUG
@@ -483,6 +505,8 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root____Vm_traceActivitySetAll(Vuse
     vlSelfRef.__Vm_traceActivity[4U] = 1U;
     vlSelfRef.__Vm_traceActivity[5U] = 1U;
     vlSelfRef.__Vm_traceActivity[6U] = 1U;
+    vlSelfRef.__Vm_traceActivity[7U] = 1U;
+    vlSelfRef.__Vm_traceActivity[8U] = 1U;
 }
 
 VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___ctor_var_reset(Vuser_domain_sw_cs_tb___024root* vlSelf) {
@@ -507,7 +531,6 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___ctor_var_reset(Vuser_domain_
     vlSelf->user_domain_sw_cs_tb__DOT__req_ongoing = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(78, vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp = VL_RAND_RESET_Q(39);
-    VL_RAND_RESET_W(74, vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp = VL_RAND_RESET_Q(39);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__user_idx = VL_RAND_RESET_I(1);
     VL_RAND_RESET_W(148, vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o);
@@ -534,29 +557,36 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___ctor_var_reset(Vuser_domain_
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_n = VL_RAND_RESET_I(3);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q = VL_RAND_RESET_I(3);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT____Vlvbound_h3dcab515__0 = VL_RAND_RESET_I(3);
-    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_o = VL_RAND_RESET_I(1);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no = VL_RAND_RESET_I(1);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q = VL_RAND_RESET_I(2);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = VL_RAND_RESET_I(2);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q = VL_RAND_RESET_I(1);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d = VL_RAND_RESET_I(1);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q = VL_RAND_RESET_I(8);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d = VL_RAND_RESET_I(8);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q = VL_RAND_RESET_I(3);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d = VL_RAND_RESET_I(3);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q = VL_RAND_RESET_I(3);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d = VL_RAND_RESET_I(3);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q = VL_RAND_RESET_I(1);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q = VL_RAND_RESET_I(32);
-    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d = VL_RAND_RESET_I(1);
-    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d = VL_RAND_RESET_I(8);
-    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d = VL_RAND_RESET_I(3);
-    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d = VL_RAND_RESET_I(3);
-    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits = VL_RAND_RESET_I(2);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q = VL_RAND_RESET_I(32);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_read_req = VL_RAND_RESET_I(1);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q = VL_RAND_RESET_I(1);
+    vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_d = VL_RAND_RESET_I(1);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_bit_idx_calc = VL_RAND_RESET_I(4);
     vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device = 0;
     vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data = VL_RAND_RESET_I(8);
     vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val = VL_RAND_RESET_I(32);
     vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit = VL_RAND_RESET_I(1);
     vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count = 0;
+    vlSelf->__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__0 = VL_RAND_RESET_I(1);
+    vlSelf->__VstlDidInit = 0;
+    vlSelf->__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__1 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__clk_i__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__rst_ni__0 = VL_RAND_RESET_I(1);
-    for (int __Vi0 = 0; __Vi0 < 7; ++__Vi0) {
+    vlSelf->__VactDidInit = 0;
+    for (int __Vi0 = 0; __Vi0 < 9; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
 }

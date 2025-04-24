@@ -19,6 +19,10 @@ void Vuser_domain_sw_cs_tb___024root___eval_initial(Vuser_domain_sw_cs_tb___024r
     vlSelfRef.__Vm_traceActivity[1U] = 1U;
     Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__0(vlSelf);
     Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1(vlSelf);
+    vlSelfRef.__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__0 
+        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o;
+    vlSelfRef.__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__1 
+        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o;
     vlSelfRef.__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__clk_i__0 
         = vlSelfRef.user_domain_sw_cs_tb__DOT__clk_i;
     vlSelfRef.__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__rst_ni__0 
@@ -33,7 +37,7 @@ VL_INLINE_OPT VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__V
     // Body
     vlSelfRef.user_domain_sw_cs_tb__DOT__clk_i = 0U;
     while (1U) {
-        co_await vlSelfRef.__VdlySched.delay(0x1388ULL, 
+        co_await vlSelfRef.__VdlySched.delay(0x61a8ULL, 
                                              nullptr, 
                                              "rtl/user_domain/user_domain_sw_cs_tb.sv", 
                                              91);
@@ -56,6 +60,8 @@ VL_INLINE_OPT VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__V
 }
 
 void Vuser_domain_sw_cs_tb___024root___act_comb__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf);
+void Vuser_domain_sw_cs_tb___024root___act_sequent__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf);
+void Vuser_domain_sw_cs_tb___024root___act_comb__TOP__1(Vuser_domain_sw_cs_tb___024root* vlSelf);
 
 void Vuser_domain_sw_cs_tb___024root___eval_act(Vuser_domain_sw_cs_tb___024root* vlSelf) {
     (void)vlSelf;  // Prevent unused variable warning
@@ -63,9 +69,16 @@ void Vuser_domain_sw_cs_tb___024root___eval_act(Vuser_domain_sw_cs_tb___024root*
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___eval_act\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if ((5ULL & vlSelfRef.__VactTriggered.word(0U))) {
+    if ((0xaULL & vlSelfRef.__VactTriggered.word(0U))) {
         Vuser_domain_sw_cs_tb___024root___act_comb__TOP__0(vlSelf);
+    }
+    if ((1ULL & vlSelfRef.__VactTriggered.word(0U))) {
+        Vuser_domain_sw_cs_tb___024root___act_sequent__TOP__0(vlSelf);
         vlSelfRef.__Vm_traceActivity[4U] = 1U;
+    }
+    if ((0xbULL & vlSelfRef.__VactTriggered.word(0U))) {
+        Vuser_domain_sw_cs_tb___024root___act_comb__TOP__1(vlSelf);
+        vlSelfRef.__Vm_traceActivity[5U] = 1U;
     }
 }
 
@@ -90,6 +103,42 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___act_comb__TOP__0(Vuser_doma
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_error_o = 0U;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx = 1U;
     }
+}
+
+VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___act_sequent__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vuser_domain_sw_cs_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___act_sequent__TOP__0\n"); );
+    auto &vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp 
+        = ((0x7ffffffffcULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
+           | (IData)((IData)((((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o) 
+                               << 1U) | (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q)))));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
+        = (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp);
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
+        = (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
+            << 7U) | (IData)((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp 
+                              >> 0x20U)));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
+        = (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
+            >> 0x19U) | ((IData)((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp 
+                                  >> 0x20U)) << 7U));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down 
+        = ((0x4dU >= (0x7fU & ((IData)(0x27U) * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))) 
+           && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                     (3U & (((IData)(0x27U) * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)) 
+                            >> 5U))] >> (0x1fU & ((IData)(0x27U) 
+                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q))))));
+}
+
+VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___act_comb__TOP__1(Vuser_domain_sw_cs_tb___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vuser_domain_sw_cs_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___act_comb__TOP__1\n"); );
+    auto &vlSelfRef = std::ref(*vlSelf).get();
+    // Body
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_d 
         = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_up = 0U;
@@ -171,6 +220,21 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___act_comb__TOP__0(Vuser_doma
                          - (IData)(1U)) : ((IData)(1U) 
                                            + (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q))));
     }
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o 
+        = ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+            >> 0xaU) & ((IData)((0x800000U == (0xfff80000U 
+                                               & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U]))) 
+                        | ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                            >> 0x13U) & ((0U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
+                                         & ((4U == 
+                                             (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                                              >> 0x14U)) 
+                                            | (0U == 
+                                               (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                                                >> 0x14U)))))));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_read_req 
+        = ((~ (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+               >> 0x13U)) & (8U == vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q));
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT____Vcellinp__i_id_fifo__push_i 
         = (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[0U] 
                  & (IData)((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp 
@@ -222,7 +286,7 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___act_comb__TOP__0(Vuser_doma
 
 void Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf);
 void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf);
-void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__1(Vuser_domain_sw_cs_tb___024root* vlSelf);
+void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__2(Vuser_domain_sw_cs_tb___024root* vlSelf);
 
 void Vuser_domain_sw_cs_tb___024root___eval_nba(Vuser_domain_sw_cs_tb___024root* vlSelf) {
     (void)vlSelf;  // Prevent unused variable warning
@@ -230,16 +294,20 @@ void Vuser_domain_sw_cs_tb___024root___eval_nba(Vuser_domain_sw_cs_tb___024root*
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___eval_nba\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if ((3ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+    if ((6ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0(vlSelf);
-        vlSelfRef.__Vm_traceActivity[5U] = 1U;
+        vlSelfRef.__Vm_traceActivity[6U] = 1U;
     }
-    if ((5ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+    if ((0xaULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__0(vlSelf);
     }
     if ((7ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__1(vlSelf);
-        vlSelfRef.__Vm_traceActivity[6U] = 1U;
+        Vuser_domain_sw_cs_tb___024root___act_sequent__TOP__0(vlSelf);
+        vlSelfRef.__Vm_traceActivity[7U] = 1U;
+    }
+    if ((0xfULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+        Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__2(vlSelf);
+        vlSelfRef.__Vm_traceActivity[8U] = 1U;
     }
 }
 
@@ -248,98 +316,100 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0(Vuser_d
     Vuser_domain_sw_cs_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
+    // Init
+    CData/*0:0*/ __Vdly__user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q;
+    __Vdly__user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q = 0;
     // Body
+    __Vdly__user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q 
+        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__write_pointer_q 
         = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) 
            && (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__write_pointer_n));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q 
-        = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) 
-           && (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_d));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q 
-        = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) 
-           && (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n));
     if (vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q 
+            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q 
+            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d;
+        if (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q 
+                = (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                   >> 0x14U);
+        }
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q 
+            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q 
             = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_d;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_d 
+            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q 
+            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d;
+        if ((((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+               >> 0xaU) & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                           >> 0x13U)) & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o))) {
+            if ((4U == (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                        >> 0x14U))) {
+                if ((0x8000U & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U])) {
+                    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q 
+                        = (0xffU & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+                                    >> 0xfU));
+                }
+            }
+            if ((4U != (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                        >> 0x14U))) {
+                if ((0U == (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                            >> 0x14U))) {
+                    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q = 1U;
+                }
+            }
+        } else if (((0U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
+                    & (1U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d)))) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q = 0U;
+        }
+        if (((3U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
+             & (0U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d)))) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_d = 1U;
+        }
+        if (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_read_req) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_d = 0U;
+        }
+        __Vdly__user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q 
+            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_d;
         if ((1U & (~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__gate_clock)))) {
             vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q 
                 = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_n;
         }
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q 
             = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_n;
-    } else {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q = 0U;
-    }
-    if (vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q 
-            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q 
-            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q 
-            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q 
-            = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d;
-        if (VL_UNLIKELY(((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
-                          & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                             >> 9U)) & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o)))) {
-            VL_WRITEF_NX("%t : SPI PERIPH READ REQ -> addr_i = 0x%08x | gnt_o = %b | rvalid_q = %b | we_i = %b\n",0,
-                         64,VL_TIME_UNITED_Q(1000),
-                         -9,32,((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                                 << 0x16U) | (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                              >> 0xaU)),
-                         1,(IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o),
-                         1,vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q,
-                         1,(1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                  >> 9U)));
-            if ((4U == ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                         << 0x16U) | (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                      >> 0xaU)))) {
-                if ((0x20U & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U])) {
-                    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q 
-                        = (0xffU & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
-                                    >> 5U));
-                }
-            } else if ((0U == ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                                << 0x16U) | (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                             >> 0xaU)))) {
-                vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q = 1U;
-            }
-        } else if (((0U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
-                    & (1U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d)))) {
-            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q = 0U;
-        }
-        if (VL_UNLIKELY(((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
-                          & (~ (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                >> 9U))) & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o)))) {
-            VL_WRITEF_NX("%t : SPI PERIPH READ REQ -> addr_i = 0x%08x | gnt_o = %b | rvalid_q = %b | we_i = %b\n",0,
-                         64,VL_TIME_UNITED_Q(1000),
-                         -9,32,((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                                 << 0x16U) | (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                              >> 0xaU)),
-                         1,(IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o),
-                         1,vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q,
-                         1,(1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                  >> 9U)));
-            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q 
-                = (((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
-                     & (0x2000U == (0x3ffe00U & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U]))) 
-                    & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o))
-                    ? (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits)
-                    : 0U);
-        }
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q 
+            = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q)
+                ? (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q) 
+                    << 1U) | ((0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
+                              & (3U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))))
+                : 0U);
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q 
             = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d;
     } else {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q = 0U;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q = 0U;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q = 0U;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q = 0U;
     }
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q 
+        = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) 
+           && (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_d));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q 
+        = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) 
+           && (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q 
+        = __Vdly__user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q;
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d 
+        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp = 0ULL;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp 
         = (0x7fULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp);
@@ -365,17 +435,21 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0(Vuser_d
         = ((0x7ffffffffcULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp) 
            | (IData)((IData)((((1U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q)) 
                                << 1U) | (0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q))))));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d 
-        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp 
         = ((0x7fULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
            | ((QData)((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q)) 
               << 7U));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_o = 1U;
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits 
-        = (((3U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
-            << 1U) | ((0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
-                      & (3U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q 
+        = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) 
+           && (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_read_req));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n 
+        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q;
+    if (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp) 
+         & (0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q)))) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n 
+            = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n) 
+               & ((IData)(1U) + (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q)));
+    }
     vlSelfRef.user_domain_sw_cs_tb__DOT__spi_sck_o = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d 
         = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q;
@@ -397,7 +471,7 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0(Vuser_d
         = (1U & ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
                  >> (7U & ((IData)(7U) - (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q)))));
     if ((2U & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_o 
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no 
             = (1U & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q));
         if ((1U & (~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)))) {
             vlSelfRef.user_domain_sw_cs_tb__DOT__spi_sck_o 
@@ -429,58 +503,20 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0(Vuser_d
                 vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 3U;
             }
         }
-    } else if ((1U & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_o = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d = 7U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 2U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__spi_mosi_o 
-            = (1U & ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
-                     >> 7U));
-    } else if (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 1U;
+    } else {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no 
+            = (1U & (~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)));
+        if ((1U & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d = 0U;
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d = 7U;
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 2U;
+            vlSelfRef.user_domain_sw_cs_tb__DOT__spi_mosi_o 
+                = (1U & ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
+                         >> 7U));
+        } else if (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 1U;
+        }
     }
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o 
-        = (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
-           & ((IData)((0x2000U == (0x3ffe00U & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U]))) 
-              | ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                  >> 9U) & ((0U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
-                            & ((4U == ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                                        << 0x16U) | 
-                                       (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                        >> 0xaU))) 
-                               | (0U == ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                                          << 0x16U) 
-                                         | (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                            >> 0xaU))))))));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n 
-        = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q;
-    if (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp) 
-         & (0U != (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q)))) {
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n 
-            = ((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n) 
-               & ((IData)(1U) + (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q)));
-    }
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp 
-        = ((0x7ffffffffcULL & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
-           | (IData)((IData)((((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o) 
-                               << 1U) | (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q)))));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
-        = (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp);
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
-        = (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
-            << 7U) | (IData)((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp 
-                              >> 0x20U)));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
-        = (((IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp) 
-            >> 0x19U) | ((IData)((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_rsp 
-                                  >> 0x20U)) << 7U));
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down 
-        = ((0x4dU >= (0x7fU & ((IData)(0x27U) * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))) 
-           && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
-                     (3U & (((IData)(0x27U) * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)) 
-                            >> 5U))] >> (0x1fU & ((IData)(0x27U) 
-                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q))))));
 }
 
 VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__0(Vuser_domain_sw_cs_tb___024root* vlSelf) {
@@ -492,7 +528,6 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__0(Vuser_doma
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__i_addr_decode_dync__DOT__matched_rules = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_valid_o = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_error_o = 0U;
-    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx = 0U;
     if (((0x20001000U <= ((vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
                            << 0x16U) | (vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] 
                                         >> 0xaU))) 
@@ -502,14 +537,13 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__0(Vuser_doma
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__i_addr_decode_dync__DOT__matched_rules = 1U;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_valid_o = 1U;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_error_o = 0U;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx = 1U;
     }
 }
 
-VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__1(Vuser_domain_sw_cs_tb___024root* vlSelf) {
+VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__2(Vuser_domain_sw_cs_tb___024root* vlSelf) {
     (void)vlSelf;  // Prevent unused variable warning
     Vuser_domain_sw_cs_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__1\n"); );
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__2\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_d 
@@ -593,6 +627,21 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_comb__TOP__1(Vuser_doma
                          - (IData)(1U)) : ((IData)(1U) 
                                            + (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q))));
     }
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_read_req 
+        = ((~ (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+               >> 0x13U)) & (8U == vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o 
+        = ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+            >> 0xaU) & ((IData)((0x800000U == (0xfff80000U 
+                                               & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U]))) 
+                        | ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                            >> 0x13U) & ((0U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
+                                         & ((4U == 
+                                             (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                                              >> 0x14U)) 
+                                            | (0U == 
+                                               (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                                                >> 0x14U)))))));
     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT____Vcellinp__i_id_fifo__push_i 
         = (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[0U] 
                  & (IData)((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_error_obi_rsp 
@@ -648,7 +697,7 @@ void Vuser_domain_sw_cs_tb___024root___timing_commit(Vuser_domain_sw_cs_tb___024
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___timing_commit\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if ((! (1ULL & vlSelfRef.__VactTriggered.word(0U)))) {
+    if ((! (2ULL & vlSelfRef.__VactTriggered.word(0U)))) {
         vlSelfRef.__VtrigSched_h7829ce67__0.commit(
                                                    "@(posedge user_domain_sw_cs_tb.clk_i)");
     }
@@ -660,11 +709,11 @@ void Vuser_domain_sw_cs_tb___024root___timing_resume(Vuser_domain_sw_cs_tb___024
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___timing_resume\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if ((1ULL & vlSelfRef.__VactTriggered.word(0U))) {
+    if ((2ULL & vlSelfRef.__VactTriggered.word(0U))) {
         vlSelfRef.__VtrigSched_h7829ce67__0.resume(
                                                    "@(posedge user_domain_sw_cs_tb.clk_i)");
     }
-    if ((4ULL & vlSelfRef.__VactTriggered.word(0U))) {
+    if ((8ULL & vlSelfRef.__VactTriggered.word(0U))) {
         vlSelfRef.__VdlySched.resume();
     }
 }
@@ -677,7 +726,7 @@ bool Vuser_domain_sw_cs_tb___024root___eval_phase__act(Vuser_domain_sw_cs_tb___0
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vuser_domain_sw_cs_tb___024root___eval_phase__act\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Init
-    VlTriggerVec<3> __VpreTriggered;
+    VlTriggerVec<4> __VpreTriggered;
     CData/*0:0*/ __VactExecute;
     // Body
     Vuser_domain_sw_cs_tb___024root___eval_triggers__act(vlSelf);
