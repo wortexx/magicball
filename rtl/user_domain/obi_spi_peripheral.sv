@@ -197,8 +197,6 @@ module obi_spi_peripheral (
       // Note: This logic directly assigns to _q signals based on *current* inputs and grant.
       // It takes precedence over the default _q <= _d assignment for start_flag and tx_data.
       if (req_i && we_i && gnt_o) begin
-        $display("%t : SPI PERIPH READ REQ -> addr_i = 0x%08h | gnt_o = %b | rvalid_q = %b | we_i = %b", 
-                 $time, addr_i, gnt_o, rvalid_q, we_i);
         unique case (addr_i)
           SPI_TX_ADDR: begin
             if (be_i[0]) begin

@@ -272,19 +272,13 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0(Vuser_d
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q = 0U;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q = 0U;
     }
-    if (VL_UNLIKELY(vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni)) {
+    if (vlSelfRef.user_domain_sw_cs_tb__DOT__rst_ni) {
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q 
             = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q 
             = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d;
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q 
             = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d;
-        vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q 
-            = (((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
-                 & (0x2000U == (0x3ffe00U & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U]))) 
-                & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o))
-                ? (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits)
-                : 0U);
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q 
             = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d;
         if (VL_UNLIKELY(((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
@@ -316,14 +310,25 @@ VL_INLINE_OPT void Vuser_domain_sw_cs_tb___024root___nba_sequent__TOP__0(Vuser_d
                     & (1U == (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d)))) {
             vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q = 0U;
         }
-        VL_WRITEF_NX("%t : SPI PERIPH READ REQ -> addr_i = 0x%08x | gnt_o = %b | rvalid_q = %b | we_i = %b\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     ((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
-                       << 0x16U) | (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                                    >> 0xaU)),1,(IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o),
-                     1,vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q,
-                     1,(1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
-                              >> 9U)));
+        if (VL_UNLIKELY(((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
+                          & (~ (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
+                                >> 9U))) & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o)))) {
+            VL_WRITEF_NX("%t : SPI PERIPH READ REQ -> addr_i = 0x%08x | gnt_o = %b | rvalid_q = %b | we_i = %b\n",0,
+                         64,VL_TIME_UNITED_Q(1000),
+                         -9,32,((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[2U] 
+                                 << 0x16U) | (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
+                                              >> 0xaU)),
+                         1,(IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o),
+                         1,vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q,
+                         1,(1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U] 
+                                  >> 9U)));
+            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q 
+                = (((vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[0U] 
+                     & (0x2000U == (0x3ffe00U & vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_spi_obi_req[1U]))) 
+                    & (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o))
+                    ? (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits)
+                    : 0U);
+        }
         vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_q 
             = vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__state_d;
     } else {
