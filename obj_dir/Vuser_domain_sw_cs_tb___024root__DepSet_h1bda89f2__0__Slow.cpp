@@ -575,11 +575,12 @@ VL_ATTR_COLD void Vuser_domain_sw_cs_tb___024root___ctor_var_reset(Vuser_domain_
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q = VL_RAND_RESET_I(1);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_d = VL_RAND_RESET_I(1);
     vlSelf->user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_bit_idx_calc = VL_RAND_RESET_I(4);
-    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device = 0;
-    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data = VL_RAND_RESET_I(8);
-    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val = VL_RAND_RESET_I(32);
-    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit = VL_RAND_RESET_I(1);
-    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count = 0;
+    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__device = 0;
+    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__data = VL_RAND_RESET_I(8);
+    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__153__spi_data = VL_RAND_RESET_I(8);
+    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__status_val = VL_RAND_RESET_I(32);
+    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__busy_bit = VL_RAND_RESET_I(1);
+    vlSelf->__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__timeout_count = 0;
     vlSelf->__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__0 = VL_RAND_RESET_I(1);
     vlSelf->__VstlDidInit = 0;
     vlSelf->__Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__1 = VL_RAND_RESET_I(1);

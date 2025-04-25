@@ -1,17 +1,14 @@
-// Testbench for user_domain containing single SPI Peripheral
-// Simulates software control of CS and D/C pins via testbench signals
+
 `timescale 1ns/1ps
 
-// Import necessary packages for types and parameters
 import croc_pkg::*;
 import user_pkg::*;
-// Note: Ensure obi_pkg is available if types are defined there instead of croc_pkg
 
 module user_domain_sw_cs_tb;
 
-  //--------------------------------------------------------------------------
+
   // Parameters
-  //--------------------------------------------------------------------------
+  
   localparam CLK_PERIOD       = 50ns; // 20 MHz clock
   localparam RESET_DURATION   = 2 * CLK_PERIOD;
   localparam OBI_TIMEOUT      = 1000; // Max cycles to wait for OBI gnt/rvalid
@@ -29,9 +26,9 @@ module user_domain_sw_cs_tb;
   // Device Selection (for TB tasks)
   typedef enum { DEV_NONE, DEV_SSD1331, DEV_ADXL345 } device_e;
 
-  //--------------------------------------------------------------------------
+
   // Signals
-  //--------------------------------------------------------------------------
+  
   // Clock and reset
   logic clk_i;
   logic rst_ni; // Active low reset for DUT
@@ -83,9 +80,9 @@ module user_domain_sw_cs_tb;
     // spi_cs_no port removed from DUT
   );
 
-  //--------------------------------------------------------------------------
+  
   // Clock Generation & Default Connections
-  //--------------------------------------------------------------------------
+  
   initial begin
     clk_i = 1'b0;
     forever #(CLK_PERIOD / 2) clk_i = ~clk_i;
@@ -103,9 +100,8 @@ module user_domain_sw_cs_tb;
      tb_int_adxl345 = 1'b0;  // Default interrupt inactive
   end
 
-  //--------------------------------------------------------------------------
-  // OBI Tasks (Identical to previous TB version)
-  //--------------------------------------------------------------------------
+  // OBI Tasks
+  
 
   // Task to perform an OBI write cycle
   task automatic write_obi(input logic [31:0] w_addr, input logic [31:0] w_data, input logic [3:0] w_be);
@@ -120,7 +116,7 @@ module user_domain_sw_cs_tb;
     req_txn.a.be   = w_be;
     user_sbr_obi_req = req_txn;
     req_ongoing = 1'b1; // Set flag
-    $display("%t : OBI Write Req : Addr=0x%h Data=0x%h BE=0x%b", $time, w_addr, w_data, w_be);
+    //$display("%t : OBI Write Req : Addr=0x%h Data=0x%h BE=0x%b", $time, w_addr, w_data, w_be);
     while (user_sbr_obi_rsp.gnt !== 1'b1 && timeout_count < OBI_TIMEOUT) begin
       @(posedge clk_i);
       timeout_count++;
@@ -131,7 +127,7 @@ module user_domain_sw_cs_tb;
     @(posedge clk_i);
     user_sbr_obi_req.req = 1'b0; // Only deassert req
     req_ongoing = 1'b0; // Clear flag
-    $display("%t : OBI Write Gnt Rcvd: Addr=0x%h", $time, w_addr);
+    //$display("%t : OBI Write Gnt Rcvd: Addr=0x%h", $time, w_addr);
     @(posedge clk_i);
     user_sbr_obi_req = '0;
   endtask
@@ -148,7 +144,7 @@ module user_domain_sw_cs_tb;
     req_txn.a.addr = r_addr;
     user_sbr_obi_req = req_txn;
     req_ongoing = 1'b1; // Set flag
-    $display("%t : OBI Read Req  : Addr=0x%h", $time, r_addr);
+    // $display("%t : OBI Read Req  : Addr=0x%h", $time, r_addr);
     while (user_sbr_obi_rsp.gnt !== 1'b1 && timeout_count_gnt < OBI_TIMEOUT) begin
       @(posedge clk_i);
       timeout_count_gnt++;
@@ -159,7 +155,7 @@ module user_domain_sw_cs_tb;
     @(posedge clk_i);
     user_sbr_obi_req.req = 1'b0; // Only deassert req
     req_ongoing = 1'b0; // Clear flag
-    $display("%t : OBI Read Gnt Rcvd: Addr=0x%h", $time, r_addr);
+    //$display("%t : OBI Read Gnt Rcvd: Addr=0x%h", $time, r_addr); // disabled for now
     while (user_sbr_obi_rsp.rvalid !== 1'b1 && timeout_count_rvalid < OBI_TIMEOUT) begin
         @(posedge clk_i);
         timeout_count_rvalid++;
@@ -168,21 +164,20 @@ module user_domain_sw_cs_tb;
         $error("%t : Timeout waiting for OBI rvalid during read from %h", $time, r_addr); $finish;
     end
     r_data_val = user_sbr_obi_rsp.r.rdata; // Adjust field access if needed
-    $display("%t : OBI Read Data Rcvd: Addr=0x%h Data=0x%h", $time, r_addr, r_data_val);
+    //$display("%t : OBI Read Data Rcvd: Addr=0x%h Data=0x%h", $time, r_addr, r_data_val);
     @(posedge clk_i);
     user_sbr_obi_req = '0;
   endtask
 
-  //--------------------------------------------------------------------------
+  
   // SPI Helper Tasks (Simulating Software Control)
-  //--------------------------------------------------------------------------
 
   // Task to wait for SPI peripheral to finish (busy bit = 0)
   task automatic wait_spi_done();
       logic [31:0] status_val;
       logic busy_bit;
       int timeout_count = 0;
-      $display("%t : Waiting for SPI HW to finishs...", $time);
+      $display("%t : Waiting for SPI HW to finish...", $time);
       @(posedge clk_i); // Ensure we don't read in the same cycle we triggered
       do begin
           read_obi(SPI_STATUS_ADDR, status_val); // Read the status register
@@ -252,9 +247,8 @@ module user_domain_sw_cs_tb;
       $display("%t : Finished Data 0x%h to %s", $time, data, device.name());
   endtask
 
-  //--------------------------------------------------------------------------
   // Test Scenario
-  //--------------------------------------------------------------------------
+  
   initial begin
     // VCD Dump Setup
     $dumpfile("user_domain_sw_cs_tb.vcd"); // New filename

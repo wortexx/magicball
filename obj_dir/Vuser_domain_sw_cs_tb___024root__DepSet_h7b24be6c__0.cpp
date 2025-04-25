@@ -960,6 +960,10 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__set_cs__136__device = 0;
     CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__set_cs__136__active;
     __Vtask_user_domain_sw_cs_tb__DOT__set_cs__136__active = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device;
+    __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device = 0;
+    CData/*7:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data;
+    __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data = 0;
     IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__set_cs__138__device;
     __Vtask_user_domain_sw_cs_tb__DOT__set_cs__138__device = 0;
     CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__set_cs__138__active;
@@ -1014,6 +1018,12 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__write_obi__145__timeout_count = 0;
     VlWide<3>/*73:0*/ __Vtask_user_domain_sw_cs_tb__DOT__write_obi__145__req_txn;
     VL_ZERO_W(74, __Vtask_user_domain_sw_cs_tb__DOT__write_obi__145__req_txn);
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val;
+    __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val = 0;
+    CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit;
+    __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count;
+    __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count = 0;
     IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__r_addr;
     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__r_addr = 0;
     IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__r_data_val;
@@ -1024,6 +1034,36 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__timeout_count_rvalid = 0;
     VlWide<3>/*73:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__req_txn;
     VL_ZERO_W(74, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__req_txn);
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_addr;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_addr = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_data_val;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_data_val = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_gnt;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_rvalid;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn;
+    VL_ZERO_W(74, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn);
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__device;
+    __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__device = 0;
+    CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__active;
+    __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__active = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__device;
+    __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__device = 0;
+    CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__active;
+    __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__active = 0;
+    CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__set_dc__152__is_data;
+    __Vtask_user_domain_sw_cs_tb__DOT__set_dc__152__is_data = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_addr;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_addr = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_data_val;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_data_val = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_gnt;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_rvalid;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn;
+    VL_ZERO_W(74, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn);
     VlWide<6>/*191:0*/ __Vtemp_1;
     VlWide<4>/*127:0*/ __Vtemp_4;
     std::string __Vtemp_5;
@@ -1096,6 +1136,13 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     VlWide<4>/*127:0*/ __Vtemp_306;
     std::string __Vtemp_307;
     VlWide<4>/*127:0*/ __Vtemp_310;
+    VlWide<4>/*127:0*/ __Vtemp_329;
+    std::string __Vtemp_330;
+    std::string __Vtemp_331;
+    std::string __Vtemp_332;
+    VlWide<4>/*127:0*/ __Vtemp_335;
+    std::string __Vtemp_336;
+    VlWide<4>/*127:0*/ __Vtemp_339;
     // Body
     __Vtemp_1[0U] = 0x2e766364U;
     __Vtemp_1[1U] = 0x735f7462U;
@@ -1166,7 +1213,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__1__spi_data = 0x2dU;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__2__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -1204,8 +1251,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__3__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__3__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -1243,8 +1288,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__3__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__3__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -1336,9 +1379,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__3__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__3__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -1395,9 +1435,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__4__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__4__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -1437,9 +1474,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__4__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__4__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -1533,10 +1567,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__4__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__4__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -1626,10 +1656,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__5__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__5__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__5__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__5__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -1667,8 +1693,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__5__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -1733,10 +1757,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__6__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__6__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__6__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__6__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -1774,8 +1794,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__6__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -1786,7 +1804,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__7__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -1824,8 +1842,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__8__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__8__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -1863,8 +1879,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__8__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__8__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -1956,9 +1970,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__8__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__8__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -2015,9 +2026,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__9__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__9__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -2057,9 +2065,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__9__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__9__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -2153,10 +2158,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__9__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__9__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -2192,7 +2193,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                  -9);
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__10__spi_data = 8U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__11__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -2230,8 +2231,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__12__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__12__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -2269,8 +2268,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__12__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__12__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -2362,9 +2359,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__12__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__12__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -2421,9 +2415,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__13__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__13__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -2463,9 +2454,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__13__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__13__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -2559,10 +2547,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__13__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__13__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -2652,10 +2636,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__14__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__14__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__14__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__14__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -2693,8 +2673,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__14__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -2759,10 +2737,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__15__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__15__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__15__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__15__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -2800,8 +2774,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__15__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -2812,7 +2784,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__16__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -2850,8 +2822,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__17__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__17__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -2889,8 +2859,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__17__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__17__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -2982,9 +2950,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__17__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__17__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -3041,9 +3006,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__18__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__18__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -3083,9 +3045,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__18__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__18__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -3179,10 +3138,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__18__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__18__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -3336,7 +3291,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__23__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_command__20__cmd;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__24__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -3374,8 +3329,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__25__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__25__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -3413,8 +3366,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__25__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__25__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -3506,9 +3457,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__25__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__25__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -3565,9 +3513,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__26__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__26__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -3607,9 +3552,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__26__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__26__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -3703,10 +3645,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__26__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__26__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -3796,10 +3734,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__27__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__27__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__27__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__27__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -3837,8 +3771,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__27__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -3903,10 +3835,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__28__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__28__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__28__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__28__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -3944,8 +3872,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__28__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -3956,7 +3882,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__29__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -3994,8 +3920,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__30__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__30__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -4033,8 +3957,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__30__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__30__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -4126,9 +4048,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__30__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__30__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -4185,9 +4104,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__31__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__31__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -4227,9 +4143,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__31__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__31__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -4323,10 +4236,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__31__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__31__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -4480,7 +4389,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__36__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_command__33__cmd;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__37__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -4518,8 +4427,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__38__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__38__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -4557,8 +4464,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__38__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__38__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -4650,9 +4555,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__38__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__38__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -4709,9 +4611,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__39__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__39__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -4751,9 +4650,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__39__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__39__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -4847,10 +4743,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__39__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__39__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -4940,10 +4832,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__40__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__40__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__40__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__40__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -4981,8 +4869,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__40__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -5047,10 +4933,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__41__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__41__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__41__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__41__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -5088,8 +4970,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__41__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -5100,7 +4980,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__42__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -5138,8 +5018,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__43__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__43__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -5177,8 +5055,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__43__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__43__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -5270,9 +5146,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__43__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__43__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -5329,9 +5202,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__44__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__44__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -5371,9 +5241,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__44__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__44__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -5467,10 +5334,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__44__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__44__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -5644,7 +5507,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__49__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_command__46__cmd;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__50__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -5682,8 +5545,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__51__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__51__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -5721,8 +5582,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__51__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__51__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -5814,9 +5673,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__51__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__51__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -5873,9 +5729,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__52__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__52__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -5915,9 +5768,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__52__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__52__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -6011,10 +5861,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__52__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__52__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -6104,10 +5950,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__53__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__53__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__53__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__53__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -6145,8 +5987,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__53__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -6211,10 +6051,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__54__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__54__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__54__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__54__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -6252,8 +6088,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__54__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -6264,7 +6098,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__55__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -6302,8 +6136,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__56__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__56__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -6341,8 +6173,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__56__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__56__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -6434,9 +6264,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__56__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__56__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -6493,9 +6320,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__57__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__57__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -6535,9 +6359,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__57__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__57__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -6631,10 +6452,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__57__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__57__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -6788,7 +6605,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__62__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_command__59__cmd;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__63__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -6826,8 +6643,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__64__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__64__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -6865,8 +6680,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__64__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__64__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -6958,9 +6771,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__64__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__64__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -7017,9 +6827,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__65__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__65__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -7059,9 +6866,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__65__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__65__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -7155,10 +6959,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__65__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__65__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -7248,10 +7048,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__66__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__66__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__66__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__66__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -7289,8 +7085,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__66__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -7355,10 +7149,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__67__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__67__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__67__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__67__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -7396,8 +7186,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__67__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -7408,7 +7196,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__68__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -7446,8 +7234,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__69__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__69__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -7485,8 +7271,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__69__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__69__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -7578,9 +7362,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__69__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__69__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -7637,9 +7418,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__70__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__70__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -7679,9 +7457,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__70__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__70__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -7775,10 +7550,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__70__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__70__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -7932,7 +7703,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__75__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_command__72__cmd;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__76__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -7970,8 +7741,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__77__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__77__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -8009,8 +7778,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__77__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__77__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -8102,9 +7869,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__77__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__77__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -8161,9 +7925,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__78__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__78__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -8203,9 +7964,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__78__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__78__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -8299,10 +8057,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__78__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__78__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -8392,10 +8146,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__79__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__79__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__79__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__79__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -8433,8 +8183,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__79__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -8499,10 +8247,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__80__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__80__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__80__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__80__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -8540,8 +8284,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__80__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -8552,7 +8294,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__81__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -8590,8 +8332,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__82__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__82__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -8629,8 +8369,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__82__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__82__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -8722,9 +8460,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__82__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__82__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -8781,9 +8516,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__83__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__83__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -8823,9 +8555,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__83__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__83__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -8919,10 +8648,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__83__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__83__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -9076,7 +8801,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__88__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_data__85__data;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__89__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -9114,8 +8839,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__90__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__90__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -9153,8 +8876,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__90__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__90__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -9246,9 +8967,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__90__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__90__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -9305,9 +9023,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__91__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__91__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -9347,9 +9062,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__91__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__91__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -9443,10 +9155,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__91__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__91__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -9536,10 +9244,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__92__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__92__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__92__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__92__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -9577,8 +9281,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__92__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -9643,10 +9345,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__93__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__93__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__93__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__93__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -9684,8 +9382,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__93__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -9696,7 +9392,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__94__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -9734,8 +9430,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__95__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__95__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -9773,8 +9467,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__95__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__95__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -9866,9 +9558,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__95__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__95__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -9925,9 +9614,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__96__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__96__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -9967,9 +9653,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__96__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__96__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -10063,10 +9746,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__96__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__96__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -10220,7 +9899,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__101__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_data__98__data;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__102__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -10258,8 +9937,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__103__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__103__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -10297,8 +9974,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__103__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__103__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -10390,9 +10065,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__103__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__103__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -10449,9 +10121,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__104__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__104__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -10491,9 +10160,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__104__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__104__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -10587,10 +10253,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__104__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__104__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -10680,10 +10342,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__105__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__105__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__105__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__105__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -10721,8 +10379,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__105__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -10787,10 +10443,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__106__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__106__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__106__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__106__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -10828,8 +10480,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__106__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -10840,7 +10490,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__107__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -10878,8 +10528,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__108__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__108__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -10917,8 +10565,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__108__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__108__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -11010,9 +10656,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__108__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__108__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -11069,9 +10712,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__109__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__109__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -11111,9 +10751,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__109__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__109__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -11207,10 +10844,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__109__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__109__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -11364,7 +10997,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__114__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_data__111__data;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__115__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -11402,8 +11035,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__116__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__116__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -11441,8 +11072,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__116__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__116__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -11534,9 +11163,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__116__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__116__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -11593,9 +11219,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__117__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__117__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -11635,9 +11258,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__117__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__117__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -11731,10 +11351,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__117__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__117__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -11824,10 +11440,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__118__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__118__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__118__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__118__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -11865,8 +11477,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__118__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -11931,10 +11541,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__119__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__119__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__119__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__119__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -11972,8 +11578,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__119__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -11984,7 +11588,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__120__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -12022,8 +11626,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__121__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__121__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -12061,8 +11663,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__121__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__121__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -12154,9 +11754,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__121__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__121__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -12213,9 +11810,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__122__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__122__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -12255,9 +11849,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__122__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__122__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -12351,10 +11942,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__122__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__122__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -12508,7 +12095,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__127__spi_data 
         = __Vtask_user_domain_sw_cs_tb__DOT__send_data__124__data;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__128__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -12546,8 +12133,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__129__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__129__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -12585,8 +12170,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__129__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__129__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -12678,9 +12261,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__129__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__129__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -12737,9 +12317,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__130__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__130__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -12779,9 +12356,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__130__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__130__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -12875,10 +12449,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__130__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__130__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -12968,10 +12538,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__131__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__131__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__131__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__131__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -13009,8 +12575,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__131__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -13075,10 +12639,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__132__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__132__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__132__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__132__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -13116,8 +12676,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__132__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -13128,7 +12686,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__133__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -13166,8 +12724,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__134__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__134__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -13205,8 +12761,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__134__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__134__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -13298,9 +12852,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__134__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__134__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -13357,9 +12908,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__135__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__135__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -13399,9 +12947,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__135__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__135__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -13495,10 +13040,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__135__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__135__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -13575,16 +13116,16 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     VL_WRITEF_NX("%t : Finished Data 0x%x to %@\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,8,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__send_data__124__data),
                  -1,&(__Vtemp_302));
-    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data = 0x7fU;
-    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device = 1U;
+    __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data = 0x7fU;
+    __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device = 1U;
     __Vtemp_303 = Vuser_domain_sw_cs_tb___024unit::__Venumtab_enum_name377
-        [(3U & vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device)];
+        [(3U & __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device)];
     VL_WRITEF_NX("%t : Sending Data 0x%x to %@\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,8,(IData)(vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data),
+                 64,VL_TIME_UNITED_Q(1000),-9,8,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data),
                  -1,&(__Vtemp_303));
     __Vtask_user_domain_sw_cs_tb__DOT__set_cs__138__active = 1U;
     __Vtask_user_domain_sw_cs_tb__DOT__set_cs__138__device 
-        = vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device;
+        = __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device;
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -13620,7 +13161,7 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                          nullptr, "rtl/user_domain/user_domain_sw_cs_tb.sv", 
                                          211);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    if (VL_UNLIKELY((1U == vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device))) {
+    if (VL_UNLIKELY((1U == __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device))) {
         __Vtask_user_domain_sw_cs_tb__DOT__set_dc__139__is_data = 1U;
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
@@ -13650,9 +13191,9 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
     }
     __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__140__spi_data 
-        = vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data;
+        = __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data;
     __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__141__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -13690,8 +13231,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__142__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__142__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -13729,8 +13268,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__142__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__142__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -13822,9 +13359,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__142__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__142__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -13881,9 +13415,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
             = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__143__req_txn[2U];
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__143__r_addr);
         while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
@@ -13923,9 +13454,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
         vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-        VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__143__r_addr);
         while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
                 & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__143__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -14019,10 +13547,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                           & ((IData)(0x27U) 
                                                              * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                          : 0ULL) >> 5U));
-        VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__143__r_addr,
-                     32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__143__r_data_val);
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -14112,10 +13636,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__144__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__144__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__144__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__144__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -14153,8 +13673,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__144__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -14219,10 +13737,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__write_obi__145__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__145__w_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__145__w_data,
-                 4,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__write_obi__145__w_be));
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -14260,8 +13774,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__write_obi__145__w_addr);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -14271,8 +13783,8 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
-    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count = 0U;
-    VL_WRITEF_NX("%t : Waiting for SPI HW to finishs...\n",0,
+    __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count = 0U;
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
@@ -14310,8 +13822,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__req_txn[2U];
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__r_addr);
     while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -14349,8 +13859,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__r_addr);
     while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
             & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
@@ -14442,9 +13950,6 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
                                                       & ((IData)(0x27U) 
                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
                      : 0ULL) >> 5U));
-    VL_WRITEF_NX("%t : OBI Read Data Rcvd: Addr=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__r_addr,
-                 32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__r_data_val);
     co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge user_domain_sw_cs_tb.clk_i)", 
@@ -14454,13 +13959,520 @@ VlCoroutine Vuser_domain_sw_cs_tb___024root___eval_initial__TOP__Vtiming__1__0(V
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
-    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val 
+    __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val 
         = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__147__r_data_val;
-    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit 
-        = (1U & vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val);
-    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count 
-        = ((IData)(1U) + vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count);
-    if (vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit) {
+    __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit 
+        = (1U & __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val);
+    __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count 
+        = ((IData)(1U) + __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count);
+    if (__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit) {
+        co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                             "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                             191);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    }
+    while (((IData)(__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit) 
+            & VL_GTS_III(32, 0x1388U, __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count))) {
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_addr = 0x20001008U;
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_gnt = 0U;
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_rvalid = 0U;
+        co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                             "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                             144);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[0U] = 0U;
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[1U] = 0U;
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[2U] = 0U;
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[0U] 
+            = (1U | __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[0U]);
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[1U] 
+            = ((0x1ffU & __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[1U]) 
+               | ((IData)(((QData)((IData)(__Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_addr)) 
+                           << 1U)) << 9U));
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[2U] 
+            = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_addr)) 
+                                   << 1U)) >> 0x17U) 
+                         | ((IData)((((QData)((IData)(__Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_addr)) 
+                                      << 1U) >> 0x20U)) 
+                            << 9U)));
+        vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
+            = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[0U];
+        vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] 
+            = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[1U];
+        vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
+            = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__req_txn[2U];
+        vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
+        while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU 
+                                              & ((IData)(0x27U) 
+                                                 * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
+                    && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                              (((IData)(1U) + (0x7fU 
+                                               & ((IData)(0x27U) 
+                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx)))) 
+                               >> 5U)] >> (0x1fU & 
+                                           ((IData)(1U) 
+                                            + (0x7fU 
+                                               & ((IData)(0x27U) 
+                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))))))) 
+                & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_gnt))) {
+            co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                                 "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                                 153);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+            __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_gnt 
+                = ((IData)(1U) + __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_gnt);
+        }
+        if (VL_UNLIKELY((0x3e8U == __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_gnt))) {
+            VL_WRITEF_NX("[%0t] %%Error: user_domain_sw_cs_tb.sv:157: Assertion failed in %Nuser_domain_sw_cs_tb.read_obi: %t : Timeout waiting for OBI grant during read from %x\n",0,
+                         64,VL_TIME_UNITED_Q(1000),
+                         -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
+                         -9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_addr);
+            VL_STOP_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 157, "");
+            VL_FINISH_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 157, "");
+        }
+        co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                             "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                             159);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
+            = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
+        vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
+        while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
+                & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_rvalid))) {
+            co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                                 "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                                 164);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+            __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_rvalid 
+                = ((IData)(1U) + __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_rvalid);
+        }
+        if (VL_UNLIKELY((0x3e8U == __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__timeout_count_rvalid))) {
+            VL_WRITEF_NX("[%0t] %%Error: user_domain_sw_cs_tb.sv:168: Assertion failed in %Nuser_domain_sw_cs_tb.read_obi: %t : Timeout waiting for OBI rvalid during read from %x\n",0,
+                         64,VL_TIME_UNITED_Q(1000),
+                         -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
+                         -9,32,__Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_addr);
+            VL_STOP_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 168, "");
+            VL_FINISH_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 168, "");
+        }
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_data_val 
+            = (IData)((((0x4dU >= ((IData)(2U) + (0x7fU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))
+                         ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                (((IData)(0x26U) 
+                                                                  + 
+                                                                  (0x7fU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))) 
+                                                                 >> 5U)])) 
+                                                << 
+                                                ((0U 
+                                                  == 
+                                                  (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0x7fU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q))))))
+                                                  ? 0x20U
+                                                  : 
+                                                 ((IData)(0x40U) 
+                                                  - 
+                                                  (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0x7fU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))) 
+                                               | (((0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0x7fU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q))))))
+                                                    ? 0ULL
+                                                    : 
+                                                   ((QData)((IData)(
+                                                                    vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(0x21U) 
+                                                                      + 
+                                                                      (0x7fU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))) 
+                                                                     >> 5U)])) 
+                                                    << 
+                                                    ((IData)(0x20U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0x7fU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))) 
+                                                  | ((QData)((IData)(
+                                                                     vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                     (((IData)(2U) 
+                                                                       + 
+                                                                       (0x7fU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))) 
+                                                                      >> 5U)])) 
+                                                     >> 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0x7fU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
+                         : 0ULL) >> 5U));
+        co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                             "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                             172);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
+        __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val 
+            = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__148__r_data_val;
+        __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit 
+            = (1U & __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val);
+        __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count 
+            = ((IData)(1U) + __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count);
+        if (__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit) {
+            co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                                 "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                                 191);
+            vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        }
+    }
+    if (VL_UNLIKELY((0x1388U == __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: user_domain_sw_cs_tb.sv:194: Assertion failed in %Nuser_domain_sw_cs_tb.wait_spi_done: %t : Timeout waiting for SPI HW to become idle.\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9);
+        VL_STOP_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 194, "");
+        VL_FINISH_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 194, "");
+    }
+    VL_WRITEF_NX("%t : SPI HW finished.\n",0,64,VL_TIME_UNITED_Q(1000),
+                 -9);
+    __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__active = 0U;
+    __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__device 
+        = __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device;
+    co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                         "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                         201);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if ((1U == __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__device)) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__tb_cs_ssd1331_n 
+            = (1U & (~ (IData)(__Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__active)));
+    } else if ((2U == __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__device)) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__tb_cs_adxl345_n 
+            = (1U & (~ (IData)(__Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__active)));
+    } else if ((0U == __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__device)) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__tb_cs_ssd1331_n = 1U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__tb_cs_adxl345_n = 1U;
+    }
+    if (__Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__active) {
+        __Vtemp_329[0U] = 0x4c6f7729U;
+        __Vtemp_329[1U] = 0x56452028U;
+        __Vtemp_329[2U] = 0x41435449U;
+        __Vtemp_329[3U] = 0U;
+    } else {
+        __Vtemp_329[0U] = 0x69676829U;
+        __Vtemp_329[1U] = 0x45202848U;
+        __Vtemp_329[2U] = 0x43544956U;
+        __Vtemp_329[3U] = 0x494e41U;
+    }
+    __Vtemp_330 = Vuser_domain_sw_cs_tb___024unit::__Venumtab_enum_name377
+        [(3U & __Vtask_user_domain_sw_cs_tb__DOT__set_cs__149__device)];
+    VL_WRITEF_NX("%t : Set CS: %@ %s\n",0,64,VL_TIME_UNITED_Q(1000),
+                 -9,-1,&(__Vtemp_330),120,__Vtemp_329.data());
+    co_await vlSelfRef.__VdlySched.delay(0xc350ULL, 
+                                         nullptr, "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                         211);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    __Vtemp_331 = Vuser_domain_sw_cs_tb___024unit::__Venumtab_enum_name377
+        [(3U & __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device)];
+    VL_WRITEF_NX("%t : Finished Data 0x%x to %@\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,8,(IData)(__Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data),
+                 -1,&(__Vtemp_331));
+    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__data = 0U;
+    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__device = 1U;
+    __Vtemp_332 = Vuser_domain_sw_cs_tb___024unit::__Venumtab_enum_name377
+        [(3U & vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__device)];
+    VL_WRITEF_NX("%t : Sending Data 0x%x to %@\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,8,(IData)(vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__data),
+                 -1,&(__Vtemp_332));
+    __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__active = 1U;
+    __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__device 
+        = vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__device;
+    co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                         "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                         201);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if ((1U == __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__device)) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__tb_cs_ssd1331_n 
+            = (1U & (~ (IData)(__Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__active)));
+    } else if ((2U == __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__device)) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__tb_cs_adxl345_n 
+            = (1U & (~ (IData)(__Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__active)));
+    } else if ((0U == __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__device)) {
+        vlSelfRef.user_domain_sw_cs_tb__DOT__tb_cs_ssd1331_n = 1U;
+        vlSelfRef.user_domain_sw_cs_tb__DOT__tb_cs_adxl345_n = 1U;
+    }
+    if (__Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__active) {
+        __Vtemp_335[0U] = 0x4c6f7729U;
+        __Vtemp_335[1U] = 0x56452028U;
+        __Vtemp_335[2U] = 0x41435449U;
+        __Vtemp_335[3U] = 0U;
+    } else {
+        __Vtemp_335[0U] = 0x69676829U;
+        __Vtemp_335[1U] = 0x45202848U;
+        __Vtemp_335[2U] = 0x43544956U;
+        __Vtemp_335[3U] = 0x494e41U;
+    }
+    __Vtemp_336 = Vuser_domain_sw_cs_tb___024unit::__Venumtab_enum_name377
+        [(3U & __Vtask_user_domain_sw_cs_tb__DOT__set_cs__151__device)];
+    VL_WRITEF_NX("%t : Set CS: %@ %s\n",0,64,VL_TIME_UNITED_Q(1000),
+                 -9,-1,&(__Vtemp_336),120,__Vtemp_335.data());
+    co_await vlSelfRef.__VdlySched.delay(0xc350ULL, 
+                                         nullptr, "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                         211);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    if (VL_UNLIKELY((1U == vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__device))) {
+        __Vtask_user_domain_sw_cs_tb__DOT__set_dc__152__is_data = 1U;
+        co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                             "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                             216);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        if (__Vtask_user_domain_sw_cs_tb__DOT__set_dc__152__is_data) {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__tb_dc_ssd1331 = 1U;
+            __Vtemp_339[0U] = 0x69676829U;
+            __Vtemp_339[1U] = 0x61202848U;
+            __Vtemp_339[2U] = 0x446174U;
+            __Vtemp_339[3U] = 0U;
+        } else {
+            vlSelfRef.user_domain_sw_cs_tb__DOT__tb_dc_ssd1331 = 0U;
+            __Vtemp_339[0U] = 0x4c6f7729U;
+            __Vtemp_339[1U] = 0x6e642028U;
+            __Vtemp_339[2U] = 0x6f6d6d61U;
+            __Vtemp_339[3U] = 0x43U;
+        }
+        VL_WRITEF_NX("%t : Set D/C: %s\n",0,64,VL_TIME_UNITED_Q(1000),
+                     -9,104,__Vtemp_339.data());
+        co_await vlSelfRef.__VdlySched.delay(0xc350ULL, 
+                                             nullptr, 
+                                             "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                             219);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    }
+    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__153__spi_data 
+        = vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__send_data__150__data;
+    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__timeout_count = 0U;
+    VL_WRITEF_NX("%t : Waiting for SPI HW to finish...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9);
+    co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                         "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                         186);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_addr = 0x20001008U;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_gnt = 0U;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_rvalid = 0U;
+    co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                         "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                         144);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[0U] = 0U;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[1U] = 0U;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[2U] = 0U;
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[0U] 
+        = (1U | __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[0U]);
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[1U] 
+        = ((0x1ffU & __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[1U]) 
+           | ((IData)(((QData)((IData)(__Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_addr)) 
+                       << 1U)) << 9U));
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[2U] 
+        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_addr)) 
+                               << 1U)) >> 0x17U) | 
+                     ((IData)((((QData)((IData)(__Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_addr)) 
+                                << 1U) >> 0x20U)) << 9U)));
+    vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[0U];
+    vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[1U];
+    vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__req_txn[2U];
+    vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 1U;
+    while (((~ ((0x4dU >= ((IData)(1U) + (0x7fU & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))) 
+                && (1U & (vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (((IData)(1U) + (0x7fU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx)))) 
+                           >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                + (0x7fU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__user_idx))))))))) 
+            & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_gnt))) {
+        co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                             "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                             153);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_gnt 
+            = ((IData)(1U) + __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_gnt);
+    }
+    if (VL_UNLIKELY((0x3e8U == __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_gnt))) {
+        VL_WRITEF_NX("[%0t] %%Error: user_domain_sw_cs_tb.sv:157: Assertion failed in %Nuser_domain_sw_cs_tb.read_obi: %t : Timeout waiting for OBI grant during read from %x\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_addr);
+        VL_STOP_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 157, "");
+        VL_FINISH_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 157, "");
+    }
+    co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                         "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                         159);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.user_domain_sw_cs_tb__DOT__req_ongoing = 0U;
+    while (((~ (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__cnt_down)) 
+            & VL_GTS_III(32, 0x3e8U, __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                             "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                             164);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY((0x3e8U == __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: user_domain_sw_cs_tb.sv:168: Assertion failed in %Nuser_domain_sw_cs_tb.read_obi: %t : Timeout waiting for OBI rvalid during read from %x\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_addr);
+        VL_STOP_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 168, "");
+        VL_FINISH_MT("rtl/user_domain/user_domain_sw_cs_tb.sv", 168, "");
+    }
+    __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_data_val 
+        = (IData)((((0x4dU >= ((IData)(2U) + (0x7fU 
+                                              & ((IData)(0x27U) 
+                                                 * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))
+                     ? (0x1fffffffffULL & (((QData)((IData)(
+                                                            vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                            (((IData)(0x26U) 
+                                                              + 
+                                                              (0x7fU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))) 
+                                                             >> 5U)])) 
+                                            << ((0U 
+                                                 == 
+                                                 (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0x7fU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q))))))
+                                                 ? 0x20U
+                                                 : 
+                                                ((IData)(0x40U) 
+                                                 - 
+                                                 (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0x7fU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))) 
+                                           | (((0U 
+                                                == 
+                                                (0x1fU 
+                                                 & ((IData)(2U) 
+                                                    + 
+                                                    (0x7fU 
+                                                     & ((IData)(0x27U) 
+                                                        * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q))))))
+                                                ? 0ULL
+                                                : ((QData)((IData)(
+                                                                   vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0x7fU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0x7fU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))) 
+                                              | ((QData)((IData)(
+                                                                 vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                 (((IData)(2U) 
+                                                                   + 
+                                                                   (0x7fU 
+                                                                    & ((IData)(0x27U) 
+                                                                       * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))) 
+                                                                  >> 5U)])) 
+                                                 >> 
+                                                 (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0x7fU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT__select_q)))))))))
+                     : 0ULL) >> 5U));
+    co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge user_domain_sw_cs_tb.clk_i)", 
+                                                         "rtl/user_domain/user_domain_sw_cs_tb.sv", 
+                                                         172);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.user_domain_sw_cs_tb__DOT__user_sbr_obi_req[2U] = 0U;
+    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__status_val 
+        = __Vtask_user_domain_sw_cs_tb__DOT__read_obi__155__r_data_val;
+    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__busy_bit 
+        = (1U & vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__status_val);
+    vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__timeout_count 
+        = ((IData)(1U) + vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__timeout_count);
+    if (vlSelfRef.__Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__busy_bit) {
         co_await vlSelfRef.__VtrigSched_h7829ce67__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge user_domain_sw_cs_tb.clk_i)", 

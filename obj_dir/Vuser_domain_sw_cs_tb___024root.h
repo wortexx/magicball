@@ -72,8 +72,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vuser_domain_sw_cs_tb___024root final : publi
         CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_q;
         CData/*0:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__done_d;
         CData/*3:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_bit_idx_calc;
-        CData/*7:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__data;
-        CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__busy_bit;
+        CData/*7:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_data__150__data;
+        CData/*7:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_spi_byte_raw__153__spi_data;
+        CData/*0:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__busy_bit;
         CData/*0:0*/ __Vtrigprevexpr___TOP__user_domain_sw_cs_tb__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__0;
         CData/*0:0*/ __VstlDidInit;
         CData/*0:0*/ __VstlFirstIteration;
@@ -85,12 +86,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vuser_domain_sw_cs_tb___024root final : publi
         SData/*15:0*/ user_domain_sw_cs_tb__DOT__gpio_in_sync_i;
         VlWide<3>/*72:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_obi_demux__DOT____Vlvbound_h19131224__0;
         IData/*31:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q;
-        IData/*31:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q;
     };
     struct {
-        IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_data__137__device;
-        IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__status_val;
-        IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__146__timeout_count;
+        IData/*31:0*/ user_domain_sw_cs_tb__DOT__dut__DOT__i_spi_peripheral__DOT__granted_addr_q;
+        IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__send_data__150__device;
+        IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__status_val;
+        IData/*31:0*/ __Vtask_user_domain_sw_cs_tb__DOT__wait_spi_done__154__timeout_count;
         IData/*31:0*/ __VactIterCount;
         VlWide<3>/*73:0*/ user_domain_sw_cs_tb__DOT__user_sbr_obi_req;
         QData/*36:0*/ user_domain_sw_cs_tb__DOT__user_mgr_obi_rsp;

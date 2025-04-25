@@ -26,7 +26,6 @@ VM_CLASSES_FAST += \
 	Vuser_domain_sw_cs_tb \
 	Vuser_domain_sw_cs_tb___024root__DepSet_h7b24be6c__0 \
 	Vuser_domain_sw_cs_tb___024root__DepSet_h7b24be6c__1 \
-	Vuser_domain_sw_cs_tb___024root__DepSet_h7b24be6c__2 \
 	Vuser_domain_sw_cs_tb___024root__DepSet_h1bda89f2__0 \
 	Vuser_domain_sw_cs_tb__main \
 

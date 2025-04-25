@@ -1,0 +1,11 @@
+verilator   -Wno-fatal -Wno-style   --timing --autoflush --trace --trace-structs   --binary -j 0   --top-module tb_obi_spi_direct  rtl/user_domain/tb_obi_spi_direct.sv rtl/user_domain/obi_spi_peripheral.sv
+
+./rtl/user_domain/obj_dir/Vtb_obi_spi_direct
+
+gtkwave tb_obi_spi_direct.vcd
+
+verilator   --binary   --top user_domain_sw_cs_tb   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o sim_user_domain_sw_cs   -f croc_tb.f   rtl/user_domain/user_domain_sw_cs_tb.sv
+
+./obj_dir/sim_user_domain_sw_cs
+
+gtkwave user_domain_sw_cs_tb.vcd

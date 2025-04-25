@@ -152,7 +152,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     // Connect to the top-level output ports of user_domain
     .sck_o    ( spi_sck_o  ),
     .mosi_o   ( spi_mosi_o ),
-    .cs_no    ( /* Unconnected - CS handled by GPIO */ ) // Leave hardware CS unconnected
+    .cs_no    ( /* Unconnected - CS handled by software/gpio */ )
   );
 
 endmodule
