@@ -4,8 +4,8 @@ verilator   -Wno-fatal -Wno-style   --timing --autoflush --trace --trace-structs
 
 gtkwave tb_obi_spi_direct.vcd
 
-verilator   --binary   --top user_domain_sw_cs_tb   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o sim_user_domain_sw_cs   -f croc_tb.f   rtl/user_domain/user_domain_sw_cs_tb.sv
+verilator   --binary   --top tb_user_domain_sw_cs   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o sim_user_domain_sw_cs   -f croc_tb.f   rtl/user_domain/tb_user_domain_sw_cs.sv
 
 ./obj_dir/sim_user_domain_sw_cs
 
-gtkwave user_domain_sw_cs_tb.vcd
+gtkwave tb_user_domain_sw_cs.vcd

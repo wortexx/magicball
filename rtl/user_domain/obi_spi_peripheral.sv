@@ -76,7 +76,6 @@ module obi_spi_peripheral (
   
   //assign busy = (state_q != IDLE) && (state_q != COMPLETE);
   //assign status_bits = {done_q, busy};
-  //assign busy = (state_q != IDLE) && (state_q != COMPLETE);
   //assign status_bits = {(state_q == COMPLETE), busy};
 assign busy = (state_q == SHIFT) || (state_q == LOAD);
 assign done = (state_q == COMPLETE);
@@ -138,7 +137,7 @@ assign status_bits = {done, busy};
         end
       end // SHIFT
       COMPLETE: begin
-        cs_no   = 1'b1; // Desassert CS high
+        cs_no   = 1'b1; // Deassert CS high
         state_d = IDLE;
       end
       default: begin

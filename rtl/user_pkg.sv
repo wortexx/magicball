@@ -17,20 +17,24 @@ package user_pkg;
   // User Subordinate Address maps ////
   /////////////////////////////////////
 
-  // Setting number of actual user subordinates to 1
-  localparam int unsigned NumUserDomainSubordinates = 1; // We are adding 1 peripheral (SPI)
+
+  
+
+
+  // Setting number of actual user subordinates to 2
+  localparam int unsigned NumUserDomainSubordinates = 1; // We are adding 2 peripherals (SPI + XORShift)
+  localparam bit [31:0] UserRomAddrOffset   = croc_pkg::UserBaseAddr; // 32'h2000_0000;
 
   // --- Address Definitions ---
   // Define a range for the SPI peripheral (e.g., 4KB)
   localparam bit [31:0] UserSpiAddrRange  = 32'h0000_1000;
   // Define the SPI offset relative to the UserBaseAddr from croc_pkg
   // Place it after the reserved ROM space (0x2000_0000 to 0x2000_1000)
-  localparam bit [31:0] UserSpiAddrOffset = croc_pkg::UserBaseAddr + UserSpiAddrRange; // Start at 32'h2000_1000
+  localparam bit [31:0] UserSpiAddrOffset = UserRomAddrOffset + UserSpiAddrRange; // Start at 32'h2000_1000
 
   // --- Demux Configuration ---
   // Number of rules = number of actual subordinates
   localparam int unsigned NumDemuxSbrRules  = NumUserDomainSubordinates; // Now 1 rule
-  // Total ports = rules + 1 (for error slave)
   localparam int unsigned NumDemuxSbr       = NumDemuxSbrRules + 1; // Now 1 + 1 = 2 ports
 
   // Enum for bus indices
