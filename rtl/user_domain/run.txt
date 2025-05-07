@@ -1,10 +1,30 @@
+#####       obi_spi_peripheral     #####
+
 verilator   -Wno-fatal -Wno-style   --timing --autoflush --trace --trace-structs   --binary -j 0   --top-module tb_obi_spi_direct  rtl/user_domain/tb_obi_spi_direct.sv rtl/user_domain/obi_spi_peripheral.sv
 
-./rtl/user_domain/obj_dir/Vtb_obi_spi_direct
 
-gtkwave tb_obi_spi_direct.vcd
+#####       user_spi_ctrl        #####
 
-verilator   --binary   --top tb_user_domain_sw_cs   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o sim_user_domain_sw_cs   -f croc_tb.f   rtl/user_domain/tb_user_domain_sw_cs.sv
+verilator   --binary   --top tb_user_spi_ctrl   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_spi_ctrl   -f croc.f   rtl/user_domain/tb_user_spi_ctrl.sv
+
+./obj_dir/tb_user_spi_ctrl
+gtkwave tb_user_spi_ctrl.vcd
+
+#####       xorshift        #####
+verilator   -Wno-fatal -Wno-style   --timing --autoflush --trace --trace-structs   --binary -j 0   --top-module tb_xorshift  rtl/user_domain/tb_xorshift.sv rtl/user_domain/xorshift.sv
+
+./obj_dir/Vtb_xorshift
+
+gtkwave tb_xorshift.vcd
+
+#####       user_font_rom      #####
+
+verilator   --binary   --top tb_user_font_rom   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_font_rom   -f croc.f   rtl/user_domain/tb_user_font_rom.sv
+
+./obj_dir/tb_user_font_rom
+gtkwave tb_user_font_rom.vcd
+
+verilator   --binary   --top tb_user_domain_hw_ctrl   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_domain_hw_ctrl   -f croc_tb.f   rtl/user_domain/tb_user_domain_hw_ctrl.sv
 
 ./obj_dir/sim_user_domain_sw_cs
 

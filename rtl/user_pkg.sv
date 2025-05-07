@@ -52,7 +52,7 @@ package user_pkg;
     // Rule for SPI Peripheral (maps to index UserSpi = 1)
     map_rules[0] = '{ idx:        UserSpi,
                       start_addr: UserSpiAddrOffset,                  
-                      end_addr:   UserSpiAddrOffset + UserSpiAddrRange 
+                      end_addr:   UserSpiAddrOffset + UserPeriphRange 
                     };
         // Rule for SPI Control Registers (maps to index UserSpiCtrl = 2)
     map_rules[1] = '{ idx:        UserSpiCtrl,

@@ -1,12 +1,5 @@
-// Copyright 2024 ETH Zurich and University of Bologna.
-// Solderpad Hardware License, Version 0.51, see LICENSE for details.
-// SPDX-License-Identifier: SHL-0.51
-//
-// Authors:
-// - Philippe Sauter <phsauter@iis.ee.ethz.ch>
-
 module croc_soc import croc_pkg::*; #(
-  parameter int unsigned GpioCount = 16
+  parameter int unsigned GpioCount = 16 // Default GpioCount
 ) (
   input  logic clk_i,
   input  logic rst_ni,
@@ -24,124 +17,123 @@ module croc_soc import croc_pkg::*; #(
   input  logic uart_rx_i,
   output logic uart_tx_o,
 
-  input  logic [GpioCount-1:0] gpio_i,       // Input from GPIO pins
-  output logic [GpioCount-1:0] gpio_o,       // Output to GPIO pins
-  output logic [GpioCount-1:0] gpio_out_en_o, // Output enable signal; 0 -> input, 1 -> output
+  input  logic [GpioCount-1:0] gpio_i,
+  output logic [GpioCount-1:0] gpio_o,
+  output logic [GpioCount-1:0] gpio_out_en_o,
 
-  //  Ports for unused pins 
+  // Unused pins (if any, not used by this routing plan)
   output logic [3:0]             unused_o,
-  output logic [3:0]             unused_oe_o // Output enable for unused pins
+  output logic [3:0]             unused_oe_o
 );
 
   logic synced_rst_n, synced_fetch_en;
 
   rstgen i_rstgen (
-    .clk_i,
-    .rst_ni,
-    .test_mode_i ( testmode_i ),
-    .rst_no      ( synced_rst_n ),
-    .init_no ( )
+      .clk_i(clk_i),
+      .rst_ni(rst_ni),
+      .test_mode_i ( testmode_i ),
+      .rst_no      ( synced_rst_n ),
+      .init_no ( /* unconnected */ )
   );
 
   sync #(
       .STAGES     (    2 ),
       .ResetValue ( 1'b0 )
     ) i_ext_intr_sync (
-      .clk_i,
+      .clk_i (clk_i),
       .rst_ni   ( synced_rst_n    ),
       .serial_i ( fetch_en_i      ),
       .serial_o ( synced_fetch_en )
     );
 
-// Connection between Croc_domain and User_domain: User Sbr, Croc Mgr
-sbr_obi_req_t user_sbr_obi_req;
-sbr_obi_rsp_t user_sbr_obi_rsp;
+  sbr_obi_req_t user_sbr_obi_req;
+  sbr_obi_rsp_t user_sbr_obi_rsp;
+  mgr_obi_req_t user_mgr_obi_req;
+  mgr_obi_rsp_t user_mgr_obi_rsp;
 
-// Connection between Croc_domain and User_domain: Croc Sbr, User Mgr
-mgr_obi_req_t user_mgr_obi_req;
-mgr_obi_rsp_t user_mgr_obi_rsp;
+  logic [NumExternalIrqs-1:0] interrupts;
+  logic [GpioCount-1:0] gpio_in_sync;
 
-logic [NumExternalIrqs-1:0] interrupts;
-logic [GpioCount-1:0] gpio_in_sync;
-
-  // Wires for user domain SCK and MOSI
+  // Wires for user domain hardware-controlled outputs
   logic user_spi_sck;
   logic user_spi_mosi;
+  logic user_spi_cs1_no;
+  logic user_spi_cs2_no;
+  logic user_spi_dc_o;
 
-  // Intermediate wires for Croc domain GPIO outputs
-  logic [GpioCount-1:0] croc_gpio_o;
-  logic [GpioCount-1:0] croc_gpio_out_en_o;
+  // Intermediate wires for standard GPIO controller outputs
+  logic [GpioCount-1:0] croc_gpio_o_internal;
+  logic [GpioCount-1:0] croc_gpio_out_en_internal;
 
-croc_domain #(
-  .GpioCount( GpioCount ) 
-) i_croc (
-  .clk_i,
-  .rst_ni ( synced_rst_n ),
-  .ref_clk_i,
-  .testmode_i,
-  .fetch_en_i ( synced_fetch_en ),
-
-  .jtag_tck_i,
-  .jtag_tdi_i,
-  .jtag_tdo_o,
-  .jtag_tms_i,
-  .jtag_trst_ni,
-
-  .uart_rx_i,
-  .uart_tx_o,
-
-  .gpio_i,             
-  //  Connect GPIO outputs to intermediate wires
-  .gpio_o ( croc_gpio_o ),            
-  .gpio_out_en_o ( croc_gpio_out_en_o ),
-
-  .gpio_in_sync_o ( gpio_in_sync ),
-
-  .user_sbr_obi_req_o  ( user_sbr_obi_req ),
-  .user_sbr_obi_rsp_i  ( user_sbr_obi_rsp ),
-
-  .user_mgr_obi_req_i  ( user_mgr_obi_req ),
-  .user_mgr_obi_rsp_o  ( user_mgr_obi_rsp ),
-
-  .interrupts_i ( interrupts  ),
-  .core_busy_o  ( status_o    )
-);
-
-  user_domain #(
-    .GpioCount( GpioCount ) // Pass GpioCount if needed by gpio_in_sync_i connection
-  ) i_user (
-    .clk_i,
-    .rst_ni ( synced_rst_n ),
-    .ref_clk_i,
-    .testmode_i,
-    .user_sbr_obi_req_i ( user_sbr_obi_req ),
-    .user_sbr_obi_rsp_o ( user_sbr_obi_rsp ),
-    .user_mgr_obi_req_o ( user_mgr_obi_req ),
-    .user_mgr_obi_rsp_i ( user_mgr_obi_rsp ),
-    .gpio_in_sync_i ( gpio_in_sync ),
-    .interrupts_o   ( interrupts   ),
-    // Connect user domain SPI outputs (SCK and MOSI only)
-    .spi_sck_o      ( user_spi_sck  ),
-    .spi_mosi_o     ( user_spi_mosi )
+  croc_domain #(
+    .GpioCount( GpioCount )
+  ) i_croc (
+    .clk_i(clk_i), 
+    .rst_ni(synced_rst_n), 
+    .ref_clk_i(ref_clk_i), 
+    
+    .testmode_i(testmode_i), 
+    .fetch_en_i(synced_fetch_en),
+    
+    .jtag_tck_i(jtag_tck_i), 
+    .jtag_tdi_i(jtag_tdi_i), 
+    .jtag_tdo_o(jtag_tdo_o), 
+    .jtag_tms_i(jtag_tms_i), 
+    .jtag_trst_ni(jtag_trst_ni),
+    
+    .uart_rx_i(uart_rx_i), 
+    .uart_tx_o(uart_tx_o),
+    
+    .gpio_i(gpio_i),
+    .gpio_o        ( croc_gpio_o_internal        ), // To intermediate
+    .gpio_out_en_o ( croc_gpio_out_en_internal ), // To intermediate
+    .gpio_in_sync_o ( gpio_in_sync ),
+    .user_sbr_obi_req_o  ( user_sbr_obi_req ), .user_sbr_obi_rsp_i  ( user_sbr_obi_rsp ),
+    .user_mgr_obi_req_i  ( user_mgr_obi_req ), .user_mgr_obi_rsp_o  ( user_mgr_obi_rsp ),
+    .interrupts_i ( interrupts  ),
+    .core_busy_o  ( status_o    )
   );
 
-  //  Drive top-level GPIO outputs: assign SPI signals to GPIO pins 0, 1
-  //  Connect ALL standard GPIO outputs directly from the intermediate wires (driven by i_croc)
-  //  This allows software to control CS1, CS2, D/C etc. using standard GPIO registers.
-  assign gpio_o        = croc_gpio_o;
-  assign gpio_out_en_o = croc_gpio_out_en_o;
-  
-  // Drive top-level UNUSED outputs 
-  // Route hardware SPI signals from user_domain to unused[0:1]
-  assign unused_o[0] = user_spi_sck;
-  assign unused_o[1] = user_spi_mosi;
-  // Leave unused[2:3] unconnected or tied off if purely outputs
-  assign unused_o[3:2] = 2'b0; // Tie off unused outputs
+  user_domain #(
+    .GpioCount( GpioCount )
+  ) i_user (
+    .clk_i(clk_i), .rst_ni(synced_rst_n), .ref_clk_i(ref_clk_i), .testmode_i(testmode_i),
+    .user_sbr_obi_req_i ( user_sbr_obi_req ), .user_sbr_obi_rsp_o ( user_sbr_obi_rsp ),
+    .user_mgr_obi_req_o ( user_mgr_obi_req ), .user_mgr_obi_rsp_i ( user_mgr_obi_rsp ),
+    .gpio_in_sync_i ( gpio_in_sync ),
+    .interrupts_o   ( interrupts   ),
+    // Connect new hardware-controlled outputs
+    .spi_sck_o      ( user_spi_sck    ),
+    .spi_mosi_o     ( user_spi_mosi   ),
+    .spi_cs1_no     ( user_spi_cs1_no ),
+    .spi_cs2_no     ( user_spi_cs2_no ),
+    .spi_dc_o       ( user_spi_dc_o   )
+  );
 
-  // Set output enables for unused pins
-  assign unused_oe_o[0] = 1'b1; // SCK is always output
-  assign unused_oe_o[1] = 1'b1; // MOSI is always output
-  // Leave unused[2:3] output enables low (or connect if needed elsewhere)
-  assign unused_oe_o[3:2] = 2'b0; // Default output enables low
+  // Drive top-level GPIO outputs
+  // Pins 0-4 are now driven by user_domain
+  assign gpio_o[0] = user_spi_sck;
+  assign gpio_o[1] = user_spi_mosi;
+  assign gpio_o[2] = user_spi_cs1_no;
+  assign gpio_o[3] = user_spi_cs2_no;
+  assign gpio_o[4] = user_spi_dc_o;
+
+  // Pins 5 and up are driven by the standard GPIO controller
+  if (GpioCount > 5) begin : gen_remaining_gpio_o
+      assign gpio_o[GpioCount-1:5] = croc_gpio_o_internal[GpioCount-1:5];
+  end
+
+  // Drive top-level GPIO Output Enables
+  // Pins 0-4 are now dedicated outputs
+  assign gpio_out_en_o[4:0] = 5'b11111; // All five are outputs
+
+  // Pins 5 and up are controlled by the standard GPIO controller
+  if (GpioCount > 5) begin : gen_remaining_gpio_oe
+      assign gpio_out_en_o[GpioCount-1:5] = croc_gpio_out_en_internal[GpioCount-1:5];
+  end
+
+  // Tie off unused_o pins if not used elsewhere
+  assign unused_o    = 4'b0;
+  assign unused_oe_o = 4'b0; // Set as inputs (output enables low)
 
 endmodule
