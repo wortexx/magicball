@@ -10,7 +10,6 @@
 Vtb_user_domain_hw_ctrl::Vtb_user_domain_hw_ctrl(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vtb_user_domain_hw_ctrl__Syms(contextp(), _vcname__, this)}
-    , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , __PVT__soc_ctrl_reg_pkg{vlSymsp->TOP.__PVT__soc_ctrl_reg_pkg}
     , rootp{&(vlSymsp->TOP)}
 {

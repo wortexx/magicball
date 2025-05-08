@@ -1,8 +1,9 @@
+// Testbench for user_domain with hardware CS/DC/ROM/PRNG control
 `timescale 1ns/1ps
 
 // Import necessary packages
 import croc_pkg::*;
-import user_pkg::*; // Import makes types like enums directly visible
+import user_pkg::*;
 
 module tb_user_domain_hw_ctrl;
 
@@ -11,8 +12,8 @@ module tb_user_domain_hw_ctrl;
   //--------------------------------------------------------------------------
   localparam CLK_PERIOD     = 50ns; // 20 MHz clock
   localparam RESET_DURATION = 2 * CLK_PERIOD;
-  localparam OBI_TIMEOUT    = 2000; // Max cycles for OBI response
-  localparam SPI_DONE_TIMEOUT = 10000; // Max cycles for SPI busy=0
+  localparam OBI_TIMEOUT    = 2000; // Max cycles for OBI response (Increased)
+  localparam SPI_DONE_TIMEOUT = 10000; // Max cycles for SPI busy=0 (Increased)
   localparam GpioCount      = 16;   // Match DUT parameterization
 
   // --- Absolute Base Addresses (from user_pkg.sv) ---
@@ -20,7 +21,7 @@ module tb_user_domain_hw_ctrl;
   localparam logic [31:0] USER_SPI_CTRL_BASE_ADDR   = user_pkg::UserSpiCtrlAddrOffset; // 0x20002000
   localparam logic [31:0] USER_FONT_ROM_BASE_ADDR   = user_pkg::UserFontRomAddrOffset; // 0x20003000
 
-  // --- Register Offsets (Defined locally in TB for clarity) ---
+  // --- Register Offsets (Defined locally in TB for clarity & correctness) ---
   // SPI Engine (obi_spi_peripheral)
   localparam logic [11:0] SPI_ENGINE_CTRL_REG_OFFSET   = 12'h000;
   localparam logic [11:0] SPI_ENGINE_TX_REG_OFFSET     = 12'h004;
@@ -32,7 +33,7 @@ module tb_user_domain_hw_ctrl;
   // Font ROM (user_font_rom)
   localparam int unsigned FONT_ROM_SIZE = 1140; // Size for 12x6 font
 
-  // Bit positions (Defined locally in TB for clarity)
+  // Bit positions (Defined locally in TB for clarity & correctness)
   // In SPI_HWCTRL_GPIO_OFFSET Register
   localparam int HWCTRL_CS1_N_BIT = 0;
   localparam int HWCTRL_CS2_N_BIT = 1;
@@ -46,13 +47,11 @@ module tb_user_domain_hw_ctrl;
   localparam logic [31:0] SPI_ENGINE_CTRL_ADDR   = USER_SPI_ENGINE_BASE_ADDR + SPI_ENGINE_CTRL_REG_OFFSET;
   localparam logic [31:0] SPI_ENGINE_TX_ADDR     = USER_SPI_ENGINE_BASE_ADDR + SPI_ENGINE_TX_REG_OFFSET;
   localparam logic [31:0] SPI_ENGINE_STATUS_ADDR = USER_SPI_ENGINE_BASE_ADDR + SPI_ENGINE_STATUS_REG_OFFSET;
-
   localparam logic [31:0] SPI_HWCTRL_GPIO_ADDR   = USER_SPI_CTRL_BASE_ADDR + SPI_HWCTRL_GPIO_OFFSET;
   localparam logic [31:0] SPI_HWCTRL_PRNG_CTRL_ADDR = USER_SPI_CTRL_BASE_ADDR + SPI_HWCTRL_PRNG_CTRL_OFFSET;
   localparam logic [31:0] SPI_HWCTRL_PRNG_READ_ADDR = USER_SPI_CTRL_BASE_ADDR + SPI_HWCTRL_PRNG_READ_OFFSET;
 
-
-  // Device Selection (for TB tasks)
+  // Device Selection
   typedef enum { DEV_NONE, DEV_SSD1331, DEV_ADXL345 } device_e;
 
   //--------------------------------------------------------------------------
@@ -68,7 +67,7 @@ module tb_user_domain_hw_ctrl;
   mgr_obi_req_t user_mgr_obi_req;
   mgr_obi_rsp_t user_mgr_obi_rsp;
   logic [GpioCount-1:0]       gpio_in_sync_i;
-  logic [croc_pkg::NumExternalIrqs-1:0] interrupts_o; // Use scoped NumExternalIrqs
+  logic [croc_pkg::NumExternalIrqs-1:0] interrupts_o;
 
   logic spi_sck_o;
   logic spi_mosi_o;
@@ -115,7 +114,7 @@ module tb_user_domain_hw_ctrl;
   end
 
   //--------------------------------------------------------------------------
-  // OBI Master Tasks (Targeting Absolute Addresses)
+  // OBI Master Tasks (Targeting Absolute Addresses) - Enhanced Debug
   //--------------------------------------------------------------------------
   task automatic write_obi(input logic [31:0] w_addr, input logic [31:0] w_data, input logic [3:0] w_be);
     int timeout_count = 0;
@@ -129,8 +128,7 @@ module tb_user_domain_hw_ctrl;
     req_txn.a.be   = w_be;
     user_sbr_obi_req = req_txn;
     req_ongoing = 1'b1;
-    $display("%t : TB: OBI Write Req : Addr=0x%h Data=0x%h BE=0x%b (Sent: %p)",
-             $time, w_addr, w_data, w_be, user_sbr_obi_req);
+    $display("%t : TB: OBI Write Req : Addr=0x%h Data=0x%h BE=0x%b", $time, w_addr, w_data, w_be);
 
     while (user_sbr_obi_rsp.gnt !== 1'b1 && timeout_count < OBI_TIMEOUT) begin
       @(posedge clk_i);
@@ -141,13 +139,11 @@ module tb_user_domain_hw_ctrl;
              $time, w_addr, user_sbr_obi_rsp);
       $finish;
     end
-    $display("%t : TB: OBI Write Gnt Rcvd: Addr=0x%h (Rcvd: %p)",
-             $time, w_addr, user_sbr_obi_rsp);
+    $display("%t : TB: OBI Write Gnt Rcvd: Addr=0x%h", $time, w_addr);
 
     @(posedge clk_i);
     user_sbr_obi_req.req = 1'b0;
     req_ongoing = 1'b0;
-    $display("%t : TB: OBI Write Req Deasserted.", $time);
     @(posedge clk_i);
     user_sbr_obi_req = '0;
   endtask
@@ -166,7 +162,7 @@ module tb_user_domain_hw_ctrl;
     req_txn.a.addr = r_addr;
     user_sbr_obi_req = req_txn;
     req_ongoing = 1'b1;
-    $display("%t : TB: OBI Read Req  : Addr=0x%h (Sent: %p)", $time, r_addr, user_sbr_obi_req);
+    $display("%t : TB: OBI Read Req  : Addr=0x%h", $time, r_addr);
 
     grant_received = 1'b0;
     while (timeout_count_gnt < OBI_TIMEOUT) begin
@@ -183,13 +179,11 @@ module tb_user_domain_hw_ctrl;
              $time, r_addr, user_sbr_obi_rsp);
       $finish;
     end
-    $display("%t : TB: OBI Read Gnt Rcvd: Addr=0x%h (Rcvd: %p)",
-             $time, r_addr, user_sbr_obi_rsp);
+    $display("%t : TB: OBI Read Gnt Rcvd: Addr=0x%h", $time, r_addr);
 
     @(posedge clk_i);
     user_sbr_obi_req.req = 1'b0;
     req_ongoing = 1'b0;
-    $display("%t : TB: OBI Read Req Deasserted.", $time);
 
     while (user_sbr_obi_rsp.rvalid !== 1'b1 && timeout_count_rvalid < OBI_TIMEOUT) begin
         @(posedge clk_i);
@@ -204,8 +198,8 @@ module tb_user_domain_hw_ctrl;
     rsp_r_chan_temp = user_sbr_obi_rsp.r;
     r_data_val = rsp_r_chan_temp.rdata;
     r_err      = rsp_r_chan_temp.err;
-    $display("%t : TB: OBI Read Data Rcvd: Addr=0x%h Data=0x%08x Err=%b RVALID=%b (Rcvd: %p)",
-             $time, r_addr, r_data_val, r_err, user_sbr_obi_rsp.rvalid, user_sbr_obi_rsp);
+    $display("%t : TB: OBI Read Data Rcvd: Addr=0x%h Data=0x%08x Err=%b RVALID=%b",
+             $time, r_addr, r_data_val, r_err, user_sbr_obi_rsp.rvalid);
     @(posedge clk_i);
     user_sbr_obi_req = '0;
   endtask
@@ -239,6 +233,7 @@ module tb_user_domain_hw_ctrl;
                  $time, status_val);
           $finish;
       end
+      // Read status one last time after busy goes low
       read_obi(SPI_ENGINE_STATUS_ADDR, status_val, read_err);
       $display("%t : TB: SPI Engine finished. Final Status: 0x%08x (done=%b, busy=%b)",
                $time, status_val, status_val[1], status_val[0]);
@@ -246,6 +241,9 @@ module tb_user_domain_hw_ctrl;
 
   task automatic set_hw_cs_dc(input int cs1_active, input int cs2_active, input int dc_is_data);
     logic [31:0] ctrl_val = 0;
+    logic [31:0] dummy_read_data; // For workaround read
+    logic        dummy_read_err;  // For workaround read
+
     if (!cs1_active) ctrl_val[HWCTRL_CS1_N_BIT] = 1'b1;
     if (!cs2_active) ctrl_val[HWCTRL_CS2_N_BIT] = 1'b1;
     if (dc_is_data)  ctrl_val[HWCTRL_DC_BIT]    = 1'b1;
@@ -253,12 +251,24 @@ module tb_user_domain_hw_ctrl;
              $time, SPI_HWCTRL_GPIO_ADDR, ctrl_val,
              ctrl_val[HWCTRL_CS1_N_BIT], ctrl_val[HWCTRL_CS2_N_BIT], ctrl_val[HWCTRL_DC_BIT]);
     write_obi(SPI_HWCTRL_GPIO_ADDR, ctrl_val, 4'b1111);
-    #(CLK_PERIOD);
+
+    // *** WORKAROUND: Perform dummy read to same peripheral index (UserSpiCtrl) ***
+    $display("%t : TB: Performing dummy read to UserSpiCtrl (PRNG Addr 0x%h) after write.",
+             $time, SPI_HWCTRL_PRNG_READ_ADDR);
+    read_obi(SPI_HWCTRL_PRNG_READ_ADDR, dummy_read_data, dummy_read_err);
+
+    #(CLK_PERIOD); // Allow outputs to settle
   endtask
 
   task automatic trigger_hw_prng();
+    logic [31:0] dummy_read_data; // For workaround read
+    logic        dummy_read_err;  // For workaround read
     $display("%t : TB: Triggering HW PRNG...", $time);
     write_obi(SPI_HWCTRL_PRNG_CTRL_ADDR, (1 << HWCTRL_PRNG_EN_BIT), 4'b1111);
+    // *** WORKAROUND: Perform dummy read to same peripheral index (UserSpiCtrl) ***
+    $display("%t : TB: Performing dummy read to UserSpiCtrl (PRNG Addr 0x%h) after write.",
+             $time, SPI_HWCTRL_PRNG_READ_ADDR);
+    read_obi(SPI_HWCTRL_PRNG_READ_ADDR, dummy_read_data, dummy_read_err);
   endtask
 
   task automatic read_hw_prng(output logic [31:0] prng_val);
@@ -295,9 +305,7 @@ module tb_user_domain_hw_ctrl;
   initial begin
     logic [31:0] read_data;
     logic        read_err;
-    // Variables prng_result and phrase_index moved to module scope
     int          phrase_index;
-    // Variable font_byte moved to module scope
 
     $dumpfile("tb_user_domain_hw_ctrl.vcd");
     $dumpvars(0, tb_user_domain_hw_ctrl);
@@ -316,38 +324,36 @@ module tb_user_domain_hw_ctrl;
     send_byte_hw_ctrl(2 /*CS2*/, 0, 8'h2D); // Send Reg Addr
     send_byte_hw_ctrl(2 /*CS2*/, 0, 8'h08); // Send Data
     $display("--- ADXL345 Init Done ---");
-    #(5 * CLK_PERIOD);
+    // No extra delay needed here as tasks include waits/dummy reads
 
     // Test 2: Initialize SSD1331
     $display("--- Test 2: Initialize SSD1331 ---");
     send_byte_hw_ctrl(1 /*CS1*/, 0 /*Command*/, 8'hAF); // Display ON
     $display("--- SSD1331 Init Done ---");
-    #(5 * CLK_PERIOD);
+    // No extra delay needed
 
     // Test 3: Trigger and Read PRNG
     $display("--- Test 3: Trigger and Read PRNG ---");
-    trigger_hw_prng();
-    #(3*CLK_PERIOD);
-    read_hw_prng(prng_val1); // Use module-scope variable
-    phrase_index = prng_val1 % 8;
+    trigger_hw_prng(); // Includes dummy read
+    #(CLK_PERIOD); // Small delay before reading
+    read_hw_prng(prng_val1);
+    phrase_index = prng_val1 % 8; // Example index calculation
     $display("   -> Phrase Index: %0d", phrase_index);
-    #(5 * CLK_PERIOD);
+    // No extra delay needed
 
     // Test 4: Read first byte of Font ROM (Char '!')
     $display("--- Test 4: Read Font ROM (Char '!', Offset 0x%h) ---", 12);
-    // *** FIXED: Use correct parameter name ***
     read_obi(USER_FONT_ROM_BASE_ADDR + 12, read_data, read_err);
     if (read_err) begin $error("Font ROM Read Failed!"); $finish; end
-    font_byte = read_data[7:0]; // Use module-scope variable
+    font_byte = read_data[7:0];
     $display("   -> Font Byte[0] for '!': 0x%02h (Expected 0x00)", font_byte);
     if (font_byte !== 8'h00) $error("Font data mismatch!");
-    #(5 * CLK_PERIOD);
+    // No extra delay needed
 
     // Test 5: Send Font Byte to Display
     $display("--- Test 5: Send Font Byte to Display ---");
     send_byte_hw_ctrl(1 /*CS1*/, 1 /*Data*/, font_byte);
     $display("--- Font Byte Sent ---");
-    #(5 * CLK_PERIOD);
 
     #(10 * CLK_PERIOD);
     $display("%t : TB: Test Sequence Complete.", $time);

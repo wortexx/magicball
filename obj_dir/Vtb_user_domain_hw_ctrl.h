@@ -13,7 +13,6 @@
 class Vtb_user_domain_hw_ctrl__Syms;
 class Vtb_user_domain_hw_ctrl___024root;
 class VerilatedVcdC;
-class Vtb_user_domain_hw_ctrl___024unit;
 class Vtb_user_domain_hw_ctrl_soc_ctrl_reg_pkg;
 
 
@@ -36,7 +35,6 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_user_domain_hw_ctrl VL_NOT_FINAL : public
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
-    Vtb_user_domain_hw_ctrl___024unit* const __PVT____024unit;
     Vtb_user_domain_hw_ctrl_soc_ctrl_reg_pkg* const __PVT__soc_ctrl_reg_pkg;
 
     // Root instance pointer to allow access to model internals,

@@ -34,7 +34,6 @@ class alignas(VL_CACHE_LINE_BYTES)Vtb_user_domain_hw_ctrl__Syms final : public V
 
     // MODULE INSTANCE STATE
     Vtb_user_domain_hw_ctrl___024root TOP;
-    Vtb_user_domain_hw_ctrl___024unit TOP____024unit;
     Vtb_user_domain_hw_ctrl_soc_ctrl_reg_pkg TOP__soc_ctrl_reg_pkg;
 
     // SCOPE NAMES

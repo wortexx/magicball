@@ -7,7 +7,6 @@
 
 #include "verilated.h"
 #include "verilated_timing.h"
-class Vtb_user_domain_hw_ctrl___024unit;
 class Vtb_user_domain_hw_ctrl_soc_ctrl_reg_pkg;
 
 
@@ -16,7 +15,6 @@ class Vtb_user_domain_hw_ctrl__Syms;
 class alignas(VL_CACHE_LINE_BYTES) Vtb_user_domain_hw_ctrl___024root final : public VerilatedModule {
   public:
     // CELLS
-    Vtb_user_domain_hw_ctrl___024unit* __PVT____024unit;
     Vtb_user_domain_hw_ctrl_soc_ctrl_reg_pkg* __PVT__soc_ctrl_reg_pkg;
 
     // DESIGN SPECIFIC STATE
@@ -69,6 +67,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_user_domain_hw_ctrl___024root final : pub
         CData/*1:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits;
         CData/*0:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__done_q;
         CData/*0:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__read_req_accepted;
+        CData/*2:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_bit_idx_calc;
         CData/*0:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs1_n_q;
         CData/*0:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs1_n_d;
         CData/*0:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs2_n_q;
@@ -85,13 +84,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_user_domain_hw_ctrl___024root final : pub
         CData/*0:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rvalid_q;
         CData/*0:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__read_req_accepted;
         CData/*0:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__read_req;
-        CData/*7:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__56__byte_val;
     };
     struct {
-        CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__busy_bit;
-        CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__done_bit_tb;
-        CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__read_err;
-        CData/*0:0*/ __Vdly__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q;
+        CData/*7:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val;
         CData/*0:0*/ __Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__0;
         CData/*0:0*/ __Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_w__0;
         CData/*0:0*/ __Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_r__0;
@@ -118,11 +113,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_user_domain_hw_ctrl___024root final : pub
         IData/*31:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__t1;
         IData/*31:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__t2;
         IData/*31:0*/ tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rdata_q;
-        IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__56__cs_pin_idx;
-        IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__56__is_data;
-        IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__status_val;
-        IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__timeout_count;
-        IData/*31:0*/ __Vdly__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q;
+        IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx;
+        IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data;
         IData/*31:0*/ __VactIterCount;
         VlWide<3>/*73:0*/ tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req;
         QData/*36:0*/ tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp;
@@ -137,7 +129,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_user_domain_hw_ctrl___024root final : pub
         QData/*38:0*/ __Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp__1;
         QData/*38:0*/ __Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp__1;
         VlUnpacked<CData/*7:0*/, 1140> tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rom_data;
-        VlUnpacked<CData/*0:0*/, 10> __Vm_traceActivity;
+        VlUnpacked<CData/*0:0*/, 9> __Vm_traceActivity;
     };
     VlDelayScheduler __VdlySched;
     VlTriggerScheduler __VtrigSched_h15786638__0;

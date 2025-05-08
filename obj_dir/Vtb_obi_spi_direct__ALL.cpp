@@ -8,8 +8,6 @@
 #include "Vtb_obi_spi_direct___024root__Slow.cpp"
 #include "Vtb_obi_spi_direct___024root__DepSet_h4f1d96ef__0__Slow.cpp"
 #include "Vtb_obi_spi_direct___024root__DepSet_h562ebb3d__0__Slow.cpp"
-#include "Vtb_obi_spi_direct___024unit__Slow.cpp"
-#include "Vtb_obi_spi_direct___024unit__DepSet_h5de096ff__0__Slow.cpp"
 #include "Vtb_obi_spi_direct__Syms.cpp"
 #include "Vtb_obi_spi_direct__Trace__0__Slow.cpp"
 #include "Vtb_obi_spi_direct__TraceDecls__0__Slow.cpp"

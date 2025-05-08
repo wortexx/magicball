@@ -79,7 +79,7 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___eval_settle(Vtb_user_domai
 #ifdef VL_DEBUG
             Vtb_user_domain_hw_ctrl___024root___dump_triggers__stl(vlSelf);
 #endif
-            VL_FATAL_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 7, "", "Settle region did not converge.");
+            VL_FATAL_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 8, "", "Settle region did not converge.");
         }
         __VstlIterCount = ((IData)(1U) + __VstlIterCount);
         __VstlContinue = 0U;
@@ -188,17 +188,10 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___stl_sequent__TOP__0(Vtb_us
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_d 
         = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_sck_o = 0U;
-    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d 
-        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d 
         = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q;
-    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits 
-        = (((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__done_q) 
-            << 1U) | ((0U != (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
-                      & (3U != (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))));
-    vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_mosi_o 
-        = (1U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
-                 >> (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q)));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d 
+        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q;
     if ((1U & (~ ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q) 
                   >> 1U)))) {
         if ((1U & (~ (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)))) {
@@ -206,16 +199,21 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___stl_sequent__TOP__0(Vtb_us
                 vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d = 0U;
             }
         }
-        if ((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
-            vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_mosi_o 
-                = (1U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
-                         >> 7U));
-        }
     }
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits 
+        = (((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__done_q) 
+            << 1U) | ((0U != (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
+                      & (3U != (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))));
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d 
         = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_d 
         = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__t1 
+        = (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__state_q 
+           ^ VL_SHIFTL_III(32,32,32, vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__state_q, 0xdU));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_mosi_o 
+        = (1U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
+                 >> (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q)));
     if ((2U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no 
             = (1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q));
@@ -231,6 +229,14 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___stl_sequent__TOP__0(Vtb_us
                         = (7U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q) 
                                  - (IData)(1U)));
                 }
+                vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_bit_idx_calc 
+                    = (7U & ((0U == (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q))
+                              ? (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q)
+                              : ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q) 
+                                 - (IData)(1U))));
+                vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_mosi_o 
+                    = (1U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
+                             >> (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_bit_idx_calc)));
             }
         }
         if ((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q))) {
@@ -247,13 +253,13 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___stl_sequent__TOP__0(Vtb_us
             vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d = 0U;
             vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d = 7U;
             vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 2U;
+            vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_mosi_o 
+                = (1U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q) 
+                         >> 7U));
         } else if (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q) {
             vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_d = 1U;
         }
     }
-    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__t1 
-        = (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__state_q 
-           ^ VL_SHIFTL_III(32,32,32, vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__state_q, 0xdU));
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx = 0U;
     if (((0x20001000U <= ((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
                            << 0x16U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
@@ -705,7 +711,6 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root____Vm_traceActivitySetAll(Vt
     vlSelfRef.__Vm_traceActivity[6U] = 1U;
     vlSelfRef.__Vm_traceActivity[7U] = 1U;
     vlSelfRef.__Vm_traceActivity[8U] = 1U;
-    vlSelfRef.__Vm_traceActivity[9U] = 1U;
 }
 
 VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___ctor_var_reset(Vtb_user_domain_hw_ctrl___024root* vlSelf) {
@@ -776,6 +781,7 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___ctor_var_reset(Vtb_user_do
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits = VL_RAND_RESET_I(2);
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__done_q = VL_RAND_RESET_I(1);
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__read_req_accepted = VL_RAND_RESET_I(1);
+    vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_bit_idx_calc = VL_RAND_RESET_I(3);
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs1_n_q = VL_RAND_RESET_I(1);
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs1_n_d = VL_RAND_RESET_I(1);
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs2_n_q = VL_RAND_RESET_I(1);
@@ -802,16 +808,9 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___ctor_var_reset(Vtb_user_do
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rdata_q = VL_RAND_RESET_I(32);
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__read_req_accepted = VL_RAND_RESET_I(1);
     vlSelf->tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__read_req = VL_RAND_RESET_I(1);
-    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__56__cs_pin_idx = 0;
-    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__56__is_data = 0;
-    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__56__byte_val = VL_RAND_RESET_I(8);
-    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__status_val = VL_RAND_RESET_I(32);
-    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__busy_bit = VL_RAND_RESET_I(1);
-    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__done_bit_tb = VL_RAND_RESET_I(1);
-    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__read_err = VL_RAND_RESET_I(1);
-    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__67__timeout_count = 0;
-    vlSelf->__Vdly__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q = VL_RAND_RESET_I(1);
-    vlSelf->__Vdly__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q = VL_RAND_RESET_I(32);
+    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx = 0;
+    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data = 0;
+    vlSelf->__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val = VL_RAND_RESET_I(8);
     vlSelf->__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp__0 = VL_RAND_RESET_Q(39);
     vlSelf->__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp__0 = VL_RAND_RESET_Q(39);
     vlSelf->__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__0 = VL_RAND_RESET_I(1);
@@ -826,7 +825,7 @@ VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___ctor_var_reset(Vtb_user_do
     vlSelf->__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__clk_i__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__rst_ni__0 = VL_RAND_RESET_I(1);
     vlSelf->__VactDidInit = 0;
-    for (int __Vi0 = 0; __Vi0 < 10; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 9; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
 }
