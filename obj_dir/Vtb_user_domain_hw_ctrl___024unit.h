@@ -14,6 +14,9 @@ class Vtb_user_domain_hw_ctrl__Syms;
 class alignas(VL_CACHE_LINE_BYTES) Vtb_user_domain_hw_ctrl___024unit final : public VerilatedModule {
   public:
 
+    // DESIGN SPECIFIC STATE
+    static VlUnpacked<std::string, 4> __Venumtab_enum_name363;
+
     // INTERNAL VARIABLES
     Vtb_user_domain_hw_ctrl__Syms* const vlSymsp;
 

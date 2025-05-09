@@ -1,3 +1,53 @@
+/*`include "register_interface/typedef.svh"
+`include "obi/typedef.svh"
+
+package user_pkg;
+
+  import croc_pkg::*; // For addr_map_rule_t and UserBaseAddr
+
+  // User Manager Address maps - None for this design
+  // User Subordinate Address maps
+
+  localparam int unsigned NumUserDomainSubordinates = 1; // Only the SPI Engine
+
+  // Address Definitions
+  localparam bit [31:0] UserDomainBaseAddr  = croc_pkg::UserBaseAddr; // e.g., 32'h2000_0000
+  localparam bit [31:0] UserPeriphRange     = 32'h0000_1000;          // 4KB range
+
+  // SPI Engine is placed after the conventional User ROM space
+  localparam bit [31:0] UserSpiAddrOffset = UserDomainBaseAddr + 1 * UserPeriphRange; // e.g., 0x20001000
+
+  // Demux Configuration
+  localparam int unsigned NumDemuxSbrRules  = NumUserDomainSubordinates; // 1 rule
+  localparam int unsigned NumDemuxSbr       = NumDemuxSbrRules + 1;      // 2 ports (Error + SPI Engine)
+
+  // Enum for bus indices for the user_domain demux
+  typedef enum int {
+    UserError = 0, // Default/Error slave
+    UserSpi   = 1  // SPI Engine
+  } user_demux_outputs_e;
+
+  // Register Offsets within obi_spi_peripheral (mirrored here for TB convenience)
+  localparam logic [11:0] SPI_ENGINE_CTRL_REG_OFFSET   = 12'h000;
+  localparam logic [11:0] SPI_ENGINE_TX_REG_OFFSET     = 12'h004;
+  localparam logic [11:0] SPI_ENGINE_STATUS_REG_OFFSET = 12'h008;
+
+  // Function to initialize the address map for user_domain
+  function automatic croc_pkg::addr_map_rule_t [NumDemuxSbrRules-1:0] init_user_addr_map();
+    croc_pkg::addr_map_rule_t [NumDemuxSbrRules-1:0] map_rules; // Array size [0:0]
+    map_rules[0] = '{ idx:        UserSpi,
+                      start_addr: UserSpiAddrOffset,
+                      end_addr:   UserSpiAddrOffset + UserPeriphRange
+                    };
+    return map_rules;
+  endfunction
+
+  localparam croc_pkg::addr_map_rule_t [NumDemuxSbrRules-1:0] user_addr_map = init_user_addr_map();
+
+endpackage
+*/
+///*
+
 `include "register_interface/typedef.svh" // Assuming this defines register types if needed
 `include "obi/typedef.svh"               // Assuming this defines OBI types if needed
 
@@ -71,3 +121,4 @@ package user_pkg;
   localparam croc_pkg::addr_map_rule_t [NumDemuxSbrRules-1:0] user_addr_map = init_user_addr_map();
 
 endpackage
+//*/

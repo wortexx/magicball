@@ -36,10 +36,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_obi_spi_direct___024root final : public V
     CData/*1:0*/ tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q;
     CData/*1:0*/ tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d;
     CData/*0:0*/ tb_obi_spi_direct__DOT__dut__DOT__rvalid_q;
-    CData/*1:0*/ tb_obi_spi_direct__DOT__dut__DOT__status_bits;
     CData/*0:0*/ tb_obi_spi_direct__DOT__dut__DOT__done_q;
-    CData/*0:0*/ tb_obi_spi_direct__DOT__dut__DOT__read_req_accepted;
-    CData/*2:0*/ tb_obi_spi_direct__DOT__dut__DOT__unnamedblk1__DOT__next_bit_idx_calc;
+    CData/*0:0*/ tb_obi_spi_direct__DOT__dut__DOT__read_req_accepted_this_cycle;
+    CData/*2:0*/ tb_obi_spi_direct__DOT__dut__DOT__unnamedblk1__DOT__next_mosi_idx;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __Vtrigprevexpr___TOP__tb_obi_spi_direct__DOT__clk__0;
     CData/*0:0*/ __Vtrigprevexpr___TOP__tb_obi_spi_direct__DOT__rst_ni__0;

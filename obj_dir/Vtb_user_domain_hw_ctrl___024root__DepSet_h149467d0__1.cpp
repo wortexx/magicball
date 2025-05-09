@@ -12,6 +12,166 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Init
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__done_bit_tb;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__done_bit_tb = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__read_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__read_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_data_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_gnt;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_rvalid;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn);
+    QData/*36:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__rsp_r_chan_temp;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__rsp_r_chan_temp = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__grant_received;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__grant_received = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_data_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_gnt;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_rvalid;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn);
+    QData/*36:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__rsp_r_chan_temp;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__rsp_r_chan_temp = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__grant_received;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__grant_received = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_data_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_gnt;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_rvalid;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn);
+    QData/*36:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__rsp_r_chan_temp;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__rsp_r_chan_temp = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__grant_received;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__grant_received = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__cs1_active;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__cs1_active = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__cs2_active;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__cs2_active = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__dc_is_data;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__dc_is_data = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_data;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_data = 0;
+    CData/*3:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_be;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_be = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__timeout_count;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__timeout_count = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn);
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_data_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_gnt;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_rvalid;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn);
+    QData/*36:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__rsp_r_chan_temp;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__rsp_r_chan_temp = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__grant_received;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__grant_received = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_data;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_data = 0;
+    CData/*3:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_be;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_be = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__timeout_count;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__timeout_count = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn);
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_data_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_gnt;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_rvalid;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn);
+    QData/*36:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__rsp_r_chan_temp;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__rsp_r_chan_temp = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__grant_received;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__grant_received = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__prng_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__prng_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__read_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__read_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_data_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_gnt;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_rvalid;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn);
+    QData/*36:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__rsp_r_chan_temp;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__rsp_r_chan_temp = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__grant_received;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__grant_received = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_data_val = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_err;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_gnt;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_rvalid;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_rvalid = 0;
+    VlWide<3>/*73:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn;
+    VL_ZERO_W(74, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn);
+    QData/*36:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__rsp_r_chan_temp;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__rsp_r_chan_temp = 0;
+    CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__grant_received;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__grant_received = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx = 0;
+    IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data = 0;
+    CData/*7:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val = 0;
     IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__67__cs1_active;
     __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__67__cs1_active = 0;
     IData/*31:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__67__cs2_active;
@@ -251,9 +411,5332 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     CData/*0:0*/ __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__grant_received;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__grant_received = 0;
     // Body
-    if (VL_UNLIKELY((1U == vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx))) {
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         110);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for SPI Engine to finish...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9);
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         135);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr = 0x20001008U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_gnt = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_rvalid = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         115);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[0U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[1U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[0U] 
+        = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[0U]);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[1U] 
+        = ((0x1ffU & __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[1U]) 
+           | ((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr)) 
+                       << 1U)) << 9U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[2U] 
+        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr)) 
+                               << 1U)) >> 0x17U) | 
+                     ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr)) 
+                                << 1U) >> 0x20U)) << 9U)));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[0U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[1U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__req_txn[2U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__grant_received = 0U;
+    {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_gnt)) {
+            if (((0x9bU >= ((IData)(1U) + (0xffU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                           (((IData)(1U) + (0xffU & 
+                                            ((IData)(0x27U) 
+                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                            >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) {
+                __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__grant_received = 1U;
+                goto __Vlabel24;
+            }
+            co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                 "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                 119);
+            vlSelfRef.__Vm_traceActivity[3U] = 1U;
+            __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_gnt 
+                = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_gnt);
+        }
+        __Vlabel24: ;
+    }
+    if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__grant_received))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         122);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr);
+    while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (7U & (((IData)(0x27U) * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                 >> 5U))] >> (0x1fU 
+                                              & ((IData)(0x27U) 
+                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             124);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+    }
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__rsp_r_chan_temp 
+        = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
+                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                   (((IData)(0x26U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                    >> 5U)])) 
+                                   << ((0U == (0x1fU 
+                                               & ((IData)(2U) 
+                                                  + 
+                                                  (0xffU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                        ? 0x20U : ((IData)(0x40U) 
+                                                   - 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                  | (((0U == (0x1fU 
+                                              & ((IData)(2U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                       ? 0ULL : ((QData)((IData)(
+                                                                 vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                 (((IData)(0x21U) 
+                                                                   + 
+                                                                   (0xffU 
+                                                                    & ((IData)(0x27U) 
+                                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                  >> 5U)])) 
+                                                 << 
+                                                 ((IData)(0x20U) 
+                                                  - 
+                                                  (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                     | ((QData)((IData)(
+                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                        (((IData)(2U) 
+                                                          + 
+                                                          (0xffU 
+                                                           & ((IData)(0x27U) 
+                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                         >> 5U)])) 
+                                        >> (0x1fU & 
+                                            ((IData)(2U) 
+                                             + (0xffU 
+                                                & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+            : 0ULL);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_data_val 
+        = (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__rsp_r_chan_temp 
+                   >> 5U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_err 
+        = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__rsp_r_chan_temp 
+                         >> 1U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_addr,
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_data_val,
+                 1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_err),
+                 1,((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                    && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                              (7U & (((IData)(0x27U) 
+                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                     >> 5U))] >> (0x1fU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         129);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__read_err 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__54__r_err;
+    if (VL_UNLIKELY(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__read_err)) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9);
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
+    }
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit 
+        = (1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__done_bit_tb 
+        = (1U & (__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val 
+                 >> 1U));
+    VL_WRITEF_NX("%t : TB: Polling SPI Engine Status (Addr 0x20001008): 0x%08x (done=%b, busy=%b)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val,
+                 1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__done_bit_tb),
+                 1,__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count 
+        = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count);
+    if (__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             141);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    }
+    while (((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit) 
+            & VL_GTS_III(32, 0x3a98U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count))) {
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr = 0x20001008U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_gnt = 0U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_rvalid = 0U;
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             115);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[0U] = 0U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[1U] = 0U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[2U] = 0U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[0U] 
+            = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[0U]);
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[1U] 
+            = ((0x1ffU & __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[1U]) 
+               | ((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr)) 
+                           << 1U)) << 9U));
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[2U] 
+            = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr)) 
+                                   << 1U)) >> 0x17U) 
+                         | ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr)) 
+                                      << 1U) >> 0x20U)) 
+                            << 9U)));
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+            = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[0U];
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+            = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[1U];
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+            = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__req_txn[2U];
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr,
+                     74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__grant_received = 0U;
+        {
+            while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_gnt)) {
+                if (((0x9bU >= ((IData)(1U) + (0xffU 
+                                               & ((IData)(0x27U) 
+                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                     && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                               (((IData)(1U) + (0xffU 
+                                                & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                >> 5U)] >> (0x1fU & 
+                                            ((IData)(1U) 
+                                             + (0xffU 
+                                                & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) {
+                    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__grant_received = 1U;
+                    goto __Vlabel25;
+                }
+                co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                     nullptr, 
+                                                                     "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                     "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                     119);
+                vlSelfRef.__Vm_traceActivity[3U] = 1U;
+                __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_gnt 
+                    = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_gnt);
+            }
+            __Vlabel25: ;
+        }
+        if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__grant_received))))) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
+                         64,VL_TIME_UNITED_Q(1000),
+                         -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
+                         -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr,
+                         39,((((0x9bU >= ((IData)(2U) 
+                                          + (0xffU 
+                                             & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                                ? (0x1fffffffffULL 
+                                   & (((QData)((IData)(
+                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                       (((IData)(0x26U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                        >> 5U)])) 
+                                       << ((0U == (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                            ? 0x20U
+                                            : ((IData)(0x40U) 
+                                               - (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                      | (((0U == (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                           ? 0ULL : 
+                                          ((QData)((IData)(
+                                                           vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                           (((IData)(0x21U) 
+                                                             + 
+                                                             (0xffU 
+                                                              & ((IData)(0x27U) 
+                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                            >> 5U)])) 
+                                           << ((IData)(0x20U) 
+                                               - (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                         | ((QData)((IData)(
+                                                            vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                            (((IData)(2U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             >> 5U)])) 
+                                            >> (0x1fU 
+                                                & ((IData)(2U) 
+                                                   + 
+                                                   (0xffU 
+                                                    & ((IData)(0x27U) 
+                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                                : 0ULL) << 2U) | (QData)((IData)(
+                                                                 ((((0x9bU 
+                                                                     >= 
+                                                                     ((IData)(1U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                    && (1U 
+                                                                        & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                           (((IData)(1U) 
+                                                                             + 
+                                                                             (0xffU 
+                                                                              & ((IData)(0x27U) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                            >> 5U)] 
+                                                                           >> 
+                                                                           (0x1fU 
+                                                                            & ((IData)(1U) 
+                                                                               + 
+                                                                               (0xffU 
+                                                                                & ((IData)(0x27U) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                                   << 1U) 
+                                                                  | ((0x9bU 
+                                                                      >= 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     && (1U 
+                                                                         & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                            (7U 
+                                                                             & (((IData)(0x27U) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                                >> 5U))] 
+                                                                            >> 
+                                                                            (0x1fU 
+                                                                             & ((IData)(0x27U) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        }
+        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             122);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+            = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+        VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr);
+        while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                    && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                              (7U & (((IData)(0x27U) 
+                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                     >> 5U))] >> (0x1fU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
+                & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_rvalid))) {
+            co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                 "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                 124);
+            vlSelfRef.__Vm_traceActivity[3U] = 1U;
+            __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_rvalid 
+                = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_rvalid);
+        }
+        if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__timeout_count_rvalid))) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
+                         64,VL_TIME_UNITED_Q(1000),
+                         -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
+                         -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr,
+                         39,((((0x9bU >= ((IData)(2U) 
+                                          + (0xffU 
+                                             & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                                ? (0x1fffffffffULL 
+                                   & (((QData)((IData)(
+                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                       (((IData)(0x26U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                        >> 5U)])) 
+                                       << ((0U == (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                            ? 0x20U
+                                            : ((IData)(0x40U) 
+                                               - (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                      | (((0U == (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                           ? 0ULL : 
+                                          ((QData)((IData)(
+                                                           vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                           (((IData)(0x21U) 
+                                                             + 
+                                                             (0xffU 
+                                                              & ((IData)(0x27U) 
+                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                            >> 5U)])) 
+                                           << ((IData)(0x20U) 
+                                               - (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                         | ((QData)((IData)(
+                                                            vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                            (((IData)(2U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             >> 5U)])) 
+                                            >> (0x1fU 
+                                                & ((IData)(2U) 
+                                                   + 
+                                                   (0xffU 
+                                                    & ((IData)(0x27U) 
+                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                                : 0ULL) << 2U) | (QData)((IData)(
+                                                                 ((((0x9bU 
+                                                                     >= 
+                                                                     ((IData)(1U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                    && (1U 
+                                                                        & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                           (((IData)(1U) 
+                                                                             + 
+                                                                             (0xffU 
+                                                                              & ((IData)(0x27U) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                            >> 5U)] 
+                                                                           >> 
+                                                                           (0x1fU 
+                                                                            & ((IData)(1U) 
+                                                                               + 
+                                                                               (0xffU 
+                                                                                & ((IData)(0x27U) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                                   << 1U) 
+                                                                  | ((0x9bU 
+                                                                      >= 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     && (1U 
+                                                                         & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                            (7U 
+                                                                             & (((IData)(0x27U) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                                >> 5U))] 
+                                                                            >> 
+                                                                            (0x1fU 
+                                                                             & ((IData)(0x27U) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        }
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__rsp_r_chan_temp 
+            = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
+                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                ? (0x1fffffffffULL & (((QData)((IData)(
+                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                       (((IData)(0x26U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                        >> 5U)])) 
+                                       << ((0U == (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                            ? 0x20U
+                                            : ((IData)(0x40U) 
+                                               - (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                      | (((0U == (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                           ? 0ULL : 
+                                          ((QData)((IData)(
+                                                           vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                           (((IData)(0x21U) 
+                                                             + 
+                                                             (0xffU 
+                                                              & ((IData)(0x27U) 
+                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                            >> 5U)])) 
+                                           << ((IData)(0x20U) 
+                                               - (0x1fU 
+                                                  & ((IData)(2U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                         | ((QData)((IData)(
+                                                            vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                            (((IData)(2U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             >> 5U)])) 
+                                            >> (0x1fU 
+                                                & ((IData)(2U) 
+                                                   + 
+                                                   (0xffU 
+                                                    & ((IData)(0x27U) 
+                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                : 0ULL);
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_data_val 
+            = (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__rsp_r_chan_temp 
+                       >> 5U));
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_err 
+            = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__rsp_r_chan_temp 
+                             >> 1U)));
+        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_addr,
+                     32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_data_val,
+                     1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_err),
+                     1,((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                        && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                  (7U & (((IData)(0x27U) 
+                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                         >> 5U))] >> 
+                                  (0x1fU & ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             129);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+        vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val 
+            = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_data_val;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__read_err 
+            = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__55__r_err;
+        if (VL_UNLIKELY(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__read_err)) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
+                         64,VL_TIME_UNITED_Q(1000),
+                         -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
+                         -9);
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
+        }
+        __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit 
+            = (1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val);
+        __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__done_bit_tb 
+            = (1U & (__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val 
+                     >> 1U));
+        VL_WRITEF_NX("%t : TB: Polling SPI Engine Status (Addr 0x20001008): 0x%08x (done=%b, busy=%b)\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val,
+                     1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__done_bit_tb),
+                     1,__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit);
+        __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count);
+        if (__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__busy_bit) {
+            co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                 "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                 141);
+            vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        }
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x3a98U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:143: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: Timeout SPI Engine idle. Status: 0x%08x\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val);
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 143, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 143, "");
+    }
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr = 0x20001008U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_gnt = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_rvalid = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         115);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[0U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[1U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[0U] 
+        = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[0U]);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[1U] 
+        = ((0x1ffU & __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[1U]) 
+           | ((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr)) 
+                       << 1U)) << 9U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[2U] 
+        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr)) 
+                               << 1U)) >> 0x17U) | 
+                     ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr)) 
+                                << 1U) >> 0x20U)) << 9U)));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[0U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[1U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__req_txn[2U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__grant_received = 0U;
+    {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_gnt)) {
+            if (((0x9bU >= ((IData)(1U) + (0xffU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                           (((IData)(1U) + (0xffU & 
+                                            ((IData)(0x27U) 
+                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                            >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) {
+                __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__grant_received = 1U;
+                goto __Vlabel26;
+            }
+            co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                 "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                 119);
+            vlSelfRef.__Vm_traceActivity[3U] = 1U;
+            __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_gnt 
+                = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_gnt);
+        }
+        __Vlabel26: ;
+    }
+    if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__grant_received))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         122);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr);
+    while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (7U & (((IData)(0x27U) * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                 >> 5U))] >> (0x1fU 
+                                              & ((IData)(0x27U) 
+                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             124);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+    }
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__rsp_r_chan_temp 
+        = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
+                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                   (((IData)(0x26U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                    >> 5U)])) 
+                                   << ((0U == (0x1fU 
+                                               & ((IData)(2U) 
+                                                  + 
+                                                  (0xffU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                        ? 0x20U : ((IData)(0x40U) 
+                                                   - 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                  | (((0U == (0x1fU 
+                                              & ((IData)(2U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                       ? 0ULL : ((QData)((IData)(
+                                                                 vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                 (((IData)(0x21U) 
+                                                                   + 
+                                                                   (0xffU 
+                                                                    & ((IData)(0x27U) 
+                                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                  >> 5U)])) 
+                                                 << 
+                                                 ((IData)(0x20U) 
+                                                  - 
+                                                  (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                     | ((QData)((IData)(
+                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                        (((IData)(2U) 
+                                                          + 
+                                                          (0xffU 
+                                                           & ((IData)(0x27U) 
+                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                         >> 5U)])) 
+                                        >> (0x1fU & 
+                                            ((IData)(2U) 
+                                             + (0xffU 
+                                                & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+            : 0ULL);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_data_val 
+        = (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__rsp_r_chan_temp 
+                   >> 5U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_err 
+        = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__rsp_r_chan_temp 
+                         >> 1U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_addr,
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_data_val,
+                 1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_err),
+                 1,((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                    && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                              (7U & (((IData)(0x27U) 
+                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                     >> 5U))] >> (0x1fU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         129);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__read_err 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__56__r_err;
+    VL_WRITEF_NX("%t : TB: SPI Engine finished. Final Status: 0x%08x (done=%b, busy=%b)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val,
+                 1,(1U & (__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val 
+                          >> 1U)),1,(1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__53__status_val));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__dc_is_data 
+        = vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__40__is_data;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__cs2_active = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__cs1_active = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val = 0U;
+    if ((1U & (~ (IData)((0U != __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__cs1_active))))) {
+        __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val 
+            = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val);
+    }
+    if ((1U & (~ (IData)((0U != __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__cs2_active))))) {
+        __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val 
+            = (2U | __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val);
+    }
+    if ((0U != __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__dc_is_data)) {
+        __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val 
+            = (4U | __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val);
+    }
+    VL_WRITEF_NX("%t : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x%08x (CS1_N=%b, CS2_N=%b, DC=%b)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val,
+                 1,(1U & __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val),
+                 1,(1U & (__Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val 
+                          >> 1U)),1,(1U & (__Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val 
+                                           >> 2U)));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_be = 0xfU;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_data 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__57__ctrl_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr = 0x20002000U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__timeout_count = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         102);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[0U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[1U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[0U] 
+        = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[0U]);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[0U] 
+        = ((0x1fU & __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[0U]) 
+           | ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_be)) 
+                        << 0x20U) | (QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_data)))) 
+              << 5U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[1U] 
+        = (((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_be)) 
+                      << 0x20U) | (QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_data)))) 
+            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr)) 
+                                           << 1U))) 
+                          << 9U) | ((IData)(((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_be)) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_data))) 
+                                             >> 0x20U)) 
+                                    << 5U)));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[2U] 
+        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr)) 
+                                                 << 1U))) 
+                                >> 0x17U)) | ((IData)(
+                                                      ((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_be)) 
+                                                         << 0x20U) 
+                                                        | (QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_data))) 
+                                                       >> 0x20U)) 
+                                              >> 0x1bU)) 
+                     | ((0x1e0U & ((IData)((1ULL | 
+                                            ((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr)) 
+                                             << 1U))) 
+                                   >> 0x17U)) | ((IData)(
+                                                         ((1ULL 
+                                                           | ((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr)) 
+                                                              << 1U)) 
+                                                          >> 0x20U)) 
+                                                 << 9U))));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[0U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[1U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__req_txn[2U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr,
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_data,
+                 4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_be),
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+    while (((~ ((0x9bU >= ((IData)(1U) + (0xffU & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (((IData)(1U) + (0xffU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                           >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                + (0xffU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) 
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__timeout_count))) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             106);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__timeout_count 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__timeout_count);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:107: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout OBI grant write 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__58__w_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         109);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         110);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    VL_WRITEF_NX("%t : TB: Dummy Read from UserSpiCtrl (PRNG Addr 0x20002008) after CS/DC write.\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr = 0x20002008U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_gnt = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_rvalid = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         115);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[0U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[1U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[0U] 
+        = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[0U]);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[1U] 
+        = ((0x1ffU & __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[1U]) 
+           | ((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr)) 
+                       << 1U)) << 9U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[2U] 
+        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr)) 
+                               << 1U)) >> 0x17U) | 
+                     ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr)) 
+                                << 1U) >> 0x20U)) << 9U)));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[0U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[1U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__req_txn[2U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__grant_received = 0U;
+    {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_gnt)) {
+            if (((0x9bU >= ((IData)(1U) + (0xffU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                           (((IData)(1U) + (0xffU & 
+                                            ((IData)(0x27U) 
+                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                            >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) {
+                __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__grant_received = 1U;
+                goto __Vlabel27;
+            }
+            co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                 "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                 119);
+            vlSelfRef.__Vm_traceActivity[3U] = 1U;
+            __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_gnt 
+                = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_gnt);
+        }
+        __Vlabel27: ;
+    }
+    if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__grant_received))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         122);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr);
+    while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (7U & (((IData)(0x27U) * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                 >> 5U))] >> (0x1fU 
+                                              & ((IData)(0x27U) 
+                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             124);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+    }
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__rsp_r_chan_temp 
+        = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
+                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                   (((IData)(0x26U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                    >> 5U)])) 
+                                   << ((0U == (0x1fU 
+                                               & ((IData)(2U) 
+                                                  + 
+                                                  (0xffU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                        ? 0x20U : ((IData)(0x40U) 
+                                                   - 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                  | (((0U == (0x1fU 
+                                              & ((IData)(2U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                       ? 0ULL : ((QData)((IData)(
+                                                                 vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                 (((IData)(0x21U) 
+                                                                   + 
+                                                                   (0xffU 
+                                                                    & ((IData)(0x27U) 
+                                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                  >> 5U)])) 
+                                                 << 
+                                                 ((IData)(0x20U) 
+                                                  - 
+                                                  (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                     | ((QData)((IData)(
+                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                        (((IData)(2U) 
+                                                          + 
+                                                          (0xffU 
+                                                           & ((IData)(0x27U) 
+                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                         >> 5U)])) 
+                                        >> (0x1fU & 
+                                            ((IData)(2U) 
+                                             + (0xffU 
+                                                & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+            : 0ULL);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_data_val 
+        = (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__rsp_r_chan_temp 
+                   >> 5U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_err 
+        = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__rsp_r_chan_temp 
+                         >> 1U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_addr,
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_data_val,
+                 1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__59__r_err),
+                 1,((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                    && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                              (7U & (((IData)(0x27U) 
+                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                     >> 5U))] >> (0x1fU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         129);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    co_await vlSelfRef.__VdlySched.delay(0xc350ULL, 
+                                         nullptr, "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                         157);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    VL_WRITEF_NX("%t : TB: Finished HW Ctrl Send Byte 0x%02x to CS%0d\n--- SSD1331 Init Done ---\n--- Test 3: Trigger and Read PRNG ---\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,8,(IData)(vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__40__byte_val),
+                 32,vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__40__cs_pin_idx);
+    VL_WRITEF_NX("%t : TB: Triggering HW PRNG...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_be = 0xfU;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_data = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr = 0x20002004U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__timeout_count = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         102);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[0U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[1U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[0U] 
+        = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[0U]);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[0U] 
+        = ((0x1fU & __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[0U]) 
+           | ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_be)) 
+                        << 0x20U) | (QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_data)))) 
+              << 5U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[1U] 
+        = (((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_be)) 
+                      << 0x20U) | (QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_data)))) 
+            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr)) 
+                                           << 1U))) 
+                          << 9U) | ((IData)(((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_be)) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_data))) 
+                                             >> 0x20U)) 
+                                    << 5U)));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[2U] 
+        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr)) 
+                                                 << 1U))) 
+                                >> 0x17U)) | ((IData)(
+                                                      ((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_be)) 
+                                                         << 0x20U) 
+                                                        | (QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_data))) 
+                                                       >> 0x20U)) 
+                                              >> 0x1bU)) 
+                     | ((0x1e0U & ((IData)((1ULL | 
+                                            ((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr)) 
+                                             << 1U))) 
+                                   >> 0x17U)) | ((IData)(
+                                                         ((1ULL 
+                                                           | ((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr)) 
+                                                              << 1U)) 
+                                                          >> 0x20U)) 
+                                                 << 9U))));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[0U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[1U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__req_txn[2U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr,
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_data,
+                 4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_be),
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+    while (((~ ((0x9bU >= ((IData)(1U) + (0xffU & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (((IData)(1U) + (0xffU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                           >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                + (0xffU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) 
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__timeout_count))) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             106);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__timeout_count 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__timeout_count);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:107: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout OBI grant write 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__61__w_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         109);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         110);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    VL_WRITEF_NX("%t : TB: Dummy Read from UserSpiCtrl (PRNG Addr 0x20002008) after PRNG trigger.\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr = 0x20002008U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_gnt = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_rvalid = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         115);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[0U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[1U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[0U] 
+        = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[0U]);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[1U] 
+        = ((0x1ffU & __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[1U]) 
+           | ((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr)) 
+                       << 1U)) << 9U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[2U] 
+        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr)) 
+                               << 1U)) >> 0x17U) | 
+                     ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr)) 
+                                << 1U) >> 0x20U)) << 9U)));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[0U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[1U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__req_txn[2U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__grant_received = 0U;
+    {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_gnt)) {
+            if (((0x9bU >= ((IData)(1U) + (0xffU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                           (((IData)(1U) + (0xffU & 
+                                            ((IData)(0x27U) 
+                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                            >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) {
+                __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__grant_received = 1U;
+                goto __Vlabel28;
+            }
+            co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                 "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                 119);
+            vlSelfRef.__Vm_traceActivity[3U] = 1U;
+            __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_gnt 
+                = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_gnt);
+        }
+        __Vlabel28: ;
+    }
+    if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__grant_received))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         122);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr);
+    while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (7U & (((IData)(0x27U) * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                 >> 5U))] >> (0x1fU 
+                                              & ((IData)(0x27U) 
+                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             124);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+    }
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__rsp_r_chan_temp 
+        = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
+                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                   (((IData)(0x26U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                    >> 5U)])) 
+                                   << ((0U == (0x1fU 
+                                               & ((IData)(2U) 
+                                                  + 
+                                                  (0xffU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                        ? 0x20U : ((IData)(0x40U) 
+                                                   - 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                  | (((0U == (0x1fU 
+                                              & ((IData)(2U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                       ? 0ULL : ((QData)((IData)(
+                                                                 vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                 (((IData)(0x21U) 
+                                                                   + 
+                                                                   (0xffU 
+                                                                    & ((IData)(0x27U) 
+                                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                  >> 5U)])) 
+                                                 << 
+                                                 ((IData)(0x20U) 
+                                                  - 
+                                                  (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                     | ((QData)((IData)(
+                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                        (((IData)(2U) 
+                                                          + 
+                                                          (0xffU 
+                                                           & ((IData)(0x27U) 
+                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                         >> 5U)])) 
+                                        >> (0x1fU & 
+                                            ((IData)(2U) 
+                                             + (0xffU 
+                                                & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+            : 0ULL);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_data_val 
+        = (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__rsp_r_chan_temp 
+                   >> 5U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_err 
+        = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__rsp_r_chan_temp 
+                         >> 1U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_addr,
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_data_val,
+                 1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__62__r_err),
+                 1,((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                    && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                              (7U & (((IData)(0x27U) 
+                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                     >> 5U))] >> (0x1fU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         129);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    co_await vlSelfRef.__VdlySched.delay(0xc350ULL, 
+                                         nullptr, "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                         204);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    VL_WRITEF_NX("%t : TB: Reading HW PRNG...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr = 0x20002008U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_gnt = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_rvalid = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         115);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[0U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[1U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[0U] 
+        = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[0U]);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[1U] 
+        = ((0x1ffU & __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[1U]) 
+           | ((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr)) 
+                       << 1U)) << 9U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[2U] 
+        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr)) 
+                               << 1U)) >> 0x17U) | 
+                     ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr)) 
+                                << 1U) >> 0x20U)) << 9U)));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[0U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[1U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__req_txn[2U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__grant_received = 0U;
+    {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_gnt)) {
+            if (((0x9bU >= ((IData)(1U) + (0xffU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                           (((IData)(1U) + (0xffU & 
+                                            ((IData)(0x27U) 
+                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                            >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) {
+                __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__grant_received = 1U;
+                goto __Vlabel29;
+            }
+            co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                 "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                 119);
+            vlSelfRef.__Vm_traceActivity[3U] = 1U;
+            __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_gnt 
+                = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_gnt);
+        }
+        __Vlabel29: ;
+    }
+    if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__grant_received))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         122);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr);
+    while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (7U & (((IData)(0x27U) * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                 >> 5U))] >> (0x1fU 
+                                              & ((IData)(0x27U) 
+                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             124);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+    }
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__rsp_r_chan_temp 
+        = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
+                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                   (((IData)(0x26U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                    >> 5U)])) 
+                                   << ((0U == (0x1fU 
+                                               & ((IData)(2U) 
+                                                  + 
+                                                  (0xffU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                        ? 0x20U : ((IData)(0x40U) 
+                                                   - 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                  | (((0U == (0x1fU 
+                                              & ((IData)(2U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                       ? 0ULL : ((QData)((IData)(
+                                                                 vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                 (((IData)(0x21U) 
+                                                                   + 
+                                                                   (0xffU 
+                                                                    & ((IData)(0x27U) 
+                                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                  >> 5U)])) 
+                                                 << 
+                                                 ((IData)(0x20U) 
+                                                  - 
+                                                  (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                     | ((QData)((IData)(
+                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                        (((IData)(2U) 
+                                                          + 
+                                                          (0xffU 
+                                                           & ((IData)(0x27U) 
+                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                         >> 5U)])) 
+                                        >> (0x1fU & 
+                                            ((IData)(2U) 
+                                             + (0xffU 
+                                                & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+            : 0ULL);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_data_val 
+        = (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__rsp_r_chan_temp 
+                   >> 5U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_err 
+        = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__rsp_r_chan_temp 
+                         >> 1U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_addr,
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_data_val,
+                 1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_err),
+                 1,((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                    && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                              (7U & (((IData)(0x27U) 
+                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                     >> 5U))] >> (0x1fU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         129);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__prng_val 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_data_val;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__read_err 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__64__r_err;
+    if (VL_UNLIKELY(__Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__read_err)) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:171: Assertion failed in %Ntb_user_domain_hw_ctrl.read_hw_prng: %t : TB: OBI Error reading PRNG value!\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9);
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 171, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 171, "");
+    }
+    VL_WRITEF_NX("%t : TB: Read HW PRNG Value = 0x%x\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__prng_val);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__prng_val1 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_hw_prng__63__prng_val;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__phrase_index 
+        = (7U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__prng_val1);
+    VL_WRITEF_NX("   -> Phrase Index: %0d\n--- Test 4: Read Font ROM (Char '!', Offset 0x0000000c) ---\n",0,
+                 32,vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__phrase_index);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr = 0x2000300cU;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_gnt = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_rvalid = 0U;
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         115);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[0U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[1U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[2U] = 0U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[0U] 
+        = (1U | __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[0U]);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[1U] 
+        = ((0x1ffU & __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[1U]) 
+           | ((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr)) 
+                       << 1U)) << 9U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[2U] 
+        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr)) 
+                               << 1U)) >> 0x17U) | 
+                     ((IData)((((QData)((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr)) 
+                                << 1U) >> 0x20U)) << 9U)));
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[0U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[1U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__req_txn[2U];
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__grant_received = 0U;
+    {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_gnt)) {
+            if (((0x9bU >= ((IData)(1U) + (0xffU & 
+                                           ((IData)(0x27U) 
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                           (((IData)(1U) + (0xffU & 
+                                            ((IData)(0x27U) 
+                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                            >> 5U)] >> (0x1fU & ((IData)(1U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) {
+                __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__grant_received = 1U;
+                goto __Vlabel30;
+            }
+            co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                                 nullptr, 
+                                                                 "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                                 "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                                 119);
+            vlSelfRef.__Vm_traceActivity[3U] = 1U;
+            __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_gnt 
+                = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_gnt);
+        }
+        __Vlabel30: ;
+    }
+    if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__grant_received))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         122);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr);
+    while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                          (7U & (((IData)(0x27U) * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                 >> 5U))] >> (0x1fU 
+                                              & ((IData)(0x27U) 
+                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                             124);
+        vlSelfRef.__Vm_traceActivity[3U] = 1U;
+        __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+    }
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__rsp_r_chan_temp 
+        = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
+                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                   (((IData)(0x26U) 
+                                                     + 
+                                                     (0xffU 
+                                                      & ((IData)(0x27U) 
+                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                    >> 5U)])) 
+                                   << ((0U == (0x1fU 
+                                               & ((IData)(2U) 
+                                                  + 
+                                                  (0xffU 
+                                                   & ((IData)(0x27U) 
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                        ? 0x20U : ((IData)(0x40U) 
+                                                   - 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                  | (((0U == (0x1fU 
+                                              & ((IData)(2U) 
+                                                 + 
+                                                 (0xffU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                       ? 0ULL : ((QData)((IData)(
+                                                                 vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                 (((IData)(0x21U) 
+                                                                   + 
+                                                                   (0xffU 
+                                                                    & ((IData)(0x27U) 
+                                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                  >> 5U)])) 
+                                                 << 
+                                                 ((IData)(0x20U) 
+                                                  - 
+                                                  (0x1fU 
+                                                   & ((IData)(2U) 
+                                                      + 
+                                                      (0xffU 
+                                                       & ((IData)(0x27U) 
+                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                     | ((QData)((IData)(
+                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                        (((IData)(2U) 
+                                                          + 
+                                                          (0xffU 
+                                                           & ((IData)(0x27U) 
+                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                         >> 5U)])) 
+                                        >> (0x1fU & 
+                                            ((IData)(2U) 
+                                             + (0xffU 
+                                                & ((IData)(0x27U) 
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+            : 0ULL);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_data_val 
+        = (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__rsp_r_chan_temp 
+                   >> 5U));
+    __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_err 
+        = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__rsp_r_chan_temp 
+                         >> 1U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_addr,
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_data_val,
+                 1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_err),
+                 1,((0x9bU >= (0xffU & ((IData)(0x27U) 
+                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                    && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                              (7U & (((IData)(0x27U) 
+                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                     >> 5U))] >> (0x1fU 
+                                                  & ((IData)(0x27U) 
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
+    co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
+                                                         129);
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__read_data 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_data_val;
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__read_err 
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__65__r_err;
+    if (VL_UNLIKELY(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__read_err)) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:210: Assertion failed in %Ntb_user_domain_hw_ctrl.unnamedblk1: Font ROM Read Failed!\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 210, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 210, "");
+    }
+    vlSelfRef.tb_user_domain_hw_ctrl__DOT__font_byte 
+        = (0xffU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__read_data);
+    VL_WRITEF_NX("   -> Font Byte[0] for '!': 0x%02x (Expected 0x00)\n",0,
+                 8,vlSelfRef.tb_user_domain_hw_ctrl__DOT__font_byte);
+    if (VL_UNLIKELY((0U != (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__font_byte)))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:213: Assertion failed in %Ntb_user_domain_hw_ctrl.unnamedblk1: Font data mismatch!\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 213, "");
+    }
+    VL_WRITEF_NX("--- Test 5: Send Font Byte to Display ---\n",0);
+    __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val 
+        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__font_byte;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data = 1U;
+    __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx = 1U;
+    if (VL_UNLIKELY((1U == __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx))) {
         __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__67__dc_is_data 
-            = vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data;
+            = __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data;
         __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__67__cs2_active = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__67__cs1_active = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__67__ctrl_val = 0U;
@@ -285,7 +5768,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             122);
+                                                             102);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__req_txn[0U] = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__req_txn[1U] = 0U;
@@ -331,11 +5814,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
             = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__req_txn[2U];
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b (Sent: %23#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__w_addr,
                      32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__w_data,
-                     4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__w_be));
+                     4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__w_be),
+                     74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
         while (((~ ((0x9bU >= ((IData)(1U) + (0xffU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -348,18 +5832,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                             + (0xffU 
                                                & ((IData)(0x27U) 
                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) 
-                & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__timeout_count))) {
+                & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__timeout_count))) {
             co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 134);
+                                                                 106);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__timeout_count 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__timeout_count);
         }
-        if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__timeout_count))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout waiting for OBI grant during write to 0x%x. Last rsp: %12#\n",0,
+        if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__timeout_count))) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:107: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout OBI grant write 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__w_addr,
@@ -465,17 +5949,128 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 140, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
         }
-        VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__w_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__68__w_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             144);
+                                                             109);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
@@ -484,12 +6079,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             147);
+                                                             110);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
-        VL_WRITEF_NX("%t : TB: Performing dummy read to UserSpiCtrl (PRNG Addr 0x20002008) after write.\n",0,
+        VL_WRITEF_NX("%t : TB: Dummy Read from UserSpiCtrl (PRNG Addr 0x20002008) after CS/DC write.\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9);
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr = 0x20002008U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_gnt = 0U;
@@ -498,7 +6093,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             158);
+                                                             115);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__req_txn[0U] = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__req_txn[1U] = 0U;
@@ -522,12 +6117,13 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
             = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__req_txn[2U];
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr,
+                     74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__grant_received = 0U;
         {
-            while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_gnt)) {
+            while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_gnt)) {
                 if (((0x9bU >= ((IData)(1U) + (0xffU 
                                                & ((IData)(0x27U) 
                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -547,7 +6143,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                      nullptr, 
                                                                      "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                      "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                     173);
+                                                                     119);
                 vlSelfRef.__Vm_traceActivity[3U] = 1U;
                 __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_gnt 
                     = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_gnt);
@@ -555,7 +6151,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
             __Vlabel31: ;
         }
         if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__grant_received))))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr,
@@ -661,21 +6257,135 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
         }
-        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             184);
+                                                             122);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+        VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr);
         while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                     && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -684,18 +6394,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-                & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_rvalid))) {
+                & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 189);
+                                                                 124);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_rvalid);
         }
-        if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+        if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__timeout_count_rvalid))) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr,
@@ -801,8 +6511,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
         }
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__rsp_r_chan_temp 
             = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -872,7 +6582,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_err 
             = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__rsp_r_chan_temp 
                              >> 1U)));
-        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_addr,
                      32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__69__r_data_val,
@@ -884,12 +6594,123 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                          >> 5U))] >> 
                                   (0x1fU & ((IData)(0x27U) 
-                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             203);
+                                                             129);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -897,11 +6718,11 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         co_await vlSelfRef.__VdlySched.delay(0xc350ULL, 
                                              nullptr, 
                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                             260);
+                                             157);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
-    } else if (VL_UNLIKELY((2U == vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx))) {
+    } else if (VL_UNLIKELY((2U == __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx))) {
         __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__70__dc_is_data 
-            = vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data;
+            = __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data;
         __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__70__cs2_active = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__70__cs1_active = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__70__ctrl_val = 0U;
@@ -933,7 +6754,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             122);
+                                                             102);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__req_txn[0U] = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__req_txn[1U] = 0U;
@@ -979,11 +6800,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
             = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__req_txn[2U];
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b (Sent: %23#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__w_addr,
                      32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__w_data,
-                     4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__w_be));
+                     4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__w_be),
+                     74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
         while (((~ ((0x9bU >= ((IData)(1U) + (0xffU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -996,18 +6818,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                             + (0xffU 
                                                & ((IData)(0x27U) 
                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) 
-                & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__timeout_count))) {
+                & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__timeout_count))) {
             co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 134);
+                                                                 106);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__timeout_count 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__timeout_count);
         }
-        if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__timeout_count))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout waiting for OBI grant during write to 0x%x. Last rsp: %12#\n",0,
+        if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__timeout_count))) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:107: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout OBI grant write 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__w_addr,
@@ -1113,17 +6935,128 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 140, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
         }
-        VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__w_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__71__w_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             144);
+                                                             109);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
@@ -1132,12 +7065,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             147);
+                                                             110);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
-        VL_WRITEF_NX("%t : TB: Performing dummy read to UserSpiCtrl (PRNG Addr 0x20002008) after write.\n",0,
+        VL_WRITEF_NX("%t : TB: Dummy Read from UserSpiCtrl (PRNG Addr 0x20002008) after CS/DC write.\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9);
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr = 0x20002008U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_gnt = 0U;
@@ -1146,7 +7079,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             158);
+                                                             115);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__req_txn[0U] = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__req_txn[1U] = 0U;
@@ -1170,12 +7103,13 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
             = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__req_txn[2U];
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr,
+                     74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__grant_received = 0U;
         {
-            while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_gnt)) {
+            while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_gnt)) {
                 if (((0x9bU >= ((IData)(1U) + (0xffU 
                                                & ((IData)(0x27U) 
                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -1195,7 +7129,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                      nullptr, 
                                                                      "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                      "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                     173);
+                                                                     119);
                 vlSelfRef.__Vm_traceActivity[3U] = 1U;
                 __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_gnt 
                     = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_gnt);
@@ -1203,7 +7137,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
             __Vlabel32: ;
         }
         if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__grant_received))))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr,
@@ -1309,21 +7243,135 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
         }
-        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             184);
+                                                             122);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+        VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr);
         while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                     && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -1332,18 +7380,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-                & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_rvalid))) {
+                & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 189);
+                                                                 124);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_rvalid);
         }
-        if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+        if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__timeout_count_rvalid))) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr,
@@ -1449,8 +7497,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
         }
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__rsp_r_chan_temp 
             = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -1520,7 +7568,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_err 
             = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__rsp_r_chan_temp 
                              >> 1U)));
-        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_addr,
                      32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__72__r_data_val,
@@ -1532,12 +7580,123 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                          >> 5U))] >> 
                                   (0x1fU & ((IData)(0x27U) 
-                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             203);
+                                                             129);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -1545,14 +7704,14 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         co_await vlSelfRef.__VdlySched.delay(0xc350ULL, 
                                              nullptr, 
                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                             260);
+                                             157);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
     } else {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:290: Assertion failed in %Ntb_user_domain_hw_ctrl.send_byte_hw_ctrl: Invalid CS index %0d\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.send_byte_hw_ctrl: Invalid CS index %0d\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     32,vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx);
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 290, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 290, "");
+                     32,__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx);
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__timeout_count = 0U;
     VL_WRITEF_NX("%t : TB: Waiting for SPI Engine to finish...\n",0,
@@ -1561,7 +7720,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         217);
+                                                         135);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr = 0x20001008U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_gnt = 0U;
@@ -1570,7 +7729,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         158);
+                                                         115);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__req_txn[0U] = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__req_txn[1U] = 0U;
@@ -1593,11 +7752,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__req_txn[2U];
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__grant_received = 0U;
     {
-        while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_gnt)) {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_gnt)) {
             if (((0x9bU >= ((IData)(1U) + (0xffU & 
                                            ((IData)(0x27U) 
                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -1617,7 +7777,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 173);
+                                                                 119);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_gnt 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_gnt);
@@ -1625,7 +7785,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vlabel33: ;
     }
     if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__grant_received))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr,
@@ -1740,20 +7900,133 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         184);
+                                                         122);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr);
     while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -1761,18 +8034,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                  >> 5U))] >> (0x1fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_rvalid))) {
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             189);
+                                                             124);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_rvalid 
             = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_rvalid);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_rvalid))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr,
@@ -1887,8 +8160,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__rsp_r_chan_temp 
         = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -1958,7 +8231,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_err 
         = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__rsp_r_chan_temp 
                          >> 1U)));
-    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_addr,
                  32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_data_val,
                  1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_err),
@@ -1969,12 +8242,123 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
-                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         203);
+                                                         129);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -1984,11 +8368,11 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__read_err 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__74__r_err;
     if (VL_UNLIKELY(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__read_err)) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:221: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9);
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__busy_bit 
         = (1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__status_val);
@@ -2006,11 +8390,11 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             228);
+                                                             141);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
     }
     while (((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__busy_bit) 
-            & VL_GTS_III(32, 0x2710U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__timeout_count))) {
+            & VL_GTS_III(32, 0x3a98U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__timeout_count))) {
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr = 0x20001008U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_gnt = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_rvalid = 0U;
@@ -2018,7 +8402,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             158);
+                                                             115);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__req_txn[0U] = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__req_txn[1U] = 0U;
@@ -2042,12 +8426,13 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
             = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__req_txn[2U];
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr,
+                     74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__grant_received = 0U;
         {
-            while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_gnt)) {
+            while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_gnt)) {
                 if (((0x9bU >= ((IData)(1U) + (0xffU 
                                                & ((IData)(0x27U) 
                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -2067,7 +8452,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                      nullptr, 
                                                                      "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                      "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                     173);
+                                                                     119);
                 vlSelfRef.__Vm_traceActivity[3U] = 1U;
                 __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_gnt 
                     = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_gnt);
@@ -2075,7 +8460,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
             __Vlabel34: ;
         }
         if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__grant_received))))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr,
@@ -2181,21 +8566,135 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
         }
-        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             184);
+                                                             122);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+        VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr);
         while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                     && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -2204,18 +8703,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-                & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_rvalid))) {
+                & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 189);
+                                                                 124);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_rvalid);
         }
-        if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+        if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__timeout_count_rvalid))) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr,
@@ -2321,8 +8820,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
         }
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__rsp_r_chan_temp 
             = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -2392,7 +8891,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_err 
             = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__rsp_r_chan_temp 
                              >> 1U)));
-        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_addr,
                      32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_data_val,
@@ -2404,12 +8903,123 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                          >> 5U))] >> 
                                   (0x1fU & ((IData)(0x27U) 
-                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             203);
+                                                             129);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -2419,12 +9029,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__read_err 
             = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__75__r_err;
         if (VL_UNLIKELY(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__read_err)) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:221: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9);
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
         }
         __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__busy_bit 
             = (1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__status_val);
@@ -2443,17 +9053,17 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 228);
+                                                                 141);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
         }
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x2710U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:232: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: Timeout waiting for SPI Engine to become idle. Last Status: 0x%08x\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x3a98U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:143: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: Timeout SPI Engine idle. Status: 0x%08x\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__status_val);
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 232, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 234, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 143, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 143, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr = 0x20001008U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_gnt = 0U;
@@ -2462,7 +9072,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         158);
+                                                         115);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__req_txn[0U] = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__req_txn[1U] = 0U;
@@ -2485,11 +9095,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__req_txn[2U];
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__grant_received = 0U;
     {
-        while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_gnt)) {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_gnt)) {
             if (((0x9bU >= ((IData)(1U) + (0xffU & 
                                            ((IData)(0x27U) 
                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -2509,7 +9120,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 173);
+                                                                 119);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_gnt 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_gnt);
@@ -2517,7 +9128,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vlabel35: ;
     }
     if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__grant_received))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr,
@@ -2632,20 +9243,133 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         184);
+                                                         122);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr);
     while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -2653,18 +9377,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                  >> 5U))] >> (0x1fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_rvalid))) {
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             189);
+                                                             124);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_rvalid 
             = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_rvalid);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_rvalid))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr,
@@ -2779,8 +9503,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__rsp_r_chan_temp 
         = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -2850,7 +9574,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_err 
         = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__rsp_r_chan_temp 
                          >> 1U)));
-    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_addr,
                  32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_data_val,
                  1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__76__r_err),
@@ -2861,12 +9585,123 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
-                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         203);
+                                                         129);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -2881,14 +9716,14 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                           >> 1U)),1,(1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__73__status_val));
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_be = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_data 
-        = vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val;
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_addr = 0x20001004U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__timeout_count = 0U;
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         122);
+                                                         102);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__req_txn[0U] = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__req_txn[1U] = 0U;
@@ -2935,10 +9770,11 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__req_txn[2U];
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
+    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b (Sent: %23#)\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_addr,
                  32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_data,
-                 4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_be));
+                 4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_be),
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
     while (((~ ((0x9bU >= ((IData)(1U) + (0xffU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -2949,18 +9785,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                 + (0xffU 
                                                    & ((IData)(0x27U) 
                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) 
-            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__timeout_count))) {
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__timeout_count))) {
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             134);
+                                                             106);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__timeout_count 
             = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__timeout_count);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout waiting for OBI grant during write to 0x%x. Last rsp: %12#\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:107: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout OBI grant write 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_addr,
@@ -3075,16 +9911,127 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 140, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_addr);
+    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__77__w_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         144);
+                                                         109);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
@@ -3093,7 +10040,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         147);
+                                                         110);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -3106,7 +10053,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         122);
+                                                         102);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__req_txn[0U] = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__req_txn[1U] = 0U;
@@ -3153,10 +10100,11 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__req_txn[2U];
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
+    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b (Sent: %23#)\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__w_addr,
                  32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__w_data,
-                 4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__w_be));
+                 4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__w_be),
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
     while (((~ ((0x9bU >= ((IData)(1U) + (0xffU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -3167,18 +10115,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                 + (0xffU 
                                                    & ((IData)(0x27U) 
                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) 
-            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__timeout_count))) {
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__timeout_count))) {
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             134);
+                                                             106);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__timeout_count 
             = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__timeout_count);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout waiting for OBI grant during write to 0x%x. Last rsp: %12#\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:107: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout OBI grant write 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__w_addr,
@@ -3293,16 +10241,127 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 140, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__w_addr);
+    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__78__w_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         144);
+                                                         109);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
@@ -3311,7 +10370,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         147);
+                                                         110);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -3323,7 +10382,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         217);
+                                                         135);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr = 0x20001008U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_gnt = 0U;
@@ -3332,7 +10391,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         158);
+                                                         115);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__req_txn[0U] = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__req_txn[1U] = 0U;
@@ -3355,11 +10414,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__req_txn[2U];
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__grant_received = 0U;
     {
-        while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_gnt)) {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_gnt)) {
             if (((0x9bU >= ((IData)(1U) + (0xffU & 
                                            ((IData)(0x27U) 
                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -3379,7 +10439,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 173);
+                                                                 119);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_gnt 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_gnt);
@@ -3387,7 +10447,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vlabel36: ;
     }
     if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__grant_received))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr,
@@ -3502,20 +10562,133 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         184);
+                                                         122);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr);
     while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -3523,18 +10696,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                  >> 5U))] >> (0x1fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_rvalid))) {
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             189);
+                                                             124);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_rvalid 
             = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_rvalid);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_rvalid))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr,
@@ -3649,8 +10822,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__rsp_r_chan_temp 
         = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -3720,7 +10893,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_err 
         = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__rsp_r_chan_temp 
                          >> 1U)));
-    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_addr,
                  32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_data_val,
                  1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_err),
@@ -3731,12 +10904,123 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
-                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         203);
+                                                         129);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -3746,11 +11030,11 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__read_err 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__80__r_err;
     if (VL_UNLIKELY(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__read_err)) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:221: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9);
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__busy_bit 
         = (1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__status_val);
@@ -3768,11 +11052,11 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             228);
+                                                             141);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
     }
     while (((IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__busy_bit) 
-            & VL_GTS_III(32, 0x2710U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__timeout_count))) {
+            & VL_GTS_III(32, 0x3a98U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__timeout_count))) {
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr = 0x20001008U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_gnt = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_rvalid = 0U;
@@ -3780,7 +11064,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             158);
+                                                             115);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__req_txn[0U] = 0U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__req_txn[1U] = 0U;
@@ -3804,12 +11088,13 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
             = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__req_txn[2U];
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr,
+                     74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__grant_received = 0U;
         {
-            while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_gnt)) {
+            while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_gnt)) {
                 if (((0x9bU >= ((IData)(1U) + (0xffU 
                                                & ((IData)(0x27U) 
                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -3829,7 +11114,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                      nullptr, 
                                                                      "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                      "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                     173);
+                                                                     119);
                 vlSelfRef.__Vm_traceActivity[3U] = 1U;
                 __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_gnt 
                     = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_gnt);
@@ -3837,7 +11122,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
             __Vlabel37: ;
         }
         if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__grant_received))))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr,
@@ -3943,21 +11228,135 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
         }
-        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
-                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr);
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr,
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             184);
+                                                             122);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+        VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr);
         while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                     && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -3966,18 +11365,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-                & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_rvalid))) {
+                & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_rvalid))) {
             co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 189);
+                                                                 124);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_rvalid);
         }
-        if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+        if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__timeout_count_rvalid))) {
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr,
@@ -4083,8 +11482,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                             (0x1fU 
                                                                              & ((IData)(0x27U) 
                                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
         }
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__rsp_r_chan_temp 
             = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -4154,7 +11553,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_err 
             = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__rsp_r_chan_temp 
                              >> 1U)));
-        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+        VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_addr,
                      32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_data_val,
@@ -4166,12 +11565,123 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                          >> 5U))] >> 
                                   (0x1fU & ((IData)(0x27U) 
-                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                     39,((((0x9bU >= ((IData)(2U) + 
+                                      (0xffU & ((IData)(0x27U) 
+                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                            ? (0x1fffffffffULL & (((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x26U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((0U 
+                                                     == 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                     ? 0x20U
+                                                     : 
+                                                    ((IData)(0x40U) 
+                                                     - 
+                                                     (0x1fU 
+                                                      & ((IData)(2U) 
+                                                         + 
+                                                         (0xffU 
+                                                          & ((IData)(0x27U) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                  | (((0U 
+                                                       == 
+                                                       (0x1fU 
+                                                        & ((IData)(2U) 
+                                                           + 
+                                                           (0xffU 
+                                                            & ((IData)(0x27U) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                       ? 0ULL
+                                                       : 
+                                                      ((QData)((IData)(
+                                                                       vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(0x21U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)])) 
+                                                       << 
+                                                       ((IData)(0x20U) 
+                                                        - 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                     | ((QData)((IData)(
+                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (((IData)(2U) 
+                                                                          + 
+                                                                          (0xffU 
+                                                                           & ((IData)(0x27U) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         >> 5U)])) 
+                                                        >> 
+                                                        (0x1fU 
+                                                         & ((IData)(2U) 
+                                                            + 
+                                                            (0xffU 
+                                                             & ((IData)(0x27U) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                            : 0ULL) << 2U) | (QData)((IData)(
+                                                             ((((0x9bU 
+                                                                 >= 
+                                                                 ((IData)(1U) 
+                                                                  + 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                                && (1U 
+                                                                    & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                       (((IData)(1U) 
+                                                                         + 
+                                                                         (0xffU 
+                                                                          & ((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        >> 5U)] 
+                                                                       >> 
+                                                                       (0x1fU 
+                                                                        & ((IData)(1U) 
+                                                                           + 
+                                                                           (0xffU 
+                                                                            & ((IData)(0x27U) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               << 1U) 
+                                                              | ((0x9bU 
+                                                                  >= 
+                                                                  (0xffU 
+                                                                   & ((IData)(0x27U) 
+                                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                 && (1U 
+                                                                     & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                        (7U 
+                                                                         & (((IData)(0x27U) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                            >> 5U))] 
+                                                                        >> 
+                                                                        (0x1fU 
+                                                                         & ((IData)(0x27U) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             203);
+                                                             129);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
         vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -4181,12 +11691,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__read_err 
             = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__81__r_err;
         if (VL_UNLIKELY(__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__read_err)) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:221: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: OBI Error reading SPI Engine Status!\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9);
-            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
         }
         __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__busy_bit 
             = (1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__status_val);
@@ -4205,17 +11715,17 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 228);
+                                                                 141);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
         }
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x2710U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:232: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: Timeout waiting for SPI Engine to become idle. Last Status: 0x%08x\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x3a98U, __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:143: Assertion failed in %Ntb_user_domain_hw_ctrl.wait_spi_engine_idle: %t : TB: Timeout SPI Engine idle. Status: 0x%08x\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__status_val);
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 232, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 234, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 143, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 143, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr = 0x20001008U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_gnt = 0U;
@@ -4224,7 +11734,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         158);
+                                                         115);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__req_txn[0U] = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__req_txn[1U] = 0U;
@@ -4247,11 +11757,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__req_txn[2U];
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__grant_received = 0U;
     {
-        while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_gnt)) {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_gnt)) {
             if (((0x9bU >= ((IData)(1U) + (0xffU & 
                                            ((IData)(0x27U) 
                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -4271,7 +11782,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 173);
+                                                                 119);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_gnt 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_gnt);
@@ -4279,7 +11790,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vlabel38: ;
     }
     if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__grant_received))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr,
@@ -4394,20 +11905,133 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         184);
+                                                         122);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr);
     while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -4415,18 +12039,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                  >> 5U))] >> (0x1fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_rvalid))) {
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             189);
+                                                             124);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_rvalid 
             = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_rvalid);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_rvalid))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr,
@@ -4541,8 +12165,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__rsp_r_chan_temp 
         = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -4612,7 +12236,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_err 
         = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__rsp_r_chan_temp 
                          >> 1U)));
-    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_addr,
                  32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_data_val,
                  1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__82__r_err),
@@ -4623,12 +12247,123 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
-                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         203);
+                                                         129);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
@@ -4642,7 +12377,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                  1,(1U & (__Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__status_val 
                           >> 1U)),1,(1U & __Vtask_tb_user_domain_hw_ctrl__DOT__wait_spi_engine_idle__79__status_val));
     __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__83__dc_is_data 
-        = vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data;
+        = __Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__is_data;
     __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__83__cs2_active = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__83__cs1_active = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__set_hw_cs_dc__83__ctrl_val = 0U;
@@ -4673,7 +12408,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         122);
+                                                         102);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__req_txn[0U] = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__req_txn[1U] = 0U;
@@ -4720,10 +12455,11 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__req_txn[2U];
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x Data=0x%x BE=0x%b\n",0,
+    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b (Sent: %23#)\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__w_addr,
                  32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__w_data,
-                 4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__w_be));
+                 4,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__w_be),
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
     while (((~ ((0x9bU >= ((IData)(1U) + (0xffU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -4734,18 +12470,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                 + (0xffU 
                                                    & ((IData)(0x27U) 
                                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))) 
-            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__timeout_count))) {
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__timeout_count))) {
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             134);
+                                                             106);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__timeout_count 
             = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__timeout_count);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:138: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout waiting for OBI grant during write to 0x%x. Last rsp: %12#\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:107: Assertion failed in %Ntb_user_domain_hw_ctrl.write_obi: %t : TB: Timeout OBI grant write 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__w_addr,
@@ -4860,16 +12596,127 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 138, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 140, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 107, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__w_addr);
+    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__write_obi__84__w_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         144);
+                                                         109);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
@@ -4878,12 +12725,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         147);
+                                                         110);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
-    VL_WRITEF_NX("%t : TB: Performing dummy read to UserSpiCtrl (PRNG Addr 0x20002008) after write.\n",0,
+    VL_WRITEF_NX("%t : TB: Dummy Read from UserSpiCtrl (PRNG Addr 0x20002008) after CS/DC write.\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr = 0x20002008U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_gnt = 0U;
@@ -4892,7 +12739,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         158);
+                                                         115);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__req_txn[0U] = 0U;
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__req_txn[1U] = 0U;
@@ -4915,11 +12762,12 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
         = __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__req_txn[2U];
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x (Sent: %23#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr,
+                 74,vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req.data());
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__grant_received = 0U;
     {
-        while (VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_gnt)) {
+        while (VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_gnt)) {
             if (((0x9bU >= ((IData)(1U) + (0xffU & 
                                            ((IData)(0x27U) 
                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
@@ -4939,7 +12787,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                  nullptr, 
                                                                  "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                                  "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                                 173);
+                                                                 119);
             vlSelfRef.__Vm_traceActivity[3U] = 1U;
             __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_gnt 
                 = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_gnt);
@@ -4947,7 +12795,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
         __Vlabel39: ;
     }
     if (VL_UNLIKELY((1U & (~ (IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__grant_received))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:178: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. Last rsp: %12#\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:120: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI grant read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr,
@@ -5062,20 +12910,133 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 178, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 180, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 120, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr);
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x (Rcvd: %12#)\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr,
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         184);
+                                                         122);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
         = (0xfffffffeU & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U]);
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: Waiting for OBI rvalid from Addr=0x%x...\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr);
     while (((~ ((0x9bU >= (0xffU & ((IData)(0x27U) 
                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
                 && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -5083,18 +13044,18 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                  >> 5U))] >> (0x1fU 
                                               & ((IData)(0x27U) 
                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))) 
-            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_rvalid))) {
+            & VL_GTS_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                             189);
+                                                             124);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
         __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_rvalid 
             = ((IData)(1U) + __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_rvalid);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_rvalid))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:193: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. Last rsp: %12#\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0xbb8U, __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_domain_hw_ctrl.sv:126: Assertion failed in %Ntb_user_domain_hw_ctrl.read_obi: %t : TB: Timeout OBI rvalid read 0x%x. Rsp: %12#\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr,
@@ -5209,8 +13170,8 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                                                         (0x1fU 
                                                                          & ((IData)(0x27U) 
                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
-        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 193, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 195, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 126, "");
     }
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__rsp_r_chan_temp 
         = ((0x9bU >= ((IData)(2U) + (0xffU & ((IData)(0x27U) 
@@ -5280,7 +13241,7 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
     __Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_err 
         = (1U & (IData)((__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__rsp_r_chan_temp 
                          >> 1U)));
-    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b (Rcvd: %12#)\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9,32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_addr,
                  32,__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_data_val,
                  1,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__read_obi__85__r_err),
@@ -5291,83 +13252,140 @@ VlCoroutine Vtb_user_domain_hw_ctrl___024root___eval_initial__TOP__Vtiming__1__1
                                       * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
                                      >> 5U))] >> (0x1fU 
                                                   & ((IData)(0x27U) 
-                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))));
+                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))),
+                 39,((((0x9bU >= ((IData)(2U) + (0xffU 
+                                                 & ((IData)(0x27U) 
+                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                        ? (0x1fffffffffULL & (((QData)((IData)(
+                                                               vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                               (((IData)(0x26U) 
+                                                                 + 
+                                                                 (0xffU 
+                                                                  & ((IData)(0x27U) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                >> 5U)])) 
+                                               << (
+                                                   (0U 
+                                                    == 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                    ? 0x20U
+                                                    : 
+                                                   ((IData)(0x40U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                              | (((0U 
+                                                   == 
+                                                   (0x1fU 
+                                                    & ((IData)(2U) 
+                                                       + 
+                                                       (0xffU 
+                                                        & ((IData)(0x27U) 
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                   ? 0ULL
+                                                   : 
+                                                  ((QData)((IData)(
+                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(0x21U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)])) 
+                                                   << 
+                                                   ((IData)(0x20U) 
+                                                    - 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                 | ((QData)((IData)(
+                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (((IData)(2U) 
+                                                                      + 
+                                                                      (0xffU 
+                                                                       & ((IData)(0x27U) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     >> 5U)])) 
+                                                    >> 
+                                                    (0x1fU 
+                                                     & ((IData)(2U) 
+                                                        + 
+                                                        (0xffU 
+                                                         & ((IData)(0x27U) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                        : 0ULL) << 2U) | (QData)((IData)(
+                                                         ((((0x9bU 
+                                                             >= 
+                                                             ((IData)(1U) 
+                                                              + 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
+                                                            && (1U 
+                                                                & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                   (((IData)(1U) 
+                                                                     + 
+                                                                     (0xffU 
+                                                                      & ((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                    >> 5U)] 
+                                                                   >> 
+                                                                   (0x1fU 
+                                                                    & ((IData)(1U) 
+                                                                       + 
+                                                                       (0xffU 
+                                                                        & ((IData)(0x27U) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                           << 1U) 
+                                                          | ((0x9bU 
+                                                              >= 
+                                                              (0xffU 
+                                                               & ((IData)(0x27U) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                             && (1U 
+                                                                 & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
+                                                                    (7U 
+                                                                     & (((IData)(0x27U) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
+                                                                        >> 5U))] 
+                                                                    >> 
+                                                                    (0x1fU 
+                                                                     & ((IData)(0x27U) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))));
     co_await vlSelfRef.__VtrigSched_h15786638__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_domain_hw_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                                         203);
+                                                         129);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] = 0U;
     vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] = 0U;
     co_await vlSelfRef.__VdlySched.delay(0xc350ULL, 
                                          nullptr, "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                         260);
+                                         157);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     VL_WRITEF_NX("%t : TB: Finished HW Ctrl Send Byte 0x%02x to CS%0d\n--- Font Byte Sent ---\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,8,(IData)(vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val),
-                 32,vlSelfRef.__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx);
+                 64,VL_TIME_UNITED_Q(1000),-9,8,(IData)(__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__byte_val),
+                 32,__Vtask_tb_user_domain_hw_ctrl__DOT__send_byte_hw_ctrl__66__cs_pin_idx);
     co_await vlSelfRef.__VdlySched.delay(0x7a120ULL, 
                                          nullptr, "rtl/user_domain/tb_user_domain_hw_ctrl.sv", 
-                                         358);
+                                         219);
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
     VL_WRITEF_NX("%t : TB: Test Sequence Complete.\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
-    VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 360, "");
+    VL_FINISH_MT("rtl/user_domain/tb_user_domain_hw_ctrl.sv", 221, "");
     vlSelfRef.__Vm_traceActivity[3U] = 1U;
-}
-
-#ifdef VL_DEBUG
-VL_ATTR_COLD void Vtb_user_domain_hw_ctrl___024root___dump_triggers__act(Vtb_user_domain_hw_ctrl___024root* vlSelf);
-#endif  // VL_DEBUG
-
-void Vtb_user_domain_hw_ctrl___024root___eval_triggers__act(Vtb_user_domain_hw_ctrl___024root* vlSelf) {
-    (void)vlSelf;  // Prevent unused variable warning
-    Vtb_user_domain_hw_ctrl__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_user_domain_hw_ctrl___024root___eval_triggers__act\n"); );
-    auto &vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.__VactTriggered.set(0U, (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
-                                       != vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp__1));
-    vlSelfRef.__VactTriggered.set(1U, (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
-                                       != vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp__1));
-    vlSelfRef.__VactTriggered.set(2U, ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o) 
-                                       != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__1)));
-    vlSelfRef.__VactTriggered.set(3U, ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_w) 
-                                       != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_w__1)));
-    vlSelfRef.__VactTriggered.set(4U, ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_r) 
-                                       != (IData)(vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_r__1)));
-    vlSelfRef.__VactTriggered.set(5U, ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__clk_i) 
-                                       & (~ (IData)(vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__clk_i__0))));
-    vlSelfRef.__VactTriggered.set(6U, ((~ (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__rst_ni)) 
-                                       & (IData)(vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__rst_ni__0)));
-    vlSelfRef.__VactTriggered.set(7U, vlSelfRef.__VdlySched.awaitingCurrentTime());
-    vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp__1 
-        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp;
-    vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp__1 
-        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp;
-    vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o__1 
-        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o;
-    vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_w__1 
-        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_w;
-    vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_r__1 
-        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_r;
-    vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__clk_i__0 
-        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__clk_i;
-    vlSelfRef.__Vtrigprevexpr___TOP__tb_user_domain_hw_ctrl__DOT__rst_ni__0 
-        = vlSelfRef.tb_user_domain_hw_ctrl__DOT__rst_ni;
-    if (VL_UNLIKELY((1U & (~ (IData)(vlSelfRef.__VactDidInit))))) {
-        vlSelfRef.__VactDidInit = 1U;
-        vlSelfRef.__VactTriggered.set(0U, 1U);
-        vlSelfRef.__VactTriggered.set(1U, 1U);
-        vlSelfRef.__VactTriggered.set(2U, 1U);
-        vlSelfRef.__VactTriggered.set(3U, 1U);
-        vlSelfRef.__VactTriggered.set(4U, 1U);
-    }
-#ifdef VL_DEBUG
-    if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {
-        Vtb_user_domain_hw_ctrl___024root___dump_triggers__act(vlSelf);
-    }
-#endif
 }

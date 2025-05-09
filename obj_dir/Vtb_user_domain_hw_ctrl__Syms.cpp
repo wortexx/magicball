@@ -43,17 +43,20 @@ Vtb_user_domain_hw_ctrl__Syms::Vtb_user_domain_hw_ctrl__Syms(VerilatedContext* c
     , __Vm_modelp{modelp}
     // Setup module instances
     , TOP{this, namep}
+    , TOP____024unit{this, Verilated::catName(namep, "$unit")}
     , TOP__soc_ctrl_reg_pkg{this, Verilated::catName(namep, "soc_ctrl_reg_pkg")}
 {
         // Check resources
-        Verilated::stackCheck(24);
+        Verilated::stackCheck(88);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);
     // Setup each module's pointers to their submodules
+    TOP.__PVT____024unit = &TOP____024unit;
     TOP.__PVT__soc_ctrl_reg_pkg = &TOP__soc_ctrl_reg_pkg;
     // Setup each module's pointer back to symbol table (for public functions)
     TOP.__Vconfigure(true);
+    TOP____024unit.__Vconfigure(true);
     TOP__soc_ctrl_reg_pkg.__Vconfigure(true);
     // Setup scopes
     __Vscope_tb_user_domain_hw_ctrl.configure(this, name(), "tb_user_domain_hw_ctrl", "tb_user_domain_hw_ctrl", -9, VerilatedScope::SCOPE_OTHER);

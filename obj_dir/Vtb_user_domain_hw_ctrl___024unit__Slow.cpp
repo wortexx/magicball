@@ -5,6 +5,7 @@
 #include "Vtb_user_domain_hw_ctrl__pch.h"
 #include "Vtb_user_domain_hw_ctrl__Syms.h"
 #include "Vtb_user_domain_hw_ctrl___024unit.h"
+VlUnpacked<std::string, 4> Vtb_user_domain_hw_ctrl___024unit::__Venumtab_enum_name363;
 
 void Vtb_user_domain_hw_ctrl___024unit___ctor_var_reset(Vtb_user_domain_hw_ctrl___024unit* vlSelf);
 
