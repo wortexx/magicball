@@ -39,9 +39,11 @@ class alignas(VL_CACHE_LINE_BYTES)Vtb_user_domain_hw_ctrl__Syms final : public V
 
     // SCOPE NAMES
     VerilatedScope __Vscope_tb_user_domain_hw_ctrl;
-    VerilatedScope __Vscope_tb_user_domain_hw_ctrl__read_hw_prng;
+    VerilatedScope __Vscope_tb_user_domain_hw_ctrl__dut__i_user_font_rom;
+    VerilatedScope __Vscope_tb_user_domain_hw_ctrl__dut__i_user_font_rom__check_file_exists_label;
     VerilatedScope __Vscope_tb_user_domain_hw_ctrl__read_obi;
     VerilatedScope __Vscope_tb_user_domain_hw_ctrl__send_byte_hw_ctrl;
+    VerilatedScope __Vscope_tb_user_domain_hw_ctrl__set_hw_cs_dc;
     VerilatedScope __Vscope_tb_user_domain_hw_ctrl__unnamedblk1;
     VerilatedScope __Vscope_tb_user_domain_hw_ctrl__wait_spi_engine_idle;
     VerilatedScope __Vscope_tb_user_domain_hw_ctrl__write_obi;

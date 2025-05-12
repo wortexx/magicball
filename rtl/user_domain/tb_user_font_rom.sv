@@ -72,13 +72,11 @@ module tb_user_font_rom;
     req_ongoing = 1'b1;
     $display("%t : TB: OBI Read Req  : Addr=0x%h (Expect Grant: %b)", $time, r_addr, expected_grant);
 
-    // Wait for Grant (or lack thereof if address is invalid)
     while (obi_rsp.gnt !== expected_grant && timeout_count_gnt < OBI_TIMEOUT) begin
       @(posedge clk_i);
       timeout_count_gnt++;
     end
 
-    // Check for unexpected grant/no-grant or timeout
     if (timeout_count_gnt >= OBI_TIMEOUT) begin
       $error("%t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%h. GNT=%b", $time, r_addr, obi_rsp.gnt);
       $finish;
@@ -87,15 +85,13 @@ module tb_user_font_rom;
        $finish;
     end
 
-    // If grant was expected and received, proceed
     if (expected_grant) begin
         $display("%t : TB: OBI Read Gnt Rcvd: Addr=0x%h. GNT=%b", $time, r_addr, obi_rsp.gnt);
         @(posedge clk_i);
-        obi_req.req = 1'b0; // Deassert request only after expected grant
+        obi_req.req = 1'b0;
         req_ongoing = 1'b0;
         $display("%t : TB: OBI Read Req Deasserted.", $time);
 
-        // Wait for Valid
         while (obi_rsp.rvalid !== 1'b1 && timeout_count_rvalid < OBI_TIMEOUT) begin
             @(posedge clk_i);
             timeout_count_rvalid++;
@@ -105,24 +101,22 @@ module tb_user_font_rom;
             $finish;
         end
 
-        // Capture Data and Error
         rsp_r_chan_temp = obi_rsp.r;
         r_data_val = rsp_r_chan_temp.rdata;
         r_err      = rsp_r_chan_temp.err;
         $display("%t : TB: OBI Read Data Rcvd: Addr=0x%h Data=0x%08x Err=%b RVALID=%b", $time, r_addr, r_data_val, r_err, obi_rsp.rvalid);
 
-    // If grant was NOT expected (invalid address)
     end else begin
         $display("%t : TB: OBI Read No Grant Rcvd (Correct for invalid Addr=0x%h). GNT=%b", $time, r_addr, obi_rsp.gnt);
         @(posedge clk_i);
-        obi_req.req = 1'b0; // Deassert request
+        obi_req.req = 1'b0;
         req_ongoing = 1'b0;
-        r_data_val = 32'hDEADBEEF; // Indicate invalid data
-        r_err = 1'b1; // Indicate error condition
+        r_data_val = 32'hDEADBEEF;
+        r_err = 1'b1;
     end
 
     @(posedge clk_i);
-    obi_req = '0; // Clear rest of request signals
+    obi_req = '0;
   endtask
 
   //--------------------------------------------------------------------------
@@ -135,7 +129,6 @@ module tb_user_font_rom;
     $dumpfile("tb_user_font_rom.vcd");
     $dumpvars(0, tb_user_font_rom);
 
-    // Reset
     rst_ni = 1'b0;
     req_ongoing = 1'b0;
     obi_req = '0;
@@ -147,44 +140,37 @@ module tb_user_font_rom;
 
     $display("%t : TB: Starting Test Sequence for user_font_rom...", $time);
 
-    // Test 1: Read first byte of 'A' (ASCII 65)
     $display("--- Test 1: Read first byte of 'A' (Offset 0x%h) ---", 32'h18C);
     read_obi_rom(32'h18C, read_data, read_err);
-    if (read_err || read_data[7:0] !== 8'h00) begin // Expected 'A'[0]
+    if (read_err || read_data[7:0] !== 8'h00) begin
         $error("%t : TB_ERROR: Test 1 Failed. Expected 0x00, Got 0x%x, Err=%b", $time, read_data[7:0], read_err);
     end else begin $display("%t : TB_PASS: Test 1 Passed.", $time); end
     #(5 * CLK_PERIOD);
 
-    // Test 2: Read last byte of 'A' (ASCII 65)
     $display("--- Test 2: Read last byte of 'A' (Offset 0x%h) ---", 32'h197);
     read_obi_rom(32'h197, read_data, read_err);
-    if (read_err || read_data[7:0] !== 8'h40) begin // Expected 'A'[11]
+    if (read_err || read_data[7:0] !== 8'h40) begin
         $error("%t : TB_ERROR: Test 2 Failed. Expected 0x40, Got 0x%x, Err=%b", $time, read_data[7:0], read_err);
     end else begin $display("%t : TB_PASS: Test 2 Passed.", $time); end
     #(5 * CLK_PERIOD);
 
-    // Test 3: Read first byte of 'a' (ASCII 97)
     $display("--- Test 3: Read first byte of 'a' (Offset 0x%h) ---", 32'h30C);
     read_obi_rom(32'h30C, read_data, read_err);
-    if (read_err || read_data[7:0] !== 8'h00) begin // Expected 'a'[0]
+    if (read_err || read_data[7:0] !== 8'h00) begin
         $error("%t : TB_ERROR: Test 3 Failed. Expected 0x00, Got 0x%x, Err=%b", $time, read_data[7:0], read_err);
     end else begin $display("%t : TB_PASS: Test 3 Passed.", $time); end
     #(5 * CLK_PERIOD);
 
-    // Test 4: Read last byte of '~' (ASCII 126) - Last valid address
     $display("--- Test 4: Read last byte of '~' (Offset 0x%h) ---", 32'h473);
     read_obi_rom(32'h473, read_data, read_err);
-    // *** FIXED: Use sized literal 8'h00 ***
-    if (read_err || read_data[7:0] !== 8'h00) begin // Expected '~'[11]
+    if (read_err || read_data[7:0] !== 8'h00) begin
         $error("%t : TB_ERROR: Test 4 Failed. Expected 0x00, Got 0x%x, Err=%b", $time, read_data[7:0], read_err);
     end else begin $display("%t : TB_PASS: Test 4 Passed.", $time); end
     #(5 * CLK_PERIOD);
 
-    // Test 5: Read out of bounds address (ROM_SIZE = 1140 = 0x474)
     $display("--- Test 5: Read out of bounds (Offset 0x%h) ---", ROM_SIZE);
     read_obi_rom(ROM_SIZE, read_data, read_err);
-    // Expected: Grant should be low, read_err should be high (set by task)
-    if (!read_err) begin // Check the error flag returned by the task
+    if (!read_err) begin
         $error("%t : TB_ERROR: Test 5 Failed. Expected OBI error for out-of-bounds read, read_err=%b", $time, read_err);
     end else begin
         $display("%t : TB_PASS: Test 5 Passed (Correctly detected OBI error).", $time);

@@ -12,6 +12,20 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___eval_static(Vtb_obi_spi_direct_
     auto &vlSelfRef = std::ref(*vlSelf).get();
 }
 
+VL_ATTR_COLD void Vtb_obi_spi_direct___024root___eval_initial__TOP(Vtb_obi_spi_direct___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vtb_obi_spi_direct__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_obi_spi_direct___024root___eval_initial__TOP\n"); );
+    auto &vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.tb_obi_spi_direct__DOT__req_i = 0U;
+    vlSelfRef.tb_obi_spi_direct__DOT__we_i = 0U;
+    vlSelfRef.tb_obi_spi_direct__DOT__be_i = 0U;
+    vlSelfRef.tb_obi_spi_direct__DOT__addr_i = 0U;
+    vlSelfRef.tb_obi_spi_direct__DOT__wdata_i = 0U;
+    vlSelfRef.tb_obi_spi_direct__DOT__req_ongoing = 0U;
+}
+
 VL_ATTR_COLD void Vtb_obi_spi_direct___024root___eval_final__TOP(Vtb_obi_spi_direct___024root* vlSelf);
 VL_ATTR_COLD void Vtb_obi_spi_direct___024root____Vm_traceActivitySetAll(Vtb_obi_spi_direct___024root* vlSelf);
 
@@ -32,7 +46,7 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___eval_final__TOP(Vtb_obi_spi_dir
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
     if (vlSelfRef.tb_obi_spi_direct__DOT__req_ongoing) {
-        vlSelfRef.tb_obi_spi_direct__DOT__req = 0U;
+        vlSelfRef.tb_obi_spi_direct__DOT__req_i = 0U;
     }
 }
 
@@ -58,7 +72,7 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___eval_settle(Vtb_obi_spi_direct_
 #ifdef VL_DEBUG
             Vtb_obi_spi_direct___024root___dump_triggers__stl(vlSelf);
 #endif
-            VL_FATAL_MT("rtl/user_domain/tb_obi_spi_direct.sv", 3, "", "Settle region did not converge.");
+            VL_FATAL_MT("rtl/user_domain/tb_obi_spi_direct.sv", 1, "", "Settle region did not converge.");
         }
         __VstlIterCount = ((IData)(1U) + __VstlIterCount);
         __VstlContinue = 0U;
@@ -105,6 +119,7 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___stl_sequent__TOP__0(Vtb_obi_spi
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_obi_spi_direct___024root___stl_sequent__TOP__0\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    vlSelfRef.tb_obi_spi_direct__DOT__cs_no = 1U;
     vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_d 
         = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_q;
     vlSelfRef.tb_obi_spi_direct__DOT__sck_o = 0U;
@@ -112,6 +127,10 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___stl_sequent__TOP__0(Vtb_obi_spi
         = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q;
     vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d 
         = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q;
+    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__status_bits 
+        = (((IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__done_q) 
+            << 1U) | ((0U != (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)) 
+                      & (3U != (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q))));
     vlSelfRef.tb_obi_spi_direct__DOT__mosi_o = (1U 
                                                 & ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_q) 
                                                    >> (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_q)));
@@ -156,39 +175,31 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___stl_sequent__TOP__0(Vtb_obi_spi
                 vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 3U;
             }
         }
-    } else {
-        vlSelfRef.tb_obi_spi_direct__DOT__cs_no = (1U 
-                                                   & (~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)));
-        if ((1U & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q))) {
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d = 0U;
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_d = 7U;
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 2U;
-        } else if (vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q) {
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 1U;
-        }
+    } else if ((1U & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q))) {
+        vlSelfRef.tb_obi_spi_direct__DOT__cs_no = 0U;
+        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d = 0U;
+        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_d = 7U;
+        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 2U;
+    } else if (vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q) {
+        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 1U;
     }
-    vlSelfRef.tb_obi_spi_direct__DOT__gnt = ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__req) 
-                                             & (((~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__we)) 
-                                                 & (8U 
-                                                    == 
-                                                    (0xfffU 
-                                                     & vlSelfRef.tb_obi_spi_direct__DOT__addr))) 
-                                                | ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__we) 
-                                                   & ((0U 
-                                                       == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)) 
-                                                      & ((4U 
-                                                          == 
-                                                          (0xfffU 
-                                                           & vlSelfRef.tb_obi_spi_direct__DOT__addr)) 
-                                                         | (0U 
+    vlSelfRef.tb_obi_spi_direct__DOT__gnt_o = ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__req_i) 
+                                               & (((~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__we_i)) 
+                                                   & (8U 
+                                                      == 
+                                                      (0xfffU 
+                                                       & vlSelfRef.tb_obi_spi_direct__DOT__addr_i))) 
+                                                  | ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__we_i) 
+                                                     & ((0U 
+                                                         == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)) 
+                                                        & ((4U 
                                                             == 
                                                             (0xfffU 
-                                                             & vlSelfRef.tb_obi_spi_direct__DOT__addr)))))));
-    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__read_req_accepted_this_cycle 
-        = ((~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__we)) 
-           & ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__req) 
-              & ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__gnt) 
-                 & (8U == (0xfffU & vlSelfRef.tb_obi_spi_direct__DOT__addr)))));
+                                                             & vlSelfRef.tb_obi_spi_direct__DOT__addr_i)) 
+                                                           | (0U 
+                                                              == 
+                                                              (0xfffU 
+                                                               & vlSelfRef.tb_obi_spi_direct__DOT__addr_i)))))));
 }
 
 VL_ATTR_COLD void Vtb_obi_spi_direct___024root___eval_triggers__stl(Vtb_obi_spi_direct___024root* vlSelf);
@@ -220,7 +231,7 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___dump_triggers__act(Vtb_obi_spi_
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelfRef.__VactTriggered.word(0U))) {
-        VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge tb_obi_spi_direct.clk)\n");
+        VL_DBG_MSGF("         'act' region trigger index 0 is active: @(posedge tb_obi_spi_direct.clk_i)\n");
     }
     if ((2ULL & vlSelfRef.__VactTriggered.word(0U))) {
         VL_DBG_MSGF("         'act' region trigger index 1 is active: @(negedge tb_obi_spi_direct.rst_ni)\n");
@@ -242,7 +253,7 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___dump_triggers__nba(Vtb_obi_spi_
         VL_DBG_MSGF("         No triggers active\n");
     }
     if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge tb_obi_spi_direct.clk)\n");
+        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @(posedge tb_obi_spi_direct.clk_i)\n");
     }
     if ((2ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         VL_DBG_MSGF("         'nba' region trigger index 1 is active: @(negedge tb_obi_spi_direct.rst_ni)\n");
@@ -271,14 +282,14 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___ctor_var_reset(Vtb_obi_spi_dire
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_obi_spi_direct___024root___ctor_var_reset\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelf->tb_obi_spi_direct__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->tb_obi_spi_direct__DOT__clk_i = VL_RAND_RESET_I(1);
     vlSelf->tb_obi_spi_direct__DOT__rst_ni = VL_RAND_RESET_I(1);
-    vlSelf->tb_obi_spi_direct__DOT__req = VL_RAND_RESET_I(1);
-    vlSelf->tb_obi_spi_direct__DOT__addr = VL_RAND_RESET_I(32);
-    vlSelf->tb_obi_spi_direct__DOT__wdata = VL_RAND_RESET_I(32);
-    vlSelf->tb_obi_spi_direct__DOT__be = VL_RAND_RESET_I(4);
-    vlSelf->tb_obi_spi_direct__DOT__we = VL_RAND_RESET_I(1);
-    vlSelf->tb_obi_spi_direct__DOT__gnt = VL_RAND_RESET_I(1);
+    vlSelf->tb_obi_spi_direct__DOT__req_i = VL_RAND_RESET_I(1);
+    vlSelf->tb_obi_spi_direct__DOT__we_i = VL_RAND_RESET_I(1);
+    vlSelf->tb_obi_spi_direct__DOT__be_i = VL_RAND_RESET_I(4);
+    vlSelf->tb_obi_spi_direct__DOT__addr_i = VL_RAND_RESET_I(32);
+    vlSelf->tb_obi_spi_direct__DOT__wdata_i = VL_RAND_RESET_I(32);
+    vlSelf->tb_obi_spi_direct__DOT__gnt_o = VL_RAND_RESET_I(1);
     vlSelf->tb_obi_spi_direct__DOT__sck_o = VL_RAND_RESET_I(1);
     vlSelf->tb_obi_spi_direct__DOT__mosi_o = VL_RAND_RESET_I(1);
     vlSelf->tb_obi_spi_direct__DOT__cs_no = VL_RAND_RESET_I(1);
@@ -295,10 +306,11 @@ VL_ATTR_COLD void Vtb_obi_spi_direct___024root___ctor_var_reset(Vtb_obi_spi_dire
     vlSelf->tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d = VL_RAND_RESET_I(2);
     vlSelf->tb_obi_spi_direct__DOT__dut__DOT__rvalid_q = VL_RAND_RESET_I(1);
     vlSelf->tb_obi_spi_direct__DOT__dut__DOT__rdata_q = VL_RAND_RESET_I(32);
+    vlSelf->tb_obi_spi_direct__DOT__dut__DOT__status_bits = VL_RAND_RESET_I(2);
     vlSelf->tb_obi_spi_direct__DOT__dut__DOT__done_q = VL_RAND_RESET_I(1);
-    vlSelf->tb_obi_spi_direct__DOT__dut__DOT__read_req_accepted_this_cycle = VL_RAND_RESET_I(1);
+    vlSelf->tb_obi_spi_direct__DOT__dut__DOT__read_req_granted_q = VL_RAND_RESET_I(1);
     vlSelf->tb_obi_spi_direct__DOT__dut__DOT__unnamedblk1__DOT__next_mosi_idx = VL_RAND_RESET_I(3);
-    vlSelf->__Vtrigprevexpr___TOP__tb_obi_spi_direct__DOT__clk__0 = VL_RAND_RESET_I(1);
+    vlSelf->__Vtrigprevexpr___TOP__tb_obi_spi_direct__DOT__clk_i__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__tb_obi_spi_direct__DOT__rst_ni__0 = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;

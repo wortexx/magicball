@@ -38,6 +38,8 @@ class alignas(VL_CACHE_LINE_BYTES)Vtb_user_font_rom__Syms final : public Verilat
 
     // SCOPE NAMES
     VerilatedScope __Vscope_tb_user_font_rom;
+    VerilatedScope __Vscope_tb_user_font_rom__dut;
+    VerilatedScope __Vscope_tb_user_font_rom__dut__check_file_exists_label;
     VerilatedScope __Vscope_tb_user_font_rom__read_obi_rom;
     VerilatedScope __Vscope_tb_user_font_rom__unnamedblk1;
 

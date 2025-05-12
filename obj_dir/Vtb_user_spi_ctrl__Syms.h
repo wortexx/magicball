@@ -38,8 +38,9 @@ class alignas(VL_CACHE_LINE_BYTES)Vtb_user_spi_ctrl__Syms final : public Verilat
 
     // SCOPE NAMES
     VerilatedScope __Vscope_tb_user_spi_ctrl;
-    VerilatedScope __Vscope_tb_user_spi_ctrl__read_obi_ctrl;
-    VerilatedScope __Vscope_tb_user_spi_ctrl__write_obi_ctrl;
+    VerilatedScope __Vscope_tb_user_spi_ctrl__read_obi;
+    VerilatedScope __Vscope_tb_user_spi_ctrl__unnamedblk1;
+    VerilatedScope __Vscope_tb_user_spi_ctrl__write_obi;
 
     // CONSTRUCTORS
     Vtb_user_spi_ctrl__Syms(VerilatedContext* contextp, const char* namep, Vtb_user_spi_ctrl* modelp);

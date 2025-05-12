@@ -33,6 +33,10 @@ VM_CLASSES_SLOW += \
 	Vtb_xorshift___024root__Slow \
 	Vtb_xorshift___024root__DepSet_h2f7fa1bf__0__Slow \
 	Vtb_xorshift___024root__DepSet_h9caf94ae__0__Slow \
+	Vtb_xorshift___024unit__Slow \
+	Vtb_xorshift___024unit__DepSet_h5e62d3af__0__Slow \
+	Vtb_xorshift_soc_ctrl_reg_pkg__Slow \
+	Vtb_xorshift_soc_ctrl_reg_pkg__DepSet_hb2c6c46b__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \

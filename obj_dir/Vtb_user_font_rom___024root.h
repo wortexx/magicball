@@ -25,12 +25,14 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_user_font_rom___024root final : public Ve
     CData/*0:0*/ tb_user_font_rom__DOT__dut__DOT__rvalid_q;
     CData/*0:0*/ tb_user_font_rom__DOT__dut__DOT__read_req_accepted;
     CData/*0:0*/ tb_user_font_rom__DOT__dut__DOT__read_req;
+    CData/*7:0*/ tb_user_font_rom__DOT__dut__DOT__rom_byte_data_comb;
     CData/*0:0*/ __VstlFirstIteration;
     CData/*0:0*/ __Vtrigprevexpr___TOP__tb_user_font_rom__DOT__clk_i__0;
     CData/*0:0*/ __Vtrigprevexpr___TOP__tb_user_font_rom__DOT__rst_ni__0;
     CData/*0:0*/ __VactContinue;
     IData/*31:0*/ tb_user_font_rom__DOT__unnamedblk1__DOT__read_data;
     IData/*31:0*/ tb_user_font_rom__DOT__dut__DOT__rdata_q;
+    IData/*31:0*/ tb_user_font_rom__DOT__dut__DOT__check_file_exists_label__DOT__file_handle;
     IData/*31:0*/ __VactIterCount;
     VlWide<3>/*73:0*/ tb_user_font_rom__DOT__obi_req;
     QData/*38:0*/ tb_user_font_rom__DOT__obi_rsp;

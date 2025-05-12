@@ -62,6 +62,18 @@ VL_INLINE_OPT void Vtb_user_font_rom___024root___act_comb__TOP__0(Vtb_user_font_
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_user_font_rom___024root___act_comb__TOP__0\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_byte_data_comb 
+        = ((0x474U > (0xfffU & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                >> 0xaU))) ? ((0x473U 
+                                               >= (0x7ffU 
+                                                   & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                                      >> 0xaU)))
+                                               ? vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_data
+                                              [(0x7ffU 
+                                                & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                                   >> 0xaU))]
+                                               : 0U)
+            : 0U);
     vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req 
         = (1U & ((~ (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
                      >> 9U)) & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]));
@@ -84,12 +96,16 @@ VL_INLINE_OPT void Vtb_user_font_rom___024root___act_comb__TOP__0(Vtb_user_font_
                                                                       ((0xeU 
                                                                         & (vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
                                                                            >> 1U)) 
-                                                                       | ((0x474U 
-                                                                           <= 
-                                                                           (0xfffU 
-                                                                            & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                                                               >> 0xaU))) 
-                                                                          & (IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req))))) 
+                                                                       | (1U 
+                                                                          & ((vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
+                                                                              & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                                                                >> 9U)) 
+                                                                             | ((0x474U 
+                                                                                <= 
+                                                                                (0xfffU 
+                                                                                & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                                                                >> 0xaU))) 
+                                                                                & (IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req))))))) 
                                                       << 3U)));
 }
 
@@ -121,33 +137,41 @@ VL_INLINE_OPT void Vtb_user_font_rom___024root___nba_sequent__TOP__0(Vtb_user_fo
     Vtb_user_font_rom__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_user_font_rom___024root___nba_sequent__TOP__0\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
+    // Init
+    CData/*0:0*/ __Vdly__tb_user_font_rom__DOT__dut__DOT__rvalid_q;
+    __Vdly__tb_user_font_rom__DOT__dut__DOT__rvalid_q = 0;
     // Body
+    __Vdly__tb_user_font_rom__DOT__dut__DOT__rvalid_q 
+        = vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q;
     if (vlSelfRef.tb_user_font_rom__DOT__rst_ni) {
-        if (vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req_accepted) {
+        __Vdly__tb_user_font_rom__DOT__dut__DOT__rvalid_q 
+            = vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req_accepted;
+        if (VL_UNLIKELY(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req_accepted)) {
+            VL_WRITEF_NX("%t [FONT_ROM_FF] read_req_accepted=1. Addr=0x%x (Offset=0x%x). Byte read=0x%x. rdata_q set to 0x%x. rvalid_q becomes 1.\n",0,
+                         64,VL_TIME_UNITED_Q(1000),
+                         -9,32,((vlSelfRef.tb_user_font_rom__DOT__obi_req[2U] 
+                                 << 0x16U) | (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                              >> 0xaU)),
+                         12,(0xfffU & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                       >> 0xaU)),8,
+                         (IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_byte_data_comb),
+                         32,vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rdata_q);
             vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rdata_q 
-                = ((0x474U > (0xfffU & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                        >> 0xaU))) ? 
-                   ((0x473U >= (0x7ffU & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                          >> 0xaU)))
-                     ? vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_data
-                    [(0x7ffU & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                >> 0xaU))] : 0U) : 0U);
-            vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q = 1U;
-        } else {
-            if ((1U & (~ (IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q)))) {
-                vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rdata_q = 0U;
-            }
-            vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q = 0U;
+                = vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_byte_data_comb;
+        } else if ((1U & (~ (IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q)))) {
+            vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rdata_q = 0U;
         }
-    } else {
-        vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q = 0U;
-        vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rdata_q = 0U;
-    }
-    vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req_accepted 
-        = ((IData)(vlSelfRef.tb_user_font_rom__DOT__rst_ni) 
-           && ((IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req) 
+        vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req_accepted 
+            = ((IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req) 
                & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
-                          >> 1U))));
+                          >> 1U)));
+    } else {
+        __Vdly__tb_user_font_rom__DOT__dut__DOT__rvalid_q = 0U;
+        vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rdata_q = 0U;
+        vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req_accepted = 0U;
+    }
+    vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q 
+        = __Vdly__tb_user_font_rom__DOT__dut__DOT__rvalid_q;
 }
 
 VL_INLINE_OPT void Vtb_user_font_rom___024root___nba_comb__TOP__0(Vtb_user_font_rom___024root* vlSelf) {
@@ -156,6 +180,18 @@ VL_INLINE_OPT void Vtb_user_font_rom___024root___nba_comb__TOP__0(Vtb_user_font_
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_user_font_rom___024root___nba_comb__TOP__0\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_byte_data_comb 
+        = ((0x474U > (0xfffU & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                >> 0xaU))) ? ((0x473U 
+                                               >= (0x7ffU 
+                                                   & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                                      >> 0xaU)))
+                                               ? vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_data
+                                              [(0x7ffU 
+                                                & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                                   >> 0xaU))]
+                                               : 0U)
+            : 0U);
     vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req 
         = (1U & ((~ (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
                      >> 9U)) & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]));
@@ -186,12 +222,16 @@ VL_INLINE_OPT void Vtb_user_font_rom___024root___nba_comb__TOP__1(Vtb_user_font_
                                                                       ((0xeU 
                                                                         & (vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
                                                                            >> 1U)) 
-                                                                       | ((0x474U 
-                                                                           <= 
-                                                                           (0xfffU 
-                                                                            & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                                                               >> 0xaU))) 
-                                                                          & (IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req))))) 
+                                                                       | (1U 
+                                                                          & ((vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
+                                                                              & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                                                                >> 9U)) 
+                                                                             | ((0x474U 
+                                                                                <= 
+                                                                                (0xfffU 
+                                                                                & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
+                                                                                >> 0xaU))) 
+                                                                                & (IData)(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req))))))) 
                                                       << 3U)));
 }
 

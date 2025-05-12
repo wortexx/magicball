@@ -33,6 +33,8 @@ VM_CLASSES_SLOW += \
 	Vtb_obi_spi_direct___024root__Slow \
 	Vtb_obi_spi_direct___024root__DepSet_h4f1d96ef__0__Slow \
 	Vtb_obi_spi_direct___024root__DepSet_h562ebb3d__0__Slow \
+	Vtb_obi_spi_direct___024unit__Slow \
+	Vtb_obi_spi_direct___024unit__DepSet_h5de096ff__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \

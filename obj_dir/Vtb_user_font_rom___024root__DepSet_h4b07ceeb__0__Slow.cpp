@@ -12,18 +12,6 @@ VL_ATTR_COLD void Vtb_user_font_rom___024root___eval_static(Vtb_user_font_rom___
     auto &vlSelfRef = std::ref(*vlSelf).get();
 }
 
-VL_ATTR_COLD void Vtb_user_font_rom___024root___eval_initial__TOP(Vtb_user_font_rom___024root* vlSelf) {
-    (void)vlSelf;  // Prevent unused variable warning
-    Vtb_user_font_rom__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_user_font_rom___024root___eval_initial__TOP\n"); );
-    auto &vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    VL_WRITEF_NX("Initializing Font ROM (size 1140 bytes) from rtl/user_domain/font_rom_12x6.hex\n",0);
-    VL_READMEM_N(true, 8, 1140, 0, std::string{"rtl/user_domain/font_rom_12x6.hex"}
-                 ,  &(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_data)
-                 , 0, ~0ULL);
-}
-
 VL_ATTR_COLD void Vtb_user_font_rom___024root___eval_final__TOP(Vtb_user_font_rom___024root* vlSelf);
 VL_ATTR_COLD void Vtb_user_font_rom___024root____Vm_traceActivitySetAll(Vtb_user_font_rom___024root* vlSelf);
 
@@ -208,6 +196,8 @@ VL_ATTR_COLD void Vtb_user_font_rom___024root___ctor_var_reset(Vtb_user_font_rom
     vlSelf->tb_user_font_rom__DOT__dut__DOT__rdata_q = VL_RAND_RESET_I(32);
     vlSelf->tb_user_font_rom__DOT__dut__DOT__read_req_accepted = VL_RAND_RESET_I(1);
     vlSelf->tb_user_font_rom__DOT__dut__DOT__read_req = VL_RAND_RESET_I(1);
+    vlSelf->tb_user_font_rom__DOT__dut__DOT__rom_byte_data_comb = VL_RAND_RESET_I(8);
+    vlSelf->tb_user_font_rom__DOT__dut__DOT__check_file_exists_label__DOT__file_handle = 0;
     vlSelf->__Vtrigprevexpr___TOP__tb_user_font_rom__DOT__clk_i__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__tb_user_font_rom__DOT__rst_ni__0 = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 6; ++__Vi0) {

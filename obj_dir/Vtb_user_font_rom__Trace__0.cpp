@@ -49,43 +49,33 @@ void Vtb_user_font_rom___024root__trace_chg_0_sub_0(Vtb_user_font_rom___024root*
         bufp->chgBit(oldp+10,((0x474U > (0xfffU & (
                                                    vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
                                                    >> 0xaU)))));
-        bufp->chgSData(oldp+11,((0x7ffU & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                           >> 0xaU))),11);
-        bufp->chgCData(oldp+12,(((0x474U > (0xfffU 
-                                            & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                               >> 0xaU)))
-                                  ? ((0x473U >= (0x7ffU 
-                                                 & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                                    >> 0xaU)))
-                                      ? vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_data
-                                     [(0x7ffU & (vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] 
-                                                 >> 0xaU))]
-                                      : 0U) : 0U)),8);
-        bufp->chgIData(oldp+13,(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data),32);
-        bufp->chgBit(oldp+14,(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err));
+        bufp->chgIData(oldp+11,(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data),32);
+        bufp->chgBit(oldp+12,(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err));
     }
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[3U] 
                      | vlSelfRef.__Vm_traceActivity
                      [5U]))) {
-        bufp->chgIData(oldp+15,((IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
+        bufp->chgIData(oldp+13,((IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                          >> 7U))),32);
-        bufp->chgCData(oldp+16,((7U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
+        bufp->chgCData(oldp+14,((7U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                                >> 4U)))),3);
-        bufp->chgBit(oldp+17,((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
+        bufp->chgBit(oldp+15,((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                              >> 3U)))));
-        bufp->chgBit(oldp+18,((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
+        bufp->chgBit(oldp+16,((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                              >> 2U)))));
-        bufp->chgBit(oldp+19,((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
+        bufp->chgBit(oldp+17,((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                              >> 1U)))));
-        bufp->chgBit(oldp+20,((1U & (IData)(vlSelfRef.tb_user_font_rom__DOT__obi_rsp))));
+        bufp->chgBit(oldp+18,((1U & (IData)(vlSelfRef.tb_user_font_rom__DOT__obi_rsp))));
     }
     if (VL_UNLIKELY(vlSelfRef.__Vm_traceActivity[4U])) {
-        bufp->chgBit(oldp+21,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q));
-        bufp->chgIData(oldp+22,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rdata_q),32);
-        bufp->chgBit(oldp+23,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req_accepted));
+        bufp->chgBit(oldp+19,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rvalid_q));
+        bufp->chgIData(oldp+20,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rdata_q),32);
+        bufp->chgBit(oldp+21,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req_accepted));
     }
-    bufp->chgBit(oldp+24,(vlSelfRef.tb_user_font_rom__DOT__clk_i));
-    bufp->chgBit(oldp+25,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req));
+    bufp->chgBit(oldp+22,(vlSelfRef.tb_user_font_rom__DOT__clk_i));
+    bufp->chgBit(oldp+23,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__read_req));
+    bufp->chgCData(oldp+24,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__rom_byte_data_comb),8);
+    bufp->chgIData(oldp+25,(vlSelfRef.tb_user_font_rom__DOT__dut__DOT__check_file_exists_label__DOT__file_handle),32);
 }
 
 void Vtb_user_font_rom___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

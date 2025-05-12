@@ -4,6 +4,8 @@
 #include "Vtb_xorshift__pch.h"
 #include "Vtb_xorshift.h"
 #include "Vtb_xorshift___024root.h"
+#include "Vtb_xorshift___024unit.h"
+#include "Vtb_xorshift_soc_ctrl_reg_pkg.h"
 
 // FUNCTIONS
 Vtb_xorshift__Syms::~Vtb_xorshift__Syms()
@@ -41,13 +43,21 @@ Vtb_xorshift__Syms::Vtb_xorshift__Syms(VerilatedContext* contextp, const char* n
     , __Vm_modelp{modelp}
     // Setup module instances
     , TOP{this, namep}
+    , TOP__soc_ctrl_reg_pkg{this, Verilated::catName(namep, "soc_ctrl_reg_pkg")}
 {
         // Check resources
-        Verilated::stackCheck(34);
+        Verilated::stackCheck(144);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);
     // Setup each module's pointers to their submodules
+    TOP.__PVT__soc_ctrl_reg_pkg = &TOP__soc_ctrl_reg_pkg;
     // Setup each module's pointer back to symbol table (for public functions)
     TOP.__Vconfigure(true);
+    TOP__soc_ctrl_reg_pkg.__Vconfigure(true);
+    // Setup scopes
+    __Vscope_tb_xorshift.configure(this, name(), "tb_xorshift", "tb_xorshift", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_xorshift__read_obi.configure(this, name(), "tb_xorshift.read_obi", "read_obi", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_xorshift__unnamedblk1.configure(this, name(), "tb_xorshift.unnamedblk1", "unnamedblk1", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_xorshift__write_obi.configure(this, name(), "tb_xorshift.write_obi", "write_obi", -9, VerilatedScope::SCOPE_OTHER);
 }

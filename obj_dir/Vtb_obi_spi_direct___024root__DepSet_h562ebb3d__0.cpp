@@ -5,6 +5,7 @@
 #include "Vtb_obi_spi_direct__pch.h"
 #include "Vtb_obi_spi_direct___024root.h"
 
+VL_ATTR_COLD void Vtb_obi_spi_direct___024root___eval_initial__TOP(Vtb_obi_spi_direct___024root* vlSelf);
 VlCoroutine Vtb_obi_spi_direct___024root___eval_initial__TOP__Vtiming__0(Vtb_obi_spi_direct___024root* vlSelf);
 VlCoroutine Vtb_obi_spi_direct___024root___eval_initial__TOP__Vtiming__1(Vtb_obi_spi_direct___024root* vlSelf);
 
@@ -14,11 +15,12 @@ void Vtb_obi_spi_direct___024root___eval_initial(Vtb_obi_spi_direct___024root* v
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_obi_spi_direct___024root___eval_initial\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
+    Vtb_obi_spi_direct___024root___eval_initial__TOP(vlSelf);
     vlSelfRef.__Vm_traceActivity[1U] = 1U;
     Vtb_obi_spi_direct___024root___eval_initial__TOP__Vtiming__0(vlSelf);
     Vtb_obi_spi_direct___024root___eval_initial__TOP__Vtiming__1(vlSelf);
-    vlSelfRef.__Vtrigprevexpr___TOP__tb_obi_spi_direct__DOT__clk__0 
-        = vlSelfRef.tb_obi_spi_direct__DOT__clk;
+    vlSelfRef.__Vtrigprevexpr___TOP__tb_obi_spi_direct__DOT__clk_i__0 
+        = vlSelfRef.tb_obi_spi_direct__DOT__clk_i;
     vlSelfRef.__Vtrigprevexpr___TOP__tb_obi_spi_direct__DOT__rst_ni__0 
         = vlSelfRef.tb_obi_spi_direct__DOT__rst_ni;
 }
@@ -29,14 +31,14 @@ VL_INLINE_OPT VlCoroutine Vtb_obi_spi_direct___024root___eval_initial__TOP__Vtim
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_obi_spi_direct___024root___eval_initial__TOP__Vtiming__0\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.tb_obi_spi_direct__DOT__clk = 0U;
+    vlSelfRef.tb_obi_spi_direct__DOT__clk_i = 0U;
     while (1U) {
         co_await vlSelfRef.__VdlySched.delay(0x61a8ULL, 
                                              nullptr, 
                                              "rtl/user_domain/tb_obi_spi_direct.sv", 
-                                             63);
-        vlSelfRef.tb_obi_spi_direct__DOT__clk = (1U 
-                                                 & (~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__clk)));
+                                             41);
+        vlSelfRef.tb_obi_spi_direct__DOT__clk_i = (1U 
+                                                   & (~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__clk_i)));
     }
 }
 
@@ -59,31 +61,27 @@ VL_INLINE_OPT void Vtb_obi_spi_direct___024root___act_comb__TOP__0(Vtb_obi_spi_d
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_obi_spi_direct___024root___act_comb__TOP__0\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.tb_obi_spi_direct__DOT__gnt = ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__req) 
-                                             & (((~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__we)) 
-                                                 & (8U 
-                                                    == 
-                                                    (0xfffU 
-                                                     & vlSelfRef.tb_obi_spi_direct__DOT__addr))) 
-                                                | ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__we) 
-                                                   & ((0U 
-                                                       == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)) 
-                                                      & ((4U 
-                                                          == 
-                                                          (0xfffU 
-                                                           & vlSelfRef.tb_obi_spi_direct__DOT__addr)) 
-                                                         | (0U 
+    vlSelfRef.tb_obi_spi_direct__DOT__gnt_o = ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__req_i) 
+                                               & (((~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__we_i)) 
+                                                   & (8U 
+                                                      == 
+                                                      (0xfffU 
+                                                       & vlSelfRef.tb_obi_spi_direct__DOT__addr_i))) 
+                                                  | ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__we_i) 
+                                                     & ((0U 
+                                                         == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)) 
+                                                        & ((4U 
                                                             == 
                                                             (0xfffU 
-                                                             & vlSelfRef.tb_obi_spi_direct__DOT__addr)))))));
-    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__read_req_accepted_this_cycle 
-        = ((~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__we)) 
-           & ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__req) 
-              & ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__gnt) 
-                 & (8U == (0xfffU & vlSelfRef.tb_obi_spi_direct__DOT__addr)))));
+                                                             & vlSelfRef.tb_obi_spi_direct__DOT__addr_i)) 
+                                                           | (0U 
+                                                              == 
+                                                              (0xfffU 
+                                                               & vlSelfRef.tb_obi_spi_direct__DOT__addr_i)))))));
 }
 
 void Vtb_obi_spi_direct___024root___nba_sequent__TOP__0(Vtb_obi_spi_direct___024root* vlSelf);
+void Vtb_obi_spi_direct___024root___nba_sequent__TOP__1(Vtb_obi_spi_direct___024root* vlSelf);
 
 void Vtb_obi_spi_direct___024root___eval_nba(Vtb_obi_spi_direct___024root* vlSelf) {
     (void)vlSelf;  // Prevent unused variable warning
@@ -91,134 +89,15 @@ void Vtb_obi_spi_direct___024root___eval_nba(Vtb_obi_spi_direct___024root* vlSel
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_obi_spi_direct___024root___eval_nba\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    if ((3ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+    if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         Vtb_obi_spi_direct___024root___nba_sequent__TOP__0(vlSelf);
+    }
+    if ((3ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+        Vtb_obi_spi_direct___024root___nba_sequent__TOP__1(vlSelf);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
     }
     if ((7ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         Vtb_obi_spi_direct___024root___act_comb__TOP__0(vlSelf);
-    }
-}
-
-VL_INLINE_OPT void Vtb_obi_spi_direct___024root___nba_sequent__TOP__0(Vtb_obi_spi_direct___024root* vlSelf) {
-    (void)vlSelf;  // Prevent unused variable warning
-    Vtb_obi_spi_direct__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_obi_spi_direct___024root___nba_sequent__TOP__0\n"); );
-    auto &vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    if (vlSelfRef.tb_obi_spi_direct__DOT__rst_ni) {
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_q 
-            = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_d;
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q 
-            = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d;
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_q 
-            = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_d;
-        if (vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__read_req_accepted_this_cycle) {
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__rdata_q 
-                = (((IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__done_q) 
-                    << 1U) | ((0U != (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)) 
-                              & (3U != (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q))));
-        } else if ((1U & (~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__rvalid_q)))) {
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__rdata_q = 0U;
-        }
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__done_q 
-            = ((2U == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)) 
-               & (3U == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d)));
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q 
-            = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_d;
-        if ((((IData)(vlSelfRef.tb_obi_spi_direct__DOT__req) 
-              & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__we)) 
-             & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__gnt))) {
-            if ((4U == (0xfffU & vlSelfRef.tb_obi_spi_direct__DOT__addr))) {
-                if ((1U & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__be))) {
-                    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_q 
-                        = (0xffU & vlSelfRef.tb_obi_spi_direct__DOT__wdata);
-                }
-            }
-            if ((4U != (0xfffU & vlSelfRef.tb_obi_spi_direct__DOT__addr))) {
-                if ((0U == (0xfffU & vlSelfRef.tb_obi_spi_direct__DOT__addr))) {
-                    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q = 1U;
-                }
-            }
-        } else if (((0U == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)) 
-                    & (1U == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d)))) {
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q = 0U;
-        }
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q 
-            = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d;
-    } else {
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_q = 0U;
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q = 0U;
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_q = 0U;
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__rdata_q = 0U;
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q = 0U;
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__done_q = 0U;
-        vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q = 0U;
-    }
-    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_d 
-        = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_q;
-    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__rvalid_q 
-        = ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__rst_ni) 
-           && (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__read_req_accepted_this_cycle));
-    vlSelfRef.tb_obi_spi_direct__DOT__sck_o = 0U;
-    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_d 
-        = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q;
-    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d 
-        = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q;
-    vlSelfRef.tb_obi_spi_direct__DOT__mosi_o = (1U 
-                                                & ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_q) 
-                                                   >> (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_q)));
-    if ((1U & (~ ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q) 
-                  >> 1U)))) {
-        if ((1U & (~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)))) {
-            if (vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q) {
-                vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_d = 0U;
-            }
-        }
-        if ((1U & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q))) {
-            vlSelfRef.tb_obi_spi_direct__DOT__mosi_o 
-                = (1U & ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__tx_data_q) 
-                         >> 7U));
-        }
-    }
-    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_d 
-        = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_q;
-    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d 
-        = vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q;
-    if ((2U & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q))) {
-        vlSelfRef.tb_obi_spi_direct__DOT__cs_no = (1U 
-                                                   & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q));
-        if ((1U & (~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)))) {
-            vlSelfRef.tb_obi_spi_direct__DOT__sck_o 
-                = (2U <= (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q));
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d 
-                = (3U & ((IData)(1U) + (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q)));
-            if ((3U == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q))) {
-                vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d = 0U;
-                if ((0U != (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_q))) {
-                    vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_d 
-                        = (7U & ((IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_q) 
-                                 - (IData)(1U)));
-                }
-            }
-        }
-        if ((1U & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q))) {
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 0U;
-        } else if ((3U == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_q))) {
-            if ((0U == (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_q))) {
-                vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 3U;
-            }
-        }
-    } else {
-        vlSelfRef.tb_obi_spi_direct__DOT__cs_no = (1U 
-                                                   & (~ (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q)));
-        if ((1U & (IData)(vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_q))) {
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__spi_clk_cnt_d = 0U;
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__bit_cnt_d = 7U;
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 2U;
-        } else if (vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__start_flag_q) {
-            vlSelfRef.tb_obi_spi_direct__DOT__dut__DOT__state_d = 1U;
-        }
     }
 }
 
@@ -229,8 +108,8 @@ void Vtb_obi_spi_direct___024root___timing_commit(Vtb_obi_spi_direct___024root* 
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
     if ((! (1ULL & vlSelfRef.__VactTriggered.word(0U)))) {
-        vlSelfRef.__VtrigSched_hadee6d82__0.commit(
-                                                   "@(posedge tb_obi_spi_direct.clk)");
+        vlSelfRef.__VtrigSched_h72f6d80e__0.commit(
+                                                   "@(posedge tb_obi_spi_direct.clk_i)");
     }
 }
 
@@ -241,8 +120,8 @@ void Vtb_obi_spi_direct___024root___timing_resume(Vtb_obi_spi_direct___024root* 
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Body
     if ((1ULL & vlSelfRef.__VactTriggered.word(0U))) {
-        vlSelfRef.__VtrigSched_hadee6d82__0.resume(
-                                                   "@(posedge tb_obi_spi_direct.clk)");
+        vlSelfRef.__VtrigSched_h72f6d80e__0.resume(
+                                                   "@(posedge tb_obi_spi_direct.clk_i)");
     }
     if ((4ULL & vlSelfRef.__VactTriggered.word(0U))) {
         vlSelfRef.__VdlySched.resume();
@@ -311,7 +190,7 @@ void Vtb_obi_spi_direct___024root___eval(Vtb_obi_spi_direct___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtb_obi_spi_direct___024root___dump_triggers__nba(vlSelf);
 #endif
-            VL_FATAL_MT("rtl/user_domain/tb_obi_spi_direct.sv", 3, "", "NBA region did not converge.");
+            VL_FATAL_MT("rtl/user_domain/tb_obi_spi_direct.sv", 1, "", "NBA region did not converge.");
         }
         __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
         __VnbaContinue = 0U;
@@ -322,7 +201,7 @@ void Vtb_obi_spi_direct___024root___eval(Vtb_obi_spi_direct___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtb_obi_spi_direct___024root___dump_triggers__act(vlSelf);
 #endif
-                VL_FATAL_MT("rtl/user_domain/tb_obi_spi_direct.sv", 3, "", "Active region did not converge.");
+                VL_FATAL_MT("rtl/user_domain/tb_obi_spi_direct.sv", 1, "", "Active region did not converge.");
             }
             vlSelfRef.__VactIterCount = ((IData)(1U) 
                                          + vlSelfRef.__VactIterCount);

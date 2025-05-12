@@ -4,6 +4,7 @@
 #include "Vtb_obi_spi_direct__pch.h"
 #include "Vtb_obi_spi_direct.h"
 #include "Vtb_obi_spi_direct___024root.h"
+#include "Vtb_obi_spi_direct___024unit.h"
 
 // FUNCTIONS
 Vtb_obi_spi_direct__Syms::~Vtb_obi_spi_direct__Syms()
@@ -41,18 +42,21 @@ Vtb_obi_spi_direct__Syms::Vtb_obi_spi_direct__Syms(VerilatedContext* contextp, c
     , __Vm_modelp{modelp}
     // Setup module instances
     , TOP{this, namep}
+    , TOP____024unit{this, Verilated::catName(namep, "$unit")}
 {
         // Check resources
-        Verilated::stackCheck(332);
+        Verilated::stackCheck(354);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);
     // Setup each module's pointers to their submodules
+    TOP.__PVT____024unit = &TOP____024unit;
     // Setup each module's pointer back to symbol table (for public functions)
     TOP.__Vconfigure(true);
+    TOP____024unit.__Vconfigure(true);
     // Setup scopes
     __Vscope_tb_obi_spi_direct.configure(this, name(), "tb_obi_spi_direct", "tb_obi_spi_direct", -9, VerilatedScope::SCOPE_OTHER);
-    __Vscope_tb_obi_spi_direct__read_obi.configure(this, name(), "tb_obi_spi_direct.read_obi", "read_obi", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_obi_spi_direct__read_obi_direct.configure(this, name(), "tb_obi_spi_direct.read_obi_direct", "read_obi_direct", -9, VerilatedScope::SCOPE_OTHER);
     __Vscope_tb_obi_spi_direct__wait_spi_done.configure(this, name(), "tb_obi_spi_direct.wait_spi_done", "wait_spi_done", -9, VerilatedScope::SCOPE_OTHER);
-    __Vscope_tb_obi_spi_direct__write_obi.configure(this, name(), "tb_obi_spi_direct.write_obi", "write_obi", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_obi_spi_direct__write_obi_direct.configure(this, name(), "tb_obi_spi_direct.write_obi_direct", "write_obi_direct", -9, VerilatedScope::SCOPE_OTHER);
 }

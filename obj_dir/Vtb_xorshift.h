@@ -13,6 +13,8 @@
 class Vtb_xorshift__Syms;
 class Vtb_xorshift___024root;
 class VerilatedVcdC;
+class Vtb_xorshift_soc_ctrl_reg_pkg;
+
 
 // This class is the main interface to the Verilated model
 class alignas(VL_CACHE_LINE_BYTES) Vtb_xorshift VL_NOT_FINAL : public VerilatedModel {
@@ -33,6 +35,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vtb_xorshift VL_NOT_FINAL : public VerilatedM
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
+    Vtb_xorshift_soc_ctrl_reg_pkg* const __PVT__soc_ctrl_reg_pkg;
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.

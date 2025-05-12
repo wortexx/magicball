@@ -1,222 +1,195 @@
-`timescale 1ns/1ps
-
 module tb_obi_spi_direct;
 
-  //--------------------------------------------------------------------------
   // Parameters
-  //--------------------------------------------------------------------------
-  localparam CLK_PERIOD       = 50ns; // For 20 MHz system clock
-  localparam RESET_DURATION   = 2 * CLK_PERIOD;
-  localparam OBI_TIMEOUT      = 2000; // Max cycles to wait for OBI gnt/rvalid
-  localparam SPI_DONE_TIMEOUT = 10000; // Max cycles to wait for SPI busy=0
+  localparam CLK_PERIOD     = 50ns; // 20 MHz clock
+  localparam RESET_DURATION = 2 * CLK_PERIOD;
+  localparam OBI_TIMEOUT    = 2000; // Max cycles for OBI response
+  localparam SPI_DONE_TIMEOUT = 10000; // Max cycles for SPI busy=0
 
-  // DUT Address Map (Offsets within the peripheral)
-  localparam logic [31:0] SPI_CTRL_ADDR_OFFSET   = 32'h00;
-  localparam logic [31:0] SPI_TX_ADDR_OFFSET     = 32'h04;
-  localparam logic [31:0] SPI_STATUS_ADDR_OFFSET = 32'h08;
+  // OBI Register Offsets (relative to peripheral base)
+  localparam logic [11:0] SPI_CTRL_ADDR_OFFSET   = 12'h000;
+  localparam logic [11:0] SPI_TX_ADDR_OFFSET     = 12'h004;
+  localparam logic [11:0] SPI_STATUS_ADDR_OFFSET = 12'h008;
 
-  //--------------------------------------------------------------------------
   // Signals
-  //--------------------------------------------------------------------------
-  logic clk;
-  logic rst_ni;
+  logic        clk_i;
+  logic        rst_ni;
+  logic        req_i;
+  logic        we_i;
+  logic [3:0]  be_i;
+  logic [31:0] addr_i;
+  logic [31:0] wdata_i;
+  logic        gnt_o;
+  logic        rvalid_o;
+  logic [31:0] rdata_o;
+  logic        sck_o;
+  logic        mosi_o;
+  logic        cs_no;
+  logic        req_ongoing;
 
-  logic        req;
-  logic [31:0] addr;
-  logic [31:0] wdata;
-  logic [3:0]  be;
-  logic        we;
-  logic        gnt;
-  logic        rvalid;
-  logic [31:0] rdata;
-
-  logic sck_o;
-  logic mosi_o;
-  logic cs_no; // Monitor the hardware CS
-
-  logic req_ongoing; // To manage req deassertion in final block
-
-  //--------------------------------------------------------------------------
   // DUT Instantiation
-  //--------------------------------------------------------------------------
   obi_spi_peripheral dut (
-    .clk_i    (clk),
-    .rst_ni   (rst_ni),
-    .req_i    (req),
-    .addr_i   (addr),
-    .wdata_i  (wdata),
-    .be_i     (be),
-    .we_i     (we),
-    .gnt_o    (gnt),
-    .rvalid_o (rvalid),
-    .rdata_o  (rdata),
-    .sck_o    (sck_o),
-    .mosi_o   (mosi_o),
-    .cs_no    (cs_no) // Connect to monitor DUT's CS
+    .clk_i, .rst_ni,
+    .req_i, .we_i, .be_i, .addr_i, .wdata_i,
+    .gnt_o, .rvalid_o, .rdata_o,
+    .sck_o, .mosi_o, .cs_no
   );
 
-  //--------------------------------------------------------------------------
   // Clock Generation
-  //--------------------------------------------------------------------------
   initial begin
-    clk = 1'b0;
-    forever #(CLK_PERIOD / 2) clk = ~clk; // Corrected for desired period
+    clk_i = 1'b0;
+    forever #(CLK_PERIOD / 2) clk_i = ~clk_i;
   end
 
-  //--------------------------------------------------------------------------
-  // OBI Tasks
-  //--------------------------------------------------------------------------
-  task automatic write_obi(input logic [31:0] w_addr, input logic [31:0] w_data, input logic [3:0] w_be);
-    int timeout_count = 0;
-    @(posedge clk);
-    req   = 1'b1;
-    we    = 1'b1;
-    addr  = w_addr;
-    wdata = w_data;
-    be    = w_be;
-    req_ongoing = 1'b1;
-    $display("%t : TB: OBI Write Req : Addr=0x%h Data=0x%h BE=0x%b", $time, w_addr, w_data, w_be);
+  // Default Connections
+  initial begin
+    req_i     = 1'b0;
+    we_i      = 1'b0;
+    be_i      = 4'b0000;
+    addr_i    = 32'h0;
+    wdata_i   = 32'h0;
+    req_ongoing = 1'b0;
+  end
 
-    while (gnt !== 1'b1 && timeout_count < OBI_TIMEOUT) begin
-      @(posedge clk);
+  // OBI Master Tasks
+  task automatic write_obi_direct(input logic [11:0] offset, input logic [31:0] data, input logic [3:0] byte_en);
+    int timeout_count = 0;
+    @(posedge clk_i);
+    req_i   = 1'b1;
+    we_i    = 1'b1;
+    addr_i  = {20'h0, offset}; // Base address is 0 for direct test
+    wdata_i = data;
+    be_i    = byte_en;
+    req_ongoing = 1'b1;
+    $display("%t : TB: OBI Write Req : Addr=0x%h, Data=0x%h, BE=0x%b", $time, addr_i, wdata_i, be_i);
+
+    while (gnt_o !== 1'b1 && timeout_count < OBI_TIMEOUT) begin
+      @(posedge clk_i);
       timeout_count++;
     end
     if (timeout_count >= OBI_TIMEOUT) begin
-      $error("%t : TB: Timeout waiting for OBI grant during write to 0x%h. GNT=%b", $time, w_addr, gnt);
+      $error("%t : TB: Timeout waiting for OBI grant during write to 0x%h. GNT=%b", $time, addr_i, gnt_o);
       $finish;
     end
-    $display("%t : TB: OBI Write Gnt Rcvd: Addr=0x%h. GNT=%b", $time, w_addr, gnt);
+    $display("%t : TB: OBI Write Gnt Rcvd: Addr=0x%h. GNT=%b", $time, addr_i, gnt_o);
 
-    @(posedge clk);
-    req = 1'b0;
+    @(posedge clk_i); // Hold req for one cycle after grant
+    req_i = 1'b0;
     req_ongoing = 1'b0;
     $display("%t : TB: OBI Write Req Deasserted.", $time);
-
-    @(posedge clk); // Allow one cycle for req to deassert before clearing other fields
-    we = 1'b0;      // Deassert we and be after req goes low
-    be = 4'b0;
+    @(posedge clk_i); // Allow one cycle for signals to settle
   endtask
 
-  task automatic read_obi(input logic [31:0] r_addr, output logic [31:0] r_data_val);
+  task automatic read_obi_direct(input logic [11:0] offset, output logic [31:0] r_data, output logic r_err);
     int timeout_count_gnt = 0;
     int timeout_count_rvalid = 0;
-    @(posedge clk);
-    req   = 1'b1;
-    we    = 1'b0;
-    addr  = r_addr;
-    wdata = 'x;
-    be    = 4'b0;
+    @(posedge clk_i);
+    req_i   = 1'b1;
+    we_i    = 1'b0;
+    addr_i  = {20'h0, offset}; // Base address is 0 for direct test
+    be_i    = 4'b1111; // Assuming full word read for status
     req_ongoing = 1'b1;
-    $display("%t : TB: OBI Read Req  : Addr=0x%h", $time, r_addr);
+    $display("%t : TB: OBI Read Req  : Addr=0x%h", $time, addr_i);
 
-    while (gnt !== 1'b1 && timeout_count_gnt < OBI_TIMEOUT) begin
-      @(posedge clk);
+    while (gnt_o !== 1'b1 && timeout_count_gnt < OBI_TIMEOUT) begin
+      @(posedge clk_i);
       timeout_count_gnt++;
     end
     if (timeout_count_gnt >= OBI_TIMEOUT) begin
-      $error("%t : TB: Timeout waiting for OBI grant during read from 0x%h. GNT=%b", $time, r_addr, gnt);
+      $error("%t : TB: Timeout waiting for OBI grant during read from 0x%h. GNT=%b", $time, addr_i, gnt_o);
       $finish;
     end
-    $display("%t : TB: OBI Read Gnt Rcvd: Addr=0x%h. GNT=%b", $time, r_addr, gnt);
+    $display("%t : TB: OBI Read Gnt Rcvd: Addr=0x%h. GNT=%b", $time, addr_i, gnt_o);
 
-    @(posedge clk);
-    req = 1'b0;
+    @(posedge clk_i); // Hold req for one cycle after grant
+    req_i = 1'b0;
     req_ongoing = 1'b0;
     $display("%t : TB: OBI Read Req Deasserted.", $time);
 
-    while (rvalid !== 1'b1 && timeout_count_rvalid < OBI_TIMEOUT) begin
-        @(posedge clk);
-        // $display("%t : TB: Polling rvalid for Addr=0x%h, rvalid=%b", $time, r_addr, rvalid);
-        timeout_count_rvalid++;
+    while (rvalid_o !== 1'b1 && timeout_count_rvalid < OBI_TIMEOUT) begin
+      @(posedge clk_i);
+      timeout_count_rvalid++;
     end
     if (timeout_count_rvalid >= OBI_TIMEOUT) begin
-        $error("%t : TB: Timeout waiting for OBI rvalid during read from 0x%h. RVALID=%b", $time, r_addr, rvalid);
-        $finish;
+      $error("%t : TB: Timeout waiting for OBI rvalid during read from 0x%h. RVALID=%b", $time, addr_i, rvalid_o);
+      $finish;
     end
-    r_data_val = rdata;
-    $display("%t : TB: OBI Read Data Rcvd: Addr=0x%h Data=0x%08x. RVALID=%b", $time, r_addr, r_data_val, rvalid);
-    @(posedge clk); // Cycle for master to sample data
+    r_data = rdata_o;
+    r_err  = 1'b0; // No error signal from DUT in this simple OBI model
+    $display("%t : TB: OBI Read Data Rcvd: Addr=0x%h Data=0x%08x. RVALID=%b", $time, addr_i, r_data, rvalid_o);
+    @(posedge clk_i); // Allow one cycle for signals to settle
   endtask
 
-  //--------------------------------------------------------------------------
-  // SPI Helper Tasks
-  //--------------------------------------------------------------------------
   task automatic wait_spi_done();
-      logic [31:0] status_val;
-      logic busy_bit;
-      logic done_bit_tb; // Use different name to avoid conflict if 'done' is a signal
-      int timeout_count = 0;
-      $display("%t : TB: Waiting for SPI Engine to finish...", $time);
-      @(posedge clk);
-      do begin
-          read_obi(SPI_STATUS_ADDR_OFFSET, status_val); // Use offset for direct test
-          busy_bit = status_val[0];
-          done_bit_tb = status_val[1];
-          $display("%t : TB: Polling SPI Engine Status: 0x%08x (done=%b, busy=%b)",
-                   $time, status_val, done_bit_tb, busy_bit);
-          timeout_count++;
-          if (busy_bit === 1'b1) @(posedge clk);
-      end while (busy_bit === 1'b1 && timeout_count < SPI_DONE_TIMEOUT);
+    logic [31:0] status_val;
+    logic busy_bit;
+    logic done_bit_tb;
+    logic read_err;
+    int timeout_count = 0;
+    $display("%t : TB: Waiting for SPI Engine to finish...", $time);
+    @(posedge clk_i);
+    do begin
+      read_obi_direct(SPI_STATUS_ADDR_OFFSET, status_val, read_err);
+      // No error check for this simple TB's read_obi_direct
+      busy_bit = status_val[0];    // busy is bit 0
+      done_bit_tb = status_val[1]; // done is bit 1
+      $display("%t : TB: Polling SPI Engine Status: 0x%08x (done=%b, busy=%b)", $time, status_val, done_bit_tb, busy_bit);
+      timeout_count++;
+      if (busy_bit === 1'b1) @(posedge clk_i); // Only wait if busy
+    end while (busy_bit === 1'b1 && timeout_count < SPI_DONE_TIMEOUT);
 
-      if (timeout_count >= SPI_DONE_TIMEOUT) begin
-          $error("%t : TB: Timeout waiting for SPI Engine to become idle. Last Status: 0x%08x",
-                 $time, status_val);
-          $finish;
-      end
-      // Read status one last time after busy goes low
-      read_obi(SPI_STATUS_ADDR_OFFSET, status_val);
-      $display("%t : TB: SPI Engine finished. Final Status: 0x%08x (done=%b, busy=%b)",
-               $time, status_val, status_val[1], status_val[0]);
+    if (timeout_count >= SPI_DONE_TIMEOUT) begin
+      $error("%t : TB: Timeout waiting for SPI Engine to become idle. Last Status: 0x%08x", $time, status_val);
+      $finish;
+    end
+    // Read status one last time after busy goes low
+    read_obi_direct(SPI_STATUS_ADDR_OFFSET, status_val, read_err);
+    $display("%t : TB: SPI Engine finished. Final Status: 0x%08x (done=%b, busy=%b)", $time, status_val, status_val[1], status_val[0]);
   endtask
 
   task automatic send_spi_byte(input [7:0] spi_data);
       $display("%t : TB: Sending SPI byte: 0x%02h", $time, spi_data);
-      wait_spi_done(); // Check if idle before starting
-      write_obi(SPI_TX_ADDR_OFFSET, {24'h0, spi_data}, 4'b0001);
-      write_obi(SPI_CTRL_ADDR_OFFSET, 32'h1, 4'b0001);
+      wait_spi_done(); // Ensure engine is idle before starting
+      write_obi_direct(SPI_TX_ADDR_OFFSET, {24'h0, spi_data}, 4'b0001); // Write LSB
+      write_obi_direct(SPI_CTRL_ADDR_OFFSET, 32'h1, 4'b0001);          // Start transfer
       wait_spi_done(); // Wait for this transfer to complete
       $display("%t : TB: Finished sending SPI byte: 0x%02h", $time, spi_data);
   endtask
 
-  //--------------------------------------------------------------------------
   // Test Scenario
-  //--------------------------------------------------------------------------
   initial begin
-    $dumpfile("tb_obi_spi_direct_debug.vcd");
+    $dumpfile("tb_obi_spi_direct.vcd");
     $dumpvars(0, tb_obi_spi_direct);
 
     rst_ni = 1'b0;
-    req    = 1'b0;
-    we     = 1'b0;
-    addr   = 'x;
-    wdata  = 'x;
-    be     = 4'b0;
-    req_ongoing = 1'b0;
-
     $display("%t : TB: Asserting Reset", $time);
     #(RESET_DURATION);
     rst_ni = 1'b1;
     $display("%t : TB: Deasserting Reset", $time);
-    @(posedge clk);
+    @(posedge clk_i);
 
     $display("%t : TB: Starting Test Sequence...", $time);
 
+    // Test 1: Send 0xAA
     send_spi_byte(8'hAA);
-    #(5 * CLK_PERIOD); // Small delay between transfers
+
+    #(CLK_PERIOD * 5); // Delay between transfers
+
+    // Test 2: Send 0x55
     send_spi_byte(8'h55);
 
-    #(10 * CLK_PERIOD);
+    #(CLK_PERIOD * 10);
     $display("%t : TB: Test Sequence Complete.", $time);
     $finish;
   end
 
   final begin
     if (req_ongoing) begin
-        req = 1'b0;
+        req_i = 1'b0; // Ensure req is deasserted if test finishes mid-transaction
     end
   end
 
-endmodule : tb_obi_spi_direct
+endmodule
 
 /*
 

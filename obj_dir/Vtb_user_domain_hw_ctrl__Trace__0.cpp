@@ -27,303 +27,324 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
     if (VL_UNLIKELY(vlSelfRef.__Vm_traceActivity[1U])) {
         bufp->chgBit(oldp+0,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__ref_clk_i));
         bufp->chgBit(oldp+1,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__testmode_i));
-        bufp->chgIData(oldp+2,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp 
+        bufp->chgIData(oldp+2,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp_i_tb 
                                         >> 5U))),32);
-        bufp->chgBit(oldp+3,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp 
+        bufp->chgBit(oldp+3,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp_i_tb 
                                             >> 4U)))));
-        bufp->chgBit(oldp+4,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp 
+        bufp->chgBit(oldp+4,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp_i_tb 
                                             >> 3U)))));
-        bufp->chgBit(oldp+5,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp 
+        bufp->chgBit(oldp+5,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp_i_tb 
                                             >> 2U)))));
-        bufp->chgBit(oldp+6,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp 
+        bufp->chgBit(oldp+6,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp_i_tb 
                                             >> 1U)))));
-        bufp->chgBit(oldp+7,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp))));
-        bufp->chgSData(oldp+8,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__gpio_in_sync_i),16);
+        bufp->chgBit(oldp+7,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_mgr_obi_rsp_i_tb))));
+        bufp->chgSData(oldp+8,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__gpio_in_sync_i_tb),16);
+        bufp->chgIData(oldp+9,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__check_file_exists_label__DOT__file_handle),32);
     }
-    if (VL_UNLIKELY(((vlSelfRef.__Vm_traceActivity[1U] 
-                      | vlSelfRef.__Vm_traceActivity
-                      [2U]) | vlSelfRef.__Vm_traceActivity
-                     [3U]))) {
-        bufp->chgIData(oldp+9,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
-                                 << 0x16U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
-                                              >> 0xaU))),32);
-        bufp->chgBit(oldp+10,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
-                                     >> 9U))));
-        bufp->chgCData(oldp+11,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
-                                         >> 5U))),4);
-        bufp->chgIData(oldp+12,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
-                                  << 0x1bU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
-                                               >> 5U))),32);
-        bufp->chgCData(oldp+13,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
-                                       >> 2U))),3);
-        bufp->chgBit(oldp+14,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+    if (VL_UNLIKELY(vlSelfRef.__Vm_traceActivity[2U])) {
+        bufp->chgIData(oldp+10,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__read_data),32);
+        bufp->chgBit(oldp+11,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__read_err));
+        bufp->chgCData(oldp+12,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__font_byte_val),8);
+        bufp->chgIData(oldp+13,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__prng_val1),32);
+        bufp->chgIData(oldp+14,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__prng_val2),32);
+        bufp->chgIData(oldp+15,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__font_addr_A_start),32);
+        bufp->chgIData(oldp+16,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__font_addr_A_mid),32);
+        bufp->chgIData(oldp+17,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__font_addr_B_start),32);
+    }
+    if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[3U] 
+                     | vlSelfRef.__Vm_traceActivity
+                     [7U]))) {
+        bufp->chgBit(oldp+18,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__cnt_down_sig));
+        bufp->chgIData(oldp+19,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
+                                  << 0x19U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
+                                               >> 7U))),32);
+        bufp->chgCData(oldp+20,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
+                                       >> 4U))),3);
+        bufp->chgBit(oldp+21,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
+                                     >> 3U))));
+        bufp->chgBit(oldp+22,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
+                                     >> 2U))));
+        bufp->chgBit(oldp+23,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
                                      >> 1U))));
-        bufp->chgBit(oldp+15,((1U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U])));
-        bufp->chgBit(oldp+16,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing));
-    }
-    if (VL_UNLIKELY(vlSelfRef.__Vm_traceActivity[3U])) {
-        bufp->chgIData(oldp+17,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__prng_val1),32);
-        bufp->chgCData(oldp+18,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__font_byte),8);
-        bufp->chgIData(oldp+19,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__read_data),32);
-        bufp->chgBit(oldp+20,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__read_err));
-        bufp->chgIData(oldp+21,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__unnamedblk1__DOT__phrase_index),32);
+        bufp->chgBit(oldp+24,((1U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U])));
+        bufp->chgIData(oldp+25,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
+                                  << 0x12U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
+                                               >> 0xeU))),32);
+        bufp->chgCData(oldp+26,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
+                                       >> 0xbU))),3);
+        bufp->chgBit(oldp+27,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
+                                     >> 0xaU))));
+        bufp->chgBit(oldp+28,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
+                                     >> 9U))));
+        bufp->chgBit(oldp+29,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
+                                     >> 8U))));
+        bufp->chgBit(oldp+30,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
+                                     >> 7U))));
+        bufp->chgIData(oldp+31,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
+                                  << 0xbU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
+                                              >> 0x15U))),32);
+        bufp->chgCData(oldp+32,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
+                                       >> 0x12U))),3);
+        bufp->chgBit(oldp+33,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
+                                     >> 0x11U))));
+        bufp->chgBit(oldp+34,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
+                                     >> 0x10U))));
+        bufp->chgBit(oldp+35,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
+                                     >> 0xfU))));
+        bufp->chgBit(oldp+36,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
+                                     >> 0xeU))));
+        bufp->chgIData(oldp+37,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[4U] 
+                                  << 4U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
+                                            >> 0x1cU))),32);
+        bufp->chgCData(oldp+38,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
+                                       >> 0x19U))),3);
+        bufp->chgBit(oldp+39,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
+                                     >> 0x18U))));
+        bufp->chgBit(oldp+40,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
+                                     >> 0x17U))));
+        bufp->chgBit(oldp+41,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
+                                     >> 0x16U))));
+        bufp->chgBit(oldp+42,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
+                                     >> 0x15U))));
+        bufp->chgIData(oldp+43,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[6U] 
+                                  << 0x1dU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[5U] 
+                                               >> 3U))),32);
+        bufp->chgCData(oldp+44,((7U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[5U])),3);
+        bufp->chgBit(oldp+45,((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[4U] 
+                               >> 0x1fU)));
+        bufp->chgBit(oldp+46,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[4U] 
+                                     >> 0x1eU))));
+        bufp->chgBit(oldp+47,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[4U] 
+                                     >> 0x1dU))));
+        bufp->chgBit(oldp+48,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[4U] 
+                                     >> 0x1cU))));
     }
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[4U] 
                      | vlSelfRef.__Vm_traceActivity
                      [8U]))) {
-        bufp->chgIData(oldp+22,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
-                                  << 0x19U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
-                                               >> 7U))),32);
-        bufp->chgCData(oldp+23,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
-                                       >> 4U))),3);
-        bufp->chgBit(oldp+24,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
-                                     >> 3U))));
-        bufp->chgBit(oldp+25,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
-                                     >> 2U))));
-        bufp->chgBit(oldp+26,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U] 
-                                     >> 1U))));
-        bufp->chgBit(oldp+27,((1U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[0U])));
-        bufp->chgIData(oldp+28,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
-                                  << 0x12U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
-                                               >> 0xeU))),32);
-        bufp->chgCData(oldp+29,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
-                                       >> 0xbU))),3);
-        bufp->chgBit(oldp+30,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
-                                     >> 0xaU))));
-        bufp->chgBit(oldp+31,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
-                                     >> 9U))));
-        bufp->chgBit(oldp+32,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
-                                     >> 8U))));
-        bufp->chgBit(oldp+33,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[1U] 
-                                     >> 7U))));
-        bufp->chgIData(oldp+34,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
-                                  << 0xbU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
-                                              >> 0x15U))),32);
-        bufp->chgCData(oldp+35,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
-                                       >> 0x12U))),3);
-        bufp->chgBit(oldp+36,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
-                                     >> 0x11U))));
-        bufp->chgBit(oldp+37,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
-                                     >> 0x10U))));
-        bufp->chgBit(oldp+38,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
-                                     >> 0xfU))));
-        bufp->chgBit(oldp+39,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[2U] 
-                                     >> 0xeU))));
-        bufp->chgIData(oldp+40,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[4U] 
-                                  << 4U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
-                                            >> 0x1cU))),32);
-        bufp->chgCData(oldp+41,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
-                                       >> 0x19U))),3);
-        bufp->chgBit(oldp+42,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
-                                     >> 0x18U))));
-        bufp->chgBit(oldp+43,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
-                                     >> 0x17U))));
-        bufp->chgBit(oldp+44,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
-                                     >> 0x16U))));
-        bufp->chgBit(oldp+45,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[3U] 
-                                     >> 0x15U))));
-        bufp->chgBit(oldp+46,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__cnt_down));
-    }
-    if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[5U] 
-                     | vlSelfRef.__Vm_traceActivity
-                     [9U]))) {
-        bufp->chgIData(oldp+47,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
-                                  << 0x16U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[1U] 
+        bufp->chgIData(oldp+49,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[2U] 
+                                  << 0x16U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[1U] 
                                                >> 0xaU))),32);
-        bufp->chgBit(oldp+48,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[1U] 
+        bufp->chgBit(oldp+50,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[1U] 
                                      >> 9U))));
-        bufp->chgCData(oldp+49,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[1U] 
+        bufp->chgCData(oldp+51,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[1U] 
                                          >> 5U))),4);
-        bufp->chgIData(oldp+50,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[1U] 
-                                  << 0x1bU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[0U] 
+        bufp->chgIData(oldp+52,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[1U] 
+                                  << 0x1bU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0U] 
                                                >> 5U))),32);
-        bufp->chgCData(oldp+51,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[0U] 
+        bufp->chgCData(oldp+53,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0U] 
                                        >> 2U))),3);
-        bufp->chgBit(oldp+52,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[0U] 
+        bufp->chgBit(oldp+54,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0U] 
                                      >> 1U))));
-        bufp->chgBit(oldp+53,((1U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[0U])));
-        bufp->chgIData(oldp+54,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[4U] 
-                                  << 0xcU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+        bufp->chgBit(oldp+55,((1U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0U])));
+        bufp->chgIData(oldp+56,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[4U] 
+                                  << 0xcU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[3U] 
                                               >> 0x14U))),32);
-        bufp->chgBit(oldp+55,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+        bufp->chgBit(oldp+57,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[3U] 
                                      >> 0x13U))));
-        bufp->chgCData(oldp+56,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+        bufp->chgCData(oldp+58,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[3U] 
                                          >> 0xfU))),4);
-        bufp->chgIData(oldp+57,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
-                                  << 0x11U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+        bufp->chgIData(oldp+59,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[3U] 
+                                  << 0x11U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[2U] 
                                                >> 0xfU))),32);
-        bufp->chgCData(oldp+58,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+        bufp->chgCData(oldp+60,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[2U] 
                                        >> 0xcU))),3);
-        bufp->chgBit(oldp+59,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+        bufp->chgBit(oldp+61,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[2U] 
                                      >> 0xbU))));
-        bufp->chgBit(oldp+60,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[2U] 
+        bufp->chgBit(oldp+62,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[2U] 
                                      >> 0xaU))));
-        bufp->chgIData(oldp+61,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[6U] 
-                                  << 2U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[5U] 
+        bufp->chgIData(oldp+63,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[6U] 
+                                  << 2U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[5U] 
                                             >> 0x1eU))),32);
-        bufp->chgBit(oldp+62,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[5U] 
+        bufp->chgBit(oldp+64,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[5U] 
                                      >> 0x1dU))));
-        bufp->chgCData(oldp+63,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[5U] 
+        bufp->chgCData(oldp+65,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[5U] 
                                          >> 0x19U))),4);
-        bufp->chgIData(oldp+64,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[5U] 
-                                  << 7U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[4U] 
+        bufp->chgIData(oldp+66,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[5U] 
+                                  << 7U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[4U] 
                                             >> 0x19U))),32);
-        bufp->chgCData(oldp+65,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[4U] 
+        bufp->chgCData(oldp+67,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[4U] 
                                        >> 0x16U))),3);
-        bufp->chgBit(oldp+66,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[4U] 
+        bufp->chgBit(oldp+68,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[4U] 
                                      >> 0x15U))));
-        bufp->chgBit(oldp+67,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[4U] 
+        bufp->chgBit(oldp+69,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[4U] 
                                      >> 0x14U))));
-        bufp->chgIData(oldp+68,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[9U] 
-                                  << 0x18U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
+        bufp->chgIData(oldp+70,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[9U] 
+                                  << 0x18U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[8U] 
                                                >> 8U))),32);
-        bufp->chgBit(oldp+69,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
+        bufp->chgBit(oldp+71,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[8U] 
                                      >> 7U))));
-        bufp->chgCData(oldp+70,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
+        bufp->chgCData(oldp+72,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[8U] 
                                          >> 3U))),4);
-        bufp->chgIData(oldp+71,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
-                                  << 0x1dU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[7U] 
+        bufp->chgIData(oldp+73,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[8U] 
+                                  << 0x1dU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[7U] 
                                                >> 3U))),32);
-        bufp->chgCData(oldp+72,((7U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[7U])),3);
-        bufp->chgBit(oldp+73,((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[6U] 
+        bufp->chgCData(oldp+74,((7U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[7U])),3);
+        bufp->chgBit(oldp+75,((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[6U] 
                                >> 0x1fU)));
-        bufp->chgBit(oldp+74,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[6U] 
+        bufp->chgBit(oldp+76,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[6U] 
                                      >> 0x1eU))));
-        bufp->chgIData(oldp+75,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
+        bufp->chgIData(oldp+77,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0xbU] 
+                                  << 0xeU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0xaU] 
+                                              >> 0x12U))),32);
+        bufp->chgBit(oldp+78,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0xaU] 
+                                     >> 0x11U))));
+        bufp->chgCData(oldp+79,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0xaU] 
+                                         >> 0xdU))),4);
+        bufp->chgIData(oldp+80,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0xaU] 
+                                  << 0x13U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[9U] 
+                                               >> 0xdU))),32);
+        bufp->chgCData(oldp+81,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[9U] 
+                                       >> 0xaU))),3);
+        bufp->chgBit(oldp+82,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[9U] 
+                                     >> 9U))));
+        bufp->chgBit(oldp+83,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[9U] 
+                                     >> 8U))));
+        bufp->chgIData(oldp+84,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
                                          >> 7U))),32);
-        bufp->chgCData(oldp+76,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
+        bufp->chgCData(oldp+85,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
                                                >> 4U)))),3);
-        bufp->chgBit(oldp+77,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
+        bufp->chgBit(oldp+86,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
                                              >> 3U)))));
-        bufp->chgBit(oldp+78,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
+        bufp->chgBit(oldp+87,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
                                              >> 2U)))));
-        bufp->chgBit(oldp+79,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
+        bufp->chgBit(oldp+88,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp 
                                              >> 1U)))));
-        bufp->chgBit(oldp+80,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp))));
-        bufp->chgBit(oldp+81,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__cnt_up));
-        bufp->chgCData(oldp+82,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__select_d),2);
-        bufp->chgBit(oldp+83,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__is_same_target_dbg));
-        bufp->chgBit(oldp+84,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__no_flight_dbg));
-        bufp->chgBit(oldp+85,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__one_completing_dbg));
-        bufp->chgBit(oldp+86,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__forward_ok_dbg));
-        bufp->chgBit(oldp+87,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__forward_condition_met_actual));
-        bufp->chgCData(oldp+88,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_d),3);
-        bufp->chgBit(oldp+89,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o));
-        bufp->chgBit(oldp+90,((IData)((0x800000U == 
+        bufp->chgBit(oldp+89,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_font_rom_obi_rsp))));
+        bufp->chgCData(oldp+90,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_d),3);
+        bufp->chgBit(oldp+91,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__grant_condition_is_met));
+        bufp->chgBit(oldp+92,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__forward_this_request));
+        bufp->chgBit(oldp+93,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__target_is_current_selection));
+        bufp->chgBit(oldp+94,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__no_transactions_in_flight));
+        bufp->chgBit(oldp+95,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__one_transaction_is_completing));
+        bufp->chgBit(oldp+96,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__sub_conditions_for_forwarding));
+        bufp->chgCData(oldp+97,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__i_counter__DOT__counter_d),4);
+        bufp->chgBit(oldp+98,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_spi_peripheral__gnt_o));
+        bufp->chgBit(oldp+99,((IData)((0x800000U == 
                                        (0xfff80000U 
-                                        & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U])))));
-        bufp->chgBit(oldp+91,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT____Vcellinp__i_id_fifo__push_i));
-        bufp->chgBit(oldp+92,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__gate_clock));
-        bufp->chgBit(oldp+93,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__write_pointer_n));
-        bufp->chgCData(oldp+94,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_n),2);
-        bufp->chgCData(oldp+95,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_n),3);
-        bufp->chgSData(oldp+96,((0xfffU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
-                                           >> 8U))),12);
-        bufp->chgBit(oldp+97,((0x474U > (0xfffU & (
-                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
-                                                   >> 8U)))));
-        bufp->chgSData(oldp+98,((0x7ffU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
-                                           >> 8U))),11);
-        bufp->chgBit(oldp+99,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__read_req));
-        bufp->chgBit(oldp+100,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs1_n_d));
-        bufp->chgBit(oldp+101,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs2_n_d));
-        bufp->chgBit(oldp+102,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__dc_d));
-        bufp->chgBit(oldp+103,(((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT____VdfgRegularize_h18fe919a_0_4) 
-                                & ((4U == (0xfffU & 
-                                           ((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[6U] 
+                                        & vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[3U])))));
+        bufp->chgBit(oldp+100,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT____Vcellinp__i_id_fifo__push_i));
+        bufp->chgBit(oldp+101,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__gate_clock));
+        bufp->chgBit(oldp+102,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__write_pointer_n));
+        bufp->chgCData(oldp+103,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_n),2);
+        bufp->chgCData(oldp+104,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_n),3);
+        bufp->chgSData(oldp+105,((0xfffU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[8U] 
+                                            >> 8U))),12);
+        bufp->chgBit(oldp+106,((0x474U > (0xfffU & 
+                                          (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[8U] 
+                                           >> 8U)))));
+        bufp->chgBit(oldp+107,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__read_req));
+        bufp->chgCData(oldp+108,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rom_byte_data_comb),8);
+        bufp->chgBit(oldp+109,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__is_ctrl_write));
+        bufp->chgBit(oldp+110,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__is_rdata_read));
+        bufp->chgBit(oldp+111,((1U & ((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[9U] 
+                                       >> 8U) & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0xaU] 
+                                                 >> 0x11U)))));
+        bufp->chgBit(oldp+112,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__read_req));
+        bufp->chgCData(oldp+113,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[0xaU] 
+                                        >> 0x14U))),3);
+        bufp->chgBit(oldp+114,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__write_req));
+        bufp->chgBit(oldp+115,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__read_req));
+        bufp->chgSData(oldp+116,((0xfffU & ((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[6U] 
                                              << 2U) 
-                                            | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[5U] 
-                                               >> 0x1eU)))) 
-                                   & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[4U] 
-                                      >> 0x19U)))));
-        bufp->chgBit(oldp+104,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__write_req));
-        bufp->chgBit(oldp+105,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__read_req));
-        bufp->chgSData(oldp+106,((0xfffU & ((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[6U] 
-                                             << 2U) 
-                                            | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[5U] 
+                                            | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[5U] 
                                                >> 0x1eU)))),12);
-        bufp->chgIData(oldp+107,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__reg_rdata),32);
-        bufp->chgBit(oldp+108,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_w));
-        bufp->chgBit(oldp+109,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_r));
+        bufp->chgIData(oldp+117,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__reg_rdata_comb),32);
+        bufp->chgBit(oldp+118,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_w));
+        bufp->chgBit(oldp+119,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__grant_r));
     }
-    if (VL_UNLIKELY(vlSelfRef.__Vm_traceActivity[6U])) {
-        bufp->chgBit(oldp+110,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs1_n_q));
-        bufp->chgBit(oldp+111,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs2_n_q));
-        bufp->chgBit(oldp+112,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__dc_q));
-        bufp->chgIData(oldp+113,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
+    if (VL_UNLIKELY(vlSelfRef.__Vm_traceActivity[5U])) {
+        bufp->chgBit(oldp+120,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs1_n_q));
+        bufp->chgBit(oldp+121,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__cs2_n_q));
+        bufp->chgBit(oldp+122,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__dc_q));
+        bufp->chgIData(oldp+123,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
                                           >> 7U))),32);
-        bufp->chgCData(oldp+114,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
+        bufp->chgCData(oldp+124,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
                                                 >> 4U)))),3);
-        bufp->chgBit(oldp+115,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
+        bufp->chgBit(oldp+125,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
                                               >> 3U)))));
-        bufp->chgBit(oldp+116,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
+        bufp->chgBit(oldp+126,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
                                               >> 2U)))));
-        bufp->chgBit(oldp+117,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
+        bufp->chgBit(oldp+127,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp 
                                               >> 1U)))));
-        bufp->chgBit(oldp+118,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp))));
-        bufp->chgBit(oldp+119,((1U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q) 
-                                      >> 2U))));
-        bufp->chgCData(oldp+120,((3U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q))),2);
-        bufp->chgCData(oldp+121,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__select_q),2);
-        bufp->chgCData(oldp+122,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__i_counter__DOT__counter_q),3);
-        bufp->chgCData(oldp+123,(((2U >= (3U & ((IData)(3U) 
+        bufp->chgBit(oldp+128,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_error_obi_rsp))));
+        bufp->chgBit(oldp+129,((1U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__i_counter__DOT__counter_q) 
+                                      >> 3U))));
+        bufp->chgCData(oldp+130,((7U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__i_counter__DOT__counter_q))),3);
+        bufp->chgBit(oldp+131,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__grant_condition_was_met_q));
+        bufp->chgCData(oldp+132,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__i_counter__DOT__counter_q),4);
+        bufp->chgBit(oldp+133,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q));
+        bufp->chgIData(oldp+134,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q),32);
+        bufp->chgBit(oldp+135,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q));
+        bufp->chgCData(oldp+136,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q),8);
+        bufp->chgCData(oldp+137,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q),3);
+        bufp->chgCData(oldp+138,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q),2);
+        bufp->chgBit(oldp+139,((2U <= (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q))));
+        bufp->chgBit(oldp+140,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__done_q));
+        bufp->chgBit(oldp+141,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__read_req_granted_q));
+        bufp->chgCData(oldp+142,(((2U >= (3U & ((IData)(3U) 
                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q))))
                                    ? (7U & ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q) 
                                             >> (3U 
                                                 & ((IData)(3U) 
                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q)))))
                                    : 0U)),3);
-        bufp->chgBit(oldp+124,((1U == (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q))));
-        bufp->chgBit(oldp+125,((0U == (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q))));
-        bufp->chgBit(oldp+126,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q))));
-        bufp->chgBit(oldp+127,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n));
-        bufp->chgBit(oldp+128,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q));
-        bufp->chgBit(oldp+129,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__write_pointer_q));
-        bufp->chgCData(oldp+130,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q),2);
-        bufp->chgCData(oldp+131,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q),3);
-        bufp->chgBit(oldp+132,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rvalid_q));
-        bufp->chgIData(oldp+133,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rdata_q),32);
-        bufp->chgBit(oldp+134,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__read_req_accepted));
-        bufp->chgIData(oldp+135,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__prng_out_q),32);
-        bufp->chgIData(oldp+136,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__state_q),32);
-        bufp->chgBit(oldp+137,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__rvalid_q));
-        bufp->chgIData(oldp+138,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__rdata_q),32);
-        bufp->chgBit(oldp+139,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__read_req_accepted));
-        bufp->chgIData(oldp+140,((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__t2 
-                                  ^ VL_SHIFTL_III(32,32,32, vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__t2, 5U))),32);
-        bufp->chgIData(oldp+141,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__t1),32);
-        bufp->chgIData(oldp+142,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__i_xorshift__DOT__t2),32);
+        bufp->chgBit(oldp+143,((1U == (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q))));
+        bufp->chgBit(oldp+144,((0U == (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q))));
+        bufp->chgBit(oldp+145,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q))));
+        bufp->chgBit(oldp+146,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_n));
+        bufp->chgBit(oldp+147,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__read_pointer_q));
+        bufp->chgBit(oldp+148,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__write_pointer_q));
+        bufp->chgCData(oldp+149,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__status_cnt_q),2);
+        bufp->chgCData(oldp+150,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_err__DOT__i_id_fifo__DOT__mem_q),3);
+        bufp->chgBit(oldp+151,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rvalid_q));
+        bufp->chgIData(oldp+152,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rdata_q),32);
+        bufp->chgBit(oldp+153,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__read_req_accepted));
+        bufp->chgIData(oldp+154,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__prng_state_q),32);
+        bufp->chgIData(oldp+155,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__prng_state_d),32);
+        bufp->chgIData(oldp+156,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__t1),32);
+        bufp->chgIData(oldp+157,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__t2),32);
+        bufp->chgBit(oldp+158,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__rvalid_q));
+        bufp->chgIData(oldp+159,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__rdata_q),32);
+        bufp->chgBit(oldp+160,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__rvalid_q));
+        bufp->chgIData(oldp+161,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__rdata_q),32);
     }
-    if (VL_UNLIKELY(vlSelfRef.__Vm_traceActivity[7U])) {
-        bufp->chgBit(oldp+143,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_sck_o));
-        bufp->chgBit(oldp+144,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_mosi_o));
-        bufp->chgBit(oldp+145,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__rvalid_q));
-        bufp->chgIData(oldp+146,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__rdata_q),32);
-        bufp->chgBit(oldp+147,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no));
-        bufp->chgCData(oldp+148,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q),2);
-        bufp->chgCData(oldp+149,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_d),2);
-        bufp->chgBit(oldp+150,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_q));
-        bufp->chgBit(oldp+151,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d));
-        bufp->chgCData(oldp+152,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__tx_data_q),8);
-        bufp->chgCData(oldp+153,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_q),3);
-        bufp->chgCData(oldp+154,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d),3);
-        bufp->chgCData(oldp+155,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q),2);
-        bufp->chgCData(oldp+156,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d),2);
-        bufp->chgBit(oldp+157,((2U <= (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_q))));
-        bufp->chgCData(oldp+158,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits),2);
-        bufp->chgBit(oldp+159,(((0U != (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
+    if (VL_UNLIKELY(vlSelfRef.__Vm_traceActivity[6U])) {
+        bufp->chgBit(oldp+162,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_sck_o_tb));
+        bufp->chgBit(oldp+163,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__spi_mosi_o_tb));
+        bufp->chgCData(oldp+164,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q),3);
+        bufp->chgBit(oldp+165,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__cs_no));
+        bufp->chgCData(oldp+166,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q),2);
+        bufp->chgCData(oldp+167,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_d),2);
+        bufp->chgBit(oldp+168,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__start_flag_d));
+        bufp->chgCData(oldp+169,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__bit_cnt_d),3);
+        bufp->chgCData(oldp+170,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__spi_clk_cnt_d),2);
+        bufp->chgCData(oldp+171,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__status_bits),2);
+        bufp->chgBit(oldp+172,(((0U != (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
                                 & (3U != (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)))));
-        bufp->chgBit(oldp+160,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__done_q));
-        bufp->chgBit(oldp+161,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__read_req_granted_q));
-        bufp->chgCData(oldp+162,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__unnamedblk1__DOT__next_mosi_idx),3);
     }
-    bufp->chgBit(oldp+163,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__clk_i));
-    bufp->chgBit(oldp+164,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__rst_ni));
-    bufp->chgIData(oldp+165,((IData)((((0x9bU >= ((IData)(2U) 
+    bufp->chgBit(oldp+173,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__clk_i));
+    bufp->chgBit(oldp+174,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__rst_ni));
+    bufp->chgIData(oldp+175,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[2U] 
+                               << 0x16U) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+                                            >> 0xaU))),32);
+    bufp->chgBit(oldp+176,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+                                  >> 9U))));
+    bufp->chgCData(oldp+177,((0xfU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+                                      >> 5U))),4);
+    bufp->chgIData(oldp+178,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[1U] 
+                               << 0x1bU) | (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+                                            >> 5U))),32);
+    bufp->chgCData(oldp+179,((7U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+                                    >> 2U))),3);
+    bufp->chgBit(oldp+180,((1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U] 
+                                  >> 1U))));
+    bufp->chgBit(oldp+181,((1U & vlSelfRef.tb_user_domain_hw_ctrl__DOT__user_sbr_obi_req[0U])));
+    bufp->chgIData(oldp+182,((IData)((((0xc2U >= ((IData)(2U) 
                                                   + 
                                                   (0xffU 
                                                    & ((IData)(0x27U) 
-                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))
                                         ? (0x1fffffffffULL 
                                            & (((QData)((IData)(
                                                                vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -331,7 +352,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                                  + 
                                                                  (0xffU 
                                                                   & ((IData)(0x27U) 
-                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                     * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                 >> 5U)])) 
                                                << (
                                                    (0U 
@@ -341,7 +362,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                         + 
                                                         (0xffU 
                                                          & ((IData)(0x27U) 
-                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q))))))
                                                     ? 0x20U
                                                     : 
                                                    ((IData)(0x40U) 
@@ -351,7 +372,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                         + 
                                                         (0xffU 
                                                          & ((IData)(0x27U) 
-                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))) 
                                               | (((0U 
                                                    == 
                                                    (0x1fU 
@@ -359,7 +380,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                        + 
                                                        (0xffU 
                                                         & ((IData)(0x27U) 
-                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q))))))
                                                    ? 0ULL
                                                    : 
                                                   ((QData)((IData)(
@@ -368,7 +389,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                                      + 
                                                                      (0xffU 
                                                                       & ((IData)(0x27U) 
-                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                     >> 5U)])) 
                                                    << 
                                                    ((IData)(0x20U) 
@@ -378,14 +399,14 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                         + 
                                                         (0xffU 
                                                          & ((IData)(0x27U) 
-                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))) 
                                                  | ((QData)((IData)(
                                                                     vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
                                                                     (((IData)(2U) 
                                                                       + 
                                                                       (0xffU 
                                                                        & ((IData)(0x27U) 
-                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                          * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                      >> 5U)])) 
                                                     >> 
                                                     (0x1fU 
@@ -393,14 +414,14 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                         + 
                                                         (0xffU 
                                                          & ((IData)(0x27U) 
-                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))))
                                         : 0ULL) >> 5U))),32);
-    bufp->chgCData(oldp+166,((7U & (IData)((((0x9bU 
+    bufp->chgCData(oldp+183,((7U & (IData)((((0xc2U 
                                               >= ((IData)(2U) 
                                                   + 
                                                   (0xffU 
                                                    & ((IData)(0x27U) 
-                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                                                      * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))
                                               ? (0x1fffffffffULL 
                                                  & (((QData)((IData)(
                                                                      vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -408,7 +429,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                                        + 
                                                                        (0xffU 
                                                                         & ((IData)(0x27U) 
-                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                       >> 5U)])) 
                                                      << 
                                                      ((0U 
@@ -418,7 +439,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                            + 
                                                            (0xffU 
                                                             & ((IData)(0x27U) 
-                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q))))))
                                                        ? 0x20U
                                                        : 
                                                       ((IData)(0x40U) 
@@ -428,7 +449,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                            + 
                                                            (0xffU 
                                                             & ((IData)(0x27U) 
-                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))) 
                                                     | (((0U 
                                                          == 
                                                          (0x1fU 
@@ -436,7 +457,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                              + 
                                                              (0xffU 
                                                               & ((IData)(0x27U) 
-                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                                 * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q))))))
                                                          ? 0ULL
                                                          : 
                                                         ((QData)((IData)(
@@ -445,7 +466,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                                            + 
                                                                            (0xffU 
                                                                             & ((IData)(0x27U) 
-                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                           >> 5U)])) 
                                                          << 
                                                          ((IData)(0x20U) 
@@ -455,14 +476,14 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                               + 
                                                               (0xffU 
                                                                & ((IData)(0x27U) 
-                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))) 
                                                        | ((QData)((IData)(
                                                                           vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
                                                                           (((IData)(2U) 
                                                                             + 
                                                                             (0xffU 
                                                                              & ((IData)(0x27U) 
-                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                            >> 5U)])) 
                                                           >> 
                                                           (0x1fU 
@@ -470,14 +491,14 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                               + 
                                                               (0xffU 
                                                                & ((IData)(0x27U) 
-                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))))
                                               : 0ULL) 
                                             >> 2U)))),3);
-    bufp->chgBit(oldp+167,((1U & (IData)((((0x9bU >= 
+    bufp->chgBit(oldp+184,((1U & (IData)((((0xc2U >= 
                                             ((IData)(2U) 
                                              + (0xffU 
                                                 & ((IData)(0x27U) 
-                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))
                                             ? (0x1fffffffffULL 
                                                & (((QData)((IData)(
                                                                    vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -485,7 +506,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                                      + 
                                                                      (0xffU 
                                                                       & ((IData)(0x27U) 
-                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                         * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                     >> 5U)])) 
                                                    << 
                                                    ((0U 
@@ -495,7 +516,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                          + 
                                                          (0xffU 
                                                           & ((IData)(0x27U) 
-                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q))))))
                                                      ? 0x20U
                                                      : 
                                                     ((IData)(0x40U) 
@@ -505,7 +526,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                          + 
                                                          (0xffU 
                                                           & ((IData)(0x27U) 
-                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))) 
                                                   | (((0U 
                                                        == 
                                                        (0x1fU 
@@ -513,7 +534,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                            + 
                                                            (0xffU 
                                                             & ((IData)(0x27U) 
-                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q))))))
                                                        ? 0ULL
                                                        : 
                                                       ((QData)((IData)(
@@ -522,7 +543,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                                          + 
                                                                          (0xffU 
                                                                           & ((IData)(0x27U) 
-                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                         >> 5U)])) 
                                                        << 
                                                        ((IData)(0x20U) 
@@ -532,14 +553,14 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                             + 
                                                             (0xffU 
                                                              & ((IData)(0x27U) 
-                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))) 
                                                      | ((QData)((IData)(
                                                                         vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
                                                                         (((IData)(2U) 
                                                                           + 
                                                                           (0xffU 
                                                                            & ((IData)(0x27U) 
-                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                          >> 5U)])) 
                                                         >> 
                                                         (0x1fU 
@@ -547,14 +568,14 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                             + 
                                                             (0xffU 
                                                              & ((IData)(0x27U) 
-                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))))
                                             : 0ULL) 
                                           >> 1U)))));
-    bufp->chgBit(oldp+168,((1U & (IData)(((0x9bU >= 
+    bufp->chgBit(oldp+185,((1U & (IData)(((0xc2U >= 
                                            ((IData)(2U) 
                                             + (0xffU 
                                                & ((IData)(0x27U) 
-                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))
+                                                  * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))
                                            ? (0x1fffffffffULL 
                                               & (((QData)((IData)(
                                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -562,7 +583,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                                     + 
                                                                     (0xffU 
                                                                      & ((IData)(0x27U) 
-                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                        * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                    >> 5U)])) 
                                                   << 
                                                   ((0U 
@@ -572,7 +593,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                         + 
                                                         (0xffU 
                                                          & ((IData)(0x27U) 
-                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q))))))
                                                     ? 0x20U
                                                     : 
                                                    ((IData)(0x40U) 
@@ -582,7 +603,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                         + 
                                                         (0xffU 
                                                          & ((IData)(0x27U) 
-                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))) 
                                                  | (((0U 
                                                       == 
                                                       (0x1fU 
@@ -590,7 +611,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                           + 
                                                           (0xffU 
                                                            & ((IData)(0x27U) 
-                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))
+                                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q))))))
                                                       ? 0ULL
                                                       : 
                                                      ((QData)((IData)(
@@ -599,7 +620,7 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                                         + 
                                                                         (0xffU 
                                                                          & ((IData)(0x27U) 
-                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                            * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                        >> 5U)])) 
                                                       << 
                                                       ((IData)(0x20U) 
@@ -609,14 +630,14 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                            + 
                                                            (0xffU 
                                                             & ((IData)(0x27U) 
-                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))) 
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))) 
                                                     | ((QData)((IData)(
                                                                        vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
                                                                        (((IData)(2U) 
                                                                          + 
                                                                          (0xffU 
                                                                           & ((IData)(0x27U) 
-                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
+                                                                             * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))) 
                                                                         >> 5U)])) 
                                                        >> 
                                                        (0x1fU 
@@ -624,9 +645,9 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                            + 
                                                            (0xffU 
                                                             & ((IData)(0x27U) 
-                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))))))))
+                                                               * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__select_q)))))))))
                                            : 0ULL)))));
-    bufp->chgBit(oldp+169,(((0x9bU >= ((IData)(1U) 
+    bufp->chgBit(oldp+186,(((0xc2U >= ((IData)(1U) 
                                        + (0xffU & ((IData)(0x27U) 
                                                    * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))) 
                             && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
@@ -640,61 +661,62 @@ void Vtb_user_domain_hw_ctrl___024root__trace_chg_0_sub_0(Vtb_user_domain_hw_ctr
                                                       (0xffU 
                                                        & ((IData)(0x27U) 
                                                           * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))))));
-    bufp->chgBit(oldp+170,(((0x9bU >= (0xffU & ((IData)(0x27U) 
-                                                * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)))) 
-                            && (1U & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__all_user_sbr_obi_rsp[
-                                      (7U & (((IData)(0x27U) 
-                                              * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx)) 
-                                             >> 5U))] 
-                                      >> (0x1fU & ((IData)(0x27U) 
-                                                   * (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx))))))));
-    bufp->chgIData(oldp+171,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_obi_rsp 
+    bufp->chgBit(oldp+187,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__req_ongoing));
+    bufp->chgIData(oldp+188,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_engine_obi_rsp 
                                       >> 7U))),32);
-    bufp->chgCData(oldp+172,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_obi_rsp 
+    bufp->chgCData(oldp+189,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_engine_obi_rsp 
                                             >> 4U)))),3);
-    bufp->chgBit(oldp+173,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_obi_rsp 
+    bufp->chgBit(oldp+190,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_engine_obi_rsp 
                                           >> 3U)))));
-    bufp->chgBit(oldp+174,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_obi_rsp 
+    bufp->chgBit(oldp+191,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_engine_obi_rsp 
                                           >> 2U)))));
-    bufp->chgBit(oldp+175,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_obi_rsp 
+    bufp->chgBit(oldp+192,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_engine_obi_rsp 
                                           >> 1U)))));
-    bufp->chgBit(oldp+176,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_obi_rsp))));
-    bufp->chgIData(oldp+177,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
+    bufp->chgBit(oldp+193,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_engine_obi_rsp))));
+    bufp->chgIData(oldp+194,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
                                       >> 7U))),32);
-    bufp->chgCData(oldp+178,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
+    bufp->chgCData(oldp+195,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
                                             >> 4U)))),3);
-    bufp->chgBit(oldp+179,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
+    bufp->chgBit(oldp+196,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
                                           >> 3U)))));
-    bufp->chgBit(oldp+180,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
+    bufp->chgBit(oldp+197,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
                                           >> 2U)))));
-    bufp->chgBit(oldp+181,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
+    bufp->chgBit(oldp+198,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp 
                                           >> 1U)))));
-    bufp->chgBit(oldp+182,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp))));
-    bufp->chgCData(oldp+183,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx),2);
-    bufp->chgBit(oldp+184,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_valid_o));
-    bufp->chgBit(oldp+185,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_addr_decode_periphs__DOT__dec_error_o));
-    bufp->chgCData(oldp+186,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_addr_decode_periphs__DOT__i_addr_decode_dync__DOT__matched_rules),3);
-    bufp->chgBit(oldp+187,(((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__cnt_up) 
-                            ^ (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux__DOT__cnt_down))));
-    bufp->chgBit(oldp+188,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+    bufp->chgBit(oldp+199,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_spi_ctrl_obi_rsp))));
+    bufp->chgIData(oldp+200,((IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_prng_obi_rsp 
+                                      >> 7U))),32);
+    bufp->chgCData(oldp+201,((7U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_prng_obi_rsp 
+                                            >> 4U)))),3);
+    bufp->chgBit(oldp+202,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_prng_obi_rsp 
+                                          >> 3U)))));
+    bufp->chgBit(oldp+203,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_prng_obi_rsp 
+                                          >> 2U)))));
+    bufp->chgBit(oldp+204,((1U & (IData)((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_prng_obi_rsp 
+                                          >> 1U)))));
+    bufp->chgBit(oldp+205,((1U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_prng_obi_rsp))));
+    bufp->chgCData(oldp+206,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__user_idx),3);
+    bufp->chgBit(oldp+207,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_addr_decode_user_periphs__DOT__dec_valid_o));
+    bufp->chgBit(oldp+208,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_addr_decode_user_periphs__DOT__dec_error_o));
+    bufp->chgCData(oldp+209,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_addr_decode_user_periphs__DOT__i_addr_decode_dync__DOT__matched_rules),4);
+    bufp->chgBit(oldp+210,(((~ (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__grant_condition_was_met_q)) 
+                            & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__grant_condition_is_met))));
+    bufp->chgBit(oldp+211,((((~ (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__grant_condition_was_met_q)) 
+                             & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__grant_condition_is_met)) 
+                            | ((IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__cnt_down_sig) 
+                               & (0U != (7U & (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_obi_demux_user__DOT__i_counter__DOT__counter_q)))))));
+    bufp->chgBit(oldp+212,(((vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[3U] 
                              >> 0x13U) & ((0U == (IData)(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_spi_peripheral__DOT__state_q)) 
                                           & ((4U == 
-                                              (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                                              (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[3U] 
                                                >> 0x14U)) 
                                              | (0U 
                                                 == 
-                                                (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[3U] 
+                                                (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux_user__mgr_ports_req_o[3U] 
                                                  >> 0x14U)))))));
-    bufp->chgCData(oldp+189,(((0x474U > (0xfffU & (
-                                                   vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
-                                                   >> 8U)))
-                               ? ((0x473U >= (0x7ffU 
-                                              & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
-                                                 >> 8U)))
-                                   ? vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_font_rom__DOT__rom_data
-                                  [(0x7ffU & (vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT____Vcellout__i_obi_demux__mgr_ports_req_o[8U] 
-                                              >> 8U))]
-                                   : 0U) : 0U)),8);
+    bufp->chgBit(oldp+213,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__trigger_prng_update));
+    bufp->chgBit(oldp+214,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_prng__DOT__read_granted_this_cycle));
+    bufp->chgBit(oldp+215,(vlSelfRef.tb_user_domain_hw_ctrl__DOT__dut__DOT__i_user_spi_ctrl__DOT__read_granted_this_cycle));
 }
 
 void Vtb_user_domain_hw_ctrl___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {
@@ -713,5 +735,4 @@ void Vtb_user_domain_hw_ctrl___024root__trace_cleanup(void* voidSelf, VerilatedV
     vlSymsp->TOP.__Vm_traceActivity[6U] = 0U;
     vlSymsp->TOP.__Vm_traceActivity[7U] = 0U;
     vlSymsp->TOP.__Vm_traceActivity[8U] = 0U;
-    vlSymsp->TOP.__Vm_traceActivity[9U] = 0U;
 }

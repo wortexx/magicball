@@ -16,6 +16,8 @@
 
 // INCLUDE MODULE CLASSES
 #include "Vtb_xorshift___024root.h"
+#include "Vtb_xorshift___024unit.h"
+#include "Vtb_xorshift_soc_ctrl_reg_pkg.h"
 
 // SYMS CLASS (contains all model state)
 class alignas(VL_CACHE_LINE_BYTES)Vtb_xorshift__Syms final : public VerilatedSyms {
@@ -32,6 +34,13 @@ class alignas(VL_CACHE_LINE_BYTES)Vtb_xorshift__Syms final : public VerilatedSym
 
     // MODULE INSTANCE STATE
     Vtb_xorshift___024root         TOP;
+    Vtb_xorshift_soc_ctrl_reg_pkg  TOP__soc_ctrl_reg_pkg;
+
+    // SCOPE NAMES
+    VerilatedScope __Vscope_tb_xorshift;
+    VerilatedScope __Vscope_tb_xorshift__read_obi;
+    VerilatedScope __Vscope_tb_xorshift__unnamedblk1;
+    VerilatedScope __Vscope_tb_xorshift__write_obi;
 
     // CONSTRUCTORS
     Vtb_xorshift__Syms(VerilatedContext* contextp, const char* namep, Vtb_xorshift* modelp);

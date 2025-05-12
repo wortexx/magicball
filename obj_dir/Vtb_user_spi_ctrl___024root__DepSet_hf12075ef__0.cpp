@@ -12,62 +12,60 @@ VL_INLINE_OPT VlCoroutine Vtb_user_spi_ctrl___024root___eval_initial__TOP__Vtimi
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtb_user_spi_ctrl___024root___eval_initial__TOP__Vtiming__1\n"); );
     auto &vlSelfRef = std::ref(*vlSelf).get();
     // Init
-    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_data;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_data = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__timeout_count;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__timeout_count = 0;
-    VlWide<3>/*73:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn;
-    VL_ZERO_W(74, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn);
-    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_data;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_data = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__timeout_count;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__timeout_count = 0;
-    VlWide<3>/*73:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn;
-    VL_ZERO_W(74, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn);
-    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_data;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_data = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__timeout_count;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__timeout_count = 0;
-    VlWide<3>/*73:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn;
-    VL_ZERO_W(74, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn);
-    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_data_val;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_data_val = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_gnt;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_gnt = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_rvalid;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_rvalid = 0;
-    VlWide<3>/*73:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn;
-    VL_ZERO_W(74, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn);
-    QData/*36:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__rsp_r_chan_temp;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__rsp_r_chan_temp = 0;
-    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_data;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_data = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__timeout_count;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__timeout_count = 0;
-    VlWide<3>/*73:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn;
-    VL_ZERO_W(74, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn);
-    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_data_val;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_data_val = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_gnt;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_gnt = 0;
-    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_rvalid;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_rvalid = 0;
-    VlWide<3>/*73:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn;
-    VL_ZERO_W(74, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn);
-    QData/*36:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__rsp_r_chan_temp;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__rsp_r_chan_temp = 0;
+    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__offset;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__offset = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__data;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__data = 0;
+    CData/*3:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__byte_en;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__byte_en = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__timeout_count;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__timeout_count = 0;
+    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__offset;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__offset = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_data;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_data = 0;
+    CData/*0:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_err;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_gnt;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_rvalid;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_rvalid = 0;
+    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__offset;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__offset = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__data;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__data = 0;
+    CData/*3:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__byte_en;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__byte_en = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__timeout_count;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__timeout_count = 0;
+    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__offset;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__offset = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_data;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_data = 0;
+    CData/*0:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_err;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_gnt;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_rvalid;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_rvalid = 0;
+    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__offset;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__offset = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__data;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__data = 0;
+    CData/*3:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__byte_en;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__byte_en = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__timeout_count;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__timeout_count = 0;
+    SData/*11:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__offset;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__offset = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_data;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_data = 0;
+    CData/*0:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_err;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_err = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_gnt;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_gnt = 0;
+    IData/*31:0*/ __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_rvalid;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_rvalid = 0;
     VlWide<5>/*159:0*/ __Vtemp_1;
     // Body
     __Vtemp_1[0U] = 0x2e766364U;
@@ -78,15 +76,11 @@ VL_INLINE_OPT VlCoroutine Vtb_user_spi_ctrl___024root___eval_initial__TOP__Vtimi
     vlSymsp->_vm_contextp__->dumpfile(VL_CVT_PACK_STR_NW(5, __Vtemp_1));
     vlSymsp->_traceDumpOpen();
     vlSelfRef.tb_user_spi_ctrl__DOT__rst_ni = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 0U;
     VL_WRITEF_NX("%t : TB: Asserting Reset\n",0,64,
                  VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VdlySched.delay(0x186a0ULL, 
                                          nullptr, "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                         167);
+                                         135);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_user_spi_ctrl__DOT__rst_ni = 1U;
     VL_WRITEF_NX("%t : TB: Deasserting Reset\n",0,64,
@@ -95,96 +89,104 @@ VL_INLINE_OPT VlCoroutine Vtb_user_spi_ctrl___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         170);
+                                                         138);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    VL_WRITEF_NX("%t : TB: Starting Test Sequence for user_spi_ctrl...\n--- Test 1: Set CS1 active, DC command ---\n",0,
+    VL_WRITEF_NX("%t : TB: Starting user_spi_ctrl Test Sequence...\n--- Test 1: Assert CS1, DC=Command ---\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_data = 2U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__timeout_count = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__byte_en = 1U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__data = 2U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__offset = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__timeout_count = 0U;
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         82);
+                                                         57);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[0U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[1U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[2U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[0U] 
-        = (1U | __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[0U]);
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[0U] 
-        = ((0x1fU & __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[0U]) 
-           | ((IData)((0xf00000000ULL | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_data)))) 
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (1U | vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = ((0x1fU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]) 
+           | ((IData)((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__byte_en)) 
+                        << 0x20U) | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__data)))) 
               << 5U));
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[1U] 
-        = (((IData)((0xf00000000ULL | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_data)))) 
-            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset)) 
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+        = (((IData)((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__byte_en)) 
+                      << 0x20U) | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__data)))) 
+            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__offset)) 
                                            << 1U))) 
-                          << 9U) | ((IData)(((0xf00000000ULL 
-                                              | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_data))) 
+                          << 9U) | ((IData)(((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__byte_en)) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__data))) 
                                              >> 0x20U)) 
                                     << 5U)));
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[2U] 
-        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset)) 
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__offset)) 
                                                  << 1U))) 
                                 >> 0x17U)) | ((IData)(
-                                                      ((0xf00000000ULL 
-                                                        | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_data))) 
+                                                      ((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__byte_en)) 
+                                                         << 0x20U) 
+                                                        | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__data))) 
                                                        >> 0x20U)) 
                                               >> 0x1bU)) 
                      | ((0x1e0U & ((IData)((1ULL | 
-                                            ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset)) 
+                                            ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__offset)) 
                                              << 1U))) 
                                    >> 0x17U)) | ((IData)(
                                                          ((1ULL 
-                                                           | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset)) 
+                                                           | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__offset)) 
                                                               << 1U)) 
                                                           >> 0x20U)) 
                                                  << 9U))));
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[0U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[1U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__req_txn[2U];
     vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Write Req : AddrOffset=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset),
-                 32,__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_data);
-    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                        >> 1U))) & VL_GTS_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__timeout_count))) {
+    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 32,__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__data,
+                 4,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__0__byte_en));
+    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                        >> 1U))) & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__timeout_count))) {
         co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                             94);
+                                                             67);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__timeout_count 
-            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__timeout_count);
+        __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__timeout_count 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__timeout_count);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:98: Assertion failed in %Ntb_user_spi_ctrl.write_obi_ctrl: %t : TB: Timeout waiting for OBI grant during write to offset 0x%x. GNT=%b\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__write_obi__0__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:71: Assertion failed in %Ntb_user_spi_ctrl.write_obi: %t : TB: Timeout waiting for OBI grant during write to 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9,12,
-                     (IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset),
-                     1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                                      >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 98, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 99, "");
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(
+                                                           (vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                                                            >> 1U))));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 71, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 72, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: AddrOffset=0x%x. GNT=%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__0__w_addr_offset),
-                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
+    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
                                   >> 1U))));
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         103);
+                                                         76);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
     vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
     VL_WRITEF_NX("%t : TB: OBI Write Req Deasserted.\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
@@ -192,125 +194,251 @@ VL_INLINE_OPT VlCoroutine Vtb_user_spi_ctrl___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         107);
+                                                         80);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 0U;
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         177);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] = 0U;
+    co_await vlSelfRef.__VdlySched.delay(0x186a0ULL, 
+                                         nullptr, "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                         145);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (VL_UNLIKELY((1U & (((IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs1_n_q) 
                             | (~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs2_n_q))) 
                            | (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__dc_q))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:179: Assertion failed in %Ntb_user_spi_ctrl: %t : TB_ERROR: Test 1 failed. CS1_N=%b, CS2_N=%b, DC=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:147: Assertion failed in %Ntb_user_spi_ctrl.unnamedblk1: %t : TB ERROR: Test 1 outputs mismatch. CS1_N=%b (exp 0), CS2_N=%b (exp 1), DC=%b (exp 0)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,1,
                      (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs1_n_q),
                      1,vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs2_n_q,
                      1,(IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__dc_q));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 179, "");
-    } else {
-        VL_WRITEF_NX("%t : TB_PASS: Test 1. CS1_N=%b, CS2_N=%b, DC=%b\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,1,
-                     (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs1_n_q),
-                     1,vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs2_n_q,
-                     1,(IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__dc_q));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 147, "");
     }
-    co_await vlSelfRef.__VdlySched.delay(0x3d090ULL, 
-                                         nullptr, "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                         183);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    VL_WRITEF_NX("--- Test 2: Set CS2 active, DC data ---\n",0);
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_data = 5U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__timeout_count = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__offset = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_gnt = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_rvalid = 0U;
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         82);
+                                                         87);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[0U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[1U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[2U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[0U] 
-        = (1U | __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[0U]);
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[0U] 
-        = ((0x1fU & __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[0U]) 
-           | ((IData)((0xf00000000ULL | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_data)))) 
-              << 5U));
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[1U] 
-        = (((IData)((0xf00000000ULL | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_data)))) 
-            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset)) 
-                                           << 1U))) 
-                          << 9U) | ((IData)(((0xf00000000ULL 
-                                              | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_data))) 
-                                             >> 0x20U)) 
-                                    << 5U)));
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[2U] 
-        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset)) 
-                                                 << 1U))) 
-                                >> 0x17U)) | ((IData)(
-                                                      ((0xf00000000ULL 
-                                                        | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_data))) 
-                                                       >> 0x20U)) 
-                                              >> 0x1bU)) 
-                     | ((0x1e0U & ((IData)((1ULL | 
-                                            ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset)) 
-                                             << 1U))) 
-                                   >> 0x17U)) | ((IData)(
-                                                         ((1ULL 
-                                                           | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset)) 
-                                                              << 1U)) 
-                                                          >> 0x20U)) 
-                                                 << 9U))));
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[0U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[1U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__req_txn[2U];
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (1U | vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+        = ((0x1fU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U]) 
+           | ((IData)((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__1__offset)) 
+                                 << 5U))) << 5U));
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+        = (0x3ffU & (((IData)((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__1__offset)) 
+                                         << 5U))) >> 0x1bU) 
+                     | ((IData)(((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__1__offset)) 
+                                            << 5U)) 
+                                 >> 0x20U)) << 5U)));
     vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Write Req : AddrOffset=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset),
-                 32,__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_data);
-    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                        >> 1U))) & VL_GTS_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__timeout_count))) {
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)));
+    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                        >> 1U))) & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_gnt))) {
         co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                             94);
+                                                             96);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__timeout_count 
-            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__timeout_count);
+        __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_gnt 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_gnt);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:98: Assertion failed in %Ntb_user_spi_ctrl.write_obi_ctrl: %t : TB: Timeout waiting for OBI grant during write to offset 0x%x. GNT=%b\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_gnt))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:100: Assertion failed in %Ntb_user_spi_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9,12,
-                     (IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset),
-                     1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                                      >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 98, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 99, "");
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(
+                                                           (vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                                                            >> 1U))));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 100, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 101, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: AddrOffset=0x%x. GNT=%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__1__w_addr_offset),
-                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
                                   >> 1U))));
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         103);
+                                                         105);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: OBI Read Req Deasserted.\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9);
+    while (((~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)) 
+            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                             111);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:115: Assertion failed in %Ntb_user_spi_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 115, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 116, "");
+    }
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_data 
+        = (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                   >> 7U));
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_err 
+        = (1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                         >> 3U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 32,__Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_data,
+                 1,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_err),
+                 1,(1U & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)));
+    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                         121);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data 
+        = __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_data;
+    vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error 
+        = __Vtask_tb_user_spi_ctrl__DOT__read_obi__1__r_err;
+    if (VL_UNLIKELY(((IData)(vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error) 
+                     | (2U != (7U & vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:152: Assertion failed in %Ntb_user_spi_ctrl.unnamedblk1: %t : TB ERROR: Test 1 readback mismatch. Data=0x%x (exp 0x...010), Err=%b\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data,
+                     1,(IData)(vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 152, "");
+    }
+    VL_WRITEF_NX("--- Test 2: Assert CS2, DC=Data ---\n",0);
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__byte_en = 1U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__data = 5U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__offset = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__timeout_count = 0U;
+    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                         57);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (1U | vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = ((0x1fU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]) 
+           | ((IData)((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__byte_en)) 
+                        << 0x20U) | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__data)))) 
+              << 5U));
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+        = (((IData)((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__byte_en)) 
+                      << 0x20U) | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__data)))) 
+            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__offset)) 
+                                           << 1U))) 
+                          << 9U) | ((IData)(((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__byte_en)) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__data))) 
+                                             >> 0x20U)) 
+                                    << 5U)));
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__offset)) 
+                                                 << 1U))) 
+                                >> 0x17U)) | ((IData)(
+                                                      ((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__byte_en)) 
+                                                         << 0x20U) 
+                                                        | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__data))) 
+                                                       >> 0x20U)) 
+                                              >> 0x1bU)) 
+                     | ((0x1e0U & ((IData)((1ULL | 
+                                            ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__offset)) 
+                                             << 1U))) 
+                                   >> 0x17U)) | ((IData)(
+                                                         ((1ULL 
+                                                           | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__offset)) 
+                                                              << 1U)) 
+                                                          >> 0x20U)) 
+                                                 << 9U))));
+    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 32,__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__data,
+                 4,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__2__byte_en));
+    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                        >> 1U))) & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__timeout_count))) {
+        co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                             67);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__timeout_count 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__timeout_count);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__write_obi__2__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:71: Assertion failed in %Ntb_user_spi_ctrl.write_obi: %t : TB: Timeout waiting for OBI grant during write to 0x%x. GNT=%b\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(
+                                                           (vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                                                            >> 1U))));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 71, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 72, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                                  >> 1U))));
+    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                         76);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
     vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
     VL_WRITEF_NX("%t : TB: OBI Write Req Deasserted.\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
@@ -318,125 +446,251 @@ VL_INLINE_OPT VlCoroutine Vtb_user_spi_ctrl___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         107);
+                                                         80);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 0U;
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         188);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] = 0U;
+    co_await vlSelfRef.__VdlySched.delay(0x186a0ULL, 
+                                         nullptr, "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                         158);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     if (VL_UNLIKELY((1U & (((~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs1_n_q)) 
                             | (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs2_n_q)) 
                            | (~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__dc_q)))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:190: Assertion failed in %Ntb_user_spi_ctrl: %t : TB_ERROR: Test 2 failed. CS1_N=%b, CS2_N=%b, DC=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:160: Assertion failed in %Ntb_user_spi_ctrl.unnamedblk1: %t : TB ERROR: Test 2 outputs mismatch. CS1_N=%b (exp 1), CS2_N=%b (exp 0), DC=%b (exp 1)\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,1,
                      (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs1_n_q),
                      1,vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs2_n_q,
                      1,(IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__dc_q));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 190, "");
-    } else {
-        VL_WRITEF_NX("%t : TB_PASS: Test 2. CS1_N=%b, CS2_N=%b, DC=%b\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,1,
-                     (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs1_n_q),
-                     1,vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs2_n_q,
-                     1,(IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__dc_q));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 160, "");
     }
-    co_await vlSelfRef.__VdlySched.delay(0x3d090ULL, 
-                                         nullptr, "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                         194);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    VL_WRITEF_NX("--- Test 3: Trigger PRNG and Read ---\n",0);
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_data = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset = 4U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__timeout_count = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__offset = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_gnt = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_rvalid = 0U;
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         82);
+                                                         87);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[0U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[1U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[2U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[0U] 
-        = (1U | __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[0U]);
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[0U] 
-        = ((0x1fU & __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[0U]) 
-           | ((IData)((0xf00000000ULL | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_data)))) 
-              << 5U));
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[1U] 
-        = (((IData)((0xf00000000ULL | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_data)))) 
-            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset)) 
-                                           << 1U))) 
-                          << 9U) | ((IData)(((0xf00000000ULL 
-                                              | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_data))) 
-                                             >> 0x20U)) 
-                                    << 5U)));
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[2U] 
-        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset)) 
-                                                 << 1U))) 
-                                >> 0x17U)) | ((IData)(
-                                                      ((0xf00000000ULL 
-                                                        | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_data))) 
-                                                       >> 0x20U)) 
-                                              >> 0x1bU)) 
-                     | ((0x1e0U & ((IData)((1ULL | 
-                                            ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset)) 
-                                             << 1U))) 
-                                   >> 0x17U)) | ((IData)(
-                                                         ((1ULL 
-                                                           | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset)) 
-                                                              << 1U)) 
-                                                          >> 0x20U)) 
-                                                 << 9U))));
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[0U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[1U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__req_txn[2U];
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (1U | vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+        = ((0x1fU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U]) 
+           | ((IData)((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__3__offset)) 
+                                 << 5U))) << 5U));
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+        = (0x3ffU & (((IData)((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__3__offset)) 
+                                         << 5U))) >> 0x1bU) 
+                     | ((IData)(((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__3__offset)) 
+                                            << 5U)) 
+                                 >> 0x20U)) << 5U)));
     vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Write Req : AddrOffset=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset),
-                 32,__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_data);
-    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                        >> 1U))) & VL_GTS_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__timeout_count))) {
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)));
+    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                        >> 1U))) & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_gnt))) {
         co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                             94);
+                                                             96);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__timeout_count 
-            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__timeout_count);
+        __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_gnt 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_gnt);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:98: Assertion failed in %Ntb_user_spi_ctrl.write_obi_ctrl: %t : TB: Timeout waiting for OBI grant during write to offset 0x%x. GNT=%b\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_gnt))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:100: Assertion failed in %Ntb_user_spi_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9,12,
-                     (IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset),
-                     1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                                      >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 98, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 99, "");
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(
+                                                           (vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                                                            >> 1U))));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 100, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 101, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: AddrOffset=0x%x. GNT=%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__2__w_addr_offset),
-                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
                                   >> 1U))));
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         103);
+                                                         105);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
+    VL_WRITEF_NX("%t : TB: OBI Read Req Deasserted.\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9);
+    while (((~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)) 
+            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_rvalid))) {
+        co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                             111);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_rvalid);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:115: Assertion failed in %Ntb_user_spi_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 115, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 116, "");
+    }
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_data 
+        = (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                   >> 7U));
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_err 
+        = (1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                         >> 3U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 32,__Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_data,
+                 1,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_err),
+                 1,(1U & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)));
+    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                         121);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data 
+        = __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_data;
+    vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error 
+        = __Vtask_tb_user_spi_ctrl__DOT__read_obi__3__r_err;
+    if (VL_UNLIKELY(((IData)(vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error) 
+                     | (5U != (7U & vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:165: Assertion failed in %Ntb_user_spi_ctrl.unnamedblk1: %t : TB ERROR: Test 2 readback mismatch. Data=0x%x (exp 0x...101), Err=%b\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data,
+                     1,(IData)(vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 165, "");
+    }
+    VL_WRITEF_NX("--- Test 3: Deassert CS1 & CS2 ---\n",0);
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__byte_en = 1U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__data = 3U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__offset = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__timeout_count = 0U;
+    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                         57);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (1U | vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = ((0x1fU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]) 
+           | ((IData)((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__byte_en)) 
+                        << 0x20U) | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__data)))) 
+              << 5U));
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+        = (((IData)((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__byte_en)) 
+                      << 0x20U) | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__data)))) 
+            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__offset)) 
+                                           << 1U))) 
+                          << 9U) | ((IData)(((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__byte_en)) 
+                                               << 0x20U) 
+                                              | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__data))) 
+                                             >> 0x20U)) 
+                                    << 5U)));
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__offset)) 
+                                                 << 1U))) 
+                                >> 0x17U)) | ((IData)(
+                                                      ((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__byte_en)) 
+                                                         << 0x20U) 
+                                                        | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__data))) 
+                                                       >> 0x20U)) 
+                                              >> 0x1bU)) 
+                     | ((0x1e0U & ((IData)((1ULL | 
+                                            ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__offset)) 
+                                             << 1U))) 
+                                   >> 0x17U)) | ((IData)(
+                                                         ((1ULL 
+                                                           | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__offset)) 
+                                                              << 1U)) 
+                                                          >> 0x20U)) 
+                                                 << 9U))));
+    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 1U;
+    VL_WRITEF_NX("%t : TB: OBI Write Req : Addr=0x%x, Data=0x%x, BE=0x%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 32,__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__data,
+                 4,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi__4__byte_en));
+    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                        >> 1U))) & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__timeout_count))) {
+        co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                             nullptr, 
+                                                             "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                             "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                             67);
+        vlSelfRef.__Vm_traceActivity[2U] = 1U;
+        __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__timeout_count 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__timeout_count);
+    }
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__write_obi__4__timeout_count))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:71: Assertion failed in %Ntb_user_spi_ctrl.write_obi: %t : TB: Timeout waiting for OBI grant during write to 0x%x. GNT=%b\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(
+                                                           (vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                                                            >> 1U))));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 71, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 72, "");
+    }
+    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                                  >> 1U))));
+    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
+                                                         nullptr, 
+                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
+                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
+                                                         76);
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
     vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
     VL_WRITEF_NX("%t : TB: OBI Write Req Deasserted.\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
@@ -444,374 +698,161 @@ VL_INLINE_OPT VlCoroutine Vtb_user_spi_ctrl___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         107);
+                                                         80);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 0U;
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         199);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         200);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset = 8U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_gnt = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_rvalid = 0U;
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         116);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[0U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[1U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[2U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[0U] 
-        = (1U | __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[0U]);
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[1U] 
-        = ((0x1ffU & __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[1U]) 
-           | ((IData)(((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset)) 
-                       << 1U)) << 9U));
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[2U] 
-        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset)) 
-                               << 1U)) >> 0x17U) | 
-                     ((IData)((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset)) 
-                                << 1U) >> 0x20U)) << 9U)));
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[0U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[1U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__req_txn[2U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Read Req  : AddrOffset=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset));
-    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                        >> 1U))) & VL_GTS_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_gnt))) {
-        co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                             "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                             126);
-        vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_gnt 
-            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_gnt);
-    }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_gnt))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:130: Assertion failed in %Ntb_user_spi_ctrl.read_obi_ctrl: %t : TB: Timeout waiting for OBI grant during read from offset 0x%x. GNT=%b\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9,12,
-                     (IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset),
-                     1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                                      >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 130, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 131, "");
-    }
-    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: AddrOffset=0x%x. GNT=%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset),
-                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                                  >> 1U))));
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         135);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U]);
-    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : TB: OBI Read Req Deasserted.\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9);
-    while (((~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp)) 
-            & VL_GTS_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_rvalid))) {
-        co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                             "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                             141);
-        vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_rvalid 
-            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_rvalid);
-    }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__timeout_count_rvalid))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:145: Assertion failed in %Ntb_user_spi_ctrl.read_obi_ctrl: %t : TB: Timeout waiting for OBI rvalid during read from offset 0x%x. RVALID=%b\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9,12,
-                     (IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset),
-                     1,(1U & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp)));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 145, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 146, "");
-    }
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__rsp_r_chan_temp 
-        = (0x1fffffffffULL & (vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                              >> 2U));
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_data_val 
-        = (IData)((__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__rsp_r_chan_temp 
-                   >> 5U));
-    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: AddrOffset=0x%x Data=0x%08x. RVALID=%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_addr_offset),
-                 32,__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_data_val,
-                 1,(1U & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp)));
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         151);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__prng_val1 = __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__3__r_data_val;
-    VL_WRITEF_NX("%t : TB: PRNG Value 1 = 0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,vlSelfRef.tb_user_spi_ctrl__DOT__prng_val1);
-    co_await vlSelfRef.__VdlySched.delay(0x3d090ULL, 
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] = 0U;
+    co_await vlSelfRef.__VdlySched.delay(0x186a0ULL, 
                                          nullptr, "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                         203);
+                                         171);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    VL_WRITEF_NX("--- Test 4: Trigger PRNG again and Read ---\n",0);
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_data = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset = 4U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__timeout_count = 0U;
+    if (VL_UNLIKELY((1U & ((~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs1_n_q)) 
+                           | (~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs2_n_q)))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:173: Assertion failed in %Ntb_user_spi_ctrl.unnamedblk1: %t : TB ERROR: Test 3 outputs mismatch. CS1_N=%b (exp 1), CS2_N=%b (exp 1)\n",0,
+                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
+                     64,VL_TIME_UNITED_Q(1000),-9,1,
+                     (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs1_n_q),
+                     1,vlSelfRef.tb_user_spi_ctrl__DOT__dut__DOT__cs2_n_q);
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 173, "");
+    }
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__offset = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_gnt = 0U;
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_rvalid = 0U;
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         82);
+                                                         87);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[0U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[1U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[2U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[0U] 
-        = (1U | __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[0U]);
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[0U] 
-        = ((0x1fU & __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[0U]) 
-           | ((IData)((0xf00000000ULL | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_data)))) 
-              << 5U));
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[1U] 
-        = (((IData)((0xf00000000ULL | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_data)))) 
-            >> 0x1bU) | (((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset)) 
-                                           << 1U))) 
-                          << 9U) | ((IData)(((0xf00000000ULL 
-                                              | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_data))) 
-                                             >> 0x20U)) 
-                                    << 5U)));
-    __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[2U] 
-        = (0x3ffU & (((0x1fU & ((IData)((1ULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset)) 
-                                                 << 1U))) 
-                                >> 0x17U)) | ((IData)(
-                                                      ((0xf00000000ULL 
-                                                        | (QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_data))) 
-                                                       >> 0x20U)) 
-                                              >> 0x1bU)) 
-                     | ((0x1e0U & ((IData)((1ULL | 
-                                            ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset)) 
-                                             << 1U))) 
-                                   >> 0x17U)) | ((IData)(
-                                                         ((1ULL 
-                                                           | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset)) 
-                                                              << 1U)) 
-                                                          >> 0x20U)) 
-                                                 << 9U))));
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[0U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[1U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__req_txn[2U];
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (1U | vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+        = ((0x1fU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U]) 
+           | ((IData)((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__5__offset)) 
+                                 << 5U))) << 5U));
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+        = (0x3ffU & (((IData)((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__5__offset)) 
+                                         << 5U))) >> 0x1bU) 
+                     | ((IData)(((0xfULL | ((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__5__offset)) 
+                                            << 5U)) 
+                                 >> 0x20U)) << 5U)));
     vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Write Req : AddrOffset=0x%x Data=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset),
-                 32,__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_data);
-    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                        >> 1U))) & VL_GTS_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__timeout_count))) {
+    VL_WRITEF_NX("%t : TB: OBI Read Req  : Addr=0x%x\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)));
+    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                        >> 1U))) & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_gnt))) {
         co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                             94);
+                                                             96);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__timeout_count 
-            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__timeout_count);
+        __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_gnt 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_gnt);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__timeout_count))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:98: Assertion failed in %Ntb_user_spi_ctrl.write_obi_ctrl: %t : TB: Timeout waiting for OBI grant during write to offset 0x%x. GNT=%b\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_gnt))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:100: Assertion failed in %Ntb_user_spi_ctrl.read_obi: %t : TB: Timeout waiting for OBI grant during read from 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9,12,
-                     (IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset),
-                     1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                                      >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 98, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 99, "");
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(
+                                                           (vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                                                            >> 1U))));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 100, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 101, "");
     }
-    VL_WRITEF_NX("%t : TB: OBI Write Gnt Rcvd: AddrOffset=0x%x. GNT=%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__write_obi_ctrl__4__w_addr_offset),
-                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
+    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
                                   >> 1U))));
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         103);
+                                                         105);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U]);
-    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
-    VL_WRITEF_NX("%t : TB: OBI Write Req Deasserted.\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9);
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         107);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 0U;
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         208);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         209);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset = 8U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_gnt = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_rvalid = 0U;
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         116);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[0U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[1U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[2U] = 0U;
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[0U] 
-        = (1U | __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[0U]);
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[1U] 
-        = ((0x1ffU & __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[1U]) 
-           | ((IData)(((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset)) 
-                       << 1U)) << 9U));
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[2U] 
-        = (0x3ffU & (((IData)(((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset)) 
-                               << 1U)) >> 0x17U) | 
-                     ((IData)((((QData)((IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset)) 
-                                << 1U) >> 0x20U)) << 9U)));
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[0U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[1U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__req_txn[2U];
-    vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 1U;
-    VL_WRITEF_NX("%t : TB: OBI Read Req  : AddrOffset=0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset));
-    while (((~ (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                        >> 1U))) & VL_GTS_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_gnt))) {
-        co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                             nullptr, 
-                                                             "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                             "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                             126);
-        vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_gnt 
-            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_gnt);
-    }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_gnt))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:130: Assertion failed in %Ntb_user_spi_ctrl.read_obi_ctrl: %t : TB: Timeout waiting for OBI grant during read from offset 0x%x. GNT=%b\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9,12,
-                     (IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset),
-                     1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                                      >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 130, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 131, "");
-    }
-    VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: AddrOffset=0x%x. GNT=%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset),
-                 1,(1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                                  >> 1U))));
-    co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
-                                                         nullptr, 
-                                                         "@(posedge tb_user_spi_ctrl.clk_i)", 
-                                                         "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         135);
-    vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 
-        (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U]);
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] 
+        = (0xfffffffeU & vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U]);
     vlSelfRef.tb_user_spi_ctrl__DOT__req_ongoing = 0U;
     VL_WRITEF_NX("%t : TB: OBI Read Req Deasserted.\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
-    while (((~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp)) 
-            & VL_GTS_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_rvalid))) {
+    while (((~ (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)) 
+            & VL_GTS_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_rvalid))) {
         co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                              nullptr, 
                                                              "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                              "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                             141);
+                                                             111);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
-        __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_rvalid 
-            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_rvalid);
+        __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_rvalid 
+            = ((IData)(1U) + __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_rvalid);
     }
-    if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__timeout_count_rvalid))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:145: Assertion failed in %Ntb_user_spi_ctrl.read_obi_ctrl: %t : TB: Timeout waiting for OBI rvalid during read from offset 0x%x. RVALID=%b\n",0,
+    if (VL_UNLIKELY(VL_LTES_III(32, 0x7d0U, __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__timeout_count_rvalid))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:115: Assertion failed in %Ntb_user_spi_ctrl.read_obi: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9,12,
-                     (IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset),
-                     1,(1U & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp)));
-        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 145, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 146, "");
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     ((vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                       << 0x16U) | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                    >> 0xaU)),1,(1U 
+                                                 & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 115, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 116, "");
     }
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__rsp_r_chan_temp 
-        = (0x1fffffffffULL & (vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp 
-                              >> 2U));
-    __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_data_val 
-        = (IData)((__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__rsp_r_chan_temp 
-                   >> 5U));
-    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: AddrOffset=0x%x Data=0x%08x. RVALID=%b\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,12,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_addr_offset),
-                 32,__Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_data_val,
-                 1,(1U & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp)));
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_data 
+        = (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                   >> 7U));
+    __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_err 
+        = (1U & (IData)((vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut 
+                         >> 3U)));
+    VL_WRITEF_NX("%t : TB: OBI Read Data Rcvd: Addr=0x%x Data=0x%08x Err=%b RVALID=%b\n",0,
+                 64,VL_TIME_UNITED_Q(1000),-9,32,((
+                                                   vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] 
+                                                   << 0x16U) 
+                                                  | (vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] 
+                                                     >> 0xaU)),
+                 32,__Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_data,
+                 1,(IData)(__Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_err),
+                 1,(1U & (IData)(vlSelfRef.tb_user_spi_ctrl__DOT__obi_rsp_o_from_dut)));
     co_await vlSelfRef.__VtrigSched_he028f39d__0.trigger(0U, 
                                                          nullptr, 
                                                          "@(posedge tb_user_spi_ctrl.clk_i)", 
                                                          "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                                         151);
+                                                         121);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[0U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[1U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req[2U] = 0U;
-    vlSelfRef.tb_user_spi_ctrl__DOT__prng_val2 = __Vtask_tb_user_spi_ctrl__DOT__read_obi_ctrl__5__r_data_val;
-    VL_WRITEF_NX("%t : TB: PRNG Value 2 = 0x%x\n",0,
-                 64,VL_TIME_UNITED_Q(1000),-9,32,vlSelfRef.tb_user_spi_ctrl__DOT__prng_val2);
-    if ((vlSelfRef.tb_user_spi_ctrl__DOT__prng_val1 
-         == vlSelfRef.tb_user_spi_ctrl__DOT__prng_val2)) {
-        VL_WRITEF_NX("[%0t] %%Warning: tb_user_spi_ctrl.sv:214: %Ntb_user_spi_ctrl: %t : TB_WARN: PRNG values are the same. Check PRNG logic or seed.\n",0,
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[0U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[1U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__obi_req_i_to_dut[2U] = 0U;
+    vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data 
+        = __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_data;
+    vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error 
+        = __Vtask_tb_user_spi_ctrl__DOT__read_obi__5__r_err;
+    if (VL_UNLIKELY(((IData)(vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error) 
+                     | (3U != (3U & vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data))))) {
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_spi_ctrl.sv:178: Assertion failed in %Ntb_user_spi_ctrl.unnamedblk1: %t : TB ERROR: Test 3 readback mismatch. Data=0x%x (exp 0x...011), Err=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
-                     64,VL_TIME_UNITED_Q(1000),-9);
-    } else {
-        VL_WRITEF_NX("%t : TB_PASS: PRNG values differ or seed is zero.\n",0,
-                     64,VL_TIME_UNITED_Q(1000),-9);
+                     64,VL_TIME_UNITED_Q(1000),-9,32,
+                     vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_back_data,
+                     1,(IData)(vlSelfRef.tb_user_spi_ctrl__DOT__unnamedblk1__DOT__read_error));
+        VL_STOP_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 178, "");
     }
     co_await vlSelfRef.__VdlySched.delay(0x7a120ULL, 
                                          nullptr, "rtl/user_domain/tb_user_spi_ctrl.sv", 
-                                         222);
+                                         181);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
-    VL_WRITEF_NX("%t : TB: Test Sequence for user_spi_ctrl Complete.\n",0,
+    VL_WRITEF_NX("%t : TB: user_spi_ctrl Test Sequence Complete.\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
-    VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 224, "");
+    VL_FINISH_MT("rtl/user_domain/tb_user_spi_ctrl.sv", 183, "");
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
 }
 

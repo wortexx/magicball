@@ -10,6 +10,7 @@
 Vtb_xorshift::Vtb_xorshift(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vtb_xorshift__Syms(contextp(), _vcname__, this)}
+    , __PVT__soc_ctrl_reg_pkg{vlSymsp->TOP.__PVT__soc_ctrl_reg_pkg}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

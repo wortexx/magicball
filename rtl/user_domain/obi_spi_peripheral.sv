@@ -60,20 +60,25 @@ module obi_spi_peripheral (
   always_comb begin
     state_d        = state_q; bit_cnt_d      = bit_cnt_q; spi_clk_cnt_d  = spi_clk_cnt_q;
     start_flag_d   = start_flag_q; tx_data_d      = tx_data_q; cs_no          = 1'b1;
-    sck_o          = 1'b0; mosi_o         = tx_data_q[bit_cnt_q];
+    sck_o          = 1'b0; mosi_o         = tx_data_q[bit_cnt_q]; // Default for MSB first during SHIFT
     case (state_q)
       IDLE: if (start_flag_q) begin state_d = LOAD; start_flag_d = 1'b0; end
       LOAD: begin cs_no = 1'b0; bit_cnt_d = SPI_DATA_BITS - 1; spi_clk_cnt_d = '0;
-                  mosi_o = tx_data_q[SPI_DATA_BITS-1]; state_d = SHIFT; end
+                  mosi_o = tx_data_q[SPI_DATA_BITS-1]; state_d = SHIFT; end // Output MSB
       SHIFT: begin
         logic [$clog2(SPI_DATA_BITS)-1:0] next_mosi_idx;
         cs_no = 1'b0; sck_o = spi_clk_phase; spi_clk_cnt_d = spi_clk_cnt_q + 1;
-        if (spi_clk_cnt_q == (SPI_CLK_DIVIDER*2 - 1)) begin
-          next_mosi_idx = (bit_cnt_q == 0) ? bit_cnt_q : (bit_cnt_q - 1);
-          mosi_o = tx_data_q[next_mosi_idx];
+        // mosi_o is driven by tx_data_q[bit_cnt_q] (current bit).
+        // It updates when bit_cnt_q updates at the end of an SCK cycle (when spi_clk_cnt_q wraps).
+        // SCK is low when bit_cnt_q updates, so data is stable for SCK rising edge (Mode 0).
+        if (spi_clk_cnt_q == (SPI_CLK_DIVIDER*2 - 1)) begin // End of an SCK cycle
           spi_clk_cnt_d = '0;
-          if (bit_cnt_q == 0) state_d = COMPLETE;
-          else bit_cnt_d = bit_cnt_q - 1;
+          if (bit_cnt_q == 0) begin
+            state_d = COMPLETE;
+          end else begin
+            bit_cnt_d = bit_cnt_q - 1; // Move to next bit for next SCK cycle
+            // mosi_o will reflect tx_data_q[bit_cnt_d(new_value)] in next combinational pass
+          end
         end
       end
       COMPLETE: begin cs_no = 1'b1; state_d = IDLE; end
@@ -89,10 +94,6 @@ module obi_spi_peripheral (
     if (req_i) begin
       $display("%t [DUT_OBI_DEBUG] req_i=%b, we_i=%b, addr_i[11:0]=%h, gnt_o=%b, state_q=%s",
                $time, req_i, we_i, addr_i[11:0], gnt_o, state_q.name());
-    end
-    if (cs_no == 1'b0) begin
-        $display("%t [DUT_SPI_DEBUG] CS_N LOW: SCK=%b, MOSI=%b, BitCnt=%d, SPIClkCnt=%d, FSMState=%s",
-                 $time, sck_o, mosi_o, bit_cnt_q, spi_clk_cnt_q, state_q.name());
     end
   end
 
@@ -126,24 +127,18 @@ module obi_spi_peripheral (
       end
 
       // OBI Read Path Logic
-      // 1. Latch if a read request for status was granted THIS cycle
       read_req_granted_q <= req_i && !we_i && gnt_o && (addr_i[11:0] == SPI_STATUS_ADDR_OFFSET);
-
-      // 2. Assert rvalid_q on the cycle AFTER the read request was granted
       rvalid_q <= read_req_granted_q;
 
-      // 3. Latch the read data WHEN read_req_granted_q was true (meaning grant occurred on previous cycle)
-      if (read_req_granted_q) begin // If grant was asserted in the *previous* cycle (read_req_granted_q is now high)
-        rdata_q <= DATA_WIDTH'(status_bits); // status_bits reflects current state_q, done_q for this cycle
-        $display("%t [DUT_READ_PATH] read_req_granted_q=TRUE (was set last cycle). Latching rdata_q with status={%b,%b}. rvalid_q is now TRUE.",
+      if (read_req_granted_q) begin
+        rdata_q <= DATA_WIDTH'(status_bits);
+        $display("%t [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={%b,%b}. rvalid_q is now TRUE.",
                  $time, status_bits[1], status_bits[0]);
-      end else if (!rvalid_q) begin // If rvalid_q is already low (or going low because read_req_granted_q is low)
+      end else if (!rvalid_q) begin
         rdata_q <= '0;
       end
-      // Else: rdata_q holds value while rvalid_q is high
 
-      // Debug display for when rvalid_o is actually high
-      if (rvalid_q) begin // This is rvalid_q that will drive rvalid_o THIS cycle
+      if (rvalid_q) begin
           $display("%t [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x%h",
                    $time, rdata_q);
       end

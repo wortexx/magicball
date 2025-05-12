@@ -46,7 +46,7 @@ Vtb_user_spi_ctrl__Syms::Vtb_user_spi_ctrl__Syms(VerilatedContext* contextp, con
     , TOP__soc_ctrl_reg_pkg{this, Verilated::catName(namep, "soc_ctrl_reg_pkg")}
 {
         // Check resources
-        Verilated::stackCheck(194);
+        Verilated::stackCheck(124);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);
@@ -57,6 +57,7 @@ Vtb_user_spi_ctrl__Syms::Vtb_user_spi_ctrl__Syms(VerilatedContext* contextp, con
     TOP__soc_ctrl_reg_pkg.__Vconfigure(true);
     // Setup scopes
     __Vscope_tb_user_spi_ctrl.configure(this, name(), "tb_user_spi_ctrl", "tb_user_spi_ctrl", -9, VerilatedScope::SCOPE_OTHER);
-    __Vscope_tb_user_spi_ctrl__read_obi_ctrl.configure(this, name(), "tb_user_spi_ctrl.read_obi_ctrl", "read_obi_ctrl", -9, VerilatedScope::SCOPE_OTHER);
-    __Vscope_tb_user_spi_ctrl__write_obi_ctrl.configure(this, name(), "tb_user_spi_ctrl.write_obi_ctrl", "write_obi_ctrl", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_user_spi_ctrl__read_obi.configure(this, name(), "tb_user_spi_ctrl.read_obi", "read_obi", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_user_spi_ctrl__unnamedblk1.configure(this, name(), "tb_user_spi_ctrl.unnamedblk1", "unnamedblk1", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_user_spi_ctrl__write_obi.configure(this, name(), "tb_user_spi_ctrl.write_obi", "write_obi", -9, VerilatedScope::SCOPE_OTHER);
 }

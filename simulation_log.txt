@@ -1,0 +1,1464 @@
+                   0 [FONT_ROM] Initializing Font ROM (size 1140 bytes) from rtl/user_domain/font_rom_12x6.hex
+                   0 : TB: Asserting Reset
+              100000 : TB: Deasserting Reset
+              125000 : TB: Starting Test Sequence for user_domain (HW Ctrl - Simplified)...
+--- Test 1: Initialize ADXL345 ---
+              125000 : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x00000001 (CS1_N=1, CS2_N=0, DC=0)
+              175000 : TB: OBI Write Req : Addr=0x20002000, Data=0x00000001, BE=0x1111
+              175000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+              175000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+              175000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+              175000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000001 -> CS1_N=1, CS2_N=0, DC=0
+              225000 : TB: OBI Write Gnt Rcvd: Addr=0x20002000
+              225000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+              225000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+              225000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+              225000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000001 -> CS1_N=1, CS2_N=0, DC=0
+              325000 : TB: Dummy Read from UserSpiCtrl (GPIO Addr 0x20002000) after CS/DC write.
+              375000 : TB: OBI Read Req  : Addr=0x20002000
+              375000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+              375000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+              375000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+              375000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+              375000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000001. rvalid_q becomes 1 NEXT cycle.
+              425000 : TB: OBI Read Gnt Rcvd: Addr=0x20002000
+              425000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+              425000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+              425000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+              425000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000001
+              425000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+              425000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=2 (Addr=0x20002000)
+              425000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000001. rvalid_q becomes 1 NEXT cycle.
+              425000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000001 for AddrOff=0x000
+              475000 : TB: Waiting for OBI rvalid from Addr=0x20002000...
+              475000 : TB: OBI Read Data Rcvd: Addr=0x20002000 Data=0x00000001 Err=0 RVALID=1
+              475000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000001
+              475000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=2 (Addr=0x20002000)
+              475000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000001 for AddrOff=0x000
+              575000 : TB: Waiting for SPI Engine to finish...
+              675000 : TB: OBI Read Req  : Addr=0x20001008
+              675000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              675000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              675000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              675000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              675000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+              725000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+              725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              725000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              725000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              725000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              725000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+              725000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+              775000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+              775000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+              775000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+              775000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+              775000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+              775000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+              825000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000000 (done=0, busy=0)
+              825000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+              825000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+              825000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+              875000 : TB: OBI Read Req  : Addr=0x20001008
+              875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              875000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              875000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              875000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              875000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+              925000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+              925000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              925000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              925000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              925000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              925000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+              925000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+              975000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+              975000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+              975000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+              975000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+              975000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+              975000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             1025000 : TB: SPI Engine finished. Final Status: 0x00000000 (done=0, busy=0)
+             1025000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             1025000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+             1025000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             1075000 : TB: OBI Write Req : Addr=0x20001004, Data=0x0000002d, BE=0x0001
+             1075000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             1075000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+             1075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+             1075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1075000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0x2d
+             1125000 : TB: OBI Write Gnt Rcvd: Addr=0x20001004
+             1125000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             1125000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+             1125000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+             1125000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1125000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0x2d
+             1275000 : TB: OBI Write Req : Addr=0x20001000, Data=0x00000001, BE=0x0001
+             1275000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             1275000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+             1275000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+             1275000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1275000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+             1325000 : TB: OBI Write Gnt Rcvd: Addr=0x20001000
+             1325000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             1325000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+             1325000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+             1325000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1325000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+             1325000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+             1375000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+             1425000 : TB: Waiting for SPI Engine to finish...
+             1525000 : TB: OBI Read Req  : Addr=0x20001008
+             1525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1525000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             1525000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             1525000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1525000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             1575000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             1575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1575000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             1575000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             1575000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1575000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             1575000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             1625000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             1625000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             1625000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             1625000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             1625000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             1625000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             1675000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             1675000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             1675000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             1675000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             1775000 : TB: OBI Read Req  : Addr=0x20001008
+             1775000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1775000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             1775000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             1775000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1775000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             1825000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             1825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1825000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             1825000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             1825000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1825000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             1825000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             1875000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             1875000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             1875000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             1875000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             1875000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             1875000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             1925000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             1925000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             1925000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             1925000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2025000 : TB: OBI Read Req  : Addr=0x20001008
+             2025000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2025000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2025000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2025000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2025000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             2075000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             2075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2075000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2075000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             2075000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             2125000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             2125000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             2125000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2125000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             2125000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             2125000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2175000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             2175000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2175000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             2175000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2275000 : TB: OBI Read Req  : Addr=0x20001008
+             2275000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2275000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2275000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2275000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2275000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             2325000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             2325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2325000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2325000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2325000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2325000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             2325000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             2375000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             2375000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             2375000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2375000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             2375000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             2375000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2425000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             2425000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2425000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             2425000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2525000 : TB: OBI Read Req  : Addr=0x20001008
+             2525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2525000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2525000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2525000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2525000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             2575000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             2575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2575000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2575000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2575000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2575000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             2575000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             2625000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             2625000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             2625000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2625000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             2625000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             2625000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2675000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             2675000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2675000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             2675000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2775000 : TB: OBI Read Req  : Addr=0x20001008
+             2775000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2775000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2775000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2775000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2775000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             2825000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             2825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2825000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2825000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2825000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2825000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             2825000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             2875000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             2875000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             2875000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2875000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             2875000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             2875000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2925000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             2925000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2925000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             2925000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             2975000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+             3025000 : TB: OBI Read Req  : Addr=0x20001008
+             3025000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=COMPLETE
+             3025000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3025000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3025000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3025000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             3025000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+             3075000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             3075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3075000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3075000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             3075000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+             3075000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             3125000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             3125000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             3125000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             3125000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+             3125000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+             3125000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             3125000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             3175000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000000 (done=0, busy=0)
+             3175000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             3175000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             3175000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             3225000 : TB: OBI Read Req  : Addr=0x20001008
+             3225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3225000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3225000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3225000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3225000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             3275000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             3275000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3275000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3275000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3275000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3275000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             3275000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             3325000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             3325000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             3325000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             3325000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             3325000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             3325000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             3375000 : TB: SPI Engine finished. Final Status: 0x00000001 (done=0, busy=1)
+             3375000 : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x00000003 (CS1_N=1, CS2_N=1, DC=0)
+             3375000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             3375000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             3375000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             3425000 : TB: OBI Write Req : Addr=0x20002000, Data=0x00000003, BE=0x1111
+             3425000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+             3425000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+             3425000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             3425000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000003 -> CS1_N=1, CS2_N=1, DC=0
+             3475000 : TB: OBI Write Gnt Rcvd: Addr=0x20002000
+             3475000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+             3475000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+             3475000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             3475000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000003 -> CS1_N=1, CS2_N=1, DC=0
+             3575000 : TB: Dummy Read from UserSpiCtrl (GPIO Addr 0x20002000) after CS/DC write.
+             3625000 : TB: OBI Read Req  : Addr=0x20002000
+             3625000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+             3625000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+             3625000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             3625000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+             3625000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000003. rvalid_q becomes 1 NEXT cycle.
+             3675000 : TB: OBI Read Gnt Rcvd: Addr=0x20002000
+             3675000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+             3675000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+             3675000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             3675000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000003
+             3675000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+             3675000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000003 for Read to Idx=2 (Addr=0x20002000)
+             3675000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000003. rvalid_q becomes 1 NEXT cycle.
+             3675000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000003 for AddrOff=0x000
+             3725000 : TB: Waiting for OBI rvalid from Addr=0x20002000...
+             3725000 : TB: OBI Read Data Rcvd: Addr=0x20002000 Data=0x00000003 Err=0 RVALID=1
+             3725000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000003
+             3725000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000003 for Read to Idx=2 (Addr=0x20002000)
+             3725000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000003 for AddrOff=0x000
+             3825000 : TB: Finished HW Ctrl Send Byte 0x2d to CS2
+             3825000 : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x00000001 (CS1_N=1, CS2_N=0, DC=0)
+             3875000 : TB: OBI Write Req : Addr=0x20002000, Data=0x00000001, BE=0x1111
+             3875000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+             3875000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+             3875000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             3875000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000001 -> CS1_N=1, CS2_N=0, DC=0
+             3925000 : TB: OBI Write Gnt Rcvd: Addr=0x20002000
+             3925000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+             3925000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+             3925000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             3925000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000001 -> CS1_N=1, CS2_N=0, DC=0
+             4025000 : TB: Dummy Read from UserSpiCtrl (GPIO Addr 0x20002000) after CS/DC write.
+             4075000 : TB: OBI Read Req  : Addr=0x20002000
+             4075000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+             4075000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+             4075000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             4075000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+             4075000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000001. rvalid_q becomes 1 NEXT cycle.
+             4125000 : TB: OBI Read Gnt Rcvd: Addr=0x20002000
+             4125000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+             4125000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+             4125000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             4125000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000001
+             4125000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+             4125000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=2 (Addr=0x20002000)
+             4125000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000001. rvalid_q becomes 1 NEXT cycle.
+             4125000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000001 for AddrOff=0x000
+             4175000 : TB: Waiting for OBI rvalid from Addr=0x20002000...
+             4175000 : TB: OBI Read Data Rcvd: Addr=0x20002000 Data=0x00000001 Err=0 RVALID=1
+             4175000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000001
+             4175000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=2 (Addr=0x20002000)
+             4175000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000001 for AddrOff=0x000
+             4275000 : TB: Waiting for SPI Engine to finish...
+             4375000 : TB: OBI Read Req  : Addr=0x20001008
+             4375000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4375000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4375000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4375000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4375000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             4425000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             4425000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4425000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4425000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4425000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4425000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             4425000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             4475000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             4475000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             4475000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             4475000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             4475000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             4475000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             4525000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             4525000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             4525000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             4525000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             4625000 : TB: OBI Read Req  : Addr=0x20001008
+             4625000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4625000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4625000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4625000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4625000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             4675000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             4675000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4675000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4675000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4675000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4675000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             4675000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             4725000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             4725000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             4725000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             4725000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             4725000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+             4725000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             4725000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             4775000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             4775000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             4775000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             4775000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+             4775000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             4875000 : TB: OBI Read Req  : Addr=0x20001008
+             4875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             4875000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4875000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4875000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4875000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             4925000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             4925000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             4925000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4925000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4925000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4925000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             4925000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             4975000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             4975000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             4975000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             4975000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+             4975000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             4975000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             5025000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000000 (done=0, busy=0)
+             5025000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             5025000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+             5025000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             5075000 : TB: OBI Read Req  : Addr=0x20001008
+             5075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             5075000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             5075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             5075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5075000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             5125000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             5125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             5125000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             5125000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             5125000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5125000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             5125000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             5175000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             5175000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             5175000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             5175000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+             5175000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             5175000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             5225000 : TB: SPI Engine finished. Final Status: 0x00000000 (done=0, busy=0)
+             5225000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             5225000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+             5225000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             5275000 : TB: OBI Write Req : Addr=0x20001004, Data=0x00000008, BE=0x0001
+             5275000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             5275000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+             5275000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+             5275000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5275000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0x08
+             5325000 : TB: OBI Write Gnt Rcvd: Addr=0x20001004
+             5325000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             5325000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+             5325000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+             5325000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5325000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0x08
+             5475000 : TB: OBI Write Req : Addr=0x20001000, Data=0x00000001, BE=0x0001
+             5475000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             5475000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+             5475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+             5475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5475000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+             5525000 : TB: OBI Write Gnt Rcvd: Addr=0x20001000
+             5525000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             5525000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+             5525000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+             5525000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5525000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+             5525000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+             5575000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+             5625000 : TB: Waiting for SPI Engine to finish...
+             5725000 : TB: OBI Read Req  : Addr=0x20001008
+             5725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             5725000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             5725000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             5725000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5725000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             5775000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             5775000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             5775000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             5775000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             5775000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5775000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             5775000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             5825000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             5825000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             5825000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             5825000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             5825000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             5825000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             5875000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             5875000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             5875000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             5875000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             5975000 : TB: OBI Read Req  : Addr=0x20001008
+             5975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             5975000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             5975000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             5975000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5975000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             6025000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             6025000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             6025000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             6025000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             6025000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             6025000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             6025000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             6075000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             6075000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             6075000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             6075000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             6075000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             6075000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             6125000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             6125000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             6125000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             6125000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             6225000 : TB: OBI Read Req  : Addr=0x20001008
+             6225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             6225000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             6225000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             6225000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             6225000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             6275000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             6275000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             6275000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             6275000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             6275000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             6275000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             6275000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             6325000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             6325000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             6325000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             6325000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             6325000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             6325000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             6375000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             6375000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             6375000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             6375000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             6475000 : TB: OBI Read Req  : Addr=0x20001008
+             6475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             6475000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             6475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             6475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             6475000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             6525000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             6525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             6525000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             6525000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             6525000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             6525000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             6525000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             6575000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             6575000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             6575000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             6575000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             6575000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             6575000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             6625000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             6625000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             6625000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             6625000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             6725000 : TB: OBI Read Req  : Addr=0x20001008
+             6725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             6725000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             6725000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             6725000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             6725000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             6775000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             6775000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             6775000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             6775000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             6775000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             6775000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             6775000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             6825000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             6825000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             6825000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             6825000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             6825000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             6825000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             6875000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             6875000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             6875000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             6875000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             6975000 : TB: OBI Read Req  : Addr=0x20001008
+             6975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             6975000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             6975000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             6975000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             6975000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             7025000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             7025000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             7025000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             7025000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             7025000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             7025000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             7025000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             7075000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             7075000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             7075000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             7075000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             7075000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             7075000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             7125000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             7125000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             7125000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             7125000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             7175000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+             7225000 : TB: OBI Read Req  : Addr=0x20001008
+             7225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=COMPLETE
+             7225000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             7225000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             7225000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             7225000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             7225000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+             7275000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             7275000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             7275000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             7275000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             7275000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             7275000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             7275000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+             7275000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             7325000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             7325000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             7325000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             7325000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+             7325000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+             7325000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             7325000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             7375000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000000 (done=0, busy=0)
+             7375000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             7375000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             7375000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             7425000 : TB: OBI Read Req  : Addr=0x20001008
+             7425000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             7425000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             7425000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             7425000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             7425000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             7475000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             7475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             7475000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             7475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             7475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             7475000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             7475000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             7525000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             7525000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             7525000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             7525000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             7525000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             7525000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             7575000 : TB: SPI Engine finished. Final Status: 0x00000001 (done=0, busy=1)
+             7575000 : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x00000003 (CS1_N=1, CS2_N=1, DC=0)
+             7575000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             7575000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             7575000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             7625000 : TB: OBI Write Req : Addr=0x20002000, Data=0x00000003, BE=0x1111
+             7625000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+             7625000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+             7625000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             7625000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000003 -> CS1_N=1, CS2_N=1, DC=0
+             7675000 : TB: OBI Write Gnt Rcvd: Addr=0x20002000
+             7675000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+             7675000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+             7675000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             7675000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000003 -> CS1_N=1, CS2_N=1, DC=0
+             7775000 : TB: Dummy Read from UserSpiCtrl (GPIO Addr 0x20002000) after CS/DC write.
+             7825000 : TB: OBI Read Req  : Addr=0x20002000
+             7825000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+             7825000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+             7825000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             7825000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+             7825000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000003. rvalid_q becomes 1 NEXT cycle.
+             7875000 : TB: OBI Read Gnt Rcvd: Addr=0x20002000
+             7875000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+             7875000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+             7875000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             7875000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000003
+             7875000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+             7875000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000003 for Read to Idx=2 (Addr=0x20002000)
+             7875000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000003. rvalid_q becomes 1 NEXT cycle.
+             7875000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000003 for AddrOff=0x000
+             7925000 : TB: Waiting for OBI rvalid from Addr=0x20002000...
+             7925000 : TB: OBI Read Data Rcvd: Addr=0x20002000 Data=0x00000003 Err=0 RVALID=1
+             7925000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000003
+             7925000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000003 for Read to Idx=2 (Addr=0x20002000)
+             7925000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000003 for AddrOff=0x000
+             8025000 : TB: Finished HW Ctrl Send Byte 0x08 to CS2
+--- ADXL345 Init Done ---
+--- Test 2: Initialize SSD1331 ---
+             8025000 : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x00000002 (CS1_N=0, CS2_N=1, DC=0)
+             8075000 : TB: OBI Write Req : Addr=0x20002000, Data=0x00000002, BE=0x1111
+             8075000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+             8075000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+             8075000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             8075000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000002 -> CS1_N=0, CS2_N=1, DC=0
+             8125000 : TB: OBI Write Gnt Rcvd: Addr=0x20002000
+             8125000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+             8125000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+             8125000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             8125000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000002 -> CS1_N=0, CS2_N=1, DC=0
+             8225000 : TB: Dummy Read from UserSpiCtrl (GPIO Addr 0x20002000) after CS/DC write.
+             8275000 : TB: OBI Read Req  : Addr=0x20002000
+             8275000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+             8275000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+             8275000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             8275000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+             8275000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000002. rvalid_q becomes 1 NEXT cycle.
+             8325000 : TB: OBI Read Gnt Rcvd: Addr=0x20002000
+             8325000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+             8325000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+             8325000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+             8325000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000002
+             8325000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+             8325000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000002 for Read to Idx=2 (Addr=0x20002000)
+             8325000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000002. rvalid_q becomes 1 NEXT cycle.
+             8325000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000002 for AddrOff=0x000
+             8375000 : TB: Waiting for OBI rvalid from Addr=0x20002000...
+             8375000 : TB: OBI Read Data Rcvd: Addr=0x20002000 Data=0x00000002 Err=0 RVALID=1
+             8375000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000002
+             8375000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000002 for Read to Idx=2 (Addr=0x20002000)
+             8375000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000002 for AddrOff=0x000
+             8475000 : TB: Waiting for SPI Engine to finish...
+             8575000 : TB: OBI Read Req  : Addr=0x20001008
+             8575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             8575000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             8575000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             8575000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             8575000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             8625000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             8625000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             8625000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             8625000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             8625000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             8625000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             8625000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             8675000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             8675000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             8675000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             8675000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             8675000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             8675000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             8725000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             8725000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             8725000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             8725000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             8825000 : TB: OBI Read Req  : Addr=0x20001008
+             8825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             8825000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             8825000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             8825000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             8825000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             8875000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             8875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             8875000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             8875000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             8875000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             8875000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             8875000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             8925000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             8925000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             8925000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             8925000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+             8925000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+             8925000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+             8925000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             8975000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+             8975000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             8975000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+             8975000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+             8975000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+             9075000 : TB: OBI Read Req  : Addr=0x20001008
+             9075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             9075000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             9075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             9075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9075000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             9125000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             9125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             9125000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             9125000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             9125000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9125000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             9125000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             9175000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             9175000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             9175000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             9175000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+             9175000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             9175000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             9225000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000000 (done=0, busy=0)
+             9225000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             9225000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+             9225000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             9275000 : TB: OBI Read Req  : Addr=0x20001008
+             9275000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             9275000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             9275000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             9275000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9275000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             9325000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             9325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             9325000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             9325000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             9325000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9325000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             9325000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             9375000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             9375000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             9375000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             9375000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+             9375000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+             9375000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             9425000 : TB: SPI Engine finished. Final Status: 0x00000000 (done=0, busy=0)
+             9425000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             9425000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+             9425000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+             9475000 : TB: OBI Write Req : Addr=0x20001004, Data=0x000000af, BE=0x0001
+             9475000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             9475000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+             9475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+             9475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9475000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0xaf
+             9525000 : TB: OBI Write Gnt Rcvd: Addr=0x20001004
+             9525000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             9525000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+             9525000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+             9525000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9525000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0xaf
+             9675000 : TB: OBI Write Req : Addr=0x20001000, Data=0x00000001, BE=0x0001
+             9675000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             9675000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+             9675000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+             9675000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9675000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+             9725000 : TB: OBI Write Gnt Rcvd: Addr=0x20001000
+             9725000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             9725000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+             9725000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+             9725000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9725000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+             9725000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+             9775000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+             9825000 : TB: Waiting for SPI Engine to finish...
+             9925000 : TB: OBI Read Req  : Addr=0x20001008
+             9925000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             9925000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             9925000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             9925000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9925000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             9975000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             9975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             9975000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             9975000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             9975000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             9975000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+             9975000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            10025000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            10025000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            10025000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            10025000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            10025000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            10025000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            10075000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            10075000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            10075000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            10075000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            10175000 : TB: OBI Read Req  : Addr=0x20001008
+            10175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            10175000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            10175000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            10175000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            10175000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            10225000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            10225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            10225000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            10225000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            10225000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            10225000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            10225000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            10275000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            10275000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            10275000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            10275000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            10275000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            10275000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            10325000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            10325000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            10325000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            10325000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            10425000 : TB: OBI Read Req  : Addr=0x20001008
+            10425000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            10425000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            10425000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            10425000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            10425000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            10475000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            10475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            10475000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            10475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            10475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            10475000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            10475000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            10525000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            10525000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            10525000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            10525000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            10525000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            10525000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            10575000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            10575000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            10575000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            10575000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            10675000 : TB: OBI Read Req  : Addr=0x20001008
+            10675000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            10675000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            10675000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            10675000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            10675000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            10725000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            10725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            10725000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            10725000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            10725000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            10725000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            10725000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            10775000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            10775000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            10775000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            10775000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            10775000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            10775000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            10825000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            10825000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            10825000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            10825000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            10925000 : TB: OBI Read Req  : Addr=0x20001008
+            10925000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            10925000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            10925000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            10925000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            10925000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            10975000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            10975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            10975000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            10975000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            10975000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            10975000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            10975000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            11025000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            11025000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            11025000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            11025000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            11025000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            11025000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            11075000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            11075000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            11075000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            11075000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            11175000 : TB: OBI Read Req  : Addr=0x20001008
+            11175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            11175000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            11175000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            11175000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            11175000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            11225000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            11225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            11225000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            11225000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            11225000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            11225000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            11225000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            11275000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            11275000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            11275000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            11275000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            11275000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            11275000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            11325000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            11325000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            11325000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            11325000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            11375000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+            11425000 : TB: OBI Read Req  : Addr=0x20001008
+            11425000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=COMPLETE
+            11425000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            11425000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            11425000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            11425000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            11425000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+            11475000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            11475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+            11475000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            11475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            11475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            11475000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            11475000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+            11475000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+            11525000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            11525000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+            11525000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+            11525000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+            11525000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+            11525000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            11525000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+            11575000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000000 (done=0, busy=0)
+            11575000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            11575000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            11575000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            11625000 : TB: OBI Read Req  : Addr=0x20001008
+            11625000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            11625000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            11625000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            11625000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            11625000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            11675000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            11675000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            11675000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            11675000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            11675000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            11675000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            11675000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            11725000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            11725000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            11725000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            11725000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            11725000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            11725000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            11775000 : TB: SPI Engine finished. Final Status: 0x00000001 (done=0, busy=1)
+            11775000 : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x00000003 (CS1_N=1, CS2_N=1, DC=0)
+            11775000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            11775000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            11775000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            11825000 : TB: OBI Write Req : Addr=0x20002000, Data=0x00000003, BE=0x1111
+            11825000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+            11825000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+            11825000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            11825000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000003 -> CS1_N=1, CS2_N=1, DC=0
+            11875000 : TB: OBI Write Gnt Rcvd: Addr=0x20002000
+            11875000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+            11875000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+            11875000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            11875000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000003 -> CS1_N=1, CS2_N=1, DC=0
+            11975000 : TB: Dummy Read from UserSpiCtrl (GPIO Addr 0x20002000) after CS/DC write.
+            12025000 : TB: OBI Read Req  : Addr=0x20002000
+            12025000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+            12025000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+            12025000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            12025000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+            12025000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000003. rvalid_q becomes 1 NEXT cycle.
+            12075000 : TB: OBI Read Gnt Rcvd: Addr=0x20002000
+            12075000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+            12075000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+            12075000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            12075000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000003
+            12075000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+            12075000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000003 for Read to Idx=2 (Addr=0x20002000)
+            12075000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000003. rvalid_q becomes 1 NEXT cycle.
+            12075000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000003 for AddrOff=0x000
+            12125000 : TB: Waiting for OBI rvalid from Addr=0x20002000...
+            12125000 : TB: OBI Read Data Rcvd: Addr=0x20002000 Data=0x00000003 Err=0 RVALID=1
+            12125000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000003
+            12125000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000003 for Read to Idx=2 (Addr=0x20002000)
+            12125000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000003 for AddrOff=0x000
+            12225000 : TB: Finished HW Ctrl Send Byte 0xaf to CS1
+--- SSD1331 Init Done ---
+--- Test 4: Read Font ROM (Char '!', Offset 0x0000000c) ---
+            12275000 : TB: OBI Read Req  : Addr=0x2000300c
+            12275000 [UD_IN] Req for Addr=0x2000300c (WE=0) -> Decoded Idx=3
+            12275000 [UD_TO_FONT_ROM] Req to Font ROM (idx           3): Addr=0x2000300c, WE=0
+            12275000 [UD_FROM_FONT_ROM] GNT from Font ROM (idx           3) to Demux
+            12275000 [UD_OUT] GNT_OUT=1 for Read to Idx=3 (Addr=0x2000300c)
+            12325000 : TB: OBI Read Gnt Rcvd: Addr=0x2000300c
+            12325000 [UD_IN] Req for Addr=0x2000300c (WE=0) -> Decoded Idx=3
+            12325000 [UD_TO_FONT_ROM] Req to Font ROM (idx           3): Addr=0x2000300c, WE=0
+            12325000 [UD_FROM_FONT_ROM] GNT from Font ROM (idx           3) to Demux
+            12325000 [UD_OUT] GNT_OUT=1 for Read to Idx=3 (Addr=0x2000300c)
+            12325000 [FONT_ROM_FF] read_req_accepted=1. Addr=0x2000300c (Offset=0x00c). Byte read=0x00. rdata_q set to 0x00000000. rvalid_q becomes 1.
+            12375000 : TB: Waiting for OBI rvalid from Addr=0x2000300c...
+            12375000 : TB: OBI Read Data Rcvd: Addr=0x2000300c Data=0x00000000 Err=0 RVALID=1
+            12375000 [UD_FROM_FONT_ROM] RVALID from Font ROM (idx           3) to Demux. RDATA=0x00000000
+            12375000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=3 (Addr=0x2000300c)
+            12375000 [FONT_ROM_FF] read_req_accepted=1. Addr=0x00000000 (Offset=0x000). Byte read=0x00. rdata_q set to 0x00000000. rvalid_q becomes 1.
+   -> Font Byte[0] for '!': 0x00 (Expected 0x00)
+--- Test 5: Send Font Byte to Display ---
+            12425000 : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x00000006 (CS1_N=0, CS2_N=1, DC=1)
+            12425000 [UD_FROM_FONT_ROM] RVALID from Font ROM (idx           3) to Demux. RDATA=0x00000000
+            12425000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+            12475000 : TB: OBI Write Req : Addr=0x20002000, Data=0x00000006, BE=0x1111
+            12475000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+            12475000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+            12475000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            12475000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000006 -> CS1_N=0, CS2_N=1, DC=1
+            12525000 : TB: OBI Write Gnt Rcvd: Addr=0x20002000
+            12525000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+            12525000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+            12525000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            12525000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000006 -> CS1_N=0, CS2_N=1, DC=1
+            12625000 : TB: Dummy Read from UserSpiCtrl (GPIO Addr 0x20002000) after CS/DC write.
+            12675000 : TB: OBI Read Req  : Addr=0x20002000
+            12675000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+            12675000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+            12675000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            12675000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+            12675000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000006. rvalid_q becomes 1 NEXT cycle.
+            12725000 : TB: OBI Read Gnt Rcvd: Addr=0x20002000
+            12725000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+            12725000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+            12725000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            12725000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000006
+            12725000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+            12725000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000006 for Read to Idx=2 (Addr=0x20002000)
+            12725000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000006. rvalid_q becomes 1 NEXT cycle.
+            12725000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000006 for AddrOff=0x000
+            12775000 : TB: Waiting for OBI rvalid from Addr=0x20002000...
+            12775000 : TB: OBI Read Data Rcvd: Addr=0x20002000 Data=0x00000006 Err=0 RVALID=1
+            12775000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000006
+            12775000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000006 for Read to Idx=2 (Addr=0x20002000)
+            12775000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000006 for AddrOff=0x000
+            12875000 : TB: Waiting for SPI Engine to finish...
+            12975000 : TB: OBI Read Req  : Addr=0x20001008
+            12975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            12975000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            12975000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            12975000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            12975000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            13025000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            13025000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            13025000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            13025000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            13025000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13025000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            13025000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            13075000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            13075000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            13075000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            13075000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            13075000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            13075000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            13125000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            13125000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            13125000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            13125000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+            13125000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            13175000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+            13225000 : TB: OBI Read Req  : Addr=0x20001008
+            13225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+            13225000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            13225000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            13225000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13225000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            13275000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            13275000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+            13275000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            13275000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            13275000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13275000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            13275000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+            13325000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            13325000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+            13325000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+            13325000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+            13325000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+            13325000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+            13375000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000000 (done=0, busy=0)
+            13375000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+            13375000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+            13375000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+            13425000 : TB: OBI Read Req  : Addr=0x20001008
+            13425000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+            13425000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            13425000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            13425000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13425000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            13475000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            13475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+            13475000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            13475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            13475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13475000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            13475000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+            13525000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            13525000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+            13525000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+            13525000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+            13525000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+            13525000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+            13575000 : TB: SPI Engine finished. Final Status: 0x00000000 (done=0, busy=0)
+            13575000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+            13575000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=0 (Addr=0x00000000)
+            13575000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+            13625000 : TB: OBI Write Req : Addr=0x20001004, Data=0x00000000, BE=0x0001
+            13625000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+            13625000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+            13625000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+            13625000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13625000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0x00
+            13675000 : TB: OBI Write Gnt Rcvd: Addr=0x20001004
+            13675000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+            13675000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+            13675000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+            13675000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13675000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0x00
+            13825000 : TB: OBI Write Req : Addr=0x20001000, Data=0x00000001, BE=0x0001
+            13825000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+            13825000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+            13825000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+            13825000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13825000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+            13875000 : TB: OBI Write Gnt Rcvd: Addr=0x20001000
+            13875000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+            13875000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+            13875000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+            13875000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            13875000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+            13875000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+            13925000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+            13975000 : TB: Waiting for SPI Engine to finish...
+            14075000 : TB: OBI Read Req  : Addr=0x20001008
+            14075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            14075000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            14075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            14075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            14075000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            14125000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            14125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            14125000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            14125000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            14125000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            14125000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            14125000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            14175000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            14175000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            14175000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            14175000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            14175000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            14175000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            14225000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            14225000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            14225000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            14225000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            14325000 : TB: OBI Read Req  : Addr=0x20001008
+            14325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            14325000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            14325000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            14325000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            14325000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            14375000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            14375000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            14375000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            14375000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            14375000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            14375000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            14375000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            14425000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            14425000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            14425000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            14425000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            14425000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            14425000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            14475000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            14475000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            14475000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            14475000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            14575000 : TB: OBI Read Req  : Addr=0x20001008
+            14575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            14575000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            14575000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            14575000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            14575000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            14625000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            14625000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            14625000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            14625000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            14625000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            14625000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            14625000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            14675000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            14675000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            14675000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            14675000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            14675000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            14675000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            14725000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            14725000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            14725000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            14725000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            14825000 : TB: OBI Read Req  : Addr=0x20001008
+            14825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            14825000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            14825000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            14825000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            14825000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            14875000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            14875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            14875000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            14875000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            14875000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            14875000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            14875000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            14925000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            14925000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            14925000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            14925000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            14925000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            14925000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            14975000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            14975000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            14975000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            14975000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            15075000 : TB: OBI Read Req  : Addr=0x20001008
+            15075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            15075000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            15075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            15075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            15075000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            15125000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            15125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            15125000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            15125000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            15125000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            15125000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            15125000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            15175000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            15175000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            15175000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            15175000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            15175000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            15175000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            15225000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            15225000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            15225000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            15225000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            15325000 : TB: OBI Read Req  : Addr=0x20001008
+            15325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            15325000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            15325000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            15325000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            15325000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            15375000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            15375000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            15375000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            15375000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            15375000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            15375000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            15375000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            15425000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            15425000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            15425000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            15425000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            15425000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            15425000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            15475000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000001 (done=0, busy=1)
+            15475000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            15475000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            15475000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            15525000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+            15575000 : TB: OBI Read Req  : Addr=0x20001008
+            15575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=COMPLETE
+            15575000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            15575000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            15575000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            15575000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            15575000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+            15625000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            15625000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+            15625000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            15625000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            15625000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            15625000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            15625000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+            15625000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,0}. rvalid_q is now TRUE.
+            15675000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            15675000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+            15675000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+            15675000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000000 for Read to Idx=1 (Addr=0x20001008)
+            15675000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+            15675000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            15675000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000000
+            15725000 : TB: Polling SPI Engine Status (Addr 0x20001008): 0x00000000 (done=0, busy=0)
+            15725000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            15725000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            15725000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            15775000 : TB: OBI Read Req  : Addr=0x20001008
+            15775000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            15775000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            15775000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            15775000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            15775000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            15825000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+            15825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+            15825000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+            15825000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+            15825000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+            15825000 [UD_OUT] GNT_OUT=1 for Read to Idx=1 (Addr=0x20001008)
+            15825000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            15875000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+            15875000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+            15875000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            15875000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=1 (Addr=0x20001008)
+            15875000 [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={0,1}. rvalid_q is now TRUE.
+            15875000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            15925000 : TB: SPI Engine finished. Final Status: 0x00000001 (done=0, busy=1)
+            15925000 : TB: Writing HW Ctrl Reg (Addr 0x20002000): 0x00000007 (CS1_N=1, CS2_N=1, DC=1)
+            15925000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+            15925000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000001 for Read to Idx=0 (Addr=0x00000000)
+            15925000 [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x00000001
+            15975000 : TB: OBI Write Req : Addr=0x20002000, Data=0x00000007, BE=0x1111
+            15975000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+            15975000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+            15975000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            15975000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000007 -> CS1_N=1, CS2_N=1, DC=1
+            16025000 : TB: OBI Write Gnt Rcvd: Addr=0x20002000
+            16025000 [UD_IN] Req for Addr=0x20002000 (WE=1) -> Decoded Idx=2
+            16025000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=1
+            16025000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            16025000 [SPI_CTRL_GPIO_WRITE] AddrOff=0x000, Data=0x00000007 -> CS1_N=1, CS2_N=1, DC=1
+            16125000 : TB: Dummy Read from UserSpiCtrl (GPIO Addr 0x20002000) after CS/DC write.
+            16175000 : TB: OBI Read Req  : Addr=0x20002000
+            16175000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+            16175000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+            16175000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            16175000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+            16175000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000007. rvalid_q becomes 1 NEXT cycle.
+            16225000 : TB: OBI Read Gnt Rcvd: Addr=0x20002000
+            16225000 [UD_IN] Req for Addr=0x20002000 (WE=0) -> Decoded Idx=2
+            16225000 [UD_TO_SPI_CTRL] Req to SPI Ctrl (idx           2): Addr=0x20002000, WE=0
+            16225000 [UD_FROM_SPI_CTRL] GNT from SPI Ctrl (idx           2) to Demux
+            16225000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000007
+            16225000 [UD_OUT] GNT_OUT=1 for Read to Idx=2 (Addr=0x20002000)
+            16225000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000007 for Read to Idx=2 (Addr=0x20002000)
+            16225000 [SPI_CTRL_READ_LATCH] Read granted for AddrOff=0x000. Latching rdata_q=0x00000007. rvalid_q becomes 1 NEXT cycle.
+            16225000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000007 for AddrOff=0x000
+            16275000 : TB: Waiting for OBI rvalid from Addr=0x20002000...
+            16275000 : TB: OBI Read Data Rcvd: Addr=0x20002000 Data=0x00000007 Err=0 RVALID=1
+            16275000 [UD_FROM_SPI_CTRL] RVALID from SPI Ctrl (idx           2) to Demux. RDATA=0x00000007
+            16275000 [UD_OUT] RVALID_OUT=1, RDATA_OUT=0x00000007 for Read to Idx=2 (Addr=0x20002000)
+            16275000 [SPI_CTRL_RVALID_HIGH] rvalid_o is HIGH. rdata_o is 0x00000007 for AddrOff=0x000
+            16375000 : TB: Finished HW Ctrl Send Byte 0x00 to CS1
+--- Font Byte Sent ---
+            16875000 : TB: Test Sequence Complete.
+- rtl/user_domain/tb_user_domain_hw_ctrl.sv:172: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.030 2024-10-27
+- Verilator: $finish at 17us; walltime 0.012 s; speed 2.033 ms/s
+- Verilator: cpu 0.008 s on 1 threads; alloced 57 MB

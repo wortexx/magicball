@@ -110,7 +110,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                  VL_TIME_UNITED_Q(1000),-9);
     co_await vlSelfRef.__VdlySched.delay(0x186a0ULL, 
                                          nullptr, "rtl/user_domain/tb_user_font_rom.sv", 
-                                         143);
+                                         136);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_user_font_rom__DOT__rst_ni = 1U;
     VL_WRITEF_NX("%t : TB: Deasserting Reset\n",0,64,
@@ -119,7 +119,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_font_rom.clk_i)", 
                                                          "rtl/user_domain/tb_user_font_rom.sv", 
-                                                         146);
+                                                         139);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("%t : TB: Starting Test Sequence for user_font_rom...\n--- Test 1: Read first byte of 'A' (Offset 0x0000018c) ---\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
@@ -165,32 +165,32 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             77);
+                                                             76);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__timeout_count_gnt 
             = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__timeout_count_gnt);
     }
     if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__timeout_count_gnt))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:83: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:81: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__r_addr,
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 83, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 81, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 82, "");
     } else if (VL_UNLIKELY(((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                            >> 1U))) 
                             != (IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__0__expected_grant)))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:86: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:84: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__r_addr,
                      1,(IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__0__expected_grant),
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 86, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 87, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 85, "");
     }
     if (VL_UNLIKELY(__Vtask_tb_user_font_rom__DOT__read_obi_rom__0__expected_grant)) {
         VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
@@ -202,7 +202,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             93);
+                                                             90);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -215,19 +215,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                                  nullptr, 
                                                                  "@(posedge tb_user_font_rom.clk_i)", 
                                                                  "rtl/user_domain/tb_user_font_rom.sv", 
-                                                                 100);
+                                                                 96);
             vlSelfRef.__Vm_traceActivity[2U] = 1U;
             __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__timeout_count_rvalid);
         }
         if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:104: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:100: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_font_rom__DOT__read_obi_rom__0__r_addr,
                          1,(1U & (IData)(vlSelfRef.tb_user_font_rom__DOT__obi_rsp)));
-            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 104, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 105, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 100, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 101, "");
         }
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__rsp_r_chan_temp 
             = (0x1fffffffffULL & (vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
@@ -254,7 +254,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             117);
+                                                             111);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -266,7 +266,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_font_rom.clk_i)", 
                                                          "rtl/user_domain/tb_user_font_rom.sv", 
-                                                         124);
+                                                         118);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] = 0U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] = 0U;
@@ -277,19 +277,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
         = __Vtask_tb_user_font_rom__DOT__read_obi_rom__0__r_err;
     if (VL_UNLIKELY(((IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err) 
                      | (0U != (0xffU & vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:154: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 1 Failed. Expected 0x00, Got 0x%x, Err=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:146: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 1 Failed. Expected 0x00, Got 0x%x, Err=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,8,
                      (0xffU & vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data),
                      1,(IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 154, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 146, "");
     } else {
         VL_WRITEF_NX("%t : TB_PASS: Test 1 Passed.\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9);
     }
     co_await vlSelfRef.__VdlySched.delay(0x3d090ULL, 
                                          nullptr, "rtl/user_domain/tb_user_font_rom.sv", 
-                                         156);
+                                         148);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("--- Test 2: Read last byte of 'A' (Offset 0x00000197) ---\n",0);
     __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__r_addr = 0x197U;
@@ -334,32 +334,32 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             77);
+                                                             76);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__timeout_count_gnt 
             = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__timeout_count_gnt);
     }
     if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__timeout_count_gnt))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:83: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:81: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__r_addr,
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 83, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 81, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 82, "");
     } else if (VL_UNLIKELY(((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                            >> 1U))) 
                             != (IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__1__expected_grant)))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:86: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:84: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__r_addr,
                      1,(IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__1__expected_grant),
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 86, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 87, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 85, "");
     }
     if (VL_UNLIKELY(__Vtask_tb_user_font_rom__DOT__read_obi_rom__1__expected_grant)) {
         VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
@@ -371,7 +371,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             93);
+                                                             90);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -384,19 +384,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                                  nullptr, 
                                                                  "@(posedge tb_user_font_rom.clk_i)", 
                                                                  "rtl/user_domain/tb_user_font_rom.sv", 
-                                                                 100);
+                                                                 96);
             vlSelfRef.__Vm_traceActivity[2U] = 1U;
             __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__timeout_count_rvalid);
         }
         if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:104: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:100: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_font_rom__DOT__read_obi_rom__1__r_addr,
                          1,(1U & (IData)(vlSelfRef.tb_user_font_rom__DOT__obi_rsp)));
-            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 104, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 105, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 100, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 101, "");
         }
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__rsp_r_chan_temp 
             = (0x1fffffffffULL & (vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
@@ -423,7 +423,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             117);
+                                                             111);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -435,7 +435,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_font_rom.clk_i)", 
                                                          "rtl/user_domain/tb_user_font_rom.sv", 
-                                                         124);
+                                                         118);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] = 0U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] = 0U;
@@ -446,19 +446,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
         = __Vtask_tb_user_font_rom__DOT__read_obi_rom__1__r_err;
     if (VL_UNLIKELY(((IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err) 
                      | (0x40U != (0xffU & vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:162: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 2 Failed. Expected 0x40, Got 0x%x, Err=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:153: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 2 Failed. Expected 0x40, Got 0x%x, Err=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,8,
                      (0xffU & vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data),
                      1,(IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 162, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 153, "");
     } else {
         VL_WRITEF_NX("%t : TB_PASS: Test 2 Passed.\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9);
     }
     co_await vlSelfRef.__VdlySched.delay(0x3d090ULL, 
                                          nullptr, "rtl/user_domain/tb_user_font_rom.sv", 
-                                         164);
+                                         155);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("--- Test 3: Read first byte of 'a' (Offset 0x0000030c) ---\n",0);
     __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__r_addr = 0x30cU;
@@ -503,32 +503,32 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             77);
+                                                             76);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__timeout_count_gnt 
             = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__timeout_count_gnt);
     }
     if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__timeout_count_gnt))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:83: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:81: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__r_addr,
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 83, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 81, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 82, "");
     } else if (VL_UNLIKELY(((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                            >> 1U))) 
                             != (IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__2__expected_grant)))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:86: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:84: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__r_addr,
                      1,(IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__2__expected_grant),
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 86, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 87, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 85, "");
     }
     if (VL_UNLIKELY(__Vtask_tb_user_font_rom__DOT__read_obi_rom__2__expected_grant)) {
         VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
@@ -540,7 +540,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             93);
+                                                             90);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -553,19 +553,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                                  nullptr, 
                                                                  "@(posedge tb_user_font_rom.clk_i)", 
                                                                  "rtl/user_domain/tb_user_font_rom.sv", 
-                                                                 100);
+                                                                 96);
             vlSelfRef.__Vm_traceActivity[2U] = 1U;
             __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__timeout_count_rvalid);
         }
         if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:104: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:100: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_font_rom__DOT__read_obi_rom__2__r_addr,
                          1,(1U & (IData)(vlSelfRef.tb_user_font_rom__DOT__obi_rsp)));
-            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 104, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 105, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 100, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 101, "");
         }
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__rsp_r_chan_temp 
             = (0x1fffffffffULL & (vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
@@ -592,7 +592,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             117);
+                                                             111);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -604,7 +604,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_font_rom.clk_i)", 
                                                          "rtl/user_domain/tb_user_font_rom.sv", 
-                                                         124);
+                                                         118);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] = 0U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] = 0U;
@@ -615,19 +615,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
         = __Vtask_tb_user_font_rom__DOT__read_obi_rom__2__r_err;
     if (VL_UNLIKELY(((IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err) 
                      | (0U != (0xffU & vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:170: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 3 Failed. Expected 0x00, Got 0x%x, Err=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:160: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 3 Failed. Expected 0x00, Got 0x%x, Err=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,8,
                      (0xffU & vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data),
                      1,(IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 170, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 160, "");
     } else {
         VL_WRITEF_NX("%t : TB_PASS: Test 3 Passed.\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9);
     }
     co_await vlSelfRef.__VdlySched.delay(0x3d090ULL, 
                                          nullptr, "rtl/user_domain/tb_user_font_rom.sv", 
-                                         172);
+                                         162);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("--- Test 4: Read last byte of '~' (Offset 0x00000473) ---\n",0);
     __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__r_addr = 0x473U;
@@ -672,32 +672,32 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             77);
+                                                             76);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__timeout_count_gnt 
             = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__timeout_count_gnt);
     }
     if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__timeout_count_gnt))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:83: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:81: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__r_addr,
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 83, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 81, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 82, "");
     } else if (VL_UNLIKELY(((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                            >> 1U))) 
                             != (IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__3__expected_grant)))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:86: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:84: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__r_addr,
                      1,(IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__3__expected_grant),
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 86, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 87, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 85, "");
     }
     if (VL_UNLIKELY(__Vtask_tb_user_font_rom__DOT__read_obi_rom__3__expected_grant)) {
         VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
@@ -709,7 +709,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             93);
+                                                             90);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -722,19 +722,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                                  nullptr, 
                                                                  "@(posedge tb_user_font_rom.clk_i)", 
                                                                  "rtl/user_domain/tb_user_font_rom.sv", 
-                                                                 100);
+                                                                 96);
             vlSelfRef.__Vm_traceActivity[2U] = 1U;
             __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__timeout_count_rvalid);
         }
         if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:104: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:100: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_font_rom__DOT__read_obi_rom__3__r_addr,
                          1,(1U & (IData)(vlSelfRef.tb_user_font_rom__DOT__obi_rsp)));
-            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 104, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 105, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 100, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 101, "");
         }
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__rsp_r_chan_temp 
             = (0x1fffffffffULL & (vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
@@ -761,7 +761,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             117);
+                                                             111);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -773,7 +773,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_font_rom.clk_i)", 
                                                          "rtl/user_domain/tb_user_font_rom.sv", 
-                                                         124);
+                                                         118);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] = 0U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] = 0U;
@@ -784,19 +784,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
         = __Vtask_tb_user_font_rom__DOT__read_obi_rom__3__r_err;
     if (VL_UNLIKELY(((IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err) 
                      | (0U != (0xffU & vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data))))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:179: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 4 Failed. Expected 0x00, Got 0x%x, Err=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:167: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 4 Failed. Expected 0x00, Got 0x%x, Err=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,8,
                      (0xffU & vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_data),
                      1,(IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 179, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 167, "");
     } else {
         VL_WRITEF_NX("%t : TB_PASS: Test 4 Passed.\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9);
     }
     co_await vlSelfRef.__VdlySched.delay(0x3d090ULL, 
                                          nullptr, "rtl/user_domain/tb_user_font_rom.sv", 
-                                         181);
+                                         169);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("--- Test 5: Read out of bounds (Offset 0x00000474) ---\n",0);
     __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__r_addr = 0x474U;
@@ -841,32 +841,32 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             77);
+                                                             76);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__timeout_count_gnt 
             = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__timeout_count_gnt);
     }
     if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__timeout_count_gnt))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:83: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:81: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI grant/no-grant during read from 0x%x. GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__r_addr,
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 83, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 81, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 82, "");
     } else if (VL_UNLIKELY(((1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                            >> 1U))) 
                             != (IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__4__expected_grant)))) {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:86: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:84: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Unexpected OBI grant status during read from 0x%x. Expected GNT=%b, Got GNT=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,32,
                      __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__r_addr,
                      1,(IData)(__Vtask_tb_user_font_rom__DOT__read_obi_rom__4__expected_grant),
                      1,(1U & (IData)((vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
                                       >> 1U))));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 86, "");
-        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 87, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 84, "");
+        VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 85, "");
     }
     if (VL_UNLIKELY(__Vtask_tb_user_font_rom__DOT__read_obi_rom__4__expected_grant)) {
         VL_WRITEF_NX("%t : TB: OBI Read Gnt Rcvd: Addr=0x%x. GNT=%b\n",0,
@@ -878,7 +878,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             93);
+                                                             90);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -891,19 +891,19 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                                  nullptr, 
                                                                  "@(posedge tb_user_font_rom.clk_i)", 
                                                                  "rtl/user_domain/tb_user_font_rom.sv", 
-                                                                 100);
+                                                                 96);
             vlSelfRef.__Vm_traceActivity[2U] = 1U;
             __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__timeout_count_rvalid 
                 = ((IData)(1U) + __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__timeout_count_rvalid);
         }
         if (VL_UNLIKELY(VL_LTES_III(32, 0x3e8U, __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__timeout_count_rvalid))) {
-            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:104: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
+            VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:100: Assertion failed in %Ntb_user_font_rom.read_obi_rom: %t : TB: Timeout waiting for OBI rvalid during read from 0x%x. RVALID=%b\n",0,
                          64,VL_TIME_UNITED_Q(1000),
                          -9,vlSymsp->name(),64,VL_TIME_UNITED_Q(1000),
                          -9,32,__Vtask_tb_user_font_rom__DOT__read_obi_rom__4__r_addr,
                          1,(1U & (IData)(vlSelfRef.tb_user_font_rom__DOT__obi_rsp)));
-            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 104, "");
-            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 105, "");
+            VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 100, "");
+            VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 101, "");
         }
         __Vtask_tb_user_font_rom__DOT__read_obi_rom__4__rsp_r_chan_temp 
             = (0x1fffffffffULL & (vlSelfRef.tb_user_font_rom__DOT__obi_rsp 
@@ -930,7 +930,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                              nullptr, 
                                                              "@(posedge tb_user_font_rom.clk_i)", 
                                                              "rtl/user_domain/tb_user_font_rom.sv", 
-                                                             117);
+                                                             111);
         vlSelfRef.__Vm_traceActivity[2U] = 1U;
         vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] 
             = (0xfffffffeU & vlSelfRef.tb_user_font_rom__DOT__obi_req[0U]);
@@ -942,7 +942,7 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
                                                          nullptr, 
                                                          "@(posedge tb_user_font_rom.clk_i)", 
                                                          "rtl/user_domain/tb_user_font_rom.sv", 
-                                                         124);
+                                                         118);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[0U] = 0U;
     vlSelfRef.tb_user_font_rom__DOT__obi_req[1U] = 0U;
@@ -955,23 +955,23 @@ VL_INLINE_OPT VlCoroutine Vtb_user_font_rom___024root___eval_initial__TOP__Vtimi
         VL_WRITEF_NX("%t : TB_PASS: Test 5 Passed (Correctly detected OBI error).\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9);
     } else {
-        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:188: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 5 Failed. Expected OBI error for out-of-bounds read, read_err=%b\n",0,
+        VL_WRITEF_NX("[%0t] %%Error: tb_user_font_rom.sv:174: Assertion failed in %Ntb_user_font_rom.unnamedblk1: %t : TB_ERROR: Test 5 Failed. Expected OBI error for out-of-bounds read, read_err=%b\n",0,
                      64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name(),
                      64,VL_TIME_UNITED_Q(1000),-9,1,
                      (IData)(vlSelfRef.tb_user_font_rom__DOT__unnamedblk1__DOT__read_err));
-        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 188, "");
+        VL_STOP_MT("rtl/user_domain/tb_user_font_rom.sv", 174, "");
     }
     co_await vlSelfRef.__VdlySched.delay(0x3d090ULL, 
                                          nullptr, "rtl/user_domain/tb_user_font_rom.sv", 
-                                         192);
+                                         178);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     co_await vlSelfRef.__VdlySched.delay(0x7a120ULL, 
                                          nullptr, "rtl/user_domain/tb_user_font_rom.sv", 
-                                         195);
+                                         181);
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
     VL_WRITEF_NX("%t : TB: Test Sequence for user_font_rom Complete.\n",0,
                  64,VL_TIME_UNITED_Q(1000),-9);
-    VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 197, "");
+    VL_FINISH_MT("rtl/user_domain/tb_user_font_rom.sv", 183, "");
     vlSelfRef.__Vm_traceActivity[2U] = 1U;
 }
 

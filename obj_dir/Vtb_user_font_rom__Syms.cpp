@@ -46,7 +46,7 @@ Vtb_user_font_rom__Syms::Vtb_user_font_rom__Syms(VerilatedContext* contextp, con
     , TOP__soc_ctrl_reg_pkg{this, Verilated::catName(namep, "soc_ctrl_reg_pkg")}
 {
         // Check resources
-        Verilated::stackCheck(228);
+        Verilated::stackCheck(230);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-12);
@@ -57,6 +57,8 @@ Vtb_user_font_rom__Syms::Vtb_user_font_rom__Syms(VerilatedContext* contextp, con
     TOP__soc_ctrl_reg_pkg.__Vconfigure(true);
     // Setup scopes
     __Vscope_tb_user_font_rom.configure(this, name(), "tb_user_font_rom", "tb_user_font_rom", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_user_font_rom__dut.configure(this, name(), "tb_user_font_rom.dut", "dut", -9, VerilatedScope::SCOPE_OTHER);
+    __Vscope_tb_user_font_rom__dut__check_file_exists_label.configure(this, name(), "tb_user_font_rom.dut.check_file_exists_label", "check_file_exists_label", -9, VerilatedScope::SCOPE_OTHER);
     __Vscope_tb_user_font_rom__read_obi_rom.configure(this, name(), "tb_user_font_rom.read_obi_rom", "read_obi_rom", -9, VerilatedScope::SCOPE_OTHER);
     __Vscope_tb_user_font_rom__unnamedblk1.configure(this, name(), "tb_user_font_rom.unnamedblk1", "unnamedblk1", -9, VerilatedScope::SCOPE_OTHER);
 }
