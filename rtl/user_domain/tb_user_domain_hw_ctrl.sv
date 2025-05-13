@@ -1,4 +1,4 @@
-/* WORKS WITH SPI ISOLATED 
+///* WORKS WITH SPI ISOLATED 
 
 `timescale 1ns/1ps
 
@@ -176,8 +176,8 @@ module tb_user_domain_hw_ctrl;
   final begin if (req_ongoing) user_sbr_obi_req.req = 1'b0; end
 endmodule
 
-*/
-
+//*/
+/*
 `timescale 1ns/1ps
 
 import croc_pkg::*;
@@ -546,3 +546,4 @@ module tb_user_domain_hw_ctrl;
   end
 
 endmodule
+*/

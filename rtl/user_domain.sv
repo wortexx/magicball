@@ -1,3 +1,4 @@
+///*
 `timescale 1ns/1ps
 
 import user_pkg::*;
@@ -108,8 +109,8 @@ module user_domain #(
     .addr_i           ( user_sbr_obi_req_i.a.addr ),
     .addr_map_i       ( user_addr_map             ), // From user_pkg
     .idx_o            ( user_idx                  ),
-    .dec_valid_o      ( /* Unused */              ),
-    .dec_error_o      ( /* Unused */              ),
+    .dec_valid_o      (               ),
+    .dec_error_o      (               ),
     .en_default_idx_i ( 1'b1                      ), // Enable default mapping
     .default_idx_i    ( UserError                 )  // Default to UserError index
   );
@@ -163,7 +164,7 @@ module user_domain #(
     // SPI Master Interface
     .sck_o    ( spi_sck_o  ),
     .mosi_o   ( spi_mosi_o ),
-    .cs_no    ( /* cs_no from obi_spi_peripheral is not used directly; controlled by user_spi_ctrl */ )
+    .cs_no    (  )
   );
   // Ensure RID is propagated for SPI Engine if not handled internally by it.
   // If obi_spi_peripheral doesn't set rid, it should be assigned here:
@@ -202,7 +203,7 @@ module user_domain #(
     .rst_ni         ( rst_ni ),
     .obi_req_i      ( user_prng_obi_req ),   // Pass the full OBI struct
     .obi_rsp_o      ( user_prng_obi_rsp ),
-    .current_prn_o  ( /* Can be left unconnected or wired for debug */ )
+    .current_prn_o  (  )
   );
 
 
@@ -231,7 +232,7 @@ module user_domain #(
     end
     // Add similar displays for UserSpiCtrl, UserFontRom, UserPrng if needed
 
-
+/*
     // Display overall response from user_domain to Croc Core
     if (user_sbr_obi_rsp_o.gnt && !user_sbr_obi_req_i.a.we) begin // Grant for a read
         $display("%t [UD_OUT] GNT_OUT=%b for Read to Idx=%d (Addr=0x%h)",
@@ -244,14 +245,14 @@ module user_domain #(
     if (user_sbr_obi_rsp_o.rvalid) begin
         $display("%t [UD_OUT] RVALID_OUT=%b, RDATA_OUT=0x%08x for Read to Idx=%d (Addr=0x%h)",
                  $time, user_sbr_obi_rsp_o.rvalid, user_sbr_obi_rsp_o.r.rdata, user_idx, user_sbr_obi_req_i.a.addr);
-    end
+    end */
   end
 
 endmodule
+//*/
 
 
-
-/* -------------------------------------ONLY SPI version, no other modules, working 
+/*// -------------------------------------ONLY SPI version, no other modules, working 
 module user_domain import user_pkg::*; import croc_pkg::*; #(
   parameter int unsigned GpioCount = 16
 ) (
@@ -337,7 +338,7 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     .mgr_ports_rsp_i   ( all_user_sbr_obi_rsp )
   );
 
-/*  // User Subordinates
+ /* // User Subordinates
   obi_err_sbr #( ) i_user_err (
     .clk_i(clk_i), .rst_ni(rst_ni), .testmode_i(testmode_i),
     .obi_req_i  ( user_error_obi_req ),
@@ -422,4 +423,5 @@ module user_domain import user_pkg::*; import croc_pkg::*; #(
     end
   end
 
-endmodule */
+endmodule 
+//*/

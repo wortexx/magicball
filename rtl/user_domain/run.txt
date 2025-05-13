@@ -1,45 +1,49 @@
 #####       obi_spi_peripheral     #####
 
-        verilator   -Wno-fatal -Wno-style   --timing --autoflush --trace --trace-structs   --binary -j 0   --top-module tb_obi_spi_direct  rtl/user_domain/tb_obi_spi_direct.sv rtl/user_domain/obi_spi_peripheral.sv
+                        verilator   -Wno-fatal -Wno-style   --timing --autoflush --trace --trace-structs   --binary -j 0   --top-module tb_obi_spi_peripheral  rtl/user_domain/tb_obi_spi_peripheral.sv rtl/user_domain/obi_spi_peripheral.sv
 
+                        ./obj_dir/Vtb_obi_spi_peripheral
 
+                        gtkwave tb_obi_spi_peripheral.vcd
+                        
 #####       user_spi_ctrl        #####
 
-        verilator   --binary   --top tb_user_spi_ctrl   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_spi_ctrl   -f croc.f   rtl/user_domain/tb_user_spi_ctrl.sv
+                        verilator   --binary   --top tb_user_spi_ctrl   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_spi_ctrl   -f croc.f   rtl/user_domain/tb_user_spi_ctrl.sv
 
-        ./obj_dir/tb_user_spi_ctrl
-        
-        gtkwave tb_user_spi_ctrl.vcd
+                        ./obj_dir/tb_user_spi_ctrl
+                        
+                        gtkwave tb_user_spi_ctrl.vcd
 
 #####       xorshift        #####
-        verilator   -Wno-fatal -Wno-style   --timing --autoflush --trace --trace-structs   --binary -j 0   --top-module tb_xorshift  rtl/user_domain/tb_xorshift.sv rtl/user_domain/xorshift.sv
+        
+                        verilator   -Wno-fatal -Wno-style   --timing --autoflush --trace --trace-structs   --binary -j 0   --top-module tb_xorshift  rtl/user_domain/tb_xorshift.sv rtl/user_domain/xorshift.sv
 
-        ./obj_dir/Vtb_xorshift
+                        ./obj_dir/Vtb_xorshift
 
-        gtkwave tb_xorshift.vcd
+                        gtkwave tb_xorshift.vcd
 
 #####       user_font_rom      #####
 
-        verilator   --binary   --top tb_user_font_rom   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_font_rom   -f croc.f   rtl/user_domain/tb_user_font_rom.sv
+                        verilator   --binary   --top tb_user_font_rom   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_font_rom   -f croc.f   rtl/user_domain/tb_user_font_rom.sv
 
-        ./obj_dir/tb_user_font_rom
-        
-        gtkwave tb_user_font_rom.vcd
+                        ./obj_dir/tb_user_font_rom
+                        
+                        gtkwave tb_user_font_rom.vcd
 
 #####       user_domain      #####
 
 
-        verilator   --binary   --top tb_user_domain_hw_ctrl   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_domain_hw_ctrl   -f croc.f   rtl/user_domain/tb_user_domain_hw_ctrl.sv
+                        verilator   --binary   --top tb_user_domain_hw_ctrl   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_domain_hw_ctrl   -f croc.f   rtl/user_domain/tb_user_domain_hw_ctrl.sv
 
-        ./obj_dir/tb_user_domain_hw_ctrl
+                        ./obj_dir/tb_user_domain_hw_ctrl
 
-        gtkwave tb_user_domain_sw_cs.vcd
+                        gtkwave tb_user_domain_sw_cs.vcd
 
 
-        spi_only_user_domain
+ #####      spi_only_user_domain       #####
 
-verilator   --binary   --top tb_user_domain_spi_engine_test   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_domain_spi_engine_test   -f croc.f   rtl/user_domain/tb_user_domain_spi_engine_test.sv
+                        verilator   --binary   --top tb_user_domain_spi_engine_test   -Wno-fatal -Wno-TIMESCALEMOD   --trace --trace-structs   --build   -j 0   -o tb_user_domain_spi_engine_test   -f croc.f   rtl/user_domain/tb_user_domain_spi_engine_test.sv
 
-        ./obj_dir/tb_user_domain_spi_engine_test
+                        ./obj_dir/tb_user_domain_spi_engine_test
 
-        gtkwave tb_user_domain_spi_engine_test.vcd
+                        gtkwave tb_user_domain_spi_engine_test.vcd

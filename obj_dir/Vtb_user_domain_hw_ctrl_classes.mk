@@ -26,7 +26,6 @@ VM_CLASSES_FAST += \
 	Vtb_user_domain_hw_ctrl \
 	Vtb_user_domain_hw_ctrl___024root__DepSet_h149467d0__0 \
 	Vtb_user_domain_hw_ctrl___024root__DepSet_h149467d0__1 \
-	Vtb_user_domain_hw_ctrl___024root__DepSet_h149467d0__2 \
 	Vtb_user_domain_hw_ctrl___024root__DepSet_h04d93616__0 \
 	Vtb_user_domain_hw_ctrl__main \
 

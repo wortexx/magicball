@@ -1,3 +1,4 @@
+//latest version for united user domain .works in other tbs as well. weird hello world output 
 `timescale 1ns/1ps
 
 module obi_spi_peripheral (
@@ -5,148 +6,322 @@ module obi_spi_peripheral (
   input  logic        rst_ni,
 
   // OBI Slave Interface
-  input  logic        req_i,
-  input  logic        we_i,
-  input  logic [3:0]  be_i,
-  input  logic [31:0] addr_i,
-  input  logic [31:0] wdata_i,
-  output logic        gnt_o,
-  output logic        rvalid_o,
-  output logic [31:0] rdata_o,
+  input  logic        req_i,    // OBI request
+  input  logic        we_i,     // OBI write enable (1 for write, 0 for read)
+  input  logic [3:0]  be_i,     // OBI byte enable
+  input  logic [31:0] addr_i,   // OBI address
+  input  logic [31:0] wdata_i,  // OBI write data
+  output logic        gnt_o,    // OBI grant
+  output logic        rvalid_o, // OBI read valid
+  output logic [31:0] rdata_o,  // OBI read data
 
   // SPI Master Interface
-  output logic        sck_o,
-  output logic        mosi_o,
-  output logic        cs_no // Active Low
+  output logic        sck_o,    // SPI serial clock
+  output logic        mosi_o,   // SPI master out slave in
+  output logic        cs_no     // SPI chip select (active low), controlled by external user_spi_ctrl
 );
 
   // Parameters & Addresses
   localparam int ADDR_WIDTH      = 32;
   localparam int DATA_WIDTH      = 32;
   localparam int SPI_DATA_BITS   = 8;
-  localparam int SPI_CLK_DIVIDER = 2; // For 5MHz SPI with 20MHz clk_i
+  localparam int SPI_CLK_DIVIDER = 2;
 
   localparam logic [11:0] SPI_CTRL_ADDR_OFFSET   = 12'h000;
   localparam logic [11:0] SPI_TX_ADDR_OFFSET     = 12'h004;
   localparam logic [11:0] SPI_STATUS_ADDR_OFFSET = 12'h008;
 
-  // FSM States
   typedef enum logic [1:0] { IDLE, LOAD, SHIFT, COMPLETE } state_e;
   state_e state_q, state_d;
 
-  // Internal Registers and Wires
   logic        start_flag_q, start_flag_d;
   logic [SPI_DATA_BITS-1:0] tx_data_q, tx_data_d;
   logic [$clog2(SPI_DATA_BITS)-1:0] bit_cnt_q, bit_cnt_d;
   logic [$clog2(SPI_CLK_DIVIDER*2)-1:0] spi_clk_cnt_q, spi_clk_cnt_d;
-  logic        rvalid_q;
-  logic [DATA_WIDTH-1:0] rdata_q;
+
+  // OBI Read Path Signals
+  logic        rvalid_q_internal;
+  logic [DATA_WIDTH-1:0] rdata_q_internal;
+  logic        was_read_granted_to_status_prev_cycle; // Registered: a read to status was granted last cycle
+  logic [DATA_WIDTH-1:0] data_for_rvalid_q;           // Registered: data to be driven when rvalid is high
+
   logic        spi_clk_phase;
   logic [1:0]  status_bits;
   logic        busy;
   logic        done_q;
-  logic        gnt_for_read, gnt_for_write;
-  logic        read_req_granted_q; // Registered version of grant for read
 
-  assign gnt_for_read = !we_i && (addr_i[11:0] == SPI_STATUS_ADDR_OFFSET);
-  assign gnt_for_write = we_i && (state_q == IDLE) &&
-                         ((addr_i[11:0] == SPI_TX_ADDR_OFFSET) || (addr_i[11:0] == SPI_CTRL_ADDR_OFFSET));
-  assign gnt_o = req_i && (gnt_for_read || gnt_for_write);
+  // Combinational grant logic
+  logic gnt_for_read_status_comb; // True if current req is a read to status reg
+  logic gnt_for_write_comb;
+
+  assign gnt_for_read_status_comb = req_i && !we_i && (addr_i[11:0] == SPI_STATUS_ADDR_OFFSET);
+  assign gnt_for_write_comb = req_i && we_i && (state_q == IDLE) &&
+                              ( (addr_i[11:0] == SPI_TX_ADDR_OFFSET && be_i[0]) ||
+                                (addr_i[11:0] == SPI_CTRL_ADDR_OFFSET && be_i[0]) );
+  assign gnt_o = gnt_for_read_status_comb || gnt_for_write_comb;
+
 
   assign busy = (state_q != IDLE) && (state_q != COMPLETE);
   assign status_bits = {done_q, busy};
   assign spi_clk_phase = (spi_clk_cnt_q >= SPI_CLK_DIVIDER);
 
   always_comb begin
-    state_d        = state_q; bit_cnt_d      = bit_cnt_q; spi_clk_cnt_d  = spi_clk_cnt_q;
-    start_flag_d   = start_flag_q; tx_data_d      = tx_data_q; cs_no          = 1'b1;
-    sck_o          = 1'b0; mosi_o         = tx_data_q[bit_cnt_q]; // Default for MSB first during SHIFT
+    state_d        = state_q;
+    bit_cnt_d      = bit_cnt_q;
+    spi_clk_cnt_d  = spi_clk_cnt_q;
+    start_flag_d   = start_flag_q;
+    tx_data_d      = tx_data_q;
+    sck_o          = 1'b0;
+    mosi_o         = tx_data_q[bit_cnt_q];
+
     case (state_q)
       IDLE: if (start_flag_q) begin state_d = LOAD; start_flag_d = 1'b0; end
-      LOAD: begin cs_no = 1'b0; bit_cnt_d = SPI_DATA_BITS - 1; spi_clk_cnt_d = '0;
-                  mosi_o = tx_data_q[SPI_DATA_BITS-1]; state_d = SHIFT; end // Output MSB
+      LOAD: begin
+        bit_cnt_d = SPI_DATA_BITS - 1;
+        spi_clk_cnt_d = '0;
+        mosi_o = tx_data_q[SPI_DATA_BITS-1];
+        state_d = SHIFT;
+      end
       SHIFT: begin
-        logic [$clog2(SPI_DATA_BITS)-1:0] next_mosi_idx;
-        cs_no = 1'b0; sck_o = spi_clk_phase; spi_clk_cnt_d = spi_clk_cnt_q + 1;
-        // mosi_o is driven by tx_data_q[bit_cnt_q] (current bit).
-        // It updates when bit_cnt_q updates at the end of an SCK cycle (when spi_clk_cnt_q wraps).
-        // SCK is low when bit_cnt_q updates, so data is stable for SCK rising edge (Mode 0).
-        if (spi_clk_cnt_q == (SPI_CLK_DIVIDER*2 - 1)) begin // End of an SCK cycle
+        sck_o = spi_clk_phase;
+        spi_clk_cnt_d = spi_clk_cnt_q + 1;
+        if (spi_clk_cnt_q == (SPI_CLK_DIVIDER*2 - 1)) begin
           spi_clk_cnt_d = '0;
-          if (bit_cnt_q == 0) begin
-            state_d = COMPLETE;
-          end else begin
-            bit_cnt_d = bit_cnt_q - 1; // Move to next bit for next SCK cycle
-            // mosi_o will reflect tx_data_q[bit_cnt_d(new_value)] in next combinational pass
-          end
+          if (bit_cnt_q == 0) state_d = COMPLETE;
+          else bit_cnt_d = bit_cnt_q - 1;
         end
       end
-      COMPLETE: begin cs_no = 1'b1; state_d = IDLE; end
+      COMPLETE: state_d = IDLE;
       default: state_d = IDLE;
     endcase
   end
 
-  assign rvalid_o = rvalid_q;
-  assign rdata_o  = rdata_q;
+  assign rvalid_o = rvalid_q_internal;
+  assign rdata_o  = rdata_q_internal;
 
-  // Debug displays
-  always @(posedge clk_i) begin
+  always_ff @(posedge clk_i or negedge rst_ni) begin
+    if (!rst_ni) begin
+      state_q            <= IDLE;
+      tx_data_q        <= '0;
+      start_flag_q       <= 1'b0;
+      bit_cnt_q        <= '0;
+      spi_clk_cnt_q      <= '0;
+      done_q             <= 1'b0;
+      
+      rvalid_q_internal  <= 1'b0;
+      rdata_q_internal   <= '0;
+      was_read_granted_to_status_prev_cycle <= 1'b0;
+      data_for_rvalid_q      <= '0;
+    end else begin
+      if (state_q != state_d) begin
+        $display("%t [DUT_FSM_DEBUG] State Transition: %s -> %s", $time, state_q.name(), state_d.name());
+      end
+      state_q       <= state_d;
+      bit_cnt_q     <= bit_cnt_d;
+      spi_clk_cnt_q <= spi_clk_cnt_d;
+      start_flag_q  <= start_flag_d;
+      tx_data_q     <= tx_data_d;
+      done_q        <= (state_q == SHIFT && state_d == COMPLETE);
+
+      // Handle OBI Writes
+      if (req_i && we_i && gnt_o) begin // gnt_o is combinational from this module
+        $display("%t [DUT_OBI_WRITE] Write to addr_offset %h granted. Data LSB: 0x%02h", $time, addr_i[11:0], wdata_i[7:0]);
+        unique case (addr_i[11:0])
+          SPI_TX_ADDR_OFFSET: if (be_i[0]) tx_data_q <= wdata_i[SPI_DATA_BITS-1:0];
+          SPI_CTRL_ADDR_OFFSET: if (be_i[0] && wdata_i[0]) start_flag_q <= 1'b1;
+          default:;
+        endcase
+      end
+
+      // OBI Read Path Logic - Stage 1: Latch data on the cycle a read to status is granted
+      // Use the combinational gnt_for_read_status_comb which directly reflects input conditions.
+      if (gnt_for_read_status_comb) begin 
+        data_for_rvalid_q <= DATA_WIDTH'(status_bits);
+        was_read_granted_to_status_prev_cycle <= 1'b1;
+        $display("%t [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=%b). Latching data 0x%h. Status: {done=%b, busy=%b}",
+                 $time, gnt_for_read_status_comb, DATA_WIDTH'(status_bits), status_bits[1], status_bits[0]);
+      end else begin
+        was_read_granted_to_status_prev_cycle <= 1'b0;
+      end
+
+      // OBI Read Path Logic - Stage 2: Assert rvalid and output latched data in the cycle AFTER grant
+      if (was_read_granted_to_status_prev_cycle) begin // This was set true in the previous cycle if grant occurred
+        rvalid_q_internal <= 1'b1;
+        rdata_q_internal  <= data_for_rvalid_q;
+        $display("%t [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x%h", $time, data_for_rvalid_q);
+      end else begin
+        rvalid_q_internal <= 1'b0;
+        if (!rvalid_q_internal) begin // To avoid driving old data if rvalid was already low
+            rdata_q_internal <= '0;
+        end
+      end
+    end
+  end
+
+  // Combinational debug display for OBI interface
+  always_comb begin
     if (req_i) begin
       $display("%t [DUT_OBI_DEBUG] req_i=%b, we_i=%b, addr_i[11:0]=%h, gnt_o=%b, state_q=%s",
                $time, req_i, we_i, addr_i[11:0], gnt_o, state_q.name());
     end
   end
 
-  always_ff @(posedge clk_i or negedge rst_ni) begin
-    if (!rst_ni) begin
-      state_q            <= IDLE; tx_data_q        <= '0; start_flag_q       <= 1'b0; bit_cnt_q        <= '0;
-      spi_clk_cnt_q      <= '0; rvalid_q           <= 1'b0; rdata_q            <= '0; done_q             <= 1'b0;
-      read_req_granted_q <= 1'b0;
-    end else begin
-      if (state_q != state_d) begin
-        $display("%t [DUT_FSM_DEBUG] State Transition: %s -> %s", $time, state_q.name(), state_d.name());
-      end
-
-      done_q <= (state_q == SHIFT && state_d == COMPLETE);
-
-      state_q       <= state_d;
-      bit_cnt_q     <= bit_cnt_d;
-      spi_clk_cnt_q <= spi_clk_cnt_d;
-      start_flag_q  <= start_flag_d;
-      tx_data_q     <= tx_data_d;
-
-      if (req_i && we_i && gnt_o) begin
-        $display("%t [DUT_OBI_WRITE] Write to addr_offset %h granted. Data LSB: 0x%02h", $time, addr_i[11:0], wdata_i[7:0]);
-        unique case (addr_i[11:0])
-          SPI_TX_ADDR_OFFSET: if (be_i[0]) tx_data_q <= wdata_i[SPI_DATA_BITS-1:0];
-          SPI_CTRL_ADDR_OFFSET: start_flag_q <= 1'b1;
-          default:;
-        endcase
-      end else if (state_q == IDLE && state_d == LOAD) begin
-         start_flag_q <= 1'b0;
-      end
-
-      // OBI Read Path Logic
-      read_req_granted_q <= req_i && !we_i && gnt_o && (addr_i[11:0] == SPI_STATUS_ADDR_OFFSET);
-      rvalid_q <= read_req_granted_q;
-
-      if (read_req_granted_q) begin
-        rdata_q <= DATA_WIDTH'(status_bits);
-        $display("%t [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={%b,%b}. rvalid_q is now TRUE.",
-                 $time, status_bits[1], status_bits[0]);
-      end else if (!rvalid_q) begin
-        rdata_q <= '0;
-      end
-
-      if (rvalid_q) begin
-          $display("%t [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x%h",
-                   $time, rdata_q);
-      end
-    end
-  end
 endmodule
 
-/*`timescale 1ns/1ps
+//*/
+
+/*
+//works with isolated spi user domain 
+`timescale 1ns/1ps
+
+module obi_spi_peripheral (
+input logic clk_i,
+input logic rst_ni,
+
+// OBI Slave Interface
+input logic req_i,
+input logic we_i,
+input logic [3:0] be_i,
+input logic [31:0] addr_i,
+input logic [31:0] wdata_i,
+output logic gnt_o,
+output logic rvalid_o,
+output logic [31:0] rdata_o,
+
+// SPI Master Interface
+output logic sck_o,
+output logic mosi_o,
+output logic cs_no // Active Low
+);
+
+// Parameters & Addresses
+localparam int ADDR_WIDTH = 32;
+localparam int DATA_WIDTH = 32;
+localparam int SPI_DATA_BITS = 8;
+localparam int SPI_CLK_DIVIDER = 2; // For 5MHz SPI with 20MHz clk_i
+
+localparam logic [11:0] SPI_CTRL_ADDR_OFFSET = 12'h000;
+localparam logic [11:0] SPI_TX_ADDR_OFFSET = 12'h004;
+localparam logic [11:0] SPI_STATUS_ADDR_OFFSET = 12'h008;
+
+// FSM States
+typedef enum logic [1:0] { IDLE, LOAD, SHIFT, COMPLETE } state_e;
+state_e state_q, state_d;
+
+// Internal Registers and Wires
+logic start_flag_q, start_flag_d;
+logic [SPI_DATA_BITS-1:0] tx_data_q, tx_data_d;
+logic [$clog2(SPI_DATA_BITS)-1:0] bit_cnt_q, bit_cnt_d;
+logic [$clog2(SPI_CLK_DIVIDER*2)-1:0] spi_clk_cnt_q, spi_clk_cnt_d;
+logic rvalid_q;
+logic [DATA_WIDTH-1:0] rdata_q;
+logic spi_clk_phase;
+logic [1:0] status_bits;
+logic busy;
+logic done_q;
+logic gnt_for_read, gnt_for_write;
+logic read_req_granted_q; // Registered version of grant for read
+
+assign gnt_for_read = !we_i && (addr_i[11:0] == SPI_STATUS_ADDR_OFFSET);
+assign gnt_for_write = we_i && (state_q == IDLE) &&
+((addr_i[11:0] == SPI_TX_ADDR_OFFSET) || (addr_i[11:0] == SPI_CTRL_ADDR_OFFSET));
+assign gnt_o = req_i && (gnt_for_read || gnt_for_write);
+
+assign busy = (state_q != IDLE) && (state_q != COMPLETE);
+assign status_bits = {done_q, busy};
+assign spi_clk_phase = (spi_clk_cnt_q >= SPI_CLK_DIVIDER);
+
+always_comb begin
+state_d = state_q; bit_cnt_d = bit_cnt_q; spi_clk_cnt_d = spi_clk_cnt_q;
+start_flag_d = start_flag_q; tx_data_d = tx_data_q; cs_no = 1'b1;
+sck_o = 1'b0; mosi_o = tx_data_q[bit_cnt_q]; // Default for MSB first during SHIFT
+case (state_q)
+IDLE: if (start_flag_q) begin state_d = LOAD; start_flag_d = 1'b0; end
+LOAD: begin cs_no = 1'b0; bit_cnt_d = SPI_DATA_BITS - 1; spi_clk_cnt_d = '0;
+mosi_o = tx_data_q[SPI_DATA_BITS-1]; state_d = SHIFT; end // Output MSB
+SHIFT: begin
+logic [$clog2(SPI_DATA_BITS)-1:0] next_mosi_idx;
+cs_no = 1'b0; sck_o = spi_clk_phase; spi_clk_cnt_d = spi_clk_cnt_q + 1;
+// mosi_o is driven by tx_data_q[bit_cnt_q] (current bit).
+// It updates when bit_cnt_q updates at the end of an SCK cycle (when spi_clk_cnt_q wraps).
+// SCK is low when bit_cnt_q updates, so data is stable for SCK rising edge (Mode 0).
+if (spi_clk_cnt_q == (SPI_CLK_DIVIDER*2 - 1)) begin // End of an SCK cycle
+spi_clk_cnt_d = '0;
+if (bit_cnt_q == 0) begin
+state_d = COMPLETE;
+end else begin
+bit_cnt_d = bit_cnt_q - 1; // Move to next bit for next SCK cycle
+// mosi_o will reflect tx_data_q[bit_cnt_d(new_value)] in next combinational pass
+end
+end
+end
+COMPLETE: begin cs_no = 1'b1; state_d = IDLE; end
+default: state_d = IDLE;
+endcase
+end
+
+assign rvalid_o = rvalid_q;
+assign rdata_o = rdata_q;
+
+// Debug displays
+always @(posedge clk_i) begin
+if (req_i) begin
+$display("%t [DUT_OBI_DEBUG] req_i=%b, we_i=%b, addr_i[11:0]=%h, gnt_o=%b, state_q=%s",
+$time, req_i, we_i, addr_i[11:0], gnt_o, state_q.name());
+end
+end
+
+always_ff @(posedge clk_i or negedge rst_ni) begin
+if (!rst_ni) begin
+state_q <= IDLE; tx_data_q <= '0; start_flag_q <= 1'b0; bit_cnt_q <= '0;
+spi_clk_cnt_q <= '0; rvalid_q <= 1'b0; rdata_q <= '0; done_q <= 1'b0;
+read_req_granted_q <= 1'b0;
+end else begin
+if (state_q != state_d) begin
+$display("%t [DUT_FSM_DEBUG] State Transition: %s -> %s", $time, state_q.name(), state_d.name());
+end
+
+done_q <= (state_q == SHIFT && state_d == COMPLETE);
+
+state_q <= state_d;
+bit_cnt_q <= bit_cnt_d;
+spi_clk_cnt_q <= spi_clk_cnt_d;
+start_flag_q <= start_flag_d;
+tx_data_q <= tx_data_d;
+
+if (req_i && we_i && gnt_o) begin
+$display("%t [DUT_OBI_WRITE] Write to addr_offset %h granted. Data LSB: 0x%02h", $time, addr_i[11:0], wdata_i[7:0]);
+unique case (addr_i[11:0])
+SPI_TX_ADDR_OFFSET: if (be_i[0]) tx_data_q <= wdata_i[SPI_DATA_BITS-1:0];
+SPI_CTRL_ADDR_OFFSET: start_flag_q <= 1'b1;
+default:;
+endcase
+end else if (state_q == IDLE && state_d == LOAD) begin
+start_flag_q <= 1'b0;
+end
+
+// OBI Read Path Logic
+read_req_granted_q <= req_i && !we_i && gnt_o && (addr_i[11:0] == SPI_STATUS_ADDR_OFFSET);
+rvalid_q <= read_req_granted_q;
+
+if (read_req_granted_q) begin
+rdata_q <= DATA_WIDTH'(status_bits);
+$display("%t [DUT_READ_PATH] read_req_granted_q is HIGH. Latching rdata_q with status={%b,%b}. rvalid_q is now TRUE.",
+$time, status_bits[1], status_bits[0]);
+end else if (!rvalid_q) begin
+rdata_q <= '0;
+end
+
+if (rvalid_q) begin
+$display("%t [DUT_READ_PATH] rvalid_o is HIGH (rvalid_q is set). rdata_o is 0x%h",
+$time, rdata_q);
+end
+end
+end
+endmodule
+//*/
+
+/*\\`timescale 1ns/1ps
 
 module obi_spi_peripheral (
   input  logic        clk_i,
