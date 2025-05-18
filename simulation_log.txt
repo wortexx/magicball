@@ -1,101 +1,467 @@
-rm -f /fosic/designs/croc/croc.flist
-rm -f klayout/croc_chip.gds
-rm -rf verilator/obj_dir/
-rm -f verilator/croc.f
-rm -f verilator/croc.vcd
-make ys_clean
-make[1]: Entering directory '/fosic/designs/croc'
-rm -rf /fosic/designs/croc/yosys/out
-rm -rf /fosic/designs/croc/yosys/tmp
-rm -rf /fosic/designs/croc/yosys/reports 
-rm -f /fosic/designs/croc/yosys/croc_chip.log
-make[1]: Leaving directory '/fosic/designs/croc'
-make or_clean
-make[1]: Entering directory '/fosic/designs/croc'
-rm -rf /fosic/designs/croc/openroad/save
-rm -rf /fosic/designs/croc/openroad/reports
-rm -rf /fosic/designs/croc/openroad/out 
-rm -f croc.log
-make[1]: Leaving directory '/fosic/designs/croc'
-bender script verilator -t rtl -t verilator -DSYNTHESIS -DVERILATOR > verilator/croc.f
-make -C sw/ compile
-make[1]: Entering directory '/fosic/designs/croc/sw'
-riscv64-unknown-elf-gcc -march=rv32i_zicsr -mabi=ilp32 -mcmodel=medany -static -std=gnu99 -Os -nostdlib -fno-builtin -ffreestanding -Iinclude -Ilib/inc -I/fosic/designs/croc/sw -c helloworld.c -o helloworld.c.o
-riscv64-unknown-elf-gcc -march=rv32i_zicsr -mabi=ilp32 -mcmodel=medany -static -std=gnu99 -Os -nostdlib -fno-builtin -ffreestanding -Iinclude -Ilib/inc -I/fosic/designs/croc/sw -c crt0.S -o crt0.S.o
-riscv64-unknown-elf-gcc -march=rv32i_zicsr -mabi=ilp32 -mcmodel=medany -static -std=gnu99 -Os -nostdlib -fno-builtin -ffreestanding -Iinclude -Ilib/inc -I/fosic/designs/croc/sw -c lib/src/gpio.c -o lib/src/gpio.c.o
-riscv64-unknown-elf-gcc -march=rv32i_zicsr -mabi=ilp32 -mcmodel=medany -static -std=gnu99 -Os -nostdlib -fno-builtin -ffreestanding -Iinclude -Ilib/inc -I/fosic/designs/croc/sw -c lib/src/print.c -o lib/src/print.c.o
-riscv64-unknown-elf-gcc -march=rv32i_zicsr -mabi=ilp32 -mcmodel=medany -static -std=gnu99 -Os -nostdlib -fno-builtin -ffreestanding -Iinclude -Ilib/inc -I/fosic/designs/croc/sw -c lib/src/timer.c -o lib/src/timer.c.o
-riscv64-unknown-elf-gcc -march=rv32i_zicsr -mabi=ilp32 -mcmodel=medany -static -std=gnu99 -Os -nostdlib -fno-builtin -ffreestanding -Iinclude -Ilib/inc -I/fosic/designs/croc/sw -c lib/src/uart.c -o lib/src/uart.c.o
-riscv64-unknown-elf-gcc -static -nostartfiles -lm -lgcc -march=rv32i_zicsr -mabi=ilp32 -mcmodel=medany -static -std=gnu99 -Os -nostdlib -fno-builtin -ffreestanding -o bin/helloworld.elf helloworld.c.o crt0.S.o lib/src/gpio.c.o lib/src/print.c.o lib/src/timer.c.o lib/src/uart.c.o -Tlink.ld
-riscv64-unknown-elf-objdump -D -s bin/helloworld.elf >bin/helloworld.dump
-riscv64-unknown-elf-objcopy -O verilog bin/helloworld.elf bin/helloworld.hex
-rm helloworld.c.o crt0.S.o lib/src/gpio.c.o lib/src/print.c.o lib/src/uart.c.o lib/src/timer.c.o
-make[1]: Leaving directory '/fosic/designs/croc/sw'
-cd verilator; /foss/tools/bin/verilator --binary -j 0 -Wno-fatal -Wno-style -Wno-WIDTHEXPAND --timing --autoflush --trace --trace-structs --unroll-count 1 --unroll-stmts 1 -O3 -CFLAGS "-O1 -march=native" --top tb_croc_soc -f croc.f
-make[1]: Entering directory '/fosic/designs/croc/verilator/obj_dir'
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /foss/tools/verilator/share/verilator/include/verilated.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_vcd_c.o /foss/tools/verilator/share/verilator/include/verilated_vcd_c.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /foss/tools/verilator/share/verilator/include/verilated_timing.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /foss/tools/verilator/share/verilator/include/verilated_threads.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -x c++-header Vtb_croc_soc__pch.h -o Vtb_croc_soc__pch.h.fast.gch
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -x c++-header Vtb_croc_soc__pch.h -o Vtb_croc_soc__pch.h.slow.gch
-echo "" > Vtb_croc_soc__ALL.verilator_deplist.tmp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc.o Vtb_croc_soc.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__0.o Vtb_croc_soc___024root__DepSet_h0ddea910__0.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__1.o Vtb_croc_soc___024root__DepSet_h0ddea910__1.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__2.o Vtb_croc_soc___024root__DepSet_h0ddea910__2.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__3.o Vtb_croc_soc___024root__DepSet_h0ddea910__3.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__4.o Vtb_croc_soc___024root__DepSet_h0ddea910__4.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__5.o Vtb_croc_soc___024root__DepSet_h0ddea910__5.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__6.o Vtb_croc_soc___024root__DepSet_h0ddea910__6.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__7.o Vtb_croc_soc___024root__DepSet_h0ddea910__7.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__8.o Vtb_croc_soc___024root__DepSet_h0ddea910__8.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__9.o Vtb_croc_soc___024root__DepSet_h0ddea910__9.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__10.o Vtb_croc_soc___024root__DepSet_h0ddea910__10.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__11.o Vtb_croc_soc___024root__DepSet_h0ddea910__11.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__12.o Vtb_croc_soc___024root__DepSet_h0ddea910__12.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__13.o Vtb_croc_soc___024root__DepSet_h0ddea910__13.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_ha6051a75__0.o Vtb_croc_soc___024root__DepSet_ha6051a75__0.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_ha6051a75__1.o Vtb_croc_soc___024root__DepSet_ha6051a75__1.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_ha6051a75__2.o Vtb_croc_soc___024root__DepSet_ha6051a75__2.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc___024root__DepSet_ha6051a75__3.o Vtb_croc_soc___024root__DepSet_ha6051a75__3.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc__main.o Vtb_croc_soc__main.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc__Trace__0.o Vtb_croc_soc__Trace__0.cpp
-g++ -Os  -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.fast -c -o Vtb_croc_soc__Trace__1.o Vtb_croc_soc__Trace__1.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc__ConstPool_0.o Vtb_croc_soc__ConstPool_0.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc___024root__Slow.o Vtb_croc_soc___024root__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc___024root__DepSet_h0ddea910__0__Slow.o Vtb_croc_soc___024root__DepSet_h0ddea910__0__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc___024root__DepSet_ha6051a75__0__Slow.o Vtb_croc_soc___024root__DepSet_ha6051a75__0__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc___024unit__Slow.o Vtb_croc_soc___024unit__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc___024unit__DepSet_h1aecf120__0__Slow.o Vtb_croc_soc___024unit__DepSet_h1aecf120__0__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc_soc_ctrl_reg_pkg__Slow.o Vtb_croc_soc_soc_ctrl_reg_pkg__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc_soc_ctrl_reg_pkg__DepSet_h03110534__0__Slow.o Vtb_croc_soc_soc_ctrl_reg_pkg__DepSet_h03110534__0__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc__Syms.o Vtb_croc_soc__Syms.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc__Trace__0__Slow.o Vtb_croc_soc__Trace__0__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc__TraceDecls__0__Slow.o Vtb_croc_soc__TraceDecls__0__Slow.cpp
-g++   -I.  -MMD -I/foss/tools/verilator/share/verilator/include -I/foss/tools/verilator/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TIMING=1 -DVM_TRACE=1 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable    -O1 -march=native -DVL_TIME_CONTEXT   -fcoroutines -include Vtb_croc_soc__pch.h.slow -c -o Vtb_croc_soc__Trace__1__Slow.o Vtb_croc_soc__Trace__1__Slow.cpp
-g++    verilated.o verilated_vcd_c.o verilated_timing.o verilated_threads.o Vtb_croc_soc__ALL.a    -pthread -lpthread -latomic   -o Vtb_croc_soc
-rm Vtb_croc_soc__ALL.verilator_deplist.tmp
-make[1]: Leaving directory '/fosic/designs/croc/verilator/obj_dir'
-- V e r i l a t i o n   R e p o r t: Verilator 5.030 2024-10-27 rev v5.030
-- Verilator: Built from 82.588 MB sources in 204 modules, into 20.185 MB in 34 C++ files needing 0.005 MB
-- Verilator: Walltime 139.881 s (elab=0.199, cvt=4.912, bld=131.562); cpu 8.984 s on 4 threads; alloced 193.945 MB
-cd verilator; obj_dir/Vtb_croc_soc +binary="/fosic/designs/croc/sw/bin/helloworld.hex"
-Running program: /fosic/designs/croc/sw/bin/helloworld.hex
-ClkFrequency:         20MHz
-UartRealBaudRate:     125000
-                   0 [FONT_ROM] Initializing Font ROM (size 1140 bytes) from rtl/user_domain/font_rom_12x6.hex
-[0] %Warning: user_font_rom.sv:29: tb_croc_soc.i_croc_soc.i_user.i_user_font_rom.check_file_exists_label: [FONT_ROM_WARN] $readmemh file not found: rtl/user_domain/font_rom_12x6.hex. ROM will be uninitialized.
-@     41100ns | [JTAG] Initialization success
-@     41100ns | [JTAG] Writing 0x12345678 to 0x10000000
-@     93650ns | [JTAG] Read 0x12345678 from 0x10000000
-@     93650ns | [JTAG] Read back correct data
-@     93650ns | [JTAG] Loading binary from /fosic/designs/croc/sw/bin/helloworld.hex
-@     95950ns | [JTAG] Writing to memory @10000000 
-@    148850ns | [JTAG] Writing to memory @10000058 
-@    986050ns | [JTAG] Writing to memory @10000604 
-@   1158550ns | [CORE] Start fetching instructions
-@   1160850ns | [JTAG] Halting hart 0... 
-@   1174200ns | [JTAG] Halted
-@   1176500ns | [JTAG] Resumed hart 0 
-@   1176500ns | [CORE] Wait for end of code...
+                   0 : TB: Asserting Reset
+              100000 : TB: Deasserting Reset
+              125000 : TB: Starting User Domain Test Sequence (Standard Demux, SPI Engine Focus)...
+--- Test 1.1: Wait for initial idle state ---
+              125000 : TB: Waiting for SPI Engine to be idle...
+              175000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+              175000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+              175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              175000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=IDLE
+              175000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              175000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              175000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              175000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000000. Status: {done=0, busy=0}
+              175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              200000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              200000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              225000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+              225000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000000
+              275000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+              275000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+              325000 : TB: SPI Engine is idle. Status: 0x00000000
+--- Test 1.2: Write a byte to SPI TX register and start transfer ---
+              375000 : TB: OBI Write Req : Addr=0x20001004, Data=0x000000ae, BE=0x0001
+              375000 : TB: OBI Write Gnt Rcvd: Addr=0x20001004
+              375000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+              375000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+              375000 [SPI_OBI] req=1 we=1 addr=0x004 → gnt_o=1 state=IDLE
+              375000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+              375000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+              375000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              375000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0xae
+              375000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+              400000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+              400000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+              425000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+              425000 : TB: Performing DUMMY READ after write to 0x20001004. Dummy Read Addr: 0x20001008
+              475000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+              475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              475000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=IDLE
+              475000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              475000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000000. Status: {done=0, busy=0}
+              475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              500000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              500000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              525000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+              525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              525000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=IDLE
+              525000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              525000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              525000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              525000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000000. Status: {done=0, busy=0}
+              525000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000000
+              525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              550000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              550000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+              575000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+              575000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+              575000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+              575000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000000
+              625000 : TB: DUMMY READ from 0x20001008 completed. Data: 0x00000000
+              625000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+              725000 : TB: OBI Write Req : Addr=0x20001000, Data=0x00000001, BE=0x0001
+              725000 : TB: OBI Write Gnt Rcvd: Addr=0x20001000
+              725000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+              725000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+              725000 [SPI_OBI] req=1 we=1 addr=0x000 → gnt_o=1 state=IDLE
+              725000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+              725000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+              725000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              725000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+              725000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+              750000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+              750000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+              775000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+              775000 : TB: Performing DUMMY READ after write to 0x20001000. Dummy Read Addr: 0x20001008
+              775000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+              825000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+              825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=LOAD
+              825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=LOAD
+              825000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=LOAD
+              825000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              825000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              825000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              825000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+              825000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+              825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              850000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              850000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              875000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+              875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              875000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+              875000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+              875000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+              875000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+              875000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+              875000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+              875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              900000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              900000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              925000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+              925000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+              925000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+              925000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+              925000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+              975000 : TB: DUMMY READ from 0x20001008 completed. Data: 0x00000001
+              975000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+--- Test 1.3: Wait for SPI engine to complete and become idle ---
+             1025000 : TB: Waiting for SPI Engine to be idle...
+             1075000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             1075000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             1075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1075000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             1075000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             1075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             1075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1075000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             1075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1100000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1100000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1125000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             1125000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             1175000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             1175000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             1325000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             1325000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             1325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1325000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             1325000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             1325000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             1325000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1325000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             1325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1350000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1350000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1375000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1375000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             1375000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             1425000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             1425000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             1575000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             1575000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             1575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1575000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             1575000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             1575000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             1575000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1575000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             1575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1600000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1600000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1625000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1625000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             1625000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             1675000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             1675000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             1825000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             1825000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             1825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1825000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             1825000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             1825000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             1825000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             1825000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             1825000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1850000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1850000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1875000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             1875000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             1875000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             1925000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             1925000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2075000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             2075000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             2075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2075000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             2075000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2075000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2075000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2075000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             2075000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2100000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2100000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2125000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             2125000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             2175000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             2175000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2325000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             2325000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             2325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2325000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             2325000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2325000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2325000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2325000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             2325000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2350000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2350000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2375000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             2375000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             2375000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             2425000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             2425000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             2425000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+             2475000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+             2575000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             2575000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             2575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             2575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             2575000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=IDLE
+             2575000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             2575000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             2575000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             2575000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000000. Status: {done=0, busy=0}
+             2575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             2600000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             2600000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             2625000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             2625000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             2625000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000000
+             2675000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             2675000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             2725000 : TB: SPI Engine is idle. Status: 0x00000000
+--- SPI Engine byte 0xAE processed ---
+--- Test 1.4: Write another byte (0x55) and start ---
+             3025000 : TB: OBI Write Req : Addr=0x20001004, Data=0x00000055, BE=0x0001
+             3025000 : TB: OBI Write Gnt Rcvd: Addr=0x20001004
+             3025000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             3025000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             3025000 [SPI_OBI] req=1 we=1 addr=0x004 → gnt_o=1 state=IDLE
+             3025000 [UD_IN] Req for Addr=0x20001004 (WE=1) -> Decoded Idx=1
+             3025000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001004, WE=1
+             3025000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3025000 [DUT_OBI_WRITE] Write to addr_offset 004 granted. Data LSB: 0x55
+             3025000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             3050000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             3050000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             3075000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=004, gnt_o=1, state_q=IDLE
+             3075000 : TB: Performing DUMMY READ after write to 0x20001004. Dummy Read Addr: 0x20001008
+             3125000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             3125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3125000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=IDLE
+             3125000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3125000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3125000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3125000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000000. Status: {done=0, busy=0}
+             3125000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3150000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3150000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3175000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             3175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3175000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=IDLE
+             3175000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3175000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3175000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3175000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000000. Status: {done=0, busy=0}
+             3175000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000000
+             3175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3175000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3200000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3200000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             3225000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             3225000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             3225000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             3225000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000000
+             3275000 : TB: DUMMY READ from 0x20001008 completed. Data: 0x00000000
+             3275000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             3375000 : TB: OBI Write Req : Addr=0x20001000, Data=0x00000001, BE=0x0001
+             3375000 : TB: OBI Write Gnt Rcvd: Addr=0x20001000
+             3375000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             3375000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             3375000 [SPI_OBI] req=1 we=1 addr=0x000 → gnt_o=1 state=IDLE
+             3375000 [UD_IN] Req for Addr=0x20001000 (WE=1) -> Decoded Idx=1
+             3375000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001000, WE=1
+             3375000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3375000 [DUT_OBI_WRITE] Write to addr_offset 000 granted. Data LSB: 0x01
+             3375000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             3400000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             3400000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             3425000 [DUT_OBI_DEBUG] req_i=1, we_i=1, addr_i[11:0]=000, gnt_o=1, state_q=IDLE
+             3425000 : TB: Performing DUMMY READ after write to 0x20001000. Dummy Read Addr: 0x20001008
+             3425000 [DUT_FSM_DEBUG] State Transition: IDLE -> LOAD
+             3475000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             3475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=LOAD
+             3475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=LOAD
+             3475000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=LOAD
+             3475000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3475000 [DUT_FSM_DEBUG] State Transition: LOAD -> SHIFT
+             3475000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             3475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3500000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3500000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3525000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             3525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3525000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             3525000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3525000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3525000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3525000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             3525000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             3525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3550000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3550000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3575000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3575000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             3575000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             3575000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             3575000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             3625000 : TB: DUMMY READ from 0x20001008 completed. Data: 0x00000001
+             3625000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             3675000 : TB: Waiting for SPI Engine to be idle...
+             3725000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             3725000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             3725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3725000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             3725000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3725000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3725000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3725000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             3725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3750000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3750000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3775000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3775000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             3775000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             3825000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             3825000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             3975000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             3975000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             3975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             3975000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             3975000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             3975000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             3975000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             3975000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             3975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4000000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4000000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4025000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4025000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             4025000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             4075000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             4075000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             4225000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             4225000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             4225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4225000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             4225000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4225000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4225000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4225000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             4225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4250000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4250000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4275000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4275000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             4275000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             4325000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             4325000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             4475000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             4475000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             4475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4475000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             4475000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4475000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4475000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4475000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             4475000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4500000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4500000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4525000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4525000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             4525000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             4575000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             4575000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             4725000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             4725000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             4725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4725000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             4725000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4725000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4725000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4725000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             4725000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4750000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4750000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4775000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4775000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             4775000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             4825000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             4825000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             4975000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             4975000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             4975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             4975000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=SHIFT
+             4975000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             4975000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             4975000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             4975000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000001. Status: {done=0, busy=1}
+             4975000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             5000000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             5000000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             5025000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=SHIFT
+             5025000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             5025000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000001
+             5075000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000001 Err=0 RVALID=1
+             5075000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000001
+             5075000 [DUT_FSM_DEBUG] State Transition: SHIFT -> COMPLETE
+             5125000 [DUT_FSM_DEBUG] State Transition: COMPLETE -> IDLE
+             5225000 : TB: OBI Read Req  : Addr=0x20001008 (Expect Grant: 1)
+             5225000 : TB: OBI Read Gnt Rcvd: Addr=0x20001008
+             5225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             5225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             5225000 [SPI_OBI] req=1 we=0 addr=0x008 → gnt_o=1 state=IDLE
+             5225000 [UD_IN] Req for Addr=0x20001008 (WE=0) -> Decoded Idx=1
+             5225000 [UD_TO_SPI_ENG] Req to SPI Eng (idx           1): Addr=0x20001008, WE=0
+             5225000 [UD_FROM_SPI_ENG] GNT from SPI Eng (idx           1) to Demux
+             5225000 [DUT_READ_SETUP] Read to STATUS_REG granted this cycle (gnt_for_read_status_comb=1). Latching data 0x00000000. Status: {done=0, busy=0}
+             5225000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             5250000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             5250000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             5275000 [DUT_OBI_DEBUG] req_i=1, we_i=0, addr_i[11:0]=008, gnt_o=1, state_q=IDLE
+             5275000 : TB: Waiting for OBI rvalid from Addr=0x20001008...
+             5275000 [DUT_READ_PATH] Asserting rvalid (was_read_granted_to_status_prev_cycle is true). rdata = 0x00000000
+             5325000 : TB: OBI Read Data Rcvd: Addr=0x20001008 Data=0x00000000 Err=0 RVALID=1
+             5325000 [UD_FROM_SPI_ENG] RVALID from SPI Eng (idx           1) to Demux. RDATA=0x00000000
+             5375000 : TB: SPI Engine is idle. Status: 0x00000000
+--- SPI Engine byte 0x55 processed ---
+             5875000 : TB: Focused User Domain Test Sequence Complete.
+- rtl/user_domain/tb_user_domain_hw_ctrl.sv:292: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.030 2024-10-27
+- Verilator: $finish at 6us; walltime 0.005 s; speed 1.564 ms/s
+- Verilator: cpu 0.004 s on 1 threads; alloced 57 MB

@@ -3,13 +3,13 @@ $timescale 1ps $end
  $scope module $rootio $end
  $upscope $end
  $scope module tb_obi_spi_peripheral $end
-  $var real 64 B CLK_PERIOD $end
-  $var real 64 D RESET_DURATION $end
-  $var wire 32 F OBI_TIMEOUT [31:0] $end
-  $var wire 32 G SPI_DONE_TIMEOUT [31:0] $end
-  $var wire 12 H SPI_CTRL_ADDR_OFFSET [11:0] $end
-  $var wire 12 I SPI_TX_ADDR_OFFSET [11:0] $end
-  $var wire 12 J SPI_STATUS_ADDR_OFFSET [11:0] $end
+  $var real 64 A CLK_PERIOD $end
+  $var real 64 C RESET_DURATION $end
+  $var wire 32 E OBI_TIMEOUT [31:0] $end
+  $var wire 32 F SPI_DONE_TIMEOUT [31:0] $end
+  $var wire 12 G SPI_CTRL_ADDR_OFFSET [11:0] $end
+  $var wire 12 H SPI_TX_ADDR_OFFSET [11:0] $end
+  $var wire 12 I SPI_STATUS_ADDR_OFFSET [11:0] $end
   $var wire 1 = clk_i $end
   $var wire 1 # rst_ni $end
   $var wire 1 $ req_i $end
@@ -22,7 +22,7 @@ $timescale 1ps $end
   $var wire 32 + rdata_o [31:0] $end
   $var wire 1 , sck_o $end
   $var wire 1 - mosi_o $end
-  $var wire 1 K cs_no $end
+  $var wire 1 J cs_no $end
   $var wire 1 ) req_ongoing $end
   $scope module dut $end
    $var wire 1 = clk_i $end
@@ -37,14 +37,14 @@ $timescale 1ps $end
    $var wire 32 + rdata_o [31:0] $end
    $var wire 1 , sck_o $end
    $var wire 1 - mosi_o $end
-   $var wire 1 K cs_no $end
-   $var wire 32 L ADDR_WIDTH [31:0] $end
-   $var wire 32 L DATA_WIDTH [31:0] $end
-   $var wire 32 M SPI_DATA_BITS [31:0] $end
-   $var wire 32 N SPI_CLK_DIVIDER [31:0] $end
-   $var wire 12 H SPI_CTRL_ADDR_OFFSET [11:0] $end
-   $var wire 12 I SPI_TX_ADDR_OFFSET [11:0] $end
-   $var wire 12 J SPI_STATUS_ADDR_OFFSET [11:0] $end
+   $var wire 1 J cs_no $end
+   $var wire 32 K ADDR_WIDTH [31:0] $end
+   $var wire 32 K DATA_WIDTH [31:0] $end
+   $var wire 32 L SPI_DATA_BITS [31:0] $end
+   $var wire 32 M SPI_CLK_DIVIDER [31:0] $end
+   $var wire 12 G SPI_CTRL_ADDR_OFFSET [11:0] $end
+   $var wire 12 H SPI_TX_ADDR_OFFSET [11:0] $end
+   $var wire 12 I SPI_STATUS_ADDR_OFFSET [11:0] $end
    $var wire 2 . state_q [1:0] $end
    $var wire 2 / state_d [1:0] $end
    $var wire 1 0 start_flag_q $end
@@ -57,15 +57,14 @@ $timescale 1ps $end
    $var wire 2 6 spi_clk_cnt_d [1:0] $end
    $var wire 1 * rvalid_q_internal $end
    $var wire 32 + rdata_q_internal [31:0] $end
-   $var wire 1 7 read_granted_in_prev_cycle $end
-   $var wire 32 8 data_latched_on_grant [31:0] $end
+   $var wire 1 7 was_read_granted_to_status_prev_cycle $end
+   $var wire 32 8 data_for_rvalid_q [31:0] $end
    $var wire 1 9 spi_clk_phase $end
    $var wire 2 : status_bits [1:0] $end
    $var wire 1 ; busy $end
    $var wire 1 < done_q $end
-   $var wire 1 ? gnt_for_read_comb $end
+   $var wire 1 ? gnt_for_read_status_comb $end
    $var wire 1 @ gnt_for_write_comb $end
-   $var wire 1 A read_to_status_reg_granted_this_cycle $end
   $upscope $end
  $upscope $end
 $enddefinitions $end
@@ -102,18 +101,17 @@ b00 :
 0>
 0?
 0@
-0A
-r49.99999999999999 B
-r99.99999999999999 D
-b00000000000000000000011111010000 F
-b00000000000000000010011100010000 G
-b000000000000 H
-b000000000100 I
-b000000001000 J
-0K
-b00000000000000000000000000100000 L
-b00000000000000000000000000001000 M
-b00000000000000000000000000000010 N
+r49.99999999999999 A
+r99.99999999999999 C
+b00000000000000000000011111010000 E
+b00000000000000000010011100010000 F
+b000000000000 G
+b000000000100 H
+b000000001000 I
+0J
+b00000000000000000000000000100000 K
+b00000000000000000000000000001000 L
+b00000000000000000000000000000010 M
 #25000
 1=
 #50000
@@ -140,7 +138,6 @@ b00000000000000000000000000001000 '
 1=
 1>
 1?
-1A
 #250000
 0=
 #275000
@@ -155,7 +152,6 @@ b00000000000000000000000000001000 '
 1=
 0>
 0?
-0A
 #350000
 0=
 #375000
@@ -170,7 +166,6 @@ b00000000000000000000000000001000 '
 1=
 1>
 1?
-1A
 #450000
 0=
 #475000
@@ -185,7 +180,6 @@ b00000000000000000000000000001000 '
 1=
 0>
 0?
-0A
 #550000
 0=
 #575000
@@ -284,7 +278,6 @@ b00000000000000000000000000000001 8
 1=
 1>
 1?
-1A
 #1100000
 0=
 #1125000
@@ -308,7 +301,6 @@ b10 6
 1=
 0>
 0?
-0A
 #1200000
 0=
 #1225000
@@ -341,7 +333,6 @@ b01 6
 1=
 1>
 1?
-1A
 #1350000
 0=
 #1375000
@@ -363,7 +354,6 @@ b11 6
 1=
 0>
 0?
-0A
 #1450000
 0=
 #1475000
@@ -394,7 +384,6 @@ b10 6
 1=
 1>
 1?
-1A
 #1600000
 0=
 #1625000
@@ -417,7 +406,6 @@ b00 6
 1=
 0>
 0?
-0A
 #1700000
 0=
 #1725000
@@ -449,7 +437,6 @@ b11 6
 1=
 1>
 1?
-1A
 #1850000
 0=
 #1875000
@@ -474,7 +461,6 @@ b01 6
 1=
 0>
 0?
-0A
 #1950000
 0=
 #1975000
@@ -503,7 +489,6 @@ b00 6
 1=
 1>
 1?
-1A
 #2100000
 0=
 #2125000
@@ -527,7 +512,6 @@ b10 6
 1=
 0>
 0?
-0A
 #2200000
 0=
 #2225000
@@ -560,7 +544,6 @@ b01 6
 1=
 1>
 1?
-1A
 #2350000
 0=
 #2375000
@@ -582,7 +565,6 @@ b11 6
 1=
 0>
 0?
-0A
 #2450000
 0=
 #2475000
@@ -619,7 +601,6 @@ b00 :
 1=
 1>
 1?
-1A
 #2600000
 0=
 #2625000
@@ -647,7 +628,6 @@ b01 6
 1=
 0>
 0?
-0A
 #2700000
 0=
 #2725000
@@ -669,7 +649,6 @@ b00000000000000000000000000000001 8
 1=
 1>
 1?
-1A
 #2800000
 0=
 #2825000
@@ -694,7 +673,6 @@ b01 6
 1=
 0>
 0?
-0A
 #2900000
 0=
 #2925000
@@ -764,7 +742,6 @@ b01 6
 1=
 1>
 1?
-1A
 #3300000
 0=
 #3325000
@@ -786,7 +763,6 @@ b11 6
 1=
 0>
 0?
-0A
 #3400000
 0=
 #3425000
@@ -817,7 +793,6 @@ b10 6
 1=
 1>
 1?
-1A
 #3550000
 0=
 #3575000
@@ -840,7 +815,6 @@ b00 6
 1=
 0>
 0?
-0A
 #3650000
 0=
 #3675000
@@ -872,7 +846,6 @@ b11 6
 1=
 1>
 1?
-1A
 #3800000
 0=
 #3825000
@@ -897,7 +870,6 @@ b01 6
 1=
 0>
 0?
-0A
 #3900000
 0=
 #3925000
@@ -926,7 +898,6 @@ b00 6
 1=
 1>
 1?
-1A
 #4050000
 0=
 #4075000
@@ -950,7 +921,6 @@ b10 6
 1=
 0>
 0?
-0A
 #4150000
 0=
 #4175000
@@ -985,7 +955,6 @@ b10 :
 1=
 1>
 1?
-1A
 #4300000
 0=
 #4325000
@@ -1006,7 +975,6 @@ b00000000000000000000000000000010 +
 1=
 0>
 0?
-0A
 #4400000
 0=
 #4425000
@@ -1027,7 +995,6 @@ b00000000000000000000000000000000 8
 1=
 1>
 1?
-1A
 #4550000
 0=
 #4575000
@@ -1042,7 +1009,6 @@ b00000000000000000000000000000000 8
 1=
 0>
 0?
-0A
 #4650000
 0=
 #4675000
@@ -1057,7 +1023,6 @@ b00000000000000000000000000000000 8
 1=
 1>
 1?
-1A
 #4750000
 0=
 #4775000
@@ -1072,7 +1037,6 @@ b00000000000000000000000000000000 8
 1=
 0>
 0?
-0A
 #4850000
 0=
 #4875000
@@ -1172,7 +1136,6 @@ b00000000000000000000000000000001 8
 1=
 1>
 1?
-1A
 #5400000
 0=
 #5425000
@@ -1196,7 +1159,6 @@ b10 6
 1=
 0>
 0?
-0A
 #5500000
 0=
 #5525000
@@ -1229,7 +1191,6 @@ b01 6
 1=
 1>
 1?
-1A
 #5650000
 0=
 #5675000
@@ -1251,7 +1212,6 @@ b11 6
 1=
 0>
 0?
-0A
 #5750000
 0=
 #5775000
@@ -1282,7 +1242,6 @@ b10 6
 1=
 1>
 1?
-1A
 #5900000
 0=
 #5925000
@@ -1305,7 +1264,6 @@ b00 6
 1=
 0>
 0?
-0A
 #6000000
 0=
 #6025000
@@ -1337,7 +1295,6 @@ b11 6
 1=
 1>
 1?
-1A
 #6150000
 0=
 #6175000
@@ -1362,7 +1319,6 @@ b01 6
 1=
 0>
 0?
-0A
 #6250000
 0=
 #6275000
@@ -1391,7 +1347,6 @@ b00 6
 1=
 1>
 1?
-1A
 #6400000
 0=
 #6425000
@@ -1415,7 +1370,6 @@ b10 6
 1=
 0>
 0?
-0A
 #6500000
 0=
 #6525000
@@ -1448,7 +1402,6 @@ b01 6
 1=
 1>
 1?
-1A
 #6650000
 0=
 #6675000
@@ -1470,7 +1423,6 @@ b11 6
 1=
 0>
 0?
-0A
 #6750000
 0=
 #6775000
@@ -1507,7 +1459,6 @@ b00 :
 1=
 1>
 1?
-1A
 #6900000
 0=
 #6925000
@@ -1535,7 +1486,6 @@ b01 6
 1=
 0>
 0?
-0A
 #7000000
 0=
 #7025000
@@ -1557,7 +1507,6 @@ b00000000000000000000000000000001 8
 1=
 1>
 1?
-1A
 #7100000
 0=
 #7125000
@@ -1582,7 +1531,6 @@ b01 6
 1=
 0>
 0?
-0A
 #7200000
 0=
 #7225000
