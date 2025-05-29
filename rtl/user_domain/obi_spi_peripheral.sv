@@ -27,6 +27,8 @@ module obi_spi_peripheral #(
   // SPI Master Interface (3-Wire: SCK, MOSI - CS & DC are external)
   output logic        sck_o,
   output logic        mosi_o
+
+  
 );
 
   // Register Address Offsets

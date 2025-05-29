@@ -245,13 +245,32 @@ localparam logic [7:0] FONT_DATA [0:1139] = '{
 
   assign obi_rsp_o.r.err  = req_latch_q && (we_latch_q || (!we_latch_q && !addr_in_bounds_latch));
 
-  always_comb begin
-    obi_rsp_o.r.rdata = 32'h0;
-    if (req_latch_q && !we_latch_q && addr_in_bounds_latch) begin // valid read
-      obi_rsp_o.r.rdata = {{(SbrObiCfg.DataWidth-8){1'b0}}, FONT_DATA[rom_byte_index]};
-    end
-    obi_rsp_o.r.r_optional = 1'b0;
+
+// Figure out the base address of the 4-byte word being requested.
+// We do this by taking the requested byte address and setting the last two bits to zero.
+logic [ROM_ADDR_BITS-1:0] word_aligned_addr;
+assign word_aligned_addr = {addr_offset_latch_q[ROM_ADDR_BITS-1:2], 2'b00};
+
+always_comb begin
+  // Default to zero
+  obi_rsp_o.r.rdata = 32'h0;
+
+  // On a valid read request...
+  if (req_latch_q && !we_latch_q && addr_in_bounds_latch) begin
+    // Assemble the full 32-bit word from four consecutive bytes in the font data
+    // and place them in the correct byte lanes.
+    obi_rsp_o.r.rdata = {
+      FONT_DATA[word_aligned_addr + 3], // Data for address ending in ...11 -> Lane 3
+      FONT_DATA[word_aligned_addr + 2], // Data for address ending in ...10 -> Lane 2
+      FONT_DATA[word_aligned_addr + 1], // Data for address ending in ...01 -> Lane 1
+      FONT_DATA[word_aligned_addr + 0]  // Data for address ending in ...00 -> Lane 0
+    };
   end
+
+  // The rest of the response signals remain the same
+  obi_rsp_o.r.r_optional = 1'b0;
+end
+
 
 endmodule
 

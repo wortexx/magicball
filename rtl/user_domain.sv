@@ -20,14 +20,34 @@ module user_domain #(
   input  logic [GpioCount-1:0]       gpio_in_sync_i,
   output logic [NumExternalIrqs-1:0] interrupts_o,
 
-  // SPI signals driven by internal peripherals
-  output logic                       spi_sck_o,
-  output logic                       spi_mosi_o,
-  input  logic                       spi_miso_i,
-  output logic                       spi_cs1_no,
-  output logic                       spi_cs2_no,
-  output logic                       spi_dc_o
+  output logic [GpioCount-1:0]       gpio_o,
+  output logic [GpioCount-1:0]       gpio_out_en_o
+
 );
+
+  logic spi_sck_w;
+  logic spi_mosi_w;
+  logic spi_cs1_no_w;
+  logic spi_cs2_no_w;
+  logic spi_dc_w;
+  // Output Pin Assignments
+  assign gpio_o[0] = spi_sck_w;         // GPIO 0 -> Shared SPI Clock (SCK)
+  assign gpio_o[1] = spi_mosi_w;        // GPIO 1 -> Shared SPI Data Out (MOSI)
+  assign gpio_o[2] = spi_cs1_no_w;      // GPIO 2 -> SSD1331 OLED Chip Select
+  assign gpio_o[3] = spi_dc_w;          // GPIO 3 -> SSD1331 OLED Data/Command
+  assign gpio_o[4] = spi_cs2_no_w;      // GPIO 4 -> ADXL345 Accelerometer Chip Select
+  // Unused GPIO outputs are tied to 0 to prevent them from floating.
+  assign gpio_o[GpioCount-1:5] = '0;
+
+  // Set Pin Directions
+  assign gpio_out_en_o[4:0] = 5'b11111; // Set GPIOs 0-4 as OUTPUTS
+  assign gpio_out_en_o[5]   = 1'b0;      // Set GPIO 5 as an INPUT (for ADXL345 interrupt)
+  // All other GPIOs are configured as inputs.
+  assign gpio_out_en_o[GpioCount-1:6] = '0;
+
+  // Input Pin Assignment
+  // This wire can now be used to read the state of the accelerometer's event pin.
+  wire adxl345_interrupt_event_i = gpio_in_sync_i[5];
 
   assign interrupts_o       = '0;
   assign user_mgr_obi_req_o = '{default: '0};
@@ -130,8 +150,8 @@ module user_domain #(
     .rdata_o  ( user_obi_spi_rsp.r.rdata  ),
     .rid_o    ( user_obi_spi_rsp.r.rid    ),
     .err_o    ( user_obi_spi_rsp.r.err    ),
-    .sck_o    ( spi_sck_o                 ),
-    .mosi_o   ( spi_mosi_o                )
+    .sck_o    ( spi_sck_w                 ),
+    .mosi_o   ( spi_mosi_w                )
   );
   assign user_obi_spi_rsp.r.r_optional = 1'b0;
 
@@ -141,9 +161,9 @@ module user_domain #(
     .rst_ni    ( rst_ni                    ),
     .obi_req_i ( user_spi_ctrl_req         ),
     .obi_rsp_o ( user_spi_ctrl_rsp         ),
-    .spi_cs1_no( spi_cs1_no                ),
-    .spi_cs2_no( spi_cs2_no                ),
-    .spi_dc_o  ( spi_dc_o                  )
+    .spi_cs1_no( spi_cs1_no_w                ),
+    .spi_cs2_no( spi_cs2_no_w                ),
+    .spi_dc_o  ( spi_dc_w                  )
   );
 
   logic [SbrObiCfg.DataWidth-1:0] dummy_prn_val;

@@ -29,6 +29,11 @@ module croc_soc import croc_pkg::*; #(
   output logic [GpioCount-1:0] gpio_out_en_o // Output enable signal; 0 -> input, 1 -> output
 );
 
+  logic [GpioCount-1:0] user_gpio_o_w;       // Data output from user_domain
+  logic [GpioCount-1:0] user_gpio_out_en_w;  // Output enable from user_domain
+  logic [GpioCount-1:0] croc_gpio_o_w;       // Data output from croc_domain
+  logic [GpioCount-1:0] croc_gpio_out_en_w;  // Output enable from croc_domain
+
   logic synced_rst_n, synced_fetch_en;
 
   rstgen i_rstgen (
@@ -78,9 +83,9 @@ croc_domain #(
   .uart_rx_i,
   .uart_tx_o,
 
-  .gpio_i,             
-  .gpio_o,            
-  .gpio_out_en_o,
+  .gpio_i(gpio_i),                          // Pass through SoC's gpio_i input
+  .gpio_o(croc_gpio_o_w),                   // Connect croc_domain output to new wire
+  .gpio_out_en_o(croc_gpio_out_en_w),       // Connect croc_domain output enable to new wire
 
   .gpio_in_sync_o ( gpio_in_sync ),
 
@@ -109,7 +114,22 @@ user_domain #(
   .user_mgr_obi_rsp_i ( user_mgr_obi_rsp ),
 
   .gpio_in_sync_i ( gpio_in_sync ),
-  .interrupts_o   ( interrupts   )
+  .interrupts_o   ( interrupts   ),
+
+  .gpio_o         ( user_gpio_o_w      ),
+  .gpio_out_en_o  ( user_gpio_out_en_w )
 );
+
+assign gpio_o[4:0] = user_gpio_o_w[4:0];
+assign gpio_out_en_o[4:0] = user_gpio_out_en_w[4:0];
+
+// Pin 5 is an input for user_domain, so user_gpio_out_en_w[5] will be 0.
+// If croc_domain needs to use pin 5, it can.
+// However, our user_domain.sv explicitly sets gpio_out_en_o[5] = 0.
+assign gpio_o[5] = user_gpio_out_en_w[5] ? user_gpio_o_w[5] : croc_gpio_o_w[5];
+assign gpio_out_en_o[5] = user_gpio_out_en_w[5] | croc_gpio_out_en_w[5];
+
+assign gpio_o[GpioCount-1:6] = croc_gpio_o_w[GpioCount-1:6];
+assign gpio_out_en_o[GpioCount-1:6] = croc_gpio_out_en_w[GpioCount-1:6];
 
 endmodule
