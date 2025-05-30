@@ -2,28 +2,29 @@
 #include "print.h"  // For printf
 #include "config.h" // For peripheral base addresses
 
-#ifndef USER_OBI_SPI_BASE_ADDR // For obi_spi_peripheral (engine)
+// -- User Domain Peripheral Base Addresses --
+#ifndef USER_OBI_SPI_BASE_ADDR
 #define USER_OBI_SPI_BASE_ADDR 0x20000000
 #endif
-#ifndef USER_SPI_CTRL_BASE_ADDR // For user_spi_ctrl
+#ifndef USER_SPI_CTRL_BASE_ADDR
 #define USER_SPI_CTRL_BASE_ADDR    0x20001000
 #endif
-#ifndef USER_PRNG_BASE_ADDR // For xorshift
+#ifndef USER_PRNG_BASE_ADDR
 #define USER_PRNG_BASE_ADDR        0x20002000
 #endif
-#ifndef USER_FONT_ROM_BASE_ADDR // For user_font_rom
+#ifndef USER_FONT_ROM_BASE_ADDR
 #define USER_FONT_ROM_BASE_ADDR    0x20003000
 #endif
 
-
+// -- Standard Croc SoC Peripheral Base Addresses (if needed by other includes) --
 #ifndef GPIO_BASE_ADDR
-#define GPIO_BASE_ADDR             0x03005000 // From croc_pkg.sv
+#define GPIO_BASE_ADDR             0x03005000
 #endif
 #ifndef UART_BASE_ADDR
-#define UART_BASE_ADDR             0x03002000 // From croc_pkg.sv
+#define UART_BASE_ADDR             0x03002000
 #endif
 
-// OBI SPI Peripheral (Engine) Register Offsets
+// -- User OBI SPI Peripheral (Engine) Register Offsets --
 #define SPI_ENGINE_REG_CTRL     0x00
 #define SPI_ENGINE_REG_STATUS   0x04
 #define SPI_ENGINE_REG_DATA_TX  0x08
@@ -38,22 +39,21 @@
 // Engine Status Register Bits
 #define SPI_ENGINE_STATUS_BUSY      (1 << 0)
 
-// User SPI Ctrl Register Offset
+// -- User SPI Ctrl (CS/DC outputs) Register Offset & Bits --
 #define SPI_CTRL_GPIO_REG_OFFSET 0x000
-// User SPI Ctrl Register Bits
-#define SPI_CTRL_GPIO_CS1_N_VAL (1 << 0)
-#define SPI_CTRL_GPIO_CS2_N_VAL (1 << 1)
-#define SPI_CTRL_GPIO_DC_VAL    (1 << 2)
+#define SPI_CTRL_GPIO_CS1_N_VAL (1 << 0) 
+#define SPI_CTRL_GPIO_CS2_N_VAL (1 << 1) 
+#define SPI_CTRL_GPIO_DC_VAL    (1 << 2) 
 
-// Xorshift PRNG Register Offsets
-#define PRNG_CTRL_OFFSET  0x00 // Write to trigger
-#define PRNG_RDATA_OFFSET 0x04 // Read to get value
+// -- Xorshift PRNG Register Offsets --
+#define PRNG_TRIGGER_BYTE_OFFSET  0x000 
+#define PRNG_READ_BYTE_OFFSET     0x004 
 
+// -- Volatile Pointers to Peripherals --
 volatile uint32_t* spi_engine_ptr    = (volatile uint32_t*)USER_OBI_SPI_BASE_ADDR;
 volatile uint32_t* spi_ctrl_gpio_ptr = (volatile uint32_t*)USER_SPI_CTRL_BASE_ADDR;
 volatile uint32_t* prng_ptr          = (volatile uint32_t*)USER_PRNG_BASE_ADDR;
-volatile uint8_t* font_rom_ptr      = (volatile uint8_t*)USER_FONT_ROM_BASE_ADDR; // Byte pointer for ROM
-volatile uint32_t* gpio_ptr          = (volatile uint32_t*)GPIO_BASE_ADDR;
+volatile uint8_t* font_rom_ptr      = (volatile uint8_t*)USER_FONT_ROM_BASE_ADDR;
 
 void delay(int count) {
     for (volatile int i = 0; i < count; i++);
@@ -61,143 +61,537 @@ void delay(int count) {
 
 int main() {
     uart_init();
-    printf("Comprehensive Peripheral Test (v4 - incl. Font ROM) Started...\n");
+    printf("Comprehensive Test (Seed-PRNG) Started...\n"); // Shortened
     uart_write_flush();
 
-    uint32_t ctrl_engine_val, status_engine_val, data_to_send;
+    uint32_t ctrl_engine_val, data_to_send;
     uint32_t ctrl_gpio_val;
     uint32_t read_val_32;
     uint8_t  read_val_8;
 
-    // --- Test User Font ROM ---
-    printf("Testing User Font ROM at 0x%x...\n", (uint32_t)font_rom_ptr);
-    uart_write_flush();
-
-    // --- Correctly read data for character '9' (ASCII 57) ---
-    int offset_9 = (57 - 32) * 12; // Should be 300
-    printf("Font ROM Data (12 bytes for '9' at offset 0x%x):\n", offset_9);
-    uart_write_flush();
-
-    for (int i = 0; i < 12; i++) {
-        // Read from the calculated offset
-        read_val_8 = font_rom_ptr[offset_9 + i]; 
-        printf("Byte 0x%x: 0x%x\n", offset_9 + i, read_val_8);
-        uart_write_flush();
-        delay(50);
+    // --- Test User Font ROM --- 
+    printf("--- Font ROM Test ---\n"); // Shortened
+    uart_write_flush(); 
+    int offset_A = (65 - 32) * 12; // Test only one character to save space
+    // printf("Font ROM Data (12 bytes for 'A' at offset 0x%x):\n", offset_A); 
+    // uart_write_flush(); 
+    for (int i = 0; i < 2; i++) { // Read only a few bytes
+        read_val_8 = font_rom_ptr[offset_A + i];  
+        printf("FR A+%d:0x%x\n", i, read_val_8); // Shortened
+        uart_write_flush(); 
+        delay(50); 
     }
+    // --- END Font ROM Test ---
 
-    // --- Correctly read data for character 'A' (ASCII 65) ---
-    int offset_A = (65 - 32) * 12; // Should be 396
-    printf("Font ROM Data (12 bytes for 'A' at offset 0x%x):\n", offset_A);
+    // --- Test Xorshift PRNG (Seed from Address) ---
+    printf("--- PRNG Test (Seed Addr) ---\n"); // Shortened
     uart_write_flush();
-
-    for (int i = 0; i < 12; i++) {
-        // Read from the calculated offset
-        read_val_8 = font_rom_ptr[offset_A + i];
-        printf("Byte 0x%x: 0x%x\n", offset_A + i, read_val_8);
-        uart_write_flush();
-        delay(50);
-    }
-    //--- Test user_spi_ctrl ---
-    printf("Testing User SPI Ctrl...\n");
-    uart_write_flush();
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL; // CS1=1, CS2=1, DC=1
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
-    delay(100);
-    read_val_32 = spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4];
-    printf("SPI_CTRL Read: 0x%x (Expected: 0x%x for lower 3 bits)\n", read_val_32 & 0x7, ctrl_gpio_val & 0x7);
-    uart_write_flush();
-
-    printf("Testing User SPI Ctrl...\n");
-    uart_write_flush();
-
-    // Example: Assert OLED CS low (active), set D/C high (data)
-    // Assuming CS1 is OLED_CS (pin 2) and DC is pin 3
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; // CS1_N=0 (low), CS2_N=1 (high), DC=0 (command initially)
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
-    printf("Set OLED_CS low (pin 2), Accel_CS high (pin 4), D/C low (pin 3)\n");
-    uart_write_flush();
-    delay(20000); // << ADD A LONG DELAY HERE FOR OBSERVATION
-
-    // Now set D/C high
-    ctrl_gpio_val = SPI_CTRL_GPIO_DC_VAL | SPI_CTRL_GPIO_CS2_N_VAL; // CS1_N=0, CS2_N=1, DC=1 (data)
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
-    printf("Set OLED_CS low (pin 2), Accel_CS high (pin 4), D/C high (pin 3)\n");
-    uart_write_flush();
-    delay(20000); // << ADD A LONG DELAY HERE
-
-    // De-assert CS1
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL; // All high
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
-    printf("De-asserted all CS and D/C high\n");
-    uart_write_flush();
-    delay(20000); // << ADD A LONG DELAY HERE
-
-// --- Test Xorshift PRNG ---
-    printf("Testing Xorshift PRNG...\n");
-    uart_write_flush();
-    prng_ptr[PRNG_CTRL_OFFSET / 4] = 0x1; // Trigger
     
     delay(100);
-
-    read_val_32 = prng_ptr[PRNG_RDATA_OFFSET / 4];
-    printf("PRNG Read 1: 0x%x\n", read_val_32);
+    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4]; 
+    printf("1.Init:0x%x\n", read_val_32); // Shortened
     uart_write_flush();
 
-    // --- Test OBI SPI Peripheral (Engine) ---
-    printf("Configuring SPI Engine...\n");
-    uart_write_flush();
-    spi_engine_ptr[SPI_ENGINE_REG_CLK_DIV / 4] = 0x01;
+    // printf("2.Triggering (offset 0x%x)...\n", PRNG_TRIGGER_BYTE_OFFSET);
+    // uart_write_flush();
+    prng_ptr[PRNG_TRIGGER_BYTE_OFFSET / 4] = 0x1; 
     delay(100);
-    ctrl_engine_val = SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA;
-    spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val;
-    delay(100);
-    read_val_32 = spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4];
-    printf("Engine Initial CTRL_REG: 0x%x\n", read_val_32 & 0xFF);
+    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
+    printf("2.Trig1:0x%x\n", read_val_32); // Shortened
     uart_write_flush();
 
-    data_to_send = 0xAD;
-    printf("Preparing to send 0x%x via SPI Engine...\n", data_to_send);
+    uint32_t seed_byte_offset_1 = 0xABC; 
+    // printf("3.Seeding (offset 0x%x -> seed 0x%x)...\n", seed_byte_offset_1, seed_byte_offset_1);
+    // uart_write_flush();
+    prng_ptr[seed_byte_offset_1 / 4] = 0x1; 
+    delay(100);
+    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
+    printf("3.Seed1:0x%x (E:0x%x)\n", read_val_32, seed_byte_offset_1); // Shortened
     uart_write_flush();
 
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; // CS1_N=0, CS2_N=1, DC=0 (command)
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
+    // printf("5.Triggering (from seed 0x%x)...\n", seed_byte_offset_1);
+    // uart_write_flush();
+    prng_ptr[PRNG_TRIGGER_BYTE_OFFSET / 4] = 0x1; 
     delay(100);
+    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
+    printf("4.Trig2:0x%x\n", read_val_32); // Shortened
+    uart_write_flush();
 
-    spi_engine_ptr[SPI_ENGINE_REG_DATA_TX / 4] = data_to_send;
+    uint32_t seed_byte_offset_2 = 0xF00; 
+    // printf("6.Seeding (offset 0x%x -> seed 0x%x)...\n", seed_byte_offset_2, seed_byte_offset_2);
+    // uart_write_flush();
+    prng_ptr[seed_byte_offset_2 / 4] = 0x1; 
+    delay(100);
+    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
+    printf("5.Seed2:0x%x (E:0x%x)\n", read_val_32, seed_byte_offset_2); // Shortened
+    uart_write_flush();
+
+    printf("--- PRNG Test Done ---\n"); // Shortened
+    uart_write_flush();
+    // --- END PRNG Test ---
+
+    // --- Test user_spi_ctrl --- 
+    printf("--- User SPI Ctrl Test ---\n");  // Shortened
+    uart_write_flush(); 
+    // printf("Action: Set user_oled_cs_n_pin_o LOW, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o LOW.\n");
+    // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
+    ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; 
+    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // uart_write_flush(); // Reduce flushes
+    delay(100); // Reduced delay 
     
-    // Initiate transfer
-    printf("Polling for SPI transfer completion (BUSY to clear)...\n"); 
-    uart_write_flush();
+    // printf("Action: Set user_oled_cs_n_pin_o LOW, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o HIGH.\n");
+    // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
+    ctrl_gpio_val = SPI_CTRL_GPIO_DC_VAL | SPI_CTRL_GPIO_CS2_N_VAL; 
+    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // uart_write_flush(); 
+    delay(100); // Reduced delay
+    
+    // printf("Action: Set user_oled_cs_n_pin_o HIGH, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o HIGH.\n");
+    // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
+    ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL; 
+    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    delay(100); 
+    read_val_32 = spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4]; 
+    printf("SPI_CTRL_RB:0x%x (E:0x7)\n", read_val_32 & 0x7); // Shortened
+    uart_write_flush(); 
+    delay(100); // Reduced delay
+    // --- END user_spi_ctrl Test ---
 
-    ctrl_engine_val = SPI_ENGINE_CTRL_ENABLE | SPI_ENGINE_CTRL_START_XFER | SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA;
+    // --- Test OBI SPI Peripheral (Engine) --- 
+    printf("--- SPI Engine Test ---\n"); // Shortened
+    uart_write_flush(); 
+    // printf("Configuring SPI Engine (CPOL=1, CPHA=1, CLK_DIV=1 for 5MHz with 20MHz sysclk)...\n");
+    spi_engine_ptr[SPI_ENGINE_REG_CLK_DIV / 4] = 1; 
+    delay(100); 
+    ctrl_engine_val = SPI_ENGINE_CTRL_ENABLE | SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA; 
     spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val; 
+    delay(100); 
+    read_val_32 = spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4]; 
+    printf("SPI_ENG_CTRL:0x%x (E:0xD)\n", read_val_32 & 0xFF); // Shortened
+    uart_write_flush(); 
 
-    int timeout = 0;
-    while ((spi_engine_ptr[SPI_ENGINE_REG_STATUS / 4] & SPI_ENGINE_STATUS_BUSY) && (timeout < 20000)) { 
-        delay(1); 
-        timeout++;
-    }
+    data_to_send = 0xAD; 
+    // printf("Preparing to send 0x%x via SPI Engine...\n", data_to_send); 
+    // uart_write_flush(); 
 
-    if (timeout >= 20000) { 
-        printf("TIMEOUT: Engine BUSY did not clear for TX1!\n"); 
-    } else { 
-        printf("Engine BUSY cleared for TX1.\n"); 
-    }
+    // printf("Action: Asserting user_oled_cs_n_pin_o LOW (for SPI transaction).\n");
+    ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; 
+    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    delay(100); 
+
+    spi_engine_ptr[SPI_ENGINE_REG_DATA_TX / 4] = data_to_send; 
+    delay(100); 
+      
+    // printf("Triggering SPI transfer. Polling BUSY. Check dedicated SCK/MOSI pins in waveforms.\n");
+    // uart_write_flush(); 
+    ctrl_engine_val = (spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] & ~(SPI_ENGINE_CTRL_START_XFER)) | SPI_ENGINE_CTRL_START_XFER;
+    spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val;  
+
+    // delay(10000); // Reduced delay for waveform observation if still needed
+
+    int timeout = 0; 
+    while ((spi_engine_ptr[SPI_ENGINE_REG_STATUS / 4] & SPI_ENGINE_STATUS_BUSY) && (timeout < 20000)) {  
+        delay(1);  
+        timeout++; 
+    } 
+
+    if (timeout >= 20000) {  
+        printf("TIMEOUT: BUSY!\n");  // Shortened
+    } else {  
+        printf("BUSY clear.\n");  // Shortened
+    } 
+    uart_write_flush(); 
+
+    // printf("Action: De-asserting user_oled_cs_n_pin_o HIGH.\n");
+    ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL;  
+    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // printf("SPI Deactivated (CS high).\n"); 
+    // uart_write_flush(); 
+    // --- END OBI SPI Peripheral Test ---
+
+    printf("\nAll Tests Done.\n"); // Shortened
     uart_write_flush();
-
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL; 
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
-    ctrl_engine_val = SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA; 
-    spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val;
-    printf("SPI Deactivated.\n");
-    uart_write_flush();
-
-    printf("All Peripheral Tests Finished.\n");
-    uart_write_flush();
-
-    return 1;
+    return 0;
 }
+
+
+//     // 1. Enable the GPIO pin
+//     current_gpio_en_val = gpio_ptr[REAL_STD_GPIO_EN_WORD_OFFSET];
+//     gpio_ptr[REAL_STD_GPIO_EN_WORD_OFFSET] = current_gpio_en_val | (1 << PIN_ACCEL_INT); // Enable pin 5
+//     delay(100);
+
+//     // 2. Set direction to input
+//     current_gpio_dir_val = gpio_ptr[REAL_STD_GPIO_DIR_WORD_OFFSET]; 
+//     gpio_ptr[REAL_STD_GPIO_DIR_WORD_OFFSET] = current_gpio_dir_val & ~(1 << PIN_ACCEL_INT); 
+//     delay(100); 
+
+//     printf("Reading Pin (hex) %x. Force gpio_i[%x] LOW in testbench if not already.\n", PIN_ACCEL_INT, PIN_ACCEL_INT);
+//     uart_write_flush();
+//     pin5_read_value = (gpio_ptr[REAL_STD_GPIO_IN_WORD_OFFSET] >> PIN_ACCEL_INT) & 0x1;
+//     printf("Debug values: PIN_ACCEL_INT = %x, pin5_read_value = %x\n", PIN_ACCEL_INT, pin5_read_value);
+//     uart_write_flush();
+//     printf("Readback for Pin %x (ADXL_INT): %x\n", PIN_ACCEL_INT, pin5_read_value); 
+//     uart_write_flush();
+//     delay(20000); 
+
+//     printf("Reading Pin (hex) %x again. Force gpio_i[%x] HIGH in testbench now.\n", PIN_ACCEL_INT, PIN_ACCEL_INT);
+//     uart_write_flush();
+//     pin5_read_value = (gpio_ptr[REAL_STD_GPIO_IN_WORD_OFFSET] >> PIN_ACCEL_INT) & 0x1;
+//     printf("Debug values: PIN_ACCEL_INT = %x, pin5_read_value = %x\n", PIN_ACCEL_INT, pin5_read_value);
+//     uart_write_flush();
+//     printf("Readback for Pin %x (ADXL_INT): %x\n", PIN_ACCEL_INT, pin5_read_value); 
+//     uart_write_flush();
+//     delay(20000); 
+
+//     // Optional: Restore original enable/direction values if needed for other tests
+//     // gpio_ptr[REAL_STD_GPIO_EN_WORD_OFFSET] = current_gpio_en_val;
+//     // gpio_ptr[REAL_STD_GPIO_DIR_WORD_OFFSET] = current_gpio_dir_val;
+
+//     printf("--- ADXL Interrupt Pin Test Finished ---\n");
+//     uart_write_flush();
+
+
+// // // --- Test User Font ROM --- 
+// printf("Testing User Font ROM at 0x%x...\n", (uint32_t)font_rom_ptr); 
+// uart_write_flush(); 
+
+// // --- Correctly read data for character '9' (ASCII 57) --- 
+// int offset_9 = (57 - 32) * 12; // Should be 300 
+// printf("Font ROM Data (12 bytes for '9' at offset 0x%x):\n", offset_9); 
+// uart_write_flush(); 
+
+// for (int i = 0; i < 12; i++) { 
+//     read_val_8 = font_rom_ptr[offset_9 + i];  
+//     printf("Byte 0x%x: 0x%x\n", offset_9 + i, read_val_8); 
+//     uart_write_flush(); 
+//     delay(50); 
+// } 
+
+// //--- Correctly read data for character 'A' (ASCII 65) --- 
+// int offset_A = (65 - 32) * 12; // Should be 396 
+// printf("Font ROM Data (12 bytes for 'A' at offset 0x%x):\n", offset_A); 
+// uart_write_flush(); 
+
+// for (int i = 0; i < 12; i++) { 
+//     read_val_8 = font_rom_ptr[offset_A + i]; 
+//     printf("Byte 0x%x: 0x%x\n", offset_A + i, read_val_8); 
+//     uart_write_flush(); 
+//     delay(50); 
+// }
+//    // --- Test Xorshift PRNG (Simple Reverted Version) --- 
+//     printf("Testing Xorshift PRNG...\n"); 
+//     uart_write_flush(); 
+//     prng_ptr[PRNG_CTRL_OFFSET / 4] = 0x1; // Trigger 
+//     delay(100); 
+//     read_val_32 = prng_ptr[PRNG_RDATA_OFFSET / 4]; 
+//     printf("PRNG Read 1: 0x%x\n", read_val_32); 
+//     uart_write_flush(); 
+//     // --- END PRNG Test ---
+
+//       // --- Test user_spi_ctrl --- 
+//     // (This section is from your stable helloworld.c)
+//     // It commands the dedicated pins. Waveform check is needed for actual pin state.
+//     printf("Testing User SPI Ctrl...\n"); 
+//     uart_write_flush(); 
+
+//     // Example: Assert OLED CS low (active), set D/C high (data) 
+//     // Assuming CS1 is OLED_CS (pin 2) and DC is pin 3 
+//     printf("Action: Set user_oled_cs_n_pin_o LOW, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o LOW.\n");
+//     printf("        (Check corresponding pins in waveform viewer)\n");
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; // CS1_N=0 (OLED_CS active), CS2_N=1, DC=0
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+//     uart_write_flush(); 
+//     delay(20000); 
+
+//     printf("Action: Set user_oled_cs_n_pin_o LOW, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o HIGH.\n");
+//     printf("        (Check corresponding pins in waveform viewer)\n");
+//     ctrl_gpio_val = SPI_CTRL_GPIO_DC_VAL | SPI_CTRL_GPIO_CS2_N_VAL; // CS1_N=0, CS2_N=1, DC=1
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+//     uart_write_flush(); 
+//     delay(20000); 
+
+//     printf("Action: Set user_oled_cs_n_pin_o HIGH, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o HIGH.\n");
+//     printf("        (Check corresponding pins in waveform viewer)\n");
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL; // All high 
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+//     delay(100); // Short delay before readback
+//     read_val_32 = spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4]; // Read back the register value
+//     printf("SPI_CTRL_REG Readback: 0x%x (Expected: 0x7 for lower 3 bits)\n", read_val_32 & 0x7);
+//     uart_write_flush(); 
+//     delay(20000); 
+//     // --- END user_spi_ctrl Test ---
+
+//     // --- Test OBI SPI Peripheral (Engine) --- 
+//     // (This section is from your stable helloworld.c)
+//     printf("Configuring SPI Engine...\n"); 
+//     uart_write_flush(); 
+//     spi_engine_ptr[SPI_ENGINE_REG_CLK_DIV / 4] = 0x01; 
+//     delay(100); 
+//     // Enable engine, set CPOL=1, CPHA=1 (example, adjust as needed for OLED/ADXL)
+//     ctrl_engine_val = SPI_ENGINE_CTRL_ENABLE | SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA; 
+//     spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val; 
+//     delay(100); 
+//     read_val_32 = spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4]; 
+//     printf("Engine Initial CTRL_REG: 0x%x\n", read_val_32 & 0xFF); 
+//     uart_write_flush(); 
+
+//     data_to_send = 0xAD; 
+//     printf("Preparing to send 0x%x via SPI Engine...\n", data_to_send); 
+//     uart_write_flush(); 
+
+//     // Assert a chip select (e.g., OLED CS) using user_spi_ctrl
+//     // DC low (command) or high (data) depending on what 0xAD represents
+//     printf("Action: Asserting user_oled_cs_n_pin_o LOW (for SPI transaction).\n");
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; // OLED_CS_N (pin for user_oled_cs_n_o) low, DC can be low/high
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+//     delay(100); 
+
+//     spi_engine_ptr[SPI_ENGINE_REG_DATA_TX / 4] = data_to_send; 
+//     delay(100); // Ensure data is written before START_XFER
+      
+//     printf("Polling for SPI transfer completion (BUSY to clear)...\n");  
+//     printf("        (Check dedicated user_spi_sck_pin_o and user_spi_mosi_pin_o in waveforms during this)\n");
+//     uart_write_flush(); 
+
+//     // Read control reg, OR in START_XFER, keep ENABLE, CPOL, CPHA
+//     ctrl_engine_val = (spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] & ~(SPI_ENGINE_CTRL_START_XFER)) | SPI_ENGINE_CTRL_START_XFER;
+//     spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val;  
+
+//     // Optional: Add a specific delay here if you want to easily find the SPI transaction in waveforms
+//     // delay(5000); 
+
+//     int timeout = 0; 
+//     while ((spi_engine_ptr[SPI_ENGINE_REG_STATUS / 4] & SPI_ENGINE_STATUS_BUSY) && (timeout < 20000)) {  
+//         delay(1);  
+//         timeout++; 
+//     } 
+
+//     if (timeout >= 20000) {  
+//         printf("TIMEOUT: Engine BUSY did not clear for TX1!\n");  
+//     } else {  
+//         printf("Engine BUSY cleared for TX1.\n");  
+//     } 
+//     uart_write_flush(); 
+
+//     // De-assert CS1 (OLED_CS_N)
+//     printf("Action: De-asserting user_oled_cs_n_pin_o HIGH.\n");
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL;  
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+//     // Optionally clear START_XFER and disable engine if done with it for now
+//     // ctrl_engine_val = SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA; // Keep CPOL/CPHA, remove ENABLE & START
+//     // spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val; 
+//     printf("SPI Deactivated (CS high).\n"); 
+//     uart_write_flush(); 
+//     // --- END OBI SPI Peripheral Test ---
+
+//     printf("All Peripheral Tests Finished.\n");
+//     uart_write_flush();
+//     return 1;
+// }
+
+
+
+// #include "uart.h"   // For uart_init, printf, uart_write_flush
+// #include "print.h"  // For printf
+// #include "config.h" // For peripheral base addresses
+
+// #ifndef USER_OBI_SPI_BASE_ADDR // For obi_spi_peripheral (engine)
+// #define USER_OBI_SPI_BASE_ADDR 0x20000000
+// #endif
+// #ifndef USER_SPI_CTRL_BASE_ADDR // For user_spi_ctrl
+// #define USER_SPI_CTRL_BASE_ADDR    0x20001000
+// #endif
+// #ifndef USER_PRNG_BASE_ADDR // For xorshift
+// #define USER_PRNG_BASE_ADDR        0x20002000
+// #endif
+// #ifndef USER_FONT_ROM_BASE_ADDR // For user_font_rom
+// #define USER_FONT_ROM_BASE_ADDR    0x20003000
+// #endif
+
+
+// #ifndef GPIO_BASE_ADDR
+// #define GPIO_BASE_ADDR             0x03005000 // From croc_pkg.sv
+// #endif
+// #ifndef UART_BASE_ADDR
+// #define UART_BASE_ADDR             0x03002000 // From croc_pkg.sv
+// #endif
+
+// // OBI SPI Peripheral (Engine) Register Offsets
+// #define SPI_ENGINE_REG_CTRL     0x00
+// #define SPI_ENGINE_REG_STATUS   0x04
+// #define SPI_ENGINE_REG_DATA_TX  0x08
+// #define SPI_ENGINE_REG_CLK_DIV  0x0C
+
+// // Engine Control Register Bits
+// #define SPI_ENGINE_CTRL_ENABLE      (1 << 0)
+// #define SPI_ENGINE_CTRL_START_XFER  (1 << 1)
+// #define SPI_ENGINE_CTRL_CPOL        (1 << 2)
+// #define SPI_ENGINE_CTRL_CPHA        (1 << 3)
+
+// // Engine Status Register Bits
+// #define SPI_ENGINE_STATUS_BUSY      (1 << 0)
+
+// // User SPI Ctrl Register Offset
+// #define SPI_CTRL_GPIO_REG_OFFSET 0x000
+// // User SPI Ctrl Register Bits
+// #define SPI_CTRL_GPIO_CS1_N_VAL (1 << 0)
+// #define SPI_CTRL_GPIO_CS2_N_VAL (1 << 1)
+// #define SPI_CTRL_GPIO_DC_VAL    (1 << 2)
+
+// // Xorshift PRNG Register Offsets
+// #define PRNG_CTRL_OFFSET  0x00 // Write to trigger
+// #define PRNG_RDATA_OFFSET 0x04 // Read to get value
+
+// volatile uint32_t* spi_engine_ptr    = (volatile uint32_t*)USER_OBI_SPI_BASE_ADDR;
+// volatile uint32_t* spi_ctrl_gpio_ptr = (volatile uint32_t*)USER_SPI_CTRL_BASE_ADDR;
+// volatile uint32_t* prng_ptr          = (volatile uint32_t*)USER_PRNG_BASE_ADDR;
+// volatile uint8_t* font_rom_ptr      = (volatile uint8_t*)USER_FONT_ROM_BASE_ADDR; // Byte pointer for ROM
+// volatile uint32_t* gpio_ptr          = (volatile uint32_t*)GPIO_BASE_ADDR;
+
+// void delay(int count) {
+//     for (volatile int i = 0; i < count; i++);
+// }
+
+// int main() {
+//     uart_init();
+//     printf("Comprehensive Peripheral Test (v4 - incl. Font ROM) Started...\n");
+//     uart_write_flush();
+
+//     uint32_t ctrl_engine_val, status_engine_val, data_to_send;
+//     uint32_t ctrl_gpio_val;
+//     uint32_t read_val_32;
+//     uint8_t  read_val_8;
+
+//     // --- Test User Font ROM ---
+//     printf("Testing User Font ROM at 0x%x...\n", (uint32_t)font_rom_ptr);
+//     uart_write_flush();
+
+//     // --- Correctly read data for character '9' (ASCII 57) ---
+//     int offset_9 = (57 - 32) * 12; // Should be 300
+//     printf("Font ROM Data (12 bytes for '9' at offset 0x%x):\n", offset_9);
+//     uart_write_flush();
+
+//     for (int i = 0; i < 12; i++) {
+//         // Read from the calculated offset
+//         read_val_8 = font_rom_ptr[offset_9 + i]; 
+//         printf("Byte 0x%x: 0x%x\n", offset_9 + i, read_val_8);
+//         uart_write_flush();
+//         delay(50);
+//     }
+
+//     // --- Correctly read data for character 'A' (ASCII 65) ---
+//     int offset_A = (65 - 32) * 12; // Should be 396
+//     printf("Font ROM Data (12 bytes for 'A' at offset 0x%x):\n", offset_A);
+//     uart_write_flush();
+
+//     for (int i = 0; i < 12; i++) {
+//         // Read from the calculated offset
+//         read_val_8 = font_rom_ptr[offset_A + i];
+//         printf("Byte 0x%x: 0x%x\n", offset_A + i, read_val_8);
+//         uart_write_flush();
+//         delay(50);
+//     }
+//     //--- Test user_spi_ctrl ---
+//     printf("Testing User SPI Ctrl...\n");
+//     uart_write_flush();
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL; // CS1=1, CS2=1, DC=1
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
+//     delay(100);
+//     read_val_32 = spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4];
+//     printf("SPI_CTRL Read: 0x%x (Expected: 0x%x for lower 3 bits)\n", read_val_32 & 0x7, ctrl_gpio_val & 0x7);
+//     uart_write_flush();
+
+//     printf("Testing User SPI Ctrl...\n");
+//     uart_write_flush();
+
+//     // Example: Assert OLED CS low (active), set D/C high (data)
+//     // Assuming CS1 is OLED_CS (pin 2) and DC is pin 3
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; // CS1_N=0 (low), CS2_N=1 (high), DC=0 (command initially)
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
+//     printf("Set OLED_CS low (pin 2), Accel_CS high (pin 4), D/C low (pin 3)\n");
+//     uart_write_flush();
+//     delay(20000); // << ADD A LONG DELAY HERE FOR OBSERVATION
+
+//     // Now set D/C high
+//     ctrl_gpio_val = SPI_CTRL_GPIO_DC_VAL | SPI_CTRL_GPIO_CS2_N_VAL; // CS1_N=0, CS2_N=1, DC=1 (data)
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
+//     printf("Set OLED_CS low (pin 2), Accel_CS high (pin 4), D/C high (pin 3)\n");
+//     uart_write_flush();
+//     delay(20000); // << ADD A LONG DELAY HERE
+
+//     // De-assert CS1
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL; // All high
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
+//     printf("De-asserted all CS and D/C high\n");
+//     uart_write_flush();
+//     delay(20000); // << ADD A LONG DELAY HERE
+
+// // --- Test Xorshift PRNG ---
+//     printf("Testing Xorshift PRNG...\n");
+//     uart_write_flush();
+//     prng_ptr[PRNG_CTRL_OFFSET / 4] = 0x1; // Trigger
+    
+//     delay(100);
+
+//     read_val_32 = prng_ptr[PRNG_RDATA_OFFSET / 4];
+//     printf("PRNG Read 1: 0x%x\n", read_val_32);
+//     uart_write_flush();
+
+//     // --- Test OBI SPI Peripheral (Engine) ---
+//     printf("Configuring SPI Engine...\n");
+//     uart_write_flush();
+//     spi_engine_ptr[SPI_ENGINE_REG_CLK_DIV / 4] = 0x01;
+//     delay(100);
+//     ctrl_engine_val = SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA;
+//     spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val;
+//     delay(100);
+//     read_val_32 = spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4];
+//     printf("Engine Initial CTRL_REG: 0x%x\n", read_val_32 & 0xFF);
+//     uart_write_flush();
+
+//     data_to_send = 0xAD;
+//     printf("Preparing to send 0x%x via SPI Engine...\n", data_to_send);
+//     uart_write_flush();
+
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; // CS1_N=0, CS2_N=1, DC=0 (command)
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
+//     delay(100);
+
+//     spi_engine_ptr[SPI_ENGINE_REG_DATA_TX / 4] = data_to_send;
+    
+//     // Initiate transfer
+//     printf("Polling for SPI transfer completion (BUSY to clear)...\n"); 
+//     uart_write_flush();
+
+//     ctrl_engine_val = SPI_ENGINE_CTRL_ENABLE | SPI_ENGINE_CTRL_START_XFER | SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA;
+//     spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val; 
+
+//     int timeout = 0;
+//     while ((spi_engine_ptr[SPI_ENGINE_REG_STATUS / 4] & SPI_ENGINE_STATUS_BUSY) && (timeout < 20000)) { 
+//         delay(1); 
+//         timeout++;
+//     }
+
+//     if (timeout >= 20000) { 
+//         printf("TIMEOUT: Engine BUSY did not clear for TX1!\n"); 
+//     } else { 
+//         printf("Engine BUSY cleared for TX1.\n"); 
+//     }
+//     uart_write_flush();
+
+//     ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL; 
+//     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
+//     ctrl_engine_val = SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA; 
+//     spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val;
+//     printf("SPI Deactivated.\n");
+//     uart_write_flush();
+
+//     printf("All Peripheral Tests Finished.\n");
+//     uart_write_flush();
+
+//     return 1;
+// }
 
 
 
