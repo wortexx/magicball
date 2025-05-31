@@ -17,12 +17,15 @@ module user_domain #(
   output mgr_obi_req_t user_mgr_obi_req_o,
   input  mgr_obi_rsp_t user_mgr_obi_rsp_i,
 
-  input  logic [GpioCount-1:0]       gpio_in_sync_i,
+  input  logic [GpioCount-1:0]       gpio_in_sync_i, // For ADXL345 interrupt on pin 5
   output logic [NumExternalIrqs-1:0] interrupts_o,
 
-  output logic [GpioCount-1:0]       gpio_o,
-  output logic [GpioCount-1:0]       gpio_out_en_o
-
+  // NEW Dedicated Output Ports for user_domain SPI signals
+  output logic user_spi_sck_o,
+  output logic user_spi_mosi_o,
+  output logic user_oled_cs_n_o,    // Chip Select for SSD1331
+  output logic user_oled_dc_o,      // Data/Command for SSD1331
+  output logic user_accel_cs_n_o    // Chip Select for ADXL345
 );
 
   logic spi_sck_w;
@@ -30,26 +33,24 @@ module user_domain #(
   logic spi_cs1_no_w;
   logic spi_cs2_no_w;
   logic spi_dc_w;
-  // Output Pin Assignments
-  assign gpio_o[0] = spi_sck_w;         // GPIO 0 -> Shared SPI Clock (SCK)
-  assign gpio_o[1] = spi_mosi_w;        // GPIO 1 -> Shared SPI Data Out (MOSI)
-  assign gpio_o[2] = spi_cs1_no_w;      // GPIO 2 -> SSD1331 OLED Chip Select
-  assign gpio_o[3] = spi_dc_w;          // GPIO 3 -> SSD1331 OLED Data/Command
-  assign gpio_o[4] = spi_cs2_no_w;      // GPIO 4 -> ADXL345 Accelerometer Chip Select
-  // Unused GPIO outputs are tied to 0 to prevent them from floating.
-  assign gpio_o[GpioCount-1:5] = '0;
 
-  // Set Pin Directions
-  assign gpio_out_en_o[4:0] = 5'b11111; // Set GPIOs 0-4 as OUTPUTS
-  assign gpio_out_en_o[5]   = 1'b0;      // Set GPIO 5 as an INPUT (for ADXL345 interrupt)
-  // All other GPIOs are configured as inputs.
-  assign gpio_out_en_o[GpioCount-1:6] = '0;
+  // Connect internal SPI signals to new dedicated output ports
+  assign user_spi_sck_o      = spi_sck_w;
+  assign user_spi_mosi_o     = spi_mosi_w;
+  assign user_oled_cs_n_o    = spi_cs1_no_w; // Assuming cs1 was OLED
+  assign user_oled_dc_o      = spi_dc_w;     // Assuming dc was OLED
+  assign user_accel_cs_n_o   = spi_cs2_no_w; // Assuming cs2 was Accelerometer
 
-  // Input Pin Assignment
-  // This wire can now be used to read the state of the accelerometer's event pin.
-  wire adxl345_interrupt_event_i = gpio_in_sync_i[5];
+  // Input Pin Assignment (ADXL345 interrupt on shared GPIO pin 5)
+  // This remains the same, user_domain reads it via gpio_in_sync_i
+  logic adxl345_interrupt_event_i;
+  assign adxl345_interrupt_event_i = gpio_in_sync_i[5];
 
-  assign interrupts_o       = '0;
+  assign interrupts_o[0]    = adxl345_interrupt_event_i;
+  
+  if (NumExternalIrqs > 1) begin : gen_other_irqs   // Ensure other user interrupt lines are '0' if not used
+      assign interrupts_o[NumExternalIrqs-1:1] = '0;
+  end
   assign user_mgr_obi_req_o = '{default: '0};
 
   sbr_obi_req_t [NumDemuxSbr-1:0] all_user_sbr_obi_req;
@@ -196,5 +197,14 @@ module user_domain #(
     .obi_rsp_o  (user_font_rom_rsp)
   );
   // user_font_rom.sv now drives its own .r.r_optional
+
+// always @(posedge clk_i) begin
+//     if (adxl345_interrupt_event_i != $past(adxl345_interrupt_event_i)) begin
+//         $display("%t [USER_DOMAIN] adxl345_interrupt_event_i (pin 5 input) changed to: %b", $time, adxl345_interrupt_event_i);
+//     end
+//     if (interrupts_o[0] != $past(interrupts_o[0])) begin
+//         $display("%t [USER_DOMAIN] interrupts_o[0] (to CPU) changed to: %b", $time, interrupts_o[0]);
+//     end
+// end
 
 endmodule

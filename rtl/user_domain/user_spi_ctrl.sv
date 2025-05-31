@@ -59,9 +59,9 @@ module user_spi_ctrl #(
             cs1_n_q_reg <= obi_req_i.a.wdata[CS1_N_BIT_IN_REG];
             cs2_n_q_reg <= obi_req_i.a.wdata[CS2_N_BIT_IN_REG];
             dc_q_reg    <= obi_req_i.a.wdata[DC_BIT_IN_REG];
-            $display("%t [USER_SPI_CTRL] Write to GPIO_CTRL (0x%h). Data LSB: 0x%h -> CS1_N=%b, CS2_N=%b, DC=%b",
-                     $time, obi_req_i.a.addr[ADDR_LOCAL_WIDTH-1:0], obi_req_i.a.wdata[7:0],
-                     obi_req_i.a.wdata[CS1_N_BIT_IN_REG], obi_req_i.a.wdata[CS2_N_BIT_IN_REG], obi_req_i.a.wdata[DC_BIT_IN_REG]);
+            // $display("%t [USER_SPI_CTRL] Write to GPIO_CTRL (0x%h). Data LSB: 0x%h -> CS1_N=%b, CS2_N=%b, DC=%b",
+            //          $time, obi_req_i.a.addr[ADDR_LOCAL_WIDTH-1:0], obi_req_i.a.wdata[7:0],
+            //          obi_req_i.a.wdata[CS1_N_BIT_IN_REG], obi_req_i.a.wdata[CS2_N_BIT_IN_REG], obi_req_i.a.wdata[DC_BIT_IN_REG]);
           end
         end
       end

@@ -10,8 +10,7 @@ sources:
     files:
       # Level 0
       - tc_sram.sv
-      - tc_sram_impl.sv
-
+      
   - target: all(any(all(not(asic), not(fpga)), tech_cells_generic_include_tc_clk), not(tech_cells_generic_exclude_tc_clk))
     files:
       # Level 0
@@ -22,4 +21,4 @@ sources:
       - fpga/pad_functional_xilinx.sv
       - fpga/tc_clk_xilinx.sv
       - fpga/tc_sram_xilinx.sv
-      - tc_sram_impl.sv
+      - tc_sram.sv

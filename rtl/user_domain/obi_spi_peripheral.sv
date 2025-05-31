@@ -106,7 +106,7 @@ module obi_spi_peripheral #(
           if (ctrl_reg_q[CTRL_START_XFER_BIT] && !status_busy_q) begin
             spi_state_d = S_LOAD_SHIFT;
             ctrl_reg_d[CTRL_START_XFER_BIT] = 1'b0;
-            $display("%t [OBI_SPI_FSM] IDLE: Start detected. Clearing START_XFER bit in ctrl_reg_d.", $time);
+            //$display("%t [OBI_SPI_FSM] IDLE: Start detected. Clearing START_XFER bit in ctrl_reg_d.", $time);
           end
         end
 
@@ -117,7 +117,7 @@ module obi_spi_peripheral #(
           sck_internal_d    = 1'b0;
           spi_state_d       = S_SHIFT_BIT;
           sck_o = ctrl_reg_q[CTRL_CPOL_BIT];
-          $display("%t [OBI_SPI_FSM] LOAD -> SHIFT, tx_data=0x%h", $time, data_tx_reg_q);
+          //$display("%t [OBI_SPI_FSM] LOAD -> SHIFT, tx_data=0x%h", $time, data_tx_reg_q);
         end
 
         S_SHIFT_BIT: begin
@@ -153,7 +153,7 @@ module obi_spi_peripheral #(
         S_TRANSFER_DONE: begin
           sck_o = ctrl_reg_q[CTRL_CPOL_BIT];
           spi_state_d       = S_IDLE;
-          $display("%t [OBI_SPI_FSM] COMPLETE -> IDLE", $time);
+          //$display("%t [OBI_SPI_FSM] COMPLETE -> IDLE", $time);
         end
         default: begin
           spi_state_d = S_IDLE;
@@ -207,12 +207,18 @@ module obi_spi_peripheral #(
   assign rvalid_o = req_latch_q;
   assign rid_o    = id_latch_q;
 
-  logic is_ctrl_access_latch    = (addr_offset_latch_q == REG_CTRL_OFFSET);
-  logic is_status_access_latch  = (addr_offset_latch_q == REG_STATUS_OFFSET);
-  logic is_data_tx_access_latch = (addr_offset_latch_q == REG_DATA_TX_OFFSET);
-  logic is_clk_div_access_latch = (addr_offset_latch_q == REG_CLK_DIV_OFFSET);
-  logic is_valid_addr_latch     = is_ctrl_access_latch || is_status_access_latch || is_data_tx_access_latch || is_clk_div_access_latch;
-  
+  logic is_ctrl_access_latch;
+  logic is_status_access_latch;
+  logic is_data_tx_access_latch;
+  logic is_clk_div_access_latch;
+  logic is_valid_addr_latch;
+
+  assign is_ctrl_access_latch    = (addr_offset_latch_q == REG_CTRL_OFFSET);
+  assign is_status_access_latch  = (addr_offset_latch_q == REG_STATUS_OFFSET);
+  assign is_data_tx_access_latch = (addr_offset_latch_q == REG_DATA_TX_OFFSET);
+  assign is_clk_div_access_latch = (addr_offset_latch_q == REG_CLK_DIV_OFFSET);
+  assign is_valid_addr_latch     = is_ctrl_access_latch || is_status_access_latch || is_data_tx_access_latch || is_clk_div_access_latch;
+    
   assign status_busy_q = (spi_state_q != S_IDLE);
 
   assign err_o = req_latch_q && (
