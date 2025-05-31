@@ -9,12 +9,9 @@ LOG_FILE=$1
 
 expected_lines=(
   "\[CORE\] Start fetching instructions"
-  "\[JTAG\] Halting hart 0"
-  "\[JTAG\] Resumed hart 0"
-  "\[UART\] Hello World!"
-  "\[UART\] Result: 0x8940, Cycles: 0xBD"
-  "\[UART\] Tick"
-  "\[UART\] Tock"
+  "\[UART\] Comprehensive Test (Seed-PRNG) Started..."
+  "\[UART\] raw: '{'h41, 'h6c, 'h6c, 'h20, 'h54, 'h65, 'h73, 'h74, 'h73, 'h20, 'h44, 'h6f, 'h6e, 'h65, 'h2e, 'ha}"
+  "\[UART\] All Tests Done."
 )
 
 for line in "${expected_lines[@]}"; do
