@@ -30,7 +30,7 @@ jobs:
       - name: Run Yosys, OpenROAD and KLayout
         uses: ./.github/actions/oseda-cmd
         with:
-          cmd: "make yosys && make openroad && make klayout"
+          cmd: "make yosys-flist yosys && make openroad && make klayout"
       - name: Upload openroad output
         uses: actions/upload-artifact@v4
         with:
