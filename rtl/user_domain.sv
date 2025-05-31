@@ -43,7 +43,8 @@ module user_domain #(
 
   // Input Pin Assignment (ADXL345 interrupt on shared GPIO pin 5)
   // This remains the same, user_domain reads it via gpio_in_sync_i
-  logic adxl345_interrupt_event_i = gpio_in_sync_i[5]; 
+  logic adxl345_interrupt_event_i;
+  assign adxl345_interrupt_event_i = gpio_in_sync_i[5];
 
   assign interrupts_o[0]    = adxl345_interrupt_event_i;
   

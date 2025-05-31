@@ -83,136 +83,136 @@ int main() {
     }
     // --- END Font ROM Test ---
 
-    // --- Test Xorshift PRNG (Seed from Address) ---
-    printf("--- PRNG Test (Seed Addr) ---\n"); // Shortened
-    uart_write_flush();
+    // // --- Test Xorshift PRNG (Seed from Address) ---
+    // printf("--- PRNG Test (Seed Addr) ---\n"); // Shortened
+    // uart_write_flush();
     
-    delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4]; 
-    printf("1.Init:0x%x\n", read_val_32); // Shortened
-    uart_write_flush();
-
-    // printf("2.Triggering (offset 0x%x)...\n", PRNG_TRIGGER_BYTE_OFFSET);
+    // delay(100);
+    // read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4]; 
+    // printf("1.Init:0x%x\n", read_val_32); // Shortened
     // uart_write_flush();
-    prng_ptr[PRNG_TRIGGER_BYTE_OFFSET / 4] = 0x1; 
-    delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
-    printf("2.Trig1:0x%x\n", read_val_32); // Shortened
-    uart_write_flush();
 
-    uint32_t seed_byte_offset_1 = 0xABC; 
-    // printf("3.Seeding (offset 0x%x -> seed 0x%x)...\n", seed_byte_offset_1, seed_byte_offset_1);
+    // // printf("2.Triggering (offset 0x%x)...\n", PRNG_TRIGGER_BYTE_OFFSET);
+    // // uart_write_flush();
+    // prng_ptr[PRNG_TRIGGER_BYTE_OFFSET / 4] = 0x1; 
+    // delay(100);
+    // read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
+    // printf("2.Trig1:0x%x\n", read_val_32); // Shortened
     // uart_write_flush();
-    prng_ptr[seed_byte_offset_1 / 4] = 0x1; 
-    delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
-    printf("3.Seed1:0x%x (E:0x%x)\n", read_val_32, seed_byte_offset_1); // Shortened
-    uart_write_flush();
 
-    // printf("5.Triggering (from seed 0x%x)...\n", seed_byte_offset_1);
+    // uint32_t seed_byte_offset_1 = 0xABC; 
+    // // printf("3.Seeding (offset 0x%x -> seed 0x%x)...\n", seed_byte_offset_1, seed_byte_offset_1);
+    // // uart_write_flush();
+    // prng_ptr[seed_byte_offset_1 / 4] = 0x1; 
+    // delay(100);
+    // read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
+    // printf("3.Seed1:0x%x (E:0x%x)\n", read_val_32, seed_byte_offset_1); // Shortened
     // uart_write_flush();
-    prng_ptr[PRNG_TRIGGER_BYTE_OFFSET / 4] = 0x1; 
-    delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
-    printf("4.Trig2:0x%x\n", read_val_32); // Shortened
-    uart_write_flush();
 
-    uint32_t seed_byte_offset_2 = 0xF00; 
-    // printf("6.Seeding (offset 0x%x -> seed 0x%x)...\n", seed_byte_offset_2, seed_byte_offset_2);
+    // // printf("5.Triggering (from seed 0x%x)...\n", seed_byte_offset_1);
+    // // uart_write_flush();
+    // prng_ptr[PRNG_TRIGGER_BYTE_OFFSET / 4] = 0x1; 
+    // delay(100);
+    // read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
+    // printf("4.Trig2:0x%x\n", read_val_32); // Shortened
     // uart_write_flush();
-    prng_ptr[seed_byte_offset_2 / 4] = 0x1; 
-    delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
-    printf("5.Seed2:0x%x (E:0x%x)\n", read_val_32, seed_byte_offset_2); // Shortened
-    uart_write_flush();
 
-    printf("--- PRNG Test Done ---\n"); // Shortened
-    uart_write_flush();
-    // --- END PRNG Test ---
+    // uint32_t seed_byte_offset_2 = 0xF00; 
+    // // printf("6.Seeding (offset 0x%x -> seed 0x%x)...\n", seed_byte_offset_2, seed_byte_offset_2);
+    // // uart_write_flush();
+    // prng_ptr[seed_byte_offset_2 / 4] = 0x1; 
+    // delay(100);
+    // read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
+    // printf("5.Seed2:0x%x (E:0x%x)\n", read_val_32, seed_byte_offset_2); // Shortened
+    // uart_write_flush();
 
-    // --- Test user_spi_ctrl --- 
-    printf("--- User SPI Ctrl Test ---\n");  // Shortened
-    uart_write_flush(); 
-    // printf("Action: Set user_oled_cs_n_pin_o LOW, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o LOW.\n");
-    // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; 
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
-    // uart_write_flush(); // Reduce flushes
-    delay(100); // Reduced delay 
-    
-    // printf("Action: Set user_oled_cs_n_pin_o LOW, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o HIGH.\n");
-    // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
-    ctrl_gpio_val = SPI_CTRL_GPIO_DC_VAL | SPI_CTRL_GPIO_CS2_N_VAL; 
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // printf("--- PRNG Test Done ---\n"); // Shortened
+    // uart_write_flush();
+    // // --- END PRNG Test ---
+
+    // // --- Test user_spi_ctrl --- 
+    // printf("--- User SPI Ctrl Test ---\n");  // Shortened
     // uart_write_flush(); 
-    delay(100); // Reduced delay
+    // // printf("Action: Set user_oled_cs_n_pin_o LOW, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o LOW.\n");
+    // // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
+    // ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; 
+    // spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // // uart_write_flush(); // Reduce flushes
+    // delay(100); // Reduced delay 
     
-    // printf("Action: Set user_oled_cs_n_pin_o HIGH, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o HIGH.\n");
-    // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL; 
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
-    delay(100); 
-    read_val_32 = spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4]; 
-    printf("SPI_CTRL_RB:0x%x (E:0x7)\n", read_val_32 & 0x7); // Shortened
-    uart_write_flush(); 
-    delay(100); // Reduced delay
-    // --- END user_spi_ctrl Test ---
+    // // printf("Action: Set user_oled_cs_n_pin_o LOW, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o HIGH.\n");
+    // // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
+    // ctrl_gpio_val = SPI_CTRL_GPIO_DC_VAL | SPI_CTRL_GPIO_CS2_N_VAL; 
+    // spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // // uart_write_flush(); 
+    // delay(100); // Reduced delay
+    
+    // // printf("Action: Set user_oled_cs_n_pin_o HIGH, user_accel_cs_n_pin_o HIGH, user_oled_dc_pin_o HIGH.\n");
+    // // printf("        (Check corresponding dedicated pins in waveform viewer)\n");
+    // ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL; 
+    // spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // delay(100); 
+    // read_val_32 = spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4]; 
+    // printf("SPI_CTRL_RB:0x%x (E:0x7)\n", read_val_32 & 0x7); // Shortened
+    // uart_write_flush(); 
+    // delay(100); // Reduced delay
+    // // --- END user_spi_ctrl Test ---
 
-    // --- Test OBI SPI Peripheral (Engine) --- 
-    printf("--- SPI Engine Test ---\n"); // Shortened
-    uart_write_flush(); 
-    // printf("Configuring SPI Engine (CPOL=1, CPHA=1, CLK_DIV=1 for 5MHz with 20MHz sysclk)...\n");
-    spi_engine_ptr[SPI_ENGINE_REG_CLK_DIV / 4] = 1; 
-    delay(100); 
-    ctrl_engine_val = SPI_ENGINE_CTRL_ENABLE | SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA; 
-    spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val; 
-    delay(100); 
-    read_val_32 = spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4]; 
-    printf("SPI_ENG_CTRL:0x%x (E:0xD)\n", read_val_32 & 0xFF); // Shortened
-    uart_write_flush(); 
-
-    data_to_send = 0xAD; 
-    // printf("Preparing to send 0x%x via SPI Engine...\n", data_to_send); 
+    // // --- Test OBI SPI Peripheral (Engine) --- 
+    // printf("--- SPI Engine Test ---\n"); // Shortened
+    // uart_write_flush(); 
+    // // printf("Configuring SPI Engine (CPOL=1, CPHA=1, CLK_DIV=1 for 5MHz with 20MHz sysclk)...\n");
+    // spi_engine_ptr[SPI_ENGINE_REG_CLK_DIV / 4] = 1; 
+    // delay(100); 
+    // ctrl_engine_val = SPI_ENGINE_CTRL_ENABLE | SPI_ENGINE_CTRL_CPOL | SPI_ENGINE_CTRL_CPHA; 
+    // spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val; 
+    // delay(100); 
+    // read_val_32 = spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4]; 
+    // printf("SPI_ENG_CTRL:0x%x (E:0xD)\n", read_val_32 & 0xFF); // Shortened
     // uart_write_flush(); 
 
-    // printf("Action: Asserting user_oled_cs_n_pin_o LOW (for SPI transaction).\n");
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; 
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
-    delay(100); 
+    // data_to_send = 0xAD; 
+    // // printf("Preparing to send 0x%x via SPI Engine...\n", data_to_send); 
+    // // uart_write_flush(); 
 
-    spi_engine_ptr[SPI_ENGINE_REG_DATA_TX / 4] = data_to_send; 
-    delay(100); 
+    // // printf("Action: Asserting user_oled_cs_n_pin_o LOW (for SPI transaction).\n");
+    // ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL; 
+    // spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // delay(100); 
+
+    // spi_engine_ptr[SPI_ENGINE_REG_DATA_TX / 4] = data_to_send; 
+    // delay(100); 
       
-    // printf("Triggering SPI transfer. Polling BUSY. Check dedicated SCK/MOSI pins in waveforms.\n");
+    // // printf("Triggering SPI transfer. Polling BUSY. Check dedicated SCK/MOSI pins in waveforms.\n");
+    // // uart_write_flush(); 
+    // ctrl_engine_val = (spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] & ~(SPI_ENGINE_CTRL_START_XFER)) | SPI_ENGINE_CTRL_START_XFER;
+    // spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val;  
+
+    // // delay(10000); // Reduced delay for waveform observation if still needed
+
+    // int timeout = 0; 
+    // while ((spi_engine_ptr[SPI_ENGINE_REG_STATUS / 4] & SPI_ENGINE_STATUS_BUSY) && (timeout < 20000)) {  
+    //     delay(1);  
+    //     timeout++; 
+    // } 
+
+    // if (timeout >= 20000) {  
+    //     printf("TIMEOUT: BUSY!\n");  // Shortened
+    // } else {  
+    //     printf("BUSY clear.\n");  // Shortened
+    // } 
     // uart_write_flush(); 
-    ctrl_engine_val = (spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] & ~(SPI_ENGINE_CTRL_START_XFER)) | SPI_ENGINE_CTRL_START_XFER;
-    spi_engine_ptr[SPI_ENGINE_REG_CTRL / 4] = ctrl_engine_val;  
 
-    // delay(10000); // Reduced delay for waveform observation if still needed
+    // // printf("Action: De-asserting user_oled_cs_n_pin_o HIGH.\n");
+    // ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL;  
+    // spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
+    // // printf("SPI Deactivated (CS high).\n"); 
+    // // uart_write_flush(); 
+    // // --- END OBI SPI Peripheral Test ---
 
-    int timeout = 0; 
-    while ((spi_engine_ptr[SPI_ENGINE_REG_STATUS / 4] & SPI_ENGINE_STATUS_BUSY) && (timeout < 20000)) {  
-        delay(1);  
-        timeout++; 
-    } 
-
-    if (timeout >= 20000) {  
-        printf("TIMEOUT: BUSY!\n");  // Shortened
-    } else {  
-        printf("BUSY clear.\n");  // Shortened
-    } 
-    uart_write_flush(); 
-
-    // printf("Action: De-asserting user_oled_cs_n_pin_o HIGH.\n");
-    ctrl_gpio_val = SPI_CTRL_GPIO_CS1_N_VAL | SPI_CTRL_GPIO_CS2_N_VAL | SPI_CTRL_GPIO_DC_VAL;  
-    spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val; 
-    // printf("SPI Deactivated (CS high).\n"); 
-    // uart_write_flush(); 
-    // --- END OBI SPI Peripheral Test ---
-
-    printf("\nAll Tests Done.\n"); // Shortened
+    printf("All Tests Done.\n"); // Shortened
     uart_write_flush();
-    return 0;
+    return 1;
 }
 
 
