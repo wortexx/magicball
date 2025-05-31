@@ -59,7 +59,7 @@ jobs:
       - name: Setup OSEDA container
         uses: ./.github/actions/oseda-cmd
         with:
-          cmd: "make yosys && tail -n 40 yosys/reports/*area.rpt"
+          cmd: "make yosys-flist yosys && tail -n 40 yosys/reports/*area.rpt"
       - name: Upload synthesis reports
         uses: actions/upload-artifact@v4
         with:
