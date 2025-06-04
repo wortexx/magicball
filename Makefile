@@ -123,7 +123,7 @@ include yosys/yosys.mk
 include openroad/openroad.mk
 
 klayout/croc_chip.gds: $(OR_OUT)/croc.def klayout/*.sh klayout/*.py
-	./klayout/def2gds.sh
+	GDS_ALLOW_EMPTY="RM_IHPSG13_1P_BITKIT.*" ./klayout/def2gds.sh
 
 ## Generate merged .gds from openroads .def output
 klayout: klayout/croc_chip.gds

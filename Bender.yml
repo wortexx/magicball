@@ -45,7 +45,10 @@ sources:
       # Level 2
       - rtl/croc_domain.sv
       - rtl/user_domain.sv
-      # add your design files with modules here
+      - rtl/user_domain/user_spi_ctrl.sv
+      - rtl/user_domain/xorshift.sv
+      - rtl/user_domain/user_font_rom.sv
+      - rtl/user_domain/obi_spi_peripheral.sv
       # Level 3
       - rtl/croc_soc.sv
 

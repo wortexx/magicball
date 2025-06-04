@@ -26,7 +26,14 @@ module croc_soc import croc_pkg::*; #(
 
   input  logic [GpioCount-1:0] gpio_i,       // Input from GPIO pins
   output logic [GpioCount-1:0] gpio_o,       // Output to GPIO pins
-  output logic [GpioCount-1:0] gpio_out_en_o // Output enable signal; 0 -> input, 1 -> output
+  output logic [GpioCount-1:0] gpio_out_en_o, // Output enable signal; 0 -> input, 1 -> output
+
+  // Dedicated Output Ports for User Domain SPI
+  output logic user_spi_sck_o,
+  output logic user_spi_mosi_o,
+  output logic user_oled_cs_n_o,
+  output logic user_oled_dc_o,
+  output logic user_accel_cs_n_o
 );
 
   logic synced_rst_n, synced_fetch_en;
@@ -78,9 +85,9 @@ croc_domain #(
   .uart_rx_i,
   .uart_tx_o,
 
-  .gpio_i,             
-  .gpio_o,            
-  .gpio_out_en_o,
+  .gpio_i(gpio_i),                         
+  .gpio_o(gpio_o),           
+  .gpio_out_en_o(gpio_out_en_o),      
 
   .gpio_in_sync_o ( gpio_in_sync ),
 
@@ -109,7 +116,13 @@ user_domain #(
   .user_mgr_obi_rsp_i ( user_mgr_obi_rsp ),
 
   .gpio_in_sync_i ( gpio_in_sync ),
-  .interrupts_o   ( interrupts   )
+  .interrupts_o   ( interrupts   ),
+
+  .user_spi_sck_o    ( user_spi_sck_o    ),
+  .user_spi_mosi_o   ( user_spi_mosi_o   ),
+  .user_oled_cs_n_o  ( user_oled_cs_n_o  ),
+  .user_oled_dc_o    ( user_oled_dc_o    ),
+  .user_accel_cs_n_o ( user_accel_cs_n_o )
 );
 
 endmodule
