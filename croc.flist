@@ -136,6 +136,7 @@
 /fosic/designs/croc/rtl/obi/obi_intf.sv
 /fosic/designs/croc/rtl/obi/obi_rready_converter.sv
 /fosic/designs/croc/rtl/obi/obi_atop_resolver.sv
+/fosic/designs/croc/rtl/obi/obi_cut.sv
 /fosic/designs/croc/rtl/obi/obi_demux.sv
 /fosic/designs/croc/rtl/obi/obi_err_sbr.sv
 /fosic/designs/croc/rtl/obi/obi_mux.sv
