@@ -20,11 +20,11 @@ services:
     entrypoint: /dockerstartup/scripts/ui_startup.sh
     command: --skip bash
     # Resource allocation
-    deploy:
-      resources:
-        limits:
-          cpus: '8.0'       # Allow access to up to 8 CPU cores
-          memory: 12288M     # Limit memory to 8192 MB (8 GB)
+    #deploy:
+      #resources:
+        #limits:
+          #cpus: '8.0'       # Allow access to up to 8 CPU cores
+          #memory: 12288M     # Limit memory to 8192 MB (8 GB)
         # reservations: # Optional: guarantee resources if needed, usually for production
         #   cpus: '4.0'
         #   memory: 4096M
