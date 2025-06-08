@@ -503,6 +503,7 @@ tc_sram_impl #(
   soc_ctrl_reg_pkg::soc_ctrl_hw2reg_t soc_ctrl_hw2reg;
   assign fetch_enable = soc_ctrl_reg2hw.fetchen.q | fetch_en_i;
   assign boot_addr = soc_ctrl_reg2hw.bootaddr.q;
+  assign sram_impl = soc_ctrl_reg2hw.sram_dly;
   assign soc_ctrl_hw2reg = '0;
 
   soc_ctrl_reg_top #(
