@@ -77,7 +77,7 @@ jobs:
       - name: Install packages in OSEDA
         uses: ./.github/actions/oseda-cmd
         with:
-          cmd: "pip install gdspy"
+          cmd: "pip install gdspy --break-system-packages"
       - name: Meercat setup, export top-level GDS
         uses: ./.github/actions/oseda-cmd
         with:
