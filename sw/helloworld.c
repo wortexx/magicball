@@ -1,53 +1,9 @@
 #include "uart.h"   // For uart_init, printf, uart_write_flush
 #include "print.h"  // For printf
 #include "config.h" // For peripheral base addresses
+#include "spi.h"    // For SPI 
+#include "xorshift.h" // For PRNG
 
-// -- User Domain Peripheral Base Addresses --
-#ifndef USER_OBI_SPI_BASE_ADDR
-#define USER_OBI_SPI_BASE_ADDR 0x20000000
-#endif
-#ifndef USER_SPI_CTRL_BASE_ADDR
-#define USER_SPI_CTRL_BASE_ADDR    0x20001000
-#endif
-#ifndef USER_PRNG_BASE_ADDR
-#define USER_PRNG_BASE_ADDR        0x20002000
-#endif
-#ifndef USER_FONT_ROM_BASE_ADDR
-#define USER_FONT_ROM_BASE_ADDR    0x20003000
-#endif
-
-// -- Standard Croc SoC Peripheral Base Addresses (if needed by other includes) --
-#ifndef GPIO_BASE_ADDR
-#define GPIO_BASE_ADDR             0x03005000
-#endif
-#ifndef UART_BASE_ADDR
-#define UART_BASE_ADDR             0x03002000
-#endif
-
-// -- User OBI SPI Peripheral (Engine) Register Offsets --
-#define SPI_ENGINE_REG_CTRL     0x00
-#define SPI_ENGINE_REG_STATUS   0x04
-#define SPI_ENGINE_REG_DATA_TX  0x08
-#define SPI_ENGINE_REG_CLK_DIV  0x0C
-
-// Engine Control Register Bits
-#define SPI_ENGINE_CTRL_ENABLE      (1 << 0)
-#define SPI_ENGINE_CTRL_START_XFER  (1 << 1)
-#define SPI_ENGINE_CTRL_CPOL        (1 << 2)
-#define SPI_ENGINE_CTRL_CPHA        (1 << 3)
-
-// Engine Status Register Bits
-#define SPI_ENGINE_STATUS_BUSY      (1 << 0)
-
-// -- User SPI Ctrl (CS/DC outputs) Register Offset & Bits --
-#define SPI_CTRL_GPIO_REG_OFFSET 0x000
-#define SPI_CTRL_GPIO_CS1_N_VAL (1 << 0) 
-#define SPI_CTRL_GPIO_CS2_N_VAL (1 << 1) 
-#define SPI_CTRL_GPIO_DC_VAL    (1 << 2) 
-
-// -- Xorshift PRNG Register Offsets --
-#define PRNG_TRIGGER_BYTE_OFFSET  0x000 
-#define PRNG_READ_BYTE_OFFSET     0x004 
 
 // -- Volatile Pointers to Peripherals --
 volatile uint32_t* spi_engine_ptr    = (volatile uint32_t*)USER_OBI_SPI_BASE_ADDR;
@@ -61,12 +17,13 @@ void delay(int count) {
 
 int main() {
     uart_init();
-    printf("Comprehensive Test (Seed-PRNG) Started...\n");
+    printf("Comprehensive Test Started...\n");
     uart_write_flush();
 
     uint32_t ctrl_engine_val, data_to_send;
     uint32_t ctrl_gpio_val;
     uint32_t read_val_32;
+    uint32_t rnd;
     uint8_t  read_val_8;
 
     // --- Test User Font ROM --- 
@@ -82,41 +39,26 @@ int main() {
     // --- END Font ROM Test ---
 
     // --- Test Xorshift PRNG (Seed from Address) ---
-    printf("--- PRNG Test (Seed Addr) ---\n");
+    printf("# PRNG Tests\n");
     uart_write_flush();
     
     delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4]; 
-    printf("1.Init:0x%x\n", read_val_32);
+    rnd = xorshift32(0x000);
+    printf("[PRNG] seed 0x000 - %x\n", rnd);
     uart_write_flush();
 
-    prng_ptr[PRNG_TRIGGER_BYTE_OFFSET / 4] = 0x1; 
     delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
-    printf("2.Trig1:0x%x\n", read_val_32);
+    rnd = xorshift32(0xAAA);
+    printf("[PRNG] seed 0xAAA - %x\n", rnd);
     uart_write_flush();
 
-    uint32_t seed_byte_offset_1 = 0xABC; 
-    prng_ptr[seed_byte_offset_1 / 4] = 0x1; 
     delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
-    printf("3.Seed1:0x%x (E:0x%x)\n", read_val_32, seed_byte_offset_1);
+    rnd = xorshift32(0xFFF);
+    printf("[PRNG] seed 0xFFF - %x\n", rnd);
     uart_write_flush();
 
-    prng_ptr[PRNG_TRIGGER_BYTE_OFFSET / 4] = 0x1; 
-    delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
-    printf("4.Trig2:0x%x\n", read_val_32);
-    uart_write_flush();
 
-    uint32_t seed_byte_offset_2 = 0xF00; 
-    prng_ptr[seed_byte_offset_2 / 4] = 0x1; 
-    delay(100);
-    read_val_32 = prng_ptr[PRNG_READ_BYTE_OFFSET / 4];
-    printf("5.Seed2:0x%x (E:0x%x)\n", read_val_32, seed_byte_offset_2);
-    uart_write_flush();
-
-    printf("--- PRNG Test Done ---\n");
+    printf("# PRNG Test Done\n");
     uart_write_flush();
     // --- END PRNG Test ---
 

@@ -37,6 +37,7 @@ module xorshift#(
   localparam int SHIFT_A = 13;
   localparam int SHIFT_B = 17;
   localparam int SHIFT_C = 5;
+  localparam [31:0] SEED = 32'hDEADBEEF;
 
   logic [PRNG_WIDTH-1:0] t1, t2;
   assign t1 = prng_state_q ^ (prng_state_q << SHIFT_A);
@@ -49,7 +50,9 @@ module xorshift#(
   // This block now ONLY handles updating the PRNG state on a write.
   always_ff @(posedge clk_i or negedge rst_ni) begin
     if (!rst_ni) begin
-      prng_state_q <= 32'hDEADBEEF; // Default seed on reset
+      // conactenate a default seed value with the lower 12 bits of the address
+      //20'hDEADB'  // Default seed on reset
+      prng_state_q <= SEED + addr_i[11:0];
     end else if (gnt_o && req_i && we_i) begin
       // If the write is to any address other than the read-only data register...
       if (addr_i[3:2] != REG_RDATA_OFFSET) begin
@@ -58,7 +61,7 @@ module xorshift#(
           prng_state_q <= prng_state_d; // ...then generate the next number.
         end else begin
           // ...otherwise, use the address bus as the new seed.
-          prng_state_q <= {20'h0, addr_i[11:0]};
+           prng_state_q <= SEED + addr_i[11:0];
         end
       end
     end

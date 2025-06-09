@@ -13,6 +13,26 @@
 // Registers below can be aligned to a byte, word, dword etc
 // SPI_BYTE_ALIGN provides the number of bytes it is aligned to
 
+// -- User OBI SPI Peripheral (Engine) Register Offsets --
+#define SPI_ENGINE_REG_CTRL     0x00
+#define SPI_ENGINE_REG_STATUS   0x04
+#define SPI_ENGINE_REG_DATA_TX  0x08
+#define SPI_ENGINE_REG_CLK_DIV  0x0C
+
+// Engine Control Register Bits
+#define SPI_ENGINE_CTRL_ENABLE      (1 << 0)
+#define SPI_ENGINE_CTRL_START_XFER  (1 << 1)
+#define SPI_ENGINE_CTRL_CPOL        (1 << 2)
+#define SPI_ENGINE_CTRL_CPHA        (1 << 3)
+
+// Engine Status Register Bits
+#define SPI_ENGINE_STATUS_BUSY      (1 << 0)
+
+// -- User SPI Ctrl (CS/DC outputs) Register Offset & Bits --
+#define SPI_CTRL_GPIO_REG_OFFSET 0x000
+#define SPI_CTRL_GPIO_CS1_N_VAL (1 << 0) 
+#define SPI_CTRL_GPIO_CS2_N_VAL (1 << 1) 
+#define SPI_CTRL_GPIO_DC_VAL    (1 << 2) 
 
 // Register offsets
 #define SPI_RBR_REG_OFFSET           (0*SPI_BYTE_ALIGN) // Receive Buffer Register
@@ -35,7 +55,7 @@
 
 void spi_init();
 
-int spi_read_ready();
+// int spi_read_ready();
 
 void spi_write(uint8_t byte);
 
@@ -43,10 +63,10 @@ void spi_write_str(void *src, uint32_t len);
 
 void spi_write_flush();
 
-uint8_t spi_read();
+// uint8_t spi_read();
 
-void spi_read_str(void *dst, uint32_t len);
+// void spi_read_str(void *dst, uint32_t len);
 
-void spi_putchar(char byte);
+// void spi_putchar(char byte);
 
-char spi_getchar();
+// char spi_getchar();
