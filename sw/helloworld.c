@@ -61,19 +61,19 @@ int main() {
     test_font(' '); // Test font for character ' '
 
     // --- Test Xorshift PRNG (Seed from Address) ---
-    printf("Testing PRNG (xorshift32)\n");
+    printf("Testing PRNG xorshift32\n");
     uart_write_flush();
 
     rnd = xorshift32(0);
-    printf("[PRNG] seed 0 - %x\n", rnd);
+    printf("[PRNG] seed 0: %x\n", rnd);
     uart_write_flush();
 
     rnd = xorshift32(333);
-    printf("[PRNG] seed 333 - %x\n", rnd);
+    printf("[PRNG] seed 333: %x\n", rnd);
     uart_write_flush();
 
     rnd = xorshift32(100);
-    printf("[PRNG] seed 100 - %x\n", rnd);
+    printf("[PRNG] seed 100: %x\n", rnd);
     uart_write_flush();
     
     // --- Test user_spi_ctrl ---
