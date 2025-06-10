@@ -77,7 +77,7 @@ jobs:
       - name: Install packages in OSEDA
         uses: ./.github/actions/oseda-cmd
         with:
-          cmd: "pip install gdspy"
+          cmd: "pip install gdspy --break-system-packages"
       - name: Meercat setup, export top-level GDS
         uses: ./.github/actions/oseda-cmd
         with:
@@ -153,7 +153,7 @@ jobs:
           cmd: "cd artistic; make gen_raw CFG_FILE=/fosic/designs/croc/artistic/renderics/croc_ci.json"
       - name: Render PDFs
         run: |
-          cd artistic; make -j gen_pdfs CFG_FILE=renderics/croc_ci_runner.json
+          cd artistic; make gen_pdfs CFG_FILE=renderics/croc_ci_runner.json
       - name: Finish render
         run: |
           mv artistic/renderics//DPI__croc_0-0.png artistic/renderics/croc_render.png
