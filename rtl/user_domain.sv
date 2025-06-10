@@ -169,7 +169,7 @@ module user_domain #(
 
   logic [SbrObiCfg.DataWidth-1:0] dummy_prn_val;
 
-  xorshift #(
+  user_xorshift #(
   ) i_xorshift (
     .clk_i    ( clk_i                     ),
     .rst_ni   ( rst_ni                    ),
@@ -183,8 +183,7 @@ module user_domain #(
     .rvalid_o ( user_prng_rsp.rvalid      ),
     .rdata_o  ( user_prng_rsp.r.rdata     ),
     .rid_o    ( user_prng_rsp.r.rid       ),
-    .err_o    ( user_prng_rsp.r.err       ),
-    .current_prn_o ( dummy_prn_val        )
+    .err_o    ( user_prng_rsp.r.err       )
   );
   assign user_prng_rsp.r.r_optional = 1'b0;
 
