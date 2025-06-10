@@ -10,8 +10,8 @@ LOG_FILE=$1
 expected_lines=(
   "\[CORE\] Start fetching instructions"
   "\[UART\] Testing Font ROM"
-  "\[UART\] Font ROM for A: [0 40 7 C0 39 0 F 0 1 C0 0 40 ]"
-  "\[UART\] Font ROM for ' ': [0 0 0 0 0 0 0 0 0 0 0 0 ]"
+  "\[UART\] Font ROM for 'A': [0x0 0x40 0x7 0xC0 0x39 0x0 0xF 0x0 0x1 0xC0 0x0 0x40 ]"
+  "\[UART\] Font ROM for ' ': [0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 ]"
   "\[UART\] Testing PRNG (xorshift32)"
   "\[UART\] [PRNG] seed 0x000 - 477D20B7"
   "\[UART\] [PRNG] seed 0xAAA - 94459096"
