@@ -171,6 +171,7 @@
 /fosic/designs/croc/rtl/user_domain.sv
 /fosic/designs/croc/rtl/user_domain/user_spi_ctrl.sv
 /fosic/designs/croc/rtl/user_domain/user_xorshift.sv
+/fosic/designs/croc/rtl/user_domain/xorshift_logic.sv
 /fosic/designs/croc/rtl/user_domain/user_font_rom.sv
 /fosic/designs/croc/rtl/user_domain/obi_spi_peripheral.sv
 /fosic/designs/croc/rtl/croc_soc.sv
