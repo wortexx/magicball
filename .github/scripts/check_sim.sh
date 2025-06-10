@@ -13,10 +13,9 @@ expected_lines=(
   "\[UART\] Font ROM for 'A':0x0 0x40 0x7 0xC0 0x39 0x0 0xF 0x0 0x1 0xC0 0x0 0x40"
   "\[UART\] Font ROM for ' ':0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0"
   "\[UART\] Testing PRNG (xorshift32)"
-  "\[UART\] [PRNG] seed 0x000 - 477D20B7"
-  "\[UART\] [PRNG] seed 0xAAA - 94459096"
-  "\[UART\] [PRNG] seed 0xFFA - 896B7771"
-  "\[UART\] [PRNG] seed 0xFFF - 896B7771"
+  "\[UART\] [PRNG] seed 0 - 477D20B7"
+  "\[UART\] [PRNG] seed 333 - A31B71D7"
+  "\[UART\] [PRNG] seed 100 - B2E076EE"
   "\[UART\] Testing SPI"
   "\[UART\] All Tests Done."
 )

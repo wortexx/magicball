@@ -64,20 +64,18 @@ int main() {
     printf("Testing PRNG (xorshift32)\n");
     uart_write_flush();
 
-    rnd = xorshift32(0x000);
-    printf("[PRNG] seed 0x000 - %x\n", rnd);
+    rnd = xorshift32(0);
+    printf("[PRNG] seed 0 - %x\n", rnd);
     uart_write_flush();
 
-    rnd = xorshift32(0xAAA);
-    printf("[PRNG] seed 0xAAA - %x\n", rnd);
+    rnd = xorshift32(333);
+    printf("[PRNG] seed 333 - %x\n", rnd);
     uart_write_flush();
 
-    // delay(100);
-    // rnd = xorshift32(0xFFF);
-    // printf("[PRNG] seed 0xFFF - %x\n", rnd);
-    // uart_write_flush();
-    // delay(100);
-
+    rnd = xorshift32(100);
+    printf("[PRNG] seed 100 - %x\n", rnd);
+    uart_write_flush();
+    
     // --- Test user_spi_ctrl ---
     printf("Testing SPI\n");
     uart_write_flush();
