@@ -25,7 +25,7 @@ package user_pkg;
     UserError       = 0, // Index for the OBI error slave
     UserObiSpi      = 1, // Index for obi_spi_peripheral
     UserSpiCtrl     = 2, // Index for user_spi_ctrl
-    UserPrng        = 3, // Index for xorshift PRNG
+    UserPrng        = 3, // Index for user_xorshift PRNG
     UserFontRom     = 4  // Index for user_font_rom
   } user_demux_outputs_e;
 
