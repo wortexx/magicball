@@ -9,10 +9,15 @@ LOG_FILE=$1
 
 expected_lines=(
   "\[CORE\] Start fetching instructions"
-  "\[UART\] Comprehensive Test (Seed-PRNG) Started..."
-  "\[JTAG\] Resumed hart 0"
-  "\[UART\] raw: '{'h43, 'h6f, 'h6d, 'h70, 'h72, 'h65, 'h68, 'h65, 'h6e, 'h73, 'h69, 'h76, 'h65, 'h20, 'h54, 'h65, 'h73, 'h74, 'h20, 'h28, 'h53, 'h65, 'h65, 'h64, 'h2d, 'h50, 'h52, 'h4e, 'h47, 'h29, 'h20, 'h53, 'h74, 'h61, 'h72, 'h74, 'h65, 'h64, 'h2e, 'h2e, 'h2e, 'ha}"
-  "\[UART\] --- Font ROM Test ---"
+  "\[UART\] Testing Font ROM"
+  "\[UART\] Font ROM for A: [0 40 7 C0 39 0 F 0 1 C0 0 40 ]"
+  "\[UART\] Font ROM for ' ': [0 0 0 0 0 0 0 0 0 0 0 0 ]"
+  "\[UART\] Testing PRNG (xorshift32)"
+  "\[UART\] [PRNG] seed 0x000 - 477D20B7"
+  "\[UART\] [PRNG] seed 0xAAA - 94459096"
+  "\[UART\] [PRNG] seed 0xFFA - 896B7771"
+  "\[UART\] [PRNG] seed 0xFFF - 896B7771"
+  "\[UART\] Testing SPI"
   "\[UART\] All Tests Done."
 )
 

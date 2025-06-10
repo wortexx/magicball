@@ -10,15 +10,41 @@
 volatile uint32_t* spi_engine_ptr    = (volatile uint32_t*)USER_OBI_SPI_BASE_ADDR;
 volatile uint32_t* spi_ctrl_gpio_ptr = (volatile uint32_t*)USER_SPI_CTRL_BASE_ADDR;
 //volatile uint32_t* prng_ptr          = (volatile uint32_t*)USER_PRNG_BASE_ADDR;
-volatile uint8_t* font_rom_ptr      = (volatile uint8_t*)USER_FONT_ROM_BASE_ADDR;
 
 void delay(int count) {
     for (volatile int i = 0; i < count; i++);
 }
 
+int xorshift32_c(int seed) {
+    // Simple xorshift32 implementation
+    seed = seed > (0xFFA) ? 0xFFA : seed; // Ensure offset is within bounds
+    uint32_t x = 0xDEADBEEF + seed;
+    x ^= (x << 13);
+    x ^= (x >> 17);
+    x ^= (x << 5);
+    return x;
+}
+
+void test_font(char c) {
+    uint8_t* font_map = font_get_char(c); // Get font data for character
+    char chars[2] = {c, '\0'}; // Create a string for printing
+    printf("Font ROM for '");
+    printf(chars);
+    printf("': [");
+    uart_write_flush();
+
+    for (int i = 0; i < 12; i++) { // Read only a few bytes
+        uint8_t font_byte = font_map[i];
+        printf("0x%x ", font_byte);
+        uart_write_flush();
+    }
+    printf("]\n");
+    uart_write_flush();
+}
+
 int main() {
     uart_init();
-    printf("Comprehensive Test Started...\n");
+    printf("Comprehensive test started...\n");
     uart_write_flush();
 
     uint32_t ctrl_engine_val, data_to_send;
@@ -28,50 +54,32 @@ int main() {
     uint8_t  read_val_8;
 
     // --- Test User Font ROM ---
-    printf("--- Font ROM Test ---\n");
+    printf("Testing Font ROM\n");
     uart_write_flush();
 
-    uint8_t* font_map_a = font_get_char('A'); // Get font data for character 'A'
-
-    printf("Font ROM for A: %p");
-    uart_write_flush();
-    
-    for (int i = 0; i < 12; i++) { // Read only a few bytes
-        uint8_t font_byte = font_map_a[i];
-        printf(" %x ", font_byte);
-        uart_write_flush();
-        delay(50);
-    }
-    printf("\n");
-
-    // --- END Font ROM Test ---
+    test_font('A'); // Test font for character 'A'
+    test_font(' '); // Test font for character ' '
 
     // --- Test Xorshift PRNG (Seed from Address) ---
-    printf("# PRNG Tests\n");
+    printf("Testing PRNG (xorshift32)\n");
     uart_write_flush();
 
-    delay(100);
-    rnd = xorshift32(0x000);
-    printf("[PRNG] seed 0x000 - %x\n", rnd);
-    uart_write_flush();
+    // rnd = xorshift32(0x000);
+    // printf("[PRNG] seed 0x000 - %x\n", rnd);
+    // uart_write_flush();
 
-    delay(100);
-    rnd = xorshift32(0xAAA);
-    printf("[PRNG] seed 0xAAA - %x\n", rnd);
-    uart_write_flush();
+    // rnd = xorshift32(0xAAA);
+    // printf("[PRNG] seed 0xAAA - %x\n", rnd);
+    // uart_write_flush();
 
-    delay(100);
-    rnd = xorshift32(0xFFF);
-    printf("[PRNG] seed 0xFFF - %x\n", rnd);
-    uart_write_flush();
-
-
-    printf("# PRNG Test Done\n");
-    uart_write_flush();
-    // --- END PRNG Test ---
+    // delay(100);
+    // rnd = xorshift32(0xFFF);
+    // printf("[PRNG] seed 0xFFF - %x\n", rnd);
+    // uart_write_flush();
+    // delay(100);
 
     // --- Test user_spi_ctrl ---
-    printf("--- User SPI Ctrl Test ---\n");
+    printf("Testing SPI\n");
     uart_write_flush();
     ctrl_gpio_val = SPI_CTRL_GPIO_CS2_N_VAL;
     spi_ctrl_gpio_ptr[SPI_CTRL_GPIO_REG_OFFSET / 4] = ctrl_gpio_val;
