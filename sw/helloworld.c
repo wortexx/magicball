@@ -30,7 +30,7 @@ void test_font(char c) {
     char chars[2] = {c, '\0'}; // Create a string for printing
     printf("Font ROM for '");
     printf(chars);
-    printf("': [");
+    printf("':");
     uart_write_flush();
 
     for (int i = 0; i < 12; i++) { // Read only a few bytes
@@ -38,7 +38,7 @@ void test_font(char c) {
         printf("0x%x ", font_byte);
         uart_write_flush();
     }
-    printf("]\n");
+    printf("\n");
     uart_write_flush();
 }
 
