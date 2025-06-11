@@ -271,8 +271,4 @@ always_comb begin
   obi_rsp_o.r.r_optional = 1'b0;
 end
 
-
 endmodule
-
-
-
